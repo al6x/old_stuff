@@ -1,0 +1,6 @@
+[submodule "vendor/plugins/common_interface"]
+	path = vendor/plugins/common_interface
+	url = git@github.com:alexeypetrushin/common_interface.git
+[submodule "vendor/plugins/sm_commons"]
+	path = vendor/plugins/sm_commons
+	url = git@github.com:alexeypetrushin/sm_commons.git

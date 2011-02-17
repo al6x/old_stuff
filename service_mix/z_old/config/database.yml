@@ -1,0 +1,17 @@
+# development: 
+#   global:
+#     name: "global_development"
+#   accounts:
+#     name: "accounts_development" 
+# 
+# test:
+#   global:
+#     name: "global_test"
+#   accounts:
+#     name: "accounts_test"   
+# 
+# production:
+#   global:
+#     name: "global_production"
+#   accounts:
+#     name: "accounts_production"

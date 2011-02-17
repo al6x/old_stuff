@@ -1,0 +1,8 @@
+require 'rad'
+
+crystal.initialize_plugin :web, __FILE__.parent_dirname do |c|
+  c.asset 'users'
+  c.routes
+  c.locales
+  c.autoload %w(controllers helpers models)
+end

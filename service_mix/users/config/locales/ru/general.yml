@@ -1,0 +1,123 @@
+ru:
+  # General
+  account: "Аккаунт"
+  accounts: "Аккаунты"
+  administration: "Администрирование"
+  anonymous: "Добро пожаловать, Гость"
+  are_you_shure: "Уверены?"
+  avatar: "Аватар"
+  domains: "Домены"
+  email: "Почта"
+  home: "Главная"
+  language: "Язык"
+  login: "Войти"
+  login_not_required: "Вы уже вошли"
+  login_required: "Для получения доступа необходимо войти в систему"
+  logo: "Лого"
+  logout: "Выйти"
+  name: "Имя"
+  password: "Пароль"
+  roles: "Роли"
+  show_more: "..."
+  signup: "Регистрация"
+  spaces: "Области"
+  state: "Статус"
+  theme: "Тема"
+  title: "Название"
+  username: "Логин"
+  users: "Пользователи"
+  web_analytics_js: "Ваш ID в Google Analytics"
+  web_analytics_js_description: |
+    Для анализа посещаемости вашего сайта вставьте в это поле ID вашего аккаунта 
+    в <a href='http://www.google.com/analytics/'>Google Analytics</a>  
+    (именно ID, вида UA-XXXXX-X, а не скрипт!)"
+
+  # Common actions
+  cancel: "Отмена"
+  delete: "Удалить"
+  remove: "Удалить"
+  edit: "Редактировать"
+  new: "Создать"
+  ok: "Ок"
+  
+  # Accounts Management
+  account_created: "Аккаунт создан"
+  account_deleted: "Аккаунт удален"
+  account_updated: "Аккаунт обновлен"
+  new_account: "Новый аккаунт"
+  update_account: "Обновить аккаунт"
+  
+  # Spaces Management
+  bottom_text: "Текст внизу сайта"
+  default_url: "Главная страница"
+  default_url_description: |
+    URL главной страницы, на которую пользователи попадут зайдя на ваш сайт<br/>
+    (используйте ссылку без домена - /some_link, вместо http://www.some_domain.com/some_link)"
+  forbiden_to_delete_default_space: "Нельзя удалять дефолтное пространство"
+  menu: "Меню"
+  menu_description: |
+    Вставте сюда ссылки которые будут показаны в меню пространства, пример:<br/>
+    Главная:/some_link <br/>
+    (используйте ссылки без домена - /some_link, вместо http://www.some_domain.com/some_link). <br/>
+    Чтобы показать все элементы используйте ссылку "Все:/items"
+  new_space: "Новое рабочее пространство"
+  update_space: "Редактировать рабочее пространство"  
+  space_created: "Область создана"
+  space_deleted: "Область удалена"
+  space_updated: "Область обновлена"
+  
+  # Files Audit
+  files_size: "Занято дискового пространства"
+  max_file_size: "Максимальный размер файла"
+  max_user_files_size: "Максимальный размер диска доступный пользователю"
+  max_user_files_size_description: "0 - нет ограничений"
+  max_account_files_size: "Максимальный размер диска доступный аккаунту" 
+  
+  # Permissions Management
+  custom_roles: "Дополнительные роли"
+  custom_roles_description: "Дополнительные роли для более гибкого управления правами доступа"
+  cant_update_roles: "Не могу обновить роли"
+  space_roles: "Роли в '{{space}}'"
+  user_updated: "Пользователь обновлен"
+  
+  # User model
+  bad_email_message: "Должен быть правильным почтовым адресом"    
+  bad_login_message: "Используйте буквы, цифры и .-_@"  
+  first_name: "Имя"
+  last_name: "Фамилия"
+  password_confirmation: "Подтверждение пароля"
+
+  # Space model
+  forbiden_to_change_default_space: "Нельзя менять дефолтную область"
+  
+  # Wigets
+  callback_error: "Ошибка калбека Service Mix!"
+  callback_error_not_specified: "Ошибка калбека не определена!"
+  
+  # Folders
+  add_button: "Добавить"
+  cancel_button: "Отменить"
+  cant_upload: "Нельзя загружать файлы"
+  delete_button: "Удалить"
+  file_saved: "Файл сохранен"
+  file_deleted: "Файл удален"
+  folder_deleted: "Папка удалена"
+  internal_error: "Не удалось сохранить"
+  upload_button: "Загрузить"
+  
+  # Authorization
+  admin: "Админ '{{name}}'"
+  add_admin_role: "Сделать Админом '{{name}}'"
+  add_custom_role: "Сделать {{role}} '{{name}}'"
+  add_manager_role: "Сделать Менеджером '{{name}}'"
+  add_member_role: "Сделать Членом '{{name}}'"
+  custom_role: "{{role}} '{{name}}'"
+  manager: "Менеджер '{{name}}'"
+  member: "Член '{{name}}'"
+  remove_admin_role: "Убрать права Админа в '{{name}}'"
+  remove_custom_role: "Убрать права {{role}} в '{{name}}'"
+  remove_manager_role: "Убрать права Менеджера в '{{name}}'"
+  remove_member_role: "Удалить из Членов '{{name}}'"
+  role_granted: "Права даны"
+  role_removed: "Права убраны"
+  invalid_roles: "Неверные роли"

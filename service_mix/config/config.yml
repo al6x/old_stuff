@@ -1,0 +1,47 @@
+# 
+# App
+# 
+default_language: en
+master_domain: localhost
+master_email: support@localhost
+logo: saas4b
+
+
+# 
+# System 
+#
+default_path: /sm
+
+
+# 
+# Deployment
+# 
+port: 4000
+session:
+  key: bom4_development
+  secret: secret_token
+  # domain: foo.com
+  # path: '/'
+  # expire_after: 2592000
+  
+database:
+  development: 
+    global:
+      name: global_development
+    accounts:
+      name: accounts_development
+
+  test:
+    global:
+      name: global_test
+    accounts:
+      name: accounts_test
+
+  production:
+    global:
+      name: global_production
+    accounts:
+      name: accounts_production
+      
+max_file_size: 204800 # 200 kb
+max_account_files_size: 104857600 # 100 Mb

@@ -1,0 +1,15 @@
+- case the_action
+- when :create
+	- line = js render(:partial => 'line', :object => @account)
+	$("._table ._content").append("#{line}")
+	
+- when :destroy
+	$("##{@account.dom_id}").remove()
+	
+- when :edit
+	- form = js b.dialog(render(:partial => 'form'))
+	target.showDialog("#{form}");
+	
+- when :update
+	- line = js render(:partial => 'line', :object => @account)
+	$("##{@account.dom_id}").replaceWith("#{line}")

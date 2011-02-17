@@ -1,0 +1,7 @@
+- content_for :content do
+	= b.title t(:new_user_title)
+	- b.narrow do
+		- b.form_for :token, @token, :action => url_for(:enter_email) do |f|
+			= f.text_field :email, :required => true, :description => t(:signup_email_description)
+			= f.line
+			= f.line_with_delimiters f.submit(t(:ok)), link_to(t(:cancel), :back)

@@ -1,0 +1,16 @@
+- content_for :top_panel do
+	- b.top_panel do |o|					
+		- o.left do |a|
+			- a.add(([link_to("<b>#{config.logo!}</b>", '/')] + breadcrumb).join(' > '))
+			
+		- o.right do |a|
+			- if User.current.registered?
+				- a.add link_to(User.current.name, Users, :show, :id => User.current)
+				- a.add " | "
+				- a.add link_to(t(:logout), Users::Sessions, :logout)
+			- else
+				- a.add t(:anonymous)
+				- a.add " | "
+				- a.add link_to(t(:login), Users::Sessions, :login)
+				- a.add " | "
+				- a.add link_to(t(:signup), Users::Identities, :enter_email_form)

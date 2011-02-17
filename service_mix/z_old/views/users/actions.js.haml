@@ -1,0 +1,4 @@
+- case the_action
+- when :update_roles
+	- html = js render(:partial => 'roles')
+	$('#user_roles').replaceWith("#{html}")

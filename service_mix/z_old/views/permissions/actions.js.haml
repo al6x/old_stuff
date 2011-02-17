@@ -1,0 +1,8 @@
+- case the_action
+- when :edit
+	- form = js render(:partial => 'form')
+	target.showDialog("#{form}");
+	
+- when :update
+	- line = js render(:partial => 'line', :object => @user)
+	$("._table .#{@user.dom_id}").replaceWith("#{line}");

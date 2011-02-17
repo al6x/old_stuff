@@ -1,0 +1,27 @@
+= b.title(@space.new_record? ? t(:new_space) : t(:update_space))
+- b.form_for [@account, @space] do |f|
+	= f.error_messages
+	
+	= f.text_field :name, :required => true, :disabled => !@account.new_record?
+	= f.text_field :title
+	
+	- b.more :id => 'space_edit_form', :name => t(:show_more) do
+		= f.text_area :custom_roles_as_string, :label => t(:custom_roles), :description => t(:custom_roles_description)
+		= f.text_field :default_url, :description => t(:default_url_description)
+		= f.text_area :menu_as_string, :label => t(:menu), :description => t(:menu_description)
+		
+		- options = Space::AVAILABLE_LANGUAGES.collect{|ln| [ln, ln]}
+		= f.select :language, options
+		
+		- options = Space.available_themes.collect{|t| [t, t]}
+		= f.select :theme, options
+		
+		= f.file_field :logo #, :label => "#{t(:logo)}#{"<br/>" + image_tag(@space.logo.url) unless @space.logo.blank?}"
+		
+		= f.text_area :original_bottom_text, :label => t(:bottom_text)
+		
+		= f.text_field :max_user_files_size, :description => t(:max_user_files_size_description)
+			
+	= f.line
+	
+	= f.line_with_delimiters ok_button, cancel_button

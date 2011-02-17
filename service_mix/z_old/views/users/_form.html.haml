@@ -1,0 +1,10 @@
+- b.form_for @user, :html => {:multipart => true} do |f|
+	= f.error_messages
+
+	= f.text_field :first_name
+	= f.text_field :last_name
+	= f.file_field :avatar, :label => "#{t(:avatar)}<br/> #{image_tag User.avatar_url(@user.name)}"
+	
+	= f.line
+
+	= f.line ok_button, cancel_button

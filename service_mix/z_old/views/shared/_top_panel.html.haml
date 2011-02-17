@@ -1,0 +1,22 @@
+- content_for :top_panel do
+	- b.top_panel do |o|					
+		- o.left do |a|
+			- if Space.current?
+				- ca, cs = Account.current, Space.current
+				- atitle = ca.title.blank? ? ca.name : ca.title
+				- stitle = cs.default? ? "" : (cs.title.blank? ? cs.name : cs.title)
+				- a.add link_to("<b>#{h atitle}</b> #{h stitle}", '/')				
+			- if breadcrumb
+				- a.add breadcrumb.join(' > ')
+			
+		- o.right do |a|
+			- if User.current.registered?
+				- a.add link_to(User.current.name, user_path(User.current))
+				- a.add " | "
+				- a.add link_to(t(:logout), logout_path)
+			- else
+				- a.add t(:anonymous)
+				- a.add " | "
+				- a.add link_to(t(:login), login_path)
+				- a.add " | "
+				- a.add link_to(t(:signup), signup_path)

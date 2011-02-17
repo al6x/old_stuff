@@ -1,0 +1,15 @@
+- case the_action
+- when :create
+	- line = js render(:partial => 'line', :object => @space)
+	$("._table ._content").append("#{line}");
+	
+- when :destroy
+	$("##{@space.dom_id}").remove();
+	
+- when :edit
+	- form = js b.dialog(render(:partial => 'form'))
+	target.showDialog("#{form}");
+	
+- when :update
+	- line = js render(:partial => 'line', :object => @space)
+	$("##{@space.dom_id}").replaceWith("#{line}");

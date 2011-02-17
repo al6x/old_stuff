@@ -1,0 +1,3 @@
+- if message = (flash[:error] || flash[:info])
+	- javascript_tag do
+		$(function(){$.infoMessage("#{j(h(message))}")})

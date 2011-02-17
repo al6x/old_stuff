@@ -1,0 +1,10 @@
+- content_for :content do
+	- b.toolbar do |o|
+		- o.left do |a|
+			- a.add link_to(t(:new), new_account_path(:format => :js))
+
+	- b.table do |o|
+		- o.head [t(:name), t(:domains), t(:spaces), '']
+		- o.rows do |a|
+			- @accounts.each do |account|
+				- a.add render(:partial => 'line', :object => account)

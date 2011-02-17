@@ -1,0 +1,9 @@
+- edit = link_to(t(:edit), edit_account_path(object, :format => :js))
+- destroy = link_to(t(:delete), account_path(object, :format => :js), :method => :delete, :confirm => t(:are_you_shure))
+
+- b.table_row :id => object.dom_id do |o|
+	- o.content do |a|		
+		- a.add link_to(object.name, account_spaces_path(object))
+		- a.add object.domains.join("<br/>")
+		- a.add object.spaces.size.to_s # TODO2 use spaces_count cache
+		- a.add [edit, destroy].join(" | ")

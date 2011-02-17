@@ -1,0 +1,16 @@
+- wrap_js_into_textarea = (request.format == 'js' and !request.xhr?) # hack to return js in AJAX iframe request (it doesn't works othervise)
+= "<textarea>" if wrap_js_into_textarea
+= Rails.production{"try{"}
+
+- unless params[:target].blank?
+	var target = $('##{params[:target]}').first();
+- else
+	var target = $('body').first();
+
+= @inline_js || yield
+
+- if msg = flash[:error] || flash[:sticky_error] || flash[:info] || flash[:sticky_info]
+	$.message("#{js msg}");
+
+= Rails.production{"}catch(e){console.log(e)};"}
+= "</textarea>" if wrap_js_into_textarea

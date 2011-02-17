@@ -1,0 +1,1 @@
+AssetPackager.add "#{RAILS_ROOT}/config/asset_packages.yml", "#{RAILS_ROOT}/public"

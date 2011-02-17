@@ -1,0 +1,11 @@
+- content_for :content do
+	= b.title t(:choose_name)
+	- b.narrow do
+		- b.form_for @user, :url => finish_open_id_registration_identities_path do |f|
+			= f.error_messages
+			
+			= f.hidden_field_tag :token, @token.token
+
+			= f.text_field :name, :required => true, :description => t(:choose_name_description)
+
+			= f.line_with_delimiters f.submit(t(:ok)), link_to(t(:cancel), :back)

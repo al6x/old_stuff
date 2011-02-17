@@ -1,0 +1,27 @@
+- content_for :nothing do
+	- content_for :head do
+		/ = stylesheet_link_tag merged_stylesheets(:base)
+		= initialize_deferred_js
+		= initialize_js_commons
+
+	- content_for :bottom do
+		/ = javascript_include_tag merged_javascripts(:base)		
+		= render '/shared/web_analytics_js'
+		= call_deferred_js
+
+		= render '/shared/messages'
+
+	= render '/shared/multitenant_top_panel'
+
+	= render '/shared/menu'
+	
+	= render '/shared/development'
+
+	- prepend_to :content, b.message(:type => :error, :content => h(flash.sticky_error)) if flash.sticky_error
+	- prepend_to :content, b.message(h(flash.sticky_info)) if flash.sticky_info
+	- prepend_to :content, b.title(h(@title)) if @title
+
+	/ = render :partial => themed_partial('default')
+	/ = Rails.development? ? tidy_html(html) : html
+	
+= render themed_partial('application')

@@ -1,0 +1,18 @@
+= b.title(@account.new_record? ? t(:new_account) : t(:update_account))
+ 
+- b.form_for @account do |f|
+	= f.error_messages
+	
+	= f.text_field :name, :required => true, :disabled => !@account.new_record?
+	= f.text_field :title		
+	= f.text_area :domains_as_string, :label => t(:domains)
+	= f.text_field :web_analytics_js, :description => t(:web_analytics_js_description)
+	
+	- b.more :id => 'account_edit_form', :name => t(:show_more) do
+		= f.text_field :files_size, :disabled => true
+		= f.text_field :max_file_size
+		= f.text_field :max_account_files_size
+	  
+	
+	= f.line
+	= f.line_with_delimiters ok_button, cancel_button

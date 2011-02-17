@@ -1,0 +1,44 @@
+master_domain: localhost
+master_email: support@localhost
+
+port: 3000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+logo: saas4b
+
+session_key: your_session_key
+session_secret: "very very very very very very very very very very very very secret code"
+
+default_path: /sm/pages/default
+
+default_language: en
+
+app_port: 3001
+service_mix_port: 3000
+r
+services:
+  jfactory:
+    callbacks: "http://localhost:3001/service_mix_callbacks"
+    
+max_file_size: 1048576 # 1 Mb
+max_account_files_size: 5368709120 # 5 Gb
+
+available_themes:
+- default
+- simple_organization

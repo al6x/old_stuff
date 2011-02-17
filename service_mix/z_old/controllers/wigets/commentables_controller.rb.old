@@ -1,0 +1,20 @@
+class Wigets::CommentablesController < Wigets::AbstractWigetsController
+  # before_filter :prepare_behaviour
+  # 
+  # def index
+  #   raise_user_error "Too big Collection" if json_params.size > 20
+  #   result = @behaviour.process_for_view json_params
+  #   render :json => result
+  # end
+  # 
+  # def create
+  #   @behaviour.comment! json_params
+  #   render :json => {:info => t(:comment_created)}
+  # end
+  # 
+  # protected  
+  # def prepare_behaviour
+  #   bclass = (secure_params[:comments_behaviour] || CommentsBehaviours::GeneralBehaviour.name).constantize
+  #   @behaviour = bclass.new @callback_caller
+  # end
+end

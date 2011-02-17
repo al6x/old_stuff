@@ -1,0 +1,6 @@
+- unless (menu = main_menu).blank?
+	- content_for :navigation do
+		- b.navigation do |o|
+			- o.items do |a|
+				- menu.each do |name, link, active|
+					= a.add :content => link_to(name, link), :active => active

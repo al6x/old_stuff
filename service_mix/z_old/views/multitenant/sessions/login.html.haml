@@ -1,0 +1,9 @@
+- content_for :content do
+	= b.title t(:login_title)
+	- b.narrow do
+		= render :partial => 'password_form'
+
+	/ - b.more :name => t(:login_using_open_id), :id => :open_id do
+	= b.title t(:login_using_open_id)
+	- b.narrow do		
+		= render :partial => 'open_id_form'

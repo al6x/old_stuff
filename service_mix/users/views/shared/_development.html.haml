@@ -1,0 +1,8 @@
+- if config.development?
+	- content_for :bottom_panel do
+		- b.bottom_panel do
+			%div{:style => "font-size: 90%; float:right"}
+				%p= "Account: #{Account.current? ? Account.current.name : ''}"
+				%p= "Space: #{Space.current? ? Space.current.name : ''}"
+				%p= "Params: #{params.reject{|k, v| ['format'].include? k}.inspect}"
+			.clear

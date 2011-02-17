@@ -1,0 +1,55 @@
+class Vote
+
+   #  acts_as_multitenant
+   #  
+   #  belongs_to :resource
+   #  belongs_to :user
+   #  
+   #  default_value_for :value, 0
+   #  
+   #  named_scope :active, :conditions => {:state => 'active'}
+   #  named_scope :bin, :conditions => {:state => 'bin'}
+   #  
+   #  state_machine :state, :initial => :active do
+   #    after_transition :on => :move_to_bin do |_self, trans|
+   #      _self.resource.rating -= _self.value
+   #    end
+   #    
+   #    after_transition :on => :restore_from_bin do |_self, trans|
+   #      _self.resource.rating += _self.value
+   #    end
+   #    
+   #    on :move_to_bin do
+   #      transition :active => :deleted
+   #    end
+   #    
+   #    on :restore_from_bin do
+   #      transition :deleted => :active
+   #    end
+   #  end
+   #  
+   #  validates_presence_of :resource, :user
+end
+
+
+
+
+
+
+# == Schema Information
+#
+# Table name: votes
+#
+#  id          :integer(4)      not null, primary key
+#  value       :float
+#  resource_id :integer(4)
+#  user_id     :integer(4)
+#  ip          :string(255)
+#  cookie      :string(255)
+#  account_id  :integer(4)
+#  created_at  :datetime
+#  updated_at  :datetime
+#  state       :string(255)
+#  space_id    :integer(4)
+#
+

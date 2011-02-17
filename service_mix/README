@@ -1,0 +1,1 @@
+- Check for errors in views and asign flash.sticky_error

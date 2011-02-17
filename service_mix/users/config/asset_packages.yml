@@ -1,0 +1,8 @@
+javascripts:
+  open_id:
+    - users/openid-selector/js/openid-jquery.js
+    - users/open_id.js
+  
+stylesheets:
+  open_id:
+    - users/openid-selector/css/openid.css

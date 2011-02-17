@@ -1,0 +1,24 @@
+- b.user do |o|
+	- o.title @user.name
+
+	- o.controls do |a| 
+		- a.add link_to(t(:edit), edit_user_path(@user)) if can?(:update_profile, @user) or (@user.anonymous? and user.roles.global_admin?)
+		
+	- o.avatar image_tag(User.avatar_url(@user.name))
+	
+	- o.properties do
+		- b.basic_list do
+			= b.basic_list_item h("#{@user.first_name} #{@user.last_name}")
+		
+		- b.text do
+			.todo= link_to(t(:update_password), update_password_form_identities_path) if owner? @user
+
+		.todo about
+
+		= render :partial => 'roles'
+		
+	- o.content do
+		.todo
+			- b.basic_list do
+				= b.basic_list_item 'Latest Activity ...'
+				= b.basic_list_item 'Public Items ...'

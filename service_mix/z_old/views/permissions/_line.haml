@@ -1,0 +1,7 @@
+- b.table_row :class => object.dom_id do |o|
+	- o.content do |a|
+		- a.add link_to(object.name, object)
+		- a.add object.email
+		- a.add object.state
+		- a.add object.space_roles_as_string
+		- a.add [link_to(t(:edit), edit_space_permission_path(@space, object, :format => :js))].join(" | ")

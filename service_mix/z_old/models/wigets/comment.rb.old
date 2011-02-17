@@ -1,0 +1,50 @@
+class Comment
+
+   #  acts_as_multitenant
+   #  
+   #  belongs_to :resource
+   #  belongs_to :user
+   #  
+   #  named_scope :active, :conditions => {:state => 'active'}
+   #  named_scope :bin, :conditions => {:state => 'bin'}
+   #  
+   #  state_machine :state, :initial => :active do
+   #    after_transition :on => :move_to_bin do |_self, trans|
+   #      _self.resource.rating -= _self.value
+   #    end
+   #    
+   #    after_transition :on => :restore_from_bin do |_self, trans|
+   #      _self.resource.rating += _self.value
+   #    end
+   #    
+   #    on :move_to_bin do
+   #      transition :active => :deleted
+   #    end
+   #    
+   #    on :restore_from_bin do
+   #      transition :deleted => :active
+   #    end
+   #  end
+   #  
+   #  validates_presence_of :resource, :user
+   #  
+   #  validates_presence_of :text
+   #  validates_length_of :text, :maximum => 500
+end
+
+
+# == Schema Information
+#
+# Table name: comments
+#
+#  id          :integer(4)      not null, primary key
+#  user_id     :integer(4)
+#  resource_id :integer(4)
+#  account_id  :integer(4)
+#  text        :text
+#  state       :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#  space_id    :integer(4)
+#
+

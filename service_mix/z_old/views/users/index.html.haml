@@ -1,0 +1,4 @@
+- content_for :content do
+	- b.text do
+		- @users.each do |user|
+			= link_to user.name, user

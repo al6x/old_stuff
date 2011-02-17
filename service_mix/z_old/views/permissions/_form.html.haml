@@ -1,0 +1,8 @@
+- b.dialog do
+	= b.title @user.name
+  
+	- b.form_for :user, :url => space_permission_path(@space, @user), :html => {:method => :put} do |f|
+		= f.error_messages  
+		= f.text_field :space_roles_as_string, :label => User.t(:roles)
+		= f.line
+		= f.line_with_delimiters ok_button, cancel_button

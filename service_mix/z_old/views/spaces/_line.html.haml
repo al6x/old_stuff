@@ -1,0 +1,7 @@
+- edit = link_to(t(:edit), edit_account_space_path(@account, object, :format => :js))
+- delete = link_to(t(:delete), account_space_path(@account, object, :format => :js), :method => :delete, :confirm => t(:are_you_shure))
+- controls = (object.name == 'default') ? [edit] : [edit, delete]
+- b.table_row :id => object.dom_id do |o|
+	- o.content do |a|
+		- a.add object.name
+		- a.add controls.join(" | ")

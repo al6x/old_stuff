@@ -1,0 +1,65 @@
+class Resource
+
+  # acts_as_multitenant
+  #   
+  # validates_presence_of :resource_id, :resource_type
+  # 
+  # def self.find_by_resource params
+  #   find_by_resource_type_and_resource_id params['resource_type'], params['resource_id']
+  # end
+  # 
+  # # Bunch select
+  # def self.find_or_prepare_by_resources rparams, options = {}
+  #   return [] if rparams.empty?
+  #   
+  #   conditions = rparams.collect do |rp| 
+  #     "(resources.resource_type = #{sanitize(rp['resource_type'])} and resources.resource_id = #{sanitize(rp['resource_id'])})"
+  #   end
+  #   resources = all options.merge(:conditions => "(#{conditions.join(" or ")})")
+  #   
+  #   sorted = []
+  #   rparams.each do |rp|
+  #     res = resources.find{|r| r.resource_type == rp['resource_type'] and r.resource_id.to_s == rp['resource_id'].to_s}
+  #     res ||= Resource.new(rp) # Create new if not found
+  #     sorted << res
+  #   end
+  #   
+  #   sorted
+  # end
+  # 
+  # # 
+  # # Votes
+  # #
+  # default_value_for :rating, 0
+  # has_many :votes, :conditions => {:state => 'active'}, :dependent => :destroy
+  # 
+  # # 
+  # # Comments
+  # # 
+  # has_many :comments, :conditions => {:state => 'active'}, :order => "created_at asc", :dependent => :destroy
+  # 
+  # # 
+  # # Files
+  # # 
+  # has_many :files, :class_name => "RemoteFile", :dependent => :destroy
+  # # accepts_nested_attributes_for :files, :allow_destroy => true
+end
+
+
+
+
+
+# == Schema Information
+#
+# Table name: resources
+#
+#  id            :integer(4)      not null, primary key
+#  rating        :float
+#  resource_id   :string(255)
+#  resource_type :string(255)
+#  account_id    :integer(4)
+#  created_at    :datetime
+#  updated_at    :datetime
+#  space_id      :integer(4)
+#
+

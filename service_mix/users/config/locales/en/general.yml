@@ -1,0 +1,125 @@
+en:
+  # General
+  account: "Account"
+  accounts: "Accounts"
+  administration: "Administration"
+  anonymous: "Welcome, Guest"
+  are_you_shure: "Are you sure?"
+  avatar: "Avatar"
+  domains: "Domains"
+  email: "eMail"
+  home: "Home"
+  language: "Language"
+  login: "Login"
+  login_not_required: "You are already logged in"
+  login_required: "You need to be logged in"
+  logo: "Logo"
+  logout: "Logout"
+  name: "Name"
+  password: "Password"
+  roles: "Roles"
+  show_more: "..."
+  signup: "Signup"
+  spaces: "Spaces"
+  state: "State"
+  theme: "Theme"
+  title: "Title"
+  username: "Username"
+  users: "Users"
+  web_analytics_js: "Your ID in Google Analytics"
+  web_analytics_js_description: |
+    To get access to site analytics enter here your ID in
+    <a href='http://www.google.com/analytics/'>Google Analytics</a>
+    (it should be ID, like UA-XXXXX-X, not a script!)"
+
+  # Common actions
+  cancel: "Cancel"
+  delete: "Delete"
+  remove: "Delete"
+  edit: "Edit"
+  new: "New"
+  ok: "Ok"
+  
+  # Accounts Management
+  account_created: "Account created"
+  account_deleted: "Account deleted"
+  account_updated: "Account updated"
+  new_account: "New Account"
+  update_account: "Update Account"
+  
+  # Spaces Management
+  bottom_text: "Site bottom text"
+  default_url: "Home page URL"
+  default_url_description: |
+    Site's default page URL, this is the first page users will se on your site<br/>
+    (use URL without domain - /some_link, instead of http://www.some_domain.com/some_link)"
+  forbiden_to_delete_default_space: "Forbidden to delete default Space"
+  menu: "Menu"
+  menu_description: |
+    Site menu, enter here links that will be shown in site menu, sample:<br/>
+    Home:/some_link <br/>
+    (Use links without domain - /some_link, instead of http://www.some_domain.com/some_link). <br/>
+    To show all items use "All:/items" link
+  new_space: "New Space"
+  update_space: "Edit Space"
+  
+  space_created: "Space created"
+  space_deleted: "Space deleted"
+  space_updated: "Space updated"
+  
+  # Files Audit
+  files_size: "Disk space used"
+  max_file_size: "Maximum file size"
+  max_user_files_size: "Maximum disk space avaliable to User"
+  max_user_files_size_description: "0 - no limit"
+  max_account_files_size: "Maximum disk space avaliable to Account"
+  
+  
+  # Permissions Management
+  custom_roles: "Custom Roles"
+  custom_roles_description: "Custom roles for custom access setting"
+  cant_update_roles: "Can't update roles"
+  space_roles: "Roles in '{{space}}'"
+  user_updated: "User updated"
+  
+  # User model
+  bad_email_message: "Invalid email"    
+  bad_login_message: "Invalid login (use only 0-9, a-z, and .-_@ symbols)"  
+  first_name: "First Name"
+  last_name: "Last Name"
+  password_confirmation: "Password confirmation"
+
+  # Space model
+  forbiden_to_change_default_space: "Forbidden to change default Space"
+  
+  # Wigets
+  callback_error: "Service Mix callback error!"
+  callback_error_not_specified: "Callback error not defined!"
+  
+  # Folders
+  add_button: "Add"
+  cancel_button: "Cancel"
+  cant_upload: "Can't upload files"
+  delete_button: "Delete"
+  file_saved: "File saved"
+  file_deleted: "File deleted"
+  folder_deleted: "Folder deleted"
+  internal_error: "Can't save, internal error"
+  upload_button: "Upload"
+  
+  # Authorization
+  admin: "Admin of '{{name}}'"
+  add_admin_role: "Grant Admin role in '{{name}}'"
+  add_custom_role: "Grant {{role}} role in '{{name}}'"
+  add_manager_role: "Grant Manager role in '{{name}}'"
+  add_member_role: "Grant Membership of '{{name}}'"
+  custom_role: "{{role}} '{{name}}'"
+  manager: "Manager of '{{name}}'"
+  member: "Member of '{{name}}'"
+  remove_admin_role: "Remove Admin role in '{{name}}'"
+  remove_custom_role: "Remove {{role}} role in '{{name}}'"
+  remove_manager_role: "Remove Manager role in '{{name}}'"
+  remove_member_role: "Remove from Members of '{{name}}'"
+  role_granted: "Role granted"
+  role_removed: "Role removed"
+  invalid_roles: "Invalid roles"

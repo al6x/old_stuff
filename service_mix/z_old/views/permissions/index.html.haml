@@ -1,0 +1,4 @@
+- content_for :content do
+	- b.table do |b|
+		= b.head *([:name, :email, :state].collect{|col| User.t(col)} + [t(:space_roles, :space => Space.current.name)] + [""])
+		= render :partial => 'line', :collection => @users
