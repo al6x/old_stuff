@@ -1,0 +1,26 @@
+# General
+view: [] #anonymous, registered
+
+# Authorization
+add_admin_role: []
+add_custom_role: [manager]
+add_manager_role: []
+add_member_role: [manager]
+remove_admin_role: []
+remove_custom_role: [manager]
+remove_manager_role: []
+remove_member_role: [manager]
+update_access: [manager, owner]
+
+# User Management
+update_profile: [owner]
+
+# Items
+create: [member]
+# update: [manager, owner]
+destroy: [manager, owner]
+
+# Comments
+create_comment: [registered]
+update_comment: [manager, owner]
+destroy_comment: [manager, owner]

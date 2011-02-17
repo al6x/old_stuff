@@ -1,0 +1,1 @@
+require "MicroContainer/_require"

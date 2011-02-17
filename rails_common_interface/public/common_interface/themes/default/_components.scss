@@ -1,0 +1,151 @@
+/* Basic List */
+
+/* List Item */
+.dlist_item {
+  .dcheck_box {display: inline;}
+  .dcontent {
+    display: inline;
+		> div {display: inline;}
+    a {@include as_link;}		
+	}
+}
+
+/* Tabs */
+.dtabs {
+  background: $inverse_color;
+
+  .dtab_item {
+    float: left;
+    margin-left: $step;
+    margin-right: $step;
+	}
+
+  .dactive {
+    padding-left: $step;
+    padding-right: $step;
+    background: $light_color;
+    font-weight: bold
+	}
+}
+
+/* Table */
+.dtable {
+  a {@include as_link;}
+
+  table {width: 100%;}
+ 
+	thead {
+    tr {
+      color: $inverse_color;
+      background: $light_color;
+
+      th {
+        text-align: left;
+
+        .dheadcell {
+          @include medium_text;
+          padding-left: $step;
+          padding-right: $step;
+          padding-top: $step;
+				}
+			}
+		}
+	}
+
+  tbody {
+    .dcell {padding: $step;}
+    .dodd {background: $very_light_color;}
+	}
+}
+
+/* Left Right */
+.dleft_right {
+  .dleft {float: left;}
+  .dright {float: right;}
+  .dlr_item {display: inline;}
+}
+
+/* Controls and Hower Controls */
+.dcontrols_container {
+  .dcontrols {
+    @include controls;
+    float: right;
+    background: $inverse_color;
+    padding: $small_step;
+	}
+}
+
+.dhover_controls_container {
+  position: relative;
+
+  .dhover_controls {
+    @include controls;
+    padding: $small_step;
+    padding-left: $big_step;
+    padding-right: $big_step;
+    text-align: right;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background: $inverse_color;
+    z-index: 1;
+    display: none;
+	}
+}
+
+/* Item Tags */
+.ditem_tags {
+  margin-top: $step;
+  float: left;
+
+  a {
+    @include small_text;
+    padding-left: $step;
+    padding-right: $step;
+    background: $light_color;
+	}
+
+  .__owner_visibility, .__member_visibility, .__custom_visibility {
+    @include small_text;
+    padding-left: $step;
+    padding-right: $step;
+    background: $inverse_color;
+    display: inline;
+	}
+
+  .__owner_visibility {color: $red_color;}
+
+  .__member_visibility, .__custom_visibility {color: $yellow_color;}
+
+  .__item_type {
+    color: $light_color;
+    display: inline;
+	}
+}
+
+/* Item Details */
+.ditem_details {
+  float: right;
+  color: $light_color;
+
+  a {
+    @include as_link;
+    color: $light_color;
+	}
+}
+
+/* Preview Title */
+.dpreview_title {
+  @include medium_text;
+
+  color: $select_color;
+  margin: 0px;
+
+  a {
+    @include medium_text;
+
+    color: $select_color;
+
+    &:visited {color: $select_color;}
+	}
+}

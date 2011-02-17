@@ -1,0 +1,8 @@
+<% if @list %>
+<ul class="subnav">		
+	${@up}
+	<% @list.each do |link| %>	
+	<li>${link}</li>
+	<% end %>	
+</ul>
+<% end %>

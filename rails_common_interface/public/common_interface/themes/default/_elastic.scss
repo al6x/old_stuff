@@ -1,0 +1,72 @@
+/*
+Elastic CSS Framework
+Released under the MIT, BSD, and GPL Licenses.
+More information http://delasticss.com
+
+@author     Fernando Trasviña (@azendal)
+@core team  Sergio de la Garza (@sgarza), Javier Ayala (@javi_ayala)
+*/
+.dunit:after, .dcontainer:after, .dcolumns:after, .dcolumn:after, .dclearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+.dunit, .dcontainer, .dcolumns, .dcolumn, .dclearfix {
+  display: block;
+  *zoom: 1;
+  *display: inline-block; }
+
+.dfull-height {
+  display: block; }
+
+.dsame-height {
+  display: block; }
+
+.ddelastic-height {
+  height: 0; }
+
+.dhorizontal-center {
+  margin: 0 auto; }
+
+.dvertical-center {
+  /* margin:auto 0; */
+  display: block; }
+
+.dcenter {
+  /* margin:auto */
+  margin: 0 auto; }
+
+.dcolumn {
+  float: left; }
+
+.dcolumn.dfinal {
+  display: block; }
+
+.dcolumn.dfixed {
+  width: auto; }
+
+.dcolumn.delastic {
+  display: block; }
+
+.dinverted > .dcolumn, .dinverted > .dcontainer > .dcolumn {
+  float: right; }
+
+.don-2.dcolumns > .dcolumn:not(.dfixed), .don-2.dcolumns > .dcontainer > .dcolumn:not(.dfixed) {
+  width: 50%; }
+
+.don-3.dcolumns > .dcolumn:not(.dfixed), .don-3.dcolumns > .dcontainer > .dcolumn:not(.dfixed) {
+  width: 33.33%; }
+
+.don-3.dcolumns > .dcolumn.dspan-2, .don-3.dcolumns > .dcontainer > .dcolumn.dspan-2 {
+  width: 66.66%; }
+
+.don-4.dcolumns > .dcolumn:not(.dfixed), .don-4.dcolumns > .dcontainer > .dcolumn:not(.dfixed) {
+  width: 25%; }
+
+.don-4.dcolumns > .dcolumn.dspan-2, .don-4.dcolumns > .dcontainer > .dcolumn.dspan-2 {
+  width: 50%; }
+
+.don-4.dcolumns > .dcolumn.dspan-3, .don-4.dcolumns > .dcontainer > .dcolumn.dspan-2 {
+  width: 75%; }

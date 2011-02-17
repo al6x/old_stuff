@@ -1,0 +1,44 @@
+<%
+	# Because of 'import_scripts' should be generated before. 
+	html_content = visible? ? content.to_html : "" 
+%>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<% if title %>
+	<title><%= title %></title>
+<% end %>		 
+
+<% if skin %>
+	<link rel="icon" href="/<%= STATIC_RESOURCE%>/skins/<%= File.join(skin, 'images', 'favicon') %>"></link>
+	<link rel="stylesheet" type="text/css" href="/<%= STATIC_RESOURCE%>/skins/<%= File.join(skin, 'style.css')%>"></link>	
+<% end %>
+
+<% import_scripts_get.each do |import| %>
+	<script type="text/javascript" src="/<%= STATIC_RESOURCE%>/<%= import %>"></script>
+<% end %>
+
+	<script type="text/javascript">                 
+		dojo.addOnLoad(function(){
+<% WGUI["wgui.js.yaml"][:messages].each do |k, v| %>
+			WGUI.<%= k %> = "<%= to_l(v) %>"
+<% end %>
+			wgui_init()			
+		});    		
+	</script>
+</head>
+<body>			
+<noscript><%= to_l("JavaScript must be enabled!") %></noscript>
+
+<!-- <%= self.class %> -->
+<div id="<%= component_id %>">
+<%= html_content %>
+</div>
+		
+<form id="wgui_ajax_call" enctype="multipart/form-data" style="display:none" method="post"  action=""></form>
+
+<div id="wgui_progress_container">
+  <img id="wgui_progress" style="display:none" src="/<%= STATIC_RESOURCE%>/wgui/loading.gif" alt="<%= to_l("Loading ...") %>"/>
+</div>
+</body>
+</html>

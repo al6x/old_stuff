@@ -1,0 +1,77 @@
+<%
+Scope[Engine::Window].add_style <<END
+body {
+	background:url(#{WGUI.skin_static_resource_uri "images/body.jpg"}) #f6f6f6;
+}
+#innerwrapper {
+	background:url(#{WGUI.skin_static_resource_uri "images/innerwrapper.jpg"}) top repeat-x;	
+}
+#header #nav {
+	background:url(#{WGUI.skin_static_resource_uri "images/nav.jpg"}) top repeat-x #4F9EC9;
+}
+#sidebarright {
+	background:url(#{WGUI.skin_static_resource_uri "images/sidebarright.jpg"}) top left no-repeat;
+}
+END
+%>
+
+<div id="wrapper">
+    <div id="innerwrapper">        
+        <div id="header">			            
+            <!-- UserMenu -->
+			${get_map(:user_menu)}		
+            
+            <!-- Logo -->			
+			<h1><%== @site.logo %></h1>
+						
+			<h2><%== @site.description %></h2>
+            
+            <!-- Menu -->			
+			${get_map(:menu)}
+            
+        </div>
+        
+        <!-- Left -->
+        <% unless @wleft.empty? %>
+        <div id="sidebar">
+            <% @wleft.each do |wiget| %>
+			${wiget}
+			<% end %>
+        </div>
+        <% end %>
+        
+        <!-- Right -->
+        <% unless @wright.empty? %>
+        <div id="sidebarright">
+            <% @wright.each do |wiget| %>
+			${wiget}
+			<% end %>
+        </div>
+        <% end %>
+        
+        <!-- ObjectView -->
+        <% if @wright.empty? and @wleft.empty? %>
+        <div id="contentwide">
+        <% elsif !@wleft.empty? %>
+        <div id="contentnorightbar">
+        <% else %>
+        <div id="content">                        
+        <% end %>            
+        	<!-- Messages --> 													
+			${get_map(:messages)}
+			
+			<!-- ObjectView -->
+			${@wobject_view}			
+        </div>
+        
+        <div id="footer">        	
+			<% if @site.footer %>			
+			<%= @site.footer %>			
+			<% end %>                        
+			<div style="font-size:10px;">
+				Powered by <a href="http://www.bos-tec.com">BOS-Tec</a>, design by <a href="http://www.sixshootermedia.com">Six Shooter Media</a>
+			</div>                        
+        </div>
+        
+    </div>
+</div>

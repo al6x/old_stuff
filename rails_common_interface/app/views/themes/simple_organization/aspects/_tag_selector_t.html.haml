@@ -1,0 +1,10 @@
+- if object.tags?
+	- content_tag :div, object.merge_html_attributes(:class => " quiet tags") do	
+		- classes = ['size-1', 'size-2', 'size-3', 'size-4']
+		- tag_cloud object.tags, classes do |tag, aclass|
+			- if object.selected.include? tag.name
+				- content_tag :span, :class => "selected_tag #{aclass}" do
+					= object.selected_tag_to_link.call tag
+			- else
+				- content_tag :span, :class => "#{aclass}" do
+					= object.tag_to_link.call tag

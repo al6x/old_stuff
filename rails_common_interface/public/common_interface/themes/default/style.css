@@ -1,0 +1,580 @@
+/* Distance */
+/* Colors */
+/* Styles */
+/*
+Elastic CSS Framework
+Released under the MIT, BSD, and GPL Licenses.
+More information http://delasticss.com
+
+@author     Fernando Trasviña (@azendal)
+@core team  Sergio de la Garza (@sgarza), Javier Ayala (@javi_ayala)
+*/
+.dunit:after, .dcontainer:after, .dcolumns:after, .dcolumn:after, .dclearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+.dunit, .dcontainer, .dcolumns, .dcolumn, .dclearfix {
+  display: block;
+  *zoom: 1;
+  *display: inline-block; }
+
+.dfull-height {
+  display: block; }
+
+.dsame-height {
+  display: block; }
+
+.ddelastic-height {
+  height: 0; }
+
+.dhorizontal-center {
+  margin: 0 auto; }
+
+.dvertical-center {
+  /* margin:auto 0; */
+  display: block; }
+
+.dcenter {
+  /* margin:auto */
+  margin: 0 auto; }
+
+.dcolumn {
+  float: left; }
+
+.dcolumn.dfinal {
+  display: block; }
+
+.dcolumn.dfixed {
+  width: auto; }
+
+.dcolumn.delastic {
+  display: block; }
+
+.dinverted > .dcolumn, .dinverted > .dcontainer > .dcolumn {
+  float: right; }
+
+.don-2.dcolumns > .dcolumn:not(.dfixed), .don-2.dcolumns > .dcontainer > .dcolumn:not(.dfixed) {
+  width: 50%; }
+
+.don-3.dcolumns > .dcolumn:not(.dfixed), .don-3.dcolumns > .dcontainer > .dcolumn:not(.dfixed) {
+  width: 33.33%; }
+
+.don-3.dcolumns > .dcolumn.dspan-2, .don-3.dcolumns > .dcontainer > .dcolumn.dspan-2 {
+  width: 66.66%; }
+
+.don-4.dcolumns > .dcolumn:not(.dfixed), .don-4.dcolumns > .dcontainer > .dcolumn:not(.dfixed) {
+  width: 25%; }
+
+.don-4.dcolumns > .dcolumn.dspan-2, .don-4.dcolumns > .dcontainer > .dcolumn.dspan-2 {
+  width: 50%; }
+
+.don-4.dcolumns > .dcolumn.dspan-3, .don-4.dcolumns > .dcontainer > .dcolumn.dspan-2 {
+  width: 75%; }
+
+/*@import "custom_reset";*/
+/* Styles */
+.dmarkup .left {
+  float: left;
+  margin: 5px;
+  margin-left: 0;
+  margin-right: 10px; }
+.dmarkup .right {
+  float: right;
+  margin: 5px;
+  margin-right: 0;
+  margin-left: 10px; }
+.dmarkup .space {
+  height: 10px; }
+.dmarkup a {
+  color: #2a5db0;
+  text-decoration: underline; }
+  .dmarkup a:visited {
+    color: #2a5db0; }
+.dmarkup p {
+  margin-bottom: 5px; }
+.dmarkup h1, .dmarkup h2, .dmarkup h3, .dmarkup h4, .dmarkup h5, .dmarkup h6 {
+  clear: both; }
+
+/* More */
+.dmore a {
+  color: #2a5db0;
+  text-decoration: underline; }
+  .dmore a:visited {
+    color: #2a5db0; }
+
+.dform .dmore {
+  text-align: right; }
+
+/* Layout */
+.dlayout .dmax_width {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto; }
+.dlayout .dtop_panel {
+  background: #cccccc; }
+  .dlayout .dtop_panel .dlogo img {
+    width: 20px;
+    height: 10px; }
+  .dlayout .dtop_panel .dcontent {
+    font-size: 90%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px; }
+.dlayout .dbottom_panel {
+  background: #cccccc; }
+  .dlayout .dbottom_panel .dcontent {
+    font-size: 90%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+.dlayout .dlayout_content {
+  padding: 5px;
+  background: white; }
+
+/* Navigation */
+.dnavigation {
+  font-size: 90%; }
+
+/* Tools */
+.dtools {
+  margin-top: 5px;
+  margin-left: 10px;
+  padding: 5px;
+  border: 1px solid #efefef; }
+  .dtools .dtool {
+    padding-top: 5px;
+    padding-bottom: 10px; }
+    .dtools .dtool .dtitle {
+      color: #cccccc;
+      font-weight: bold; }
+
+/* Message */
+.dmessage {
+  margin-bottom: 5px;
+  margin-top: 5px; }
+  .dmessage a {
+    color: #2a5db0;
+    text-decoration: underline; }
+    .dmessage a:visited {
+      color: #2a5db0; }
+  .dmessage .dinfo {
+    padding: 5px;
+    background: #eeeebb; }
+  .dmessage .derror {
+    padding: 5px;
+    background: #eebbbb; }
+
+/* Narrow */
+.dnarrow {
+  margin-left: 20%;
+  margin-right: 20%; }
+
+/* Divider */
+.ddivider {
+  height: 5px;
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  clear: both; }
+  .ddivider .ddivider_title {
+    font-size: 110%;
+    font-weight: bold;
+    border-bottom: 1px solid black; }
+
+/* Toolbar */
+.dpage_toolbar a {
+  color: #2a5db0;
+  text-decoration: underline; }
+  .dpage_toolbar a:visited {
+    color: #2a5db0; }
+
+/* Form */
+.dform {
+  border: solid #efefef 1px;
+  padding: 5px; }
+  .dform a {
+    color: #2a5db0;
+    text-decoration: underline; }
+    .dform a:visited {
+      color: #2a5db0; }
+  .dform .dform_item {
+    margin-top: 5px;
+    margin-bottom: 5px; }
+  .dform .dbase_errors .dbase_error {
+    font-size: 90%;
+    color: #dd0000;
+    margin-left: 5px; }
+  .dform .dfield .dinput > * {
+    width: 100%; }
+  .dform .dfield .derrors .derror {
+    font-size: 90%;
+    color: #dd0000;
+    margin-left: 5px; }
+  .dform .dfield .ddescription {
+    font-size: 90%;
+    color: #cccccc;
+    margin-left: 5px; }
+  .dform .line .control {
+    display: inline; }
+  .dform .requiredfield {
+    font-weight: bold; }
+
+/* Form special case */
+.dform a {
+  color: #2a5db0;
+  text-decoration: underline; }
+  .dform a:visited {
+    color: #2a5db0; }
+.dform .dfield .dinput textarea {
+  height: 60px; }
+.dform .dfield .dinput input[type=checkbox] {
+  width: auto; }
+.dform .dfield .dinput input[type=radio] {
+  width: auto; }
+
+/* Dialog */
+.ddialog {
+  position: absolute;
+  z-index: 1;
+  width: 60%;
+  background: white;
+  border: solid #2a5db0 5px;
+  padding: 5px; }
+
+/* Popup */
+.dpopup {
+  position: absolute;
+  z-index: 1;
+  background: white;
+  border: solid #2a5db0 1px;
+  padding: 5px;
+  max-width: 100px; }
+  .dpopup a {
+    color: #2a5db0;
+    text-decoration: underline; }
+    .dpopup a:visited {
+      color: #2a5db0; }
+
+/* Inplace */
+.dinplace {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+._inline {
+  display: inline; }
+
+._space {
+  margin-bottom: 5px; }
+
+._highlight {
+  background: #eeeebb;
+  padding-left: 5px;
+  padding-right: 5px; }
+
+._tiny {
+  color: #cccccc !important; }
+  ._tiny a {
+    color: #cccccc !important; }
+
+._hidden {
+  display: none; }
+
+/* Styles */
+._markup object {
+  clear: both;
+  display: block;
+  margin-bottom: 5px; }
+._markup .clear {
+  clear: both; }
+._markup .space {
+  clear: both; }
+._markup table tr td {
+  vertical-align: top; }
+
+._clear {
+  clear: both; }
+
+/* Basic List */
+/* List Item */
+.dlist_item .dcheck_box {
+  display: inline; }
+.dlist_item .dcontent {
+  display: inline; }
+  .dlist_item .dcontent > div {
+    display: inline; }
+  .dlist_item .dcontent a {
+    color: #2a5db0;
+    text-decoration: underline; }
+    .dlist_item .dcontent a:visited {
+      color: #2a5db0; }
+
+/* Tabs */
+.dtabs {
+  background: white; }
+  .dtabs .dtab_item {
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px; }
+  .dtabs .dactive {
+    padding-left: 5px;
+    padding-right: 5px;
+    background: #cccccc;
+    font-weight: bold; }
+
+/* Table */
+.dtable a {
+  color: #2a5db0;
+  text-decoration: underline; }
+  .dtable a:visited {
+    color: #2a5db0; }
+.dtable table {
+  width: 100%; }
+.dtable thead tr {
+  color: white;
+  background: #cccccc; }
+  .dtable thead tr th {
+    text-align: left; }
+    .dtable thead tr th .dheadcell {
+      font-size: 110%;
+      font-weight: bold;
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-top: 5px; }
+.dtable tbody .dcell {
+  padding: 5px; }
+.dtable tbody .dodd {
+  background: #efefef; }
+
+/* Left Right */
+.dleft_right .dleft {
+  float: left; }
+.dleft_right .dright {
+  float: right; }
+.dleft_right .dlr_item {
+  display: inline; }
+
+/* Controls and Hower Controls */
+.dcontrols_container .dcontrols {
+  font-size: 100%;
+  float: right;
+  background: white;
+  padding: 1px; }
+  .dcontrols_container .dcontrols a {
+    color: #2a5db0;
+    text-decoration: underline; }
+    .dcontrols_container .dcontrols a:visited {
+      color: #2a5db0; }
+
+.dhover_controls_container {
+  position: relative; }
+  .dhover_controls_container .dhover_controls {
+    font-size: 100%;
+    padding: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: right;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background: white;
+    z-index: 1;
+    display: none; }
+    .dhover_controls_container .dhover_controls a {
+      color: #2a5db0;
+      text-decoration: underline; }
+      .dhover_controls_container .dhover_controls a:visited {
+        color: #2a5db0; }
+
+/* Item Tags */
+.ditem_tags {
+  margin-top: 5px;
+  float: left; }
+  .ditem_tags a {
+    font-size: 90%;
+    padding-left: 5px;
+    padding-right: 5px;
+    background: #cccccc; }
+  .ditem_tags .__owner_visibility, .ditem_tags .__member_visibility, .ditem_tags .__custom_visibility {
+    font-size: 90%;
+    padding-left: 5px;
+    padding-right: 5px;
+    background: white;
+    display: inline; }
+  .ditem_tags .__owner_visibility {
+    color: #dd0000; }
+  .ditem_tags .__member_visibility, .ditem_tags .__custom_visibility {
+    color: #dddd00; }
+  .ditem_tags .__item_type {
+    color: #cccccc;
+    display: inline; }
+
+/* Item Details */
+.ditem_details {
+  float: right;
+  color: #cccccc; }
+  .ditem_details a {
+    color: #2a5db0;
+    text-decoration: underline;
+    color: #cccccc; }
+    .ditem_details a:visited {
+      color: #2a5db0; }
+
+/* Preview Title */
+.dpreview_title {
+  font-size: 110%;
+  font-weight: bold;
+  color: #2a5db0;
+  margin: 0px; }
+  .dpreview_title a {
+    font-size: 110%;
+    font-weight: bold;
+    color: #2a5db0; }
+    .dpreview_title a:visited {
+      color: #2a5db0; }
+
+/* selector */
+.dselector .dtext a {
+  color: #2a5db0;
+  text-decoration: underline; }
+  .dselector .dtext a:visited {
+    color: #2a5db0; }
+
+/* list */
+.dlist .dcontrols {
+  font-size: 90%;
+  margin-left: 10px; }
+  .dlist .dcontrols a {
+    color: #2a5db0;
+    text-decoration: underline; }
+    .dlist .dcontrols a:visited {
+      color: #2a5db0; }
+
+/* file */
+.dfile_item .ddetails {
+  margin-left: 5px; }
+  .dfile_item .ddetails .dtitle {
+    font-weight: bold; }
+  .dfile_item .ddetails a {
+    color: #2a5db0;
+    text-decoration: underline; }
+    .dfile_item .ddetails a:visited {
+      color: #2a5db0; }
+
+/* thumb */
+.dthumb_item {
+  float: left;
+  min-width: 150px;
+  min-height: 150px;
+  padding-right: 5px; }
+  .dthumb_item .dhover_controls {
+    font-size: 90%; }
+  .dthumb_item .dtitle {
+    font-size: 90%;
+    max-width: 150px; }
+
+/* line */
+.dline_item .dicon {
+  margin-right: 5px; }
+.dline_item .ditem_tags {
+  margin: 0px; }
+.dline_item .dsingle_line .ditem_tags {
+  margin-right: 5px;
+  float: left; }
+
+/* user */
+.duser .dproperties {
+  margin-top: 5px; }
+
+/* item */
+.dselectable_item {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid white; }
+
+.dselectable_item_padding {
+  padding-left: 5px;
+  padding-right: 5px; }
+
+.dselectable_item_hover {
+  border-color: #efefef; }
+
+/* page */
+.dpage ._container h1.item_title {
+  font-size: 120%;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 5px; }
+
+/* folder */
+/* note */
+/* list */
+/* list item */
+.dtask_list_item {
+  padding: 1px; }
+
+.dfinishedlist_item div, .dfinishedlist_item a {
+  font-size: 90%; }
+.dfinishedlist_item .dcontent {
+  text-decoration: line-through; }
+
+/* dpaginator */
+.dpaginator {
+  margin-top: 5px; }
+  .dpaginator > * {
+    margin-right: 5px; }
+  .dpaginator a {
+    color: #2a5db0;
+    text-decoration: underline; }
+    .dpaginator a:visited {
+      color: #2a5db0; }
+  .dpaginator .dcurrent {
+    font-weight: bold; }
+
+/* details */
+.ddetails_aspect {
+  margin-top: 10px; }
+
+/* discussion */
+.ddiscussion {
+  margin-top: 10px; }
+  .ddiscussion .dcontrols {
+    float: right;
+    font-size: 100%; }
+    .ddiscussion .dcontrols a {
+      color: #2a5db0;
+      text-decoration: underline; }
+      .ddiscussion .dcontrols a:visited {
+        color: #2a5db0; }
+
+/* comment */
+.dcomment .dtext {
+  margin-left: 5px; }
+.dcomment .ditem_details {
+  margin-top: 0; }
+
+/* tag selector */
+.dtag_selector .dtags {
+  text-align: center; }
+  .dtag_selector .dtags .dselected {
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    background: #2a5db0; }
+    .dtag_selector .dtags .dselected a {
+      color: white; }
+  .dtag_selector .dtags .dtag {
+    display: inline-block;
+    margin: 3px; }
+  .dtag_selector .dtags .dsize_1 {
+    font-size: 90%; }
+  .dtag_selector .dtags .dsize_2 {
+    font-size: 120%; }
+  .dtag_selector .dtags .dsize_3 {
+    font-size: 130%; }
+  .dtag_selector .dtags .dsize_4 {
+    font-size: 140%; }

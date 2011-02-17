@@ -1,0 +1,3 @@
+class LoadError < RuntimeError; 
+
+end

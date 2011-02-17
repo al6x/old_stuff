@@ -1,0 +1,9 @@
+= render :partial => 'theme_shared/top_navigation_bottom'
+
+= render :partial => 'theme_shared/core_tools'
+
+- content_for :content do
+	- b.note :id => "note_id", :class => "note_class" do |o|
+		- o.text current_theme.metadata.homepage_html
+		- o.controls [link_to('edit', '#'), link_to('delete', '#')]
+		- o.details @common_details

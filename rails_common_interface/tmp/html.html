@@ -1,0 +1,39 @@
+<div class='_files_wiget files'>							
+
+	<div class='_templates' style='display:none'>
+		
+		<textarea class='_file_progress_template'>
+			<li class="_file_#{id}">
+				<em>#{name}</em> 
+				(#{size_in_kb} KB) 
+				<em class='_cancel'>[#{cancel}]</em>
+				<span class="progressvalue _progressvalue" ></span>
+				<div class="progressbar" ><div class="progress _progress" ></div></div>
+				<!-- <span class="_cancel cancel" >&nbsp;</span> -->
+			</li>
+		</textarea>
+	
+		<textarea class="_file_template">
+			<div class='#{file_id}'>
+				<a href='#{url}'>#{name}</a> <a class="_delete" href="#">[#{delete}]</a>
+			</div>
+		</textarea> 
+	
+		<textarea class="_content_template">
+			<div class="_files"></div>
+			<ol class="log _queue"></ol>
+			<span class='_flash_holder'></span> 
+			
+			<br/><a class="_upload" href="#"></a>
+		</textarea>
+		
+	</div>
+	
+	<div class="_content">
+	</div>
+	
+</div>
+
+folder_wiget object, {}, {
+	:wiget => '._files_wiget'
+}

@@ -1,0 +1,27 @@
+<table class="container wide font padding"><tbody>
+	<tr class="color">
+		<td><div class="font h2">Shortcuts</div></td>
+	</tr>
+	<% @links.each_with_index do |item, i| %>
+    <tr>    		
+		<td>			
+			<table class="minimal"><tbody>
+				<tr><td>
+		        	<div <% if @index == i %>class="h1 h2"<% end %>>
+						${item}
+					</div>		
+				</td><td>
+					&nbsp;	
+				</td><td>				
+					${@buttons[i]}
+				</td></tr>
+			</tbody></table>
+        </td>						
+    </tr>	
+	<% end %>
+	<tr>
+		<td>
+			${@add}
+		</td>
+	</tr>
+</tbody></table>

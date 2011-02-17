@@ -1,0 +1,8 @@
+<% if @value and @value.size > 0 %>
+	<% @value.each_with_index do |item, index| %>
+		<% unless index == 0%>	
+<div style="display:inline">&nbsp;&nbsp;&nbsp;&nbsp;</div>		
+		<% end %>
+<div style="display:inline"><%= to_label ? to_label.call(item) : item.to_s %></div>
+	<% end %>
+<% end %>

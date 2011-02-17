@@ -1,0 +1,10 @@
+<h2><%== title %></h2>
+<% @titles.each_with_index do |item, index| %>
+<div class="bold p">
+	${item}
+</div>
+<div class="p">
+${@contents[index]}
+<div class="more">${@dates[index]}</div>
+</div>
+<% end %>

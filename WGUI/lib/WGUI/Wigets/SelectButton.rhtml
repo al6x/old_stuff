@@ -1,0 +1,6 @@
+
+<select name="<%= component_id %>" <% if disabled? %>disabled="disabled"<% end %>>
+	<% actions.keys.each do |value| %>
+	<option <% if value == selected %>selected="selected"<% end %> onclick="<%= js_for value %>"><%== value %></option>
+	<% end %>
+</select>

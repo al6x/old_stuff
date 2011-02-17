@@ -1,0 +1,14 @@
+- content_tag :div, object.merge_html_attributes(:class => " dcomment _comment dselectable_item") do
+	.dhover_controls_container
+		- if object.controls?		
+			.dhover_controls= object.controls.join(' ')
+
+		.dcolumns
+			.dfixed.dcolumn{:width => 50}
+				.dicon= object.avatar
+			.delastic.dcolumn
+				.dtext._markup.dmarkup= object.text
+		
+		- if object.details?
+			.ditem_details= object.details.to_a.join(', ')
+			._clear

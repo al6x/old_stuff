@@ -1,0 +1,76 @@
+<script type="text/javascript">
+wgui.tabjs_show = function(component_id, index, length) {
+	for(var i = 0; i != length; i++){		
+		var id = component_id + '_' + i.toString();
+		var e = dojo.byId(id);
+		if(i == index){
+			e.style.display = "block"
+		}else{
+			e.style.display = "none"
+		}
+	}	
+}
+</script>
+<% if @names.size > 0 %>
+<% @names.each_with_index do |current_name, index| %>	
+<% pane = @panes[index] %>
+<% if current_name == active %>
+<div id="<%= "#{component_id}_#{index}" %>" style="display:block">
+<% else %>
+<div id="<%= "#{component_id}_#{index}" %>" style="display:none">
+<% end %>
+<table class="<%= css || '' %> border_top <% if @wide %>wide<% end %>"><tbody>
+    <tr>
+    	<td class="color">    											
+    		<table class="container wide padding"><tbody>
+                <tr>
+                    <td class="color">
+                    	<div class="h2 font"><%== (title ? title : "") %></div>	
+					</td>
+                </tr>
+            </tbody></table>
+    	</td>
+        <td class="color" style="vertical-align: bottom;">
+			<% if @names.size > 1 %>
+            <table class="container" align="right"><tbody>
+                <tr>            	
+				<% @names.each_with_index do |name, i| %>
+                    <td>
+                        <table class="container wide padding"><tbody>
+                            <tr>
+                            <% if name == current_name %>
+                                <td class="background">
+                                	<div class="font"><%== name %></div>
+                                </td>
+                            <% else %>
+								<td class="color">
+									<a href="#" onclick="wgui.tabjs_show('<%= component_id %>', <%= i %>, <%= @names.size %>); return false;" class="font"><%== name %></a>
+                                </td>
+							<% end %>                                    
+                            </tr>
+                        </tbody></table>
+                    </td>
+				<% end %>			
+					<td class="color">&nbsp;</td>								
+                </tr>
+            </tbody></table>
+			<% else %>
+			&nbsp;
+			<% end %>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table class="container wide padding"><tbody>
+                <tr>
+                    <td>
+                        ${pane}
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+</div>
+<% end %>
+<% end %>

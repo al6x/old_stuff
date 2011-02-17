@@ -1,0 +1,20 @@
+<table class="container wide padding"><tbody>
+<% @messages.each do |msg, type| %>	
+<%
+color = case type
+when :info then "color_info"
+when :warn then "color_warn"
+when :error then "color_error"
+end
+%>
+	<tr>
+		<td class="<%= color %>">
+			<table class="container wide padding font"><tbody>				
+                <tr>
+                    <td><%== msg %></td>
+                </tr>
+            </tbody></table>			
+		</td>
+	</tr>		
+<% end %>	
+</tbody></table>

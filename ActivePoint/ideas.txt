@@ -1,0 +1,70 @@
+CRITICAL
+
+
+- Remove login/logout from Services, it doesn't know this concept
+- Refactor RubyExt::Localization
+- Move HandyScope definitions to distinct file
+- Remove all logic from controllers, they can't contains any logic (use Model::Services).
+- Back Button
+- Rename Policy to Police?
+
+NORMAL
+- Move Plugins to plugins folder
+- Google SignIn Integration
+- Refactor Localization strategy (localization file/migration data per plugin)
+- Use Twitter comments
+- rake start/stop/kill process tasks.
+- Refactor C.object, add ability to display other objects, like in OpenGoo
+- Configuration/Migration/Data management
+- Update Border Layout (add ability to define borders for components)
+- Settings Module (Use the same setting as in Redmine - Setting.mail_from (Setting is ActiveRecord), 
+value_from_repository || default_value_from_yaml)
+- Refactor UserMenu (make it configurable)
+- Add handy shortcuts to R (users, core, security, ...)
+
+LOW
+- Add :environment task (like in RoR task :load => :environment do |t| ... end)
+- Use Rack::Locale
+- Secure Tabbed Pane (security setting for tab)
+- Create 'Helper' tool (like MS Office Helper)
+- Refactor ... undefine_methods to BlankSlate inheritance
+- Online Welcome Page and Help, as in Rails
+- Add additional Template system to WYSIWYG, via 'method_missing' in template.
+- Use folding sections for attribute groups as in Youtube/OpenGoo.
+- Sort out Specs in Adapters/Web/Spec
+
+DONE
+- Use Services Registry instead of (SecurityManager, LayoutManager, ...)
+- Services and Services Registry (Remote services looks the same as Local)
+- IFrame Wiget
+- Security Cache (also can use expired by time, or check parents every time)
+- Localization
+- Hack for Plugins
+- TODO Recheck all testcases and rebuild editors (split it to two - edit&view).
+- Create tab container
+- Introduce 'View' concept
+- Implement 'View' inheritance. There is linear list of components and it's possible to alter its and add new.
+- Custom Table Cell Wigets (table inside Table, :richtext_view, ...)
+- Add 'weight' to Containers.
+- Introduce ViewContext, copy :wigets from View to ViewContext.
+- Reimplemente View.wigets as returning list instead of hash
+- Add Tab Container maded by AJAX
+- Use 'ObjectContext.view_state' to preserve complex component state during view refresh.
+- Provide way for Wigets to get access to Object Metadata.
+- Make :border and :padding optional parameters for Tab.
+- Instead of explicitly defined :border and so on use .style = "border padding" on Components
+- Use View.autobuild (list of attributes)
+	- Use set of rules to perform autobuild
+	- Some Actions and its Controls should be created automatically (:child/:reference)
+	- Use Attribute Group
+	- Sort Attributes alphabetically
+	- For edit also use tabbed view 
+- Move all :object Scope staff from ActivePoint::Engine to Adapters::Web, ActivePoint::Engine hasn't current object concept.
+- Move Security-related API from Web::Controller to ActivePoint::Services::Security
+- ActivePoints::Engine should have no dependencies on WebClient
+- Add /ui/rest REST Web Services
+- Spec for ActivePoint (needed UIDRiver update)
+- Move TreeMenu to Portal
+- Move Security Service from Plugins to Services
+- Refactor to /Plugins and /Adapters
+- Remote ActivePoint Control for Spec

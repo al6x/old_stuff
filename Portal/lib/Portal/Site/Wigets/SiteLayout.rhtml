@@ -1,0 +1,39 @@
+<table class="container padding font wide"><tbody>
+	<tr><td>
+		${@menu_wiget}
+	</td></tr>
+	<tr><td>
+		${@user_menu_wiget}
+	</td></tr>
+	<tr><td>
+		<table class="container wide font padding"><tbody>
+			<tr><td>
+				${@banner_left_wiget}
+			</td><td>
+				${@banner_right_wiget}
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td>
+		${@messages_wiget}
+	</td></tr>	
+	<tr><td>
+		<table class="container wide font padding"><tbody>
+			<tr><td>
+				${@object_view}
+			</td></tr>
+			<tr><td>
+				<table class="container padding font wide"><tbody>
+					<% @sidebar_wiget.each do |wiget| %>
+					<tr><td>
+						${wiget}
+					</td></tr>
+					<% end %>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>	
+	<tr><td>
+		${@footer_wiget}
+	</td></tr>
+</tbody></table>

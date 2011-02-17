@@ -1,0 +1,39 @@
+<% if @wrows and !@wrows.empty?%>
+<table class="<%= css ? css : "" %> <% if @wide %>wide<% end %> padding">
+	<% if @whead %>
+	<thead class="color2">
+		<tr>
+			<% if @selector and !@whead.empty? %>
+		    <th width="1%">*</th>		
+			<% end %>
+			<% @whead.each do |hcell| %>			
+		    <th><div class="font h2">
+		    	${hcell}	
+			</div></th>
+			<% end %>			
+		</tr>
+	</thead>	
+	<!--<tfoot class="color2">
+		<tr>		
+		    <th colspan="%= head.size + 1 %">1-50</th>
+		</tr>
+	</tfoot>-->
+	<% end %>
+	<tbody>
+		<% @wrows.each_with_index do |row, index| %>		
+		<tr>				
+			<% if @selector %>
+		    <td>
+${@wcheckboxes[index]}		        
+		    </td>
+			<% end %>
+			<% row.each do |cell| %>						
+		    <td>
+${cell}		        
+		    </td>
+			<% end %>
+		</tr>
+		<% end %>	
+	</tbody>
+</table>
+<% end %>

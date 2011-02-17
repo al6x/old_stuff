@@ -1,0 +1,19 @@
+- content_tag :div, object.merge_html_attributes(:class => " dselectable_item dfile_item") do
+	.dhover_controls_container
+		.dhover_controls= object.controls.join(' ') if object.controls?
+		
+		.dcolumns
+			.dfixed.dcolumn{:width => 50}					
+				.dicon
+					%a{:href => object.url}
+						%img{:src => object.icon}
+			.delastic.dcolumn								
+				.ddetails
+					%a{:href => object.url}
+						.dtitle= object.name? ? object.name : '&nbsp;'
+					
+		- if object.tags?
+			.ditem_tags= object.tags.join("\n")
+		- if object.details?
+			.ditem_details= object.details.to_a.join(', ')
+		._clear

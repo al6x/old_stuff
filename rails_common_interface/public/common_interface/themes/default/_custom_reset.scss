@@ -1,0 +1,12 @@
+/* Custom Reset */
+h1 {@include h1;}
+h2 {@include h2;}
+a {
+  color: $color;
+  text-decoration: none;
+  &:visited {color: $color;}
+}
+.as_link {@include as_link;}
+
+/* Reset Elastic */
+p, fieldset, table, pre {margin-bottom: 0px;}

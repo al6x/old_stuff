@@ -1,0 +1,16 @@
+- content_for :content do	
+	= b.title 'Alex'
+	
+	- b.user :id => 'user_id', :class => 'user_class' do |o|
+		- o.controls [link_to('add', '#'), link_to('edit', '#'), link_to('delete', '#')]
+		- o.avatar image_tag("/common_interface/images/img1_icon.jpg")
+		- o.properties do
+			- b.list do |o|
+				- o.content do
+					= b.list_item 'Alex Freeman'
+			
+		- o.content do
+			- b.list do |o|
+				- o.content do
+					= b.list_item 'Latest Activity ...'
+					= b.list_item 'Public Items ...'

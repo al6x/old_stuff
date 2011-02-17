@@ -1,0 +1,31 @@
+.app {
+	max-width:800px;
+	margin:0 auto;
+}
+
+.reference a {color:#0000CC; white-space:nowrap;}
+
+.float a, .minimal a {
+text-decoration:none;
+}
+
+.float a:hover, .minimal a:hover {
+text-decoration:underline;
+}
+
+
+
+.h1, div.h1, .h1 a {font-weight:bold; font-size: 24px;}
+.h2, div.h2, .h2 a  {font-weight:bold; font-size: 12px;}
+.h3 {font-weight:bold;}
+
+.color, table.color{background: #C6D8FF;}
+.color2, table.color2{background: #E5ECF9;}
+.background{background: white}
+.color_info{background: #E5ECF9;}
+.color_warn{background: #FAE5B0}
+.color_error{background: #ff6666;}
+
+textarea {
+	height:150px;
+}

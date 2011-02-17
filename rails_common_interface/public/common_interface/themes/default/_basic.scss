@@ -1,0 +1,228 @@
+/* Styles */
+.dmarkup {
+	.left {
+		float: left;
+		margin: $step;
+    margin-left: 0;
+    margin-right: $big_step;
+	}
+	
+	.right {
+		float: right;
+		margin: $step;
+    margin-right: 0;
+    margin-left: $big_step;
+	}
+	
+	.space {
+		height: $big_step;
+	}
+
+  a {@include as_link;}
+  p {margin-bottom: $step;}
+  h1, h2, h3, h4, h5, h6 {clear: both;}
+}
+
+/* More */
+.dmore {
+  a {@include as_link;}
+}
+
+.dform {
+  .dmore {text-align: right;}
+}
+
+/* Layout */
+.dlayout {
+  .dmax_width {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+	}
+
+  .dtop_panel {
+    background: $light_color;
+
+		.dlogo img {
+			width: $big_step * 2;
+			height: $big_step;
+		}
+
+    .dcontent {
+      @include small_text;
+
+      padding-left: $step;
+      padding-right: $step;
+      padding-top: $small_step;
+      padding-bottom: $small_step;
+		}
+	}
+
+  .dbottom_panel {
+    background: $light_color;
+
+    .dcontent {
+      @include small_text;
+
+      padding-left: $step;
+      padding-right: $step;
+      padding-top: $big_step;
+      padding-bottom: $big_step;
+		}
+	}
+	
+  .dlayout_content {
+    padding: $step;
+    background: $inverse_color;
+	}
+}
+
+/* Navigation */
+.dnavigation {
+  @include small_text;
+}
+
+/* Tools */
+.dtools {
+  margin-top: $step;
+  margin-left: $big_step;
+  padding: $step;
+  border: $small_step solid $very_light_color;
+
+  .dtool {
+    padding-top: $step;
+    padding-bottom: $big_step;
+    .dtitle {
+      color: $light_color;
+      font-weight: bold;
+		}
+	}
+}
+
+/* Message */
+.dmessage {
+	margin-bottom: $step;
+	margin-top: $step;
+
+  a {@include as_link;}
+
+  .dinfo {
+    padding: $step;
+    background: $light_yellow_color;
+	}
+  .derror {
+    padding: $step;
+    background: $light_red_color;
+	}
+}
+
+/* Narrow */
+.dnarrow {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+/* Divider */
+.ddivider {
+	height: $step;
+  text-align: right;
+  padding-top: $big_step;
+  padding-bottom: 2 * $big_step;
+	clear: both;
+
+  .ddivider_title {
+    @include medium_text;
+    border-bottom: #{$small_step} solid #{$color};
+	}
+}
+
+/* Toolbar */
+.dpage_toolbar {
+  a {@include as_link;}
+}
+
+/* Form */
+.dform {
+  border: solid #{$very_light_color} #{$small_step};
+  padding: $step;
+
+  a {@include as_link}
+  .dform_item {
+    margin-top: $step;
+    margin-bottom: $step;
+	}
+
+  .dbase_errors {
+    .dbase_error {
+      @include small_text;
+      color: $red_color;
+      margin-left: $step;
+		}
+	}
+
+  .dfield {
+    .dinput {
+      > * {width: 100%;}
+		}
+    .derrors {
+      .derror {
+        @include small_text;
+        color: $red_color;
+        margin-left: $step;
+			}
+		}
+    .ddescription {
+      @include small_text;
+      color: $light_color;
+      margin-left: $step;
+		}
+	}
+
+  .line {
+    .control {display: inline;}
+	}
+
+  .requiredfield {
+    font-weight: bold;
+	}
+}	
+
+/* Form special case */
+.dform {
+  a {@include as_link;}
+
+  .dfield {
+    .dinput {
+      textarea {height: 60px;}
+      input[type=checkbox] {width: auto;}
+      input[type=radio] {width: auto;}
+		}
+	}
+}
+
+/* Dialog */
+.ddialog {
+  @include overflow;
+  width: 60%;
+  background: $inverse_color;
+  border: solid #{$select_color} #{$step};
+  padding: $step;
+}
+
+/* Popup */
+.dpopup {
+  @include overflow;
+
+  background: $inverse_color;
+  border: solid #{$select_color} #{$small_step};
+  padding: $step;
+  max-width: 100px;
+
+	a {@include as_link;}
+}
+
+/* Inplace */
+.dinplace {
+  margin-top: $big_step;
+  margin-bottom: $big_step;
+}

@@ -1,0 +1,130 @@
+/* --------------- Core --------------- */
+/*
+First Color Scheme: #C6D8FF #E5ECF9
+*/
+
+html, body {
+	margin: 0;
+	padding: 0;
+	border: 0;  
+}
+
+table.container { 
+	border-collapse: separate; 
+	border-spacing: 0; 
+	padding: 0;    
+    margin: 0;       	
+	background: white;
+}
+
+table.container > thead > tr > th,
+table.container > tfoot > tr > th,
+table.container > tbody > tr > td {
+    padding: 0;    
+    margin: 0;       	
+    text-align: left;
+	font-size: inherit;	
+	font-weight: inherit;
+}
+
+table.container > tbody > tr > td {
+    vertical-align: top;    
+}
+
+table.wide {
+    width: 100%;    
+}
+
+table.padding > thead > tr > th,
+    table.padding > tfoot > tr > th,
+    table.padding > tbody > tr > td{
+    padding: 3px;    
+}
+
+table.margin > thead > tr > th,
+    table.margin > tfoot > tr > th,
+    table.margin > tbody > tr > td{
+    margin: 3px;    
+}
+
+.border {border: solid 1px #C6D8FF;}
+.border_left {border-left: solid 1px #C6D8FF;}
+.border_top {border-top: solid 1px #C6D8FF;}
+.border_right {border-right: solid 1px #C6D8FF;}
+.border_bottom {border-bottom: solid 1px #C6D8FF;}
+.border_color2 {border-color: #E5ECF9;}
+
+.tab1{padding-left: 10px;}
+.tab2{padding-left: 20px;}
+
+/* --------------- Effects --------------- */
+.color, table.color{background: #C6D8FF;}
+.color2, table.color2{background: #E5ECF9;}
+.background{background: white}
+.color_info{background: #E5ECF9;}
+.color_warn{background: #FAE5B0}
+.color_error{background: #ff6666;}
+
+.h1, div.h1, .h1 a {font-weight:bold; font-size: 24px;}
+.h2, div.h2, .h2 a  {font-weight:bold; font-size: 12px;}
+.h3 {font-weight:bold;}
+
+button {
+	background-color:#C6D8FF;
+	border:solid black 1px;
+	color:black;
+	margin:3px;
+}
+
+select {						
+	border:solid black 1px;
+	color:black;
+}
+
+textarea {
+	height:150px;
+}
+
+.font{
+	font-family: DeJavu Sans,Arial;
+	font-size: 12px;
+}
+
+.nowrap, .nowrap * {white-space:nowrap;}
+
+.input input,
+.input textarea,
+.input select {
+	width:98%;
+}
+
+.icon img {
+	max-width: 96px;
+	max-height: 96px;
+}
+#wgui_progress_container{
+    position:fixed;
+    left:3px;
+    top:3px;
+    float:left;
+}
+
+iframe {
+	border:0px;
+}
+
+/* --------------- Temp --------------- */
+/** {
+	color: blue; 
+}
+img[src="small.gif"] { 
+	border: 1px solid #000; 
+}
+.tabs {
+	position: relative;
+	right: 0;
+    text-align: right;
+    border-bottom: solid 1px blue;
+}
+
+table, td {border: solid 1px black;}*/

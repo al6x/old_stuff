@@ -1,0 +1,18 @@
+- if object.logo? or object.left? or object.right?
+	.dtop_panel
+		.dmax_width
+			.dcontent.dleft_right
+
+				- if object.left? or object.logo?
+					.dleft
+						%b.dlogo= object.logo + (object.left? ? " | " : '') if object.logo?
+						
+						- object.left.each do |item|
+							.dlr_item= item.blank? ? ' | ' : item
+			
+				- if object.right?
+					.dright
+						- object.right.each do |item|
+							.dlr_item= item.blank? ? ' | ' : item
+
+				._clear

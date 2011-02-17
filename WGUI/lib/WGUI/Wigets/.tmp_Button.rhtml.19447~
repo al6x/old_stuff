@@ -1,0 +1,7 @@
+<button onclick="wgui_ajax_call('<%= component_id %>' <%= 
+if inputs.empty?
+	''
+else
+	%{, ['#{inputs.join("', '")}']}
+end
+%>)"><%== text %></button>

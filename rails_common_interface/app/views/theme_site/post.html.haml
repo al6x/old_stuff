@@ -1,0 +1,11 @@
+= render :partial => 'theme_shared/top_navigation_bottom'
+
+= render :partial => 'theme_shared/tools'
+
+- content_for :content do
+	- b.note :id => "note_id", :class => "note_class" do |o|
+		- o.text @note_text
+		- o.controls [link_to('edit', '#'), link_to('delete', '#')]
+		- o.details @common_details
+		
+	= render :partial => 'theme_shared/comments'

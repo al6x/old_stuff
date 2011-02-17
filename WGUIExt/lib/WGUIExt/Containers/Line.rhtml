@@ -1,0 +1,16 @@
+<% if children and children.size > 0 %>
+<table class="<%= css || '' %> <% if @wide %>wide<% end %>"><tbody>
+<% if title and !title.empty? %>
+	<tr>
+		<td class="color" colspan="<%= children.size %>"><div class="h2"><%= title %></div></td>
+	</tr>
+<% end %>
+	<tr>
+<% children.each do |child| %>					
+		<td>
+${child}
+		</td>				
+<% end %>					
+	</tr>
+</tbody></table>
+<% end %>

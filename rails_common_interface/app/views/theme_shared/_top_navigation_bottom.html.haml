@@ -1,0 +1,32 @@
+- content_for :top_panel do
+	- b.top_panel :id => "top_panel_id", :class => "top_panel_class" do |o|
+		- o.logo current_theme.metadata.logo
+		- o.left do |a|
+			- a.add 'Documents > Main'
+		
+		- o.right do |a|
+			- a.add "Hello, Guest"
+			- a.add
+			- a.add link_to("Log In", "#")
+			- a.add
+			- a.add link_to("Register", "#")
+			- a.add
+			- a.add link_to("+", {:action => 'popup', :format => :js, :_theme => params[:_theme]})
+
+
+- content_for :navigation do
+	- b.navigation :id => 'navigation_id', :class => 'navigation_class' do |o|		
+		- o.items do |a|			
+			- @top_menu_items.each do |menu|
+				- if @active_top_menu == menu
+					- a.add :content => menu, :active => true
+				- else
+					- a.add link_to(menu, :action => :select_menu, :top_menu => menu)
+
+
+- content_for :bottom_panel do
+	- b.bottom_panel do |o|
+		- o.left do
+			Some bottom links
+		- o.right do
+			Powered by <a href='http://bom4.com'>bom4.com</a>

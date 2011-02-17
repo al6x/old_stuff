@@ -1,0 +1,5 @@
+- if object.content?
+	- content_tag :tr, object.merge_html_attributes(:class => " _row") do
+		- object.content.each do |cell|
+			%td
+				.dcell= cell.content

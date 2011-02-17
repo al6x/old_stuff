@@ -1,0 +1,27 @@
+<table class="container padding font wide"><tbody>
+	<tr class="color">
+		<td><div class="font h2"><%== @title %></div></td>
+	</tr>	
+	<tr><td>
+		${@icon}
+	</td></tr>	
+	<tr><td>
+		${@content}
+	</td></tr>	
+	<tr><td>
+		<table class="container padding font"><tbody>
+			<tr>
+				<td>${@author}</td>								
+				<td>${@date}</td>
+				<% @controls.each do |control| %>
+				<td>${control}</td>								
+				<% end %>
+			</tr>
+		</tbody></table>
+	</td></tr>
+	<% @comments.each do |line| %>
+	<tr><td>
+		${line}
+	</td></tr>
+	<% end %>
+</tbody></table>

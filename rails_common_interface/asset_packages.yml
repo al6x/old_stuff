@@ -1,0 +1,89 @@
+--- 
+javascripts:
+  common_interface_base:
+  # Core
+  - common_interface/lib/jquery.js
+  - common_interface/lib/jquery.json.js
+  - common_interface/lib/jquery.hoverIntent.js
+  - common_interface/lib/jquery.template.js
+  - common_interface/lib/jquery.jgrowl/jquery.jgrowl.js
+  - common_interface/lib/jquery.form.js
+  
+  - /rails_ext/rails_ext.js
+  
+  - common_interface/js/basic.js
+  - common_interface/js/items.js
+  - common_interface/js/aspects.js
+  - common_interface/js/style.js
+  
+  #
+  # Files Upload, TODO3 (load it dynamically)
+  # using $.getScript("/some_script.js");
+  # - files_upload: 
+  - common_interface/lib/jquery.swfupload/swfupload/swfupload.js
+  - common_interface/lib/jquery.swfupload/swfupload/swfupload.queue.js
+  - common_interface/lib/jquery.swfupload/jquery.swfupload.js
+  - common_interface/js/files_upload.js  
+  
+  # Images, Slides
+  - common_interface/lib/jquery.fancybox/jquery.fancybox.js
+  
+  # Interactions
+  - common_interface/lib/jquery.ui/jquery.ui.js
+  
+  # Elastic TextArea
+  - common_interface/lib/jquery.elastic.js
+  
+  # Default theme
+  - common_interface/themes/default/elastic.js
+  - common_interface/themes/default/style.js
+  
+
+stylesheets:
+  common_interface_base:
+  # CSS Reset
+  - common_interface/themes/default/reset.css
+  
+  # Default theme
+  - common_interface/themes/default/style.css
+   
+  # Core
+  - common_interface/lib/jquery.jgrowl/jquery.jgrowl.css
+  
+  - /rails_ext/rails_ext.css
+  
+  #
+  # Files Upload, TODO3 (load it dynamically)
+  # - files_upload: 
+  - common_interface/lib/jquery.swfupload/style.css
+  
+  # Images, Slides
+  - common_interface/lib/jquery.fancybox/jquery.fancybox.css
+  
+  # Interactions
+  - common_interface/lib/jquery.ui/jquery.ui.css
+  
+  
+  # 
+  # Mixin, for usage in incomplete themes, to support default theme partials.
+  # The same as common_interface_base but without global 'reset.css'
+  # 
+  common_interface_base_mixin: 
+  # Default theme
+  - common_interface/themes/default/style.css
+   
+  # Core
+  - common_interface/lib/jquery.jgrowl/jquery.jgrowl.css
+  
+  - /rails_ext/rails_ext.css
+  
+  #
+  # Files Upload, TODO3 (load it dynamically)
+  # - files_upload: 
+  - common_interface/lib/jquery.swfupload/style.css
+  
+  # Images, Slides
+  - common_interface/lib/jquery.fancybox/jquery.fancybox.css
+  
+  # Interactions
+  - common_interface/lib/jquery.ui/jquery.ui.css

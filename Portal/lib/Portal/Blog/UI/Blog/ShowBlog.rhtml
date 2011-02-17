@@ -1,0 +1,15 @@
+<table class="container padding font wide"><tbody>
+	<tr><td>
+		<table class="container padding font"><tbody>
+			<tr>
+				<td>${@add}</td>								
+				<td>${@edit}</td>
+			</tr>
+		</tbody></table>
+	</td></tr>
+	<% @posts.each do |line| %>
+	<tr><td>
+			${line}
+	</td></tr>	
+	<% end %>
+</tbody></table>

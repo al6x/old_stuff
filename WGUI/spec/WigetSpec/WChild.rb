@@ -1,0 +1,3 @@
+class WChild < WParent
+	
+end

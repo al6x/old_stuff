@@ -1,0 +1,2 @@
+class WImage < WResource		
+end

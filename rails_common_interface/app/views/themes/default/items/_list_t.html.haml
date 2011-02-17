@@ -1,0 +1,35 @@
+- content_tag :div, object.merge_html_attributes(:class => " _list dlist dselectable_item dbasic_list dlist_sortable_items") do
+	.dhover_controls_container
+		- unless object.controls.blank?
+			.dhover_controls
+				= object.controls.join(' ')
+	
+		- if object.name?
+			%h1.item_title= object.name? ? object.name : '&nbsp;'
+		- else
+			%h1.item_title.empty_title
+				&nbsp;
+			
+		._container
+			= object.content.to_a.join("\n")
+			._clear
+
+		- unless object.name? or object.content?
+			.dtitle= t(:empty_list)
+			
+		/ Show or Hide Finished tasks
+		.dcontrols
+			._show_more._hidden
+				= content_tag :a, t(:show_more), :href => '#', :class => :_show_more
+			._show_less._hidden
+				= content_tag :a, t(:show_less), :href => '#', :class => :_show_less		
+			._clear	
+		
+		._hidden_tasks._hidden			
+		
+		- if object.tags?
+			.ditem_tags= object.tags.join("\n")
+		- if object.details?
+			.ditem_details= object.details.to_a.join(', ')
+		._clear
+			

@@ -1,0 +1,63 @@
+<%
+	# Because of 'import_scripts' should be generated before. 
+	html_content = visible? ? content.to_html : "" 
+%>
+<% unless WGUI::CONFIG[:uidriver_mode] %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+	"http://www.w3.org/TR/html4/strict.dtd">
+<% end %>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<% if title %>
+	<title><%= title %></title>
+<% end %>		 
+
+<% if favicon %>
+	<link rel="icon" href="<%= WGUI.static_resource_uri favicon %>"></link>
+<% end %>
+
+<% if css_list %>
+<% css_list.each do |css| %>	
+	<link rel="stylesheet" type="text/css" href="<%= WGUI.static_resource_uri css %>"></link>
+<% end %>
+<% end %>
+
+<% import_scripts_get.each do |import| %>
+	<script type="text/javascript" src="<%= WGUI.static_resource_uri import %>"></script>
+<% end %>
+
+<% unless styles_get.empty? %>	
+	<style type="text/css">
+	<% styles_get.each do |st| %>	
+		<%== st %>	
+	<% end %>
+	</style>
+<% end %>
+
+	<script type="text/javascript">                 
+		dojo.addOnLoad(function(){
+<% WGUI["wgui.js.yaml"][:messages].each do |k, v| %>
+			wgui.messages.<%= k %> = "<%= to_l(v) %>"
+<% end %>
+			wgui.constants.session_id = "<%= session_id %>"
+			wgui.constants.base_uri = "<%= brige_servlet.base_uri %>"
+			wgui.init()			
+		});    		
+	</script>
+</head>
+<body>			
+<noscript><%= to_l("JavaScript must be enabled!") %></noscript>
+
+<!-- <%= self.class %> -->
+<div id="<%= component_id %>">
+<%= html_content %>
+</div>
+		
+<form id="wgui_ajax_call" enctype="multipart/form-data" style="display:none" method="post"  action=""></form>
+
+<div id="wgui_progress_container">
+  <img id="wgui_progress" style="display:none" src="<%= WGUI.static_resource_uri 'wgui/loading.gif' %>" alt="<%= to_l("Loading ...") %>"/>
+</div>
+</body>
+</html>

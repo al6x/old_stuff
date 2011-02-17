@@ -1,0 +1,31 @@
+1. You have an application utilizing lots of AJAX requests (possibly hundreds 
+of different actions are triggered via XHR requests). 
+Some of those calls may result in exceptions. Each time you have to 
+display an error message to the user. How would you organize error 
+handling in this case?
+
+- As i understood in this case errors handling will be similar in many places. 
+So it seems reasonable to abstract/isolate it, maybe by using custom helper/controller method, or add listener
+to JavaScript XHR request failure.
+
+
+2.How do you prefer to organize your test data: fixtures, object factories or 
+anything else? Why? *
+
+- fixtures, because it's widely used and simple.
+
+3. You have a web 2.0 application, where most of the content comes from 
+the end-users. You also need to handle sensitive data, such as passwords, 
+credit card information, etc. List as many possible security risks as you can 
+and make suggestions how to avoid them. *
+
+- Password can be stolen - crypt/hash passwords.
+- Don't store credit card information, encode it, or store only part of it.
+- Cross site scripting - escape text/HTML submitted by users.
+- SQL injection - use parameterised SQL queries, or be careful and remember to escape SQL if build it manually.
+- Session/Cookie keys - use secure hashes and set timeout.
+- Spam/Performance - shield your app behind proven webserver (apache).
+- Cache - be careful and check you don't cache secure information.
+- HTTP interception - use SSL for secure connection.
+- Use protected access by default, so it will be less possibly you accidentally forget protect something valuable.
+

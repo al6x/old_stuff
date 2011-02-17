@@ -1,0 +1,10 @@
+<div class="user_menu">	
+	<div class="inline">
+	<% if C.user.anonymous? %>
+		${@login}
+	<% else %>
+		<%== user_name %> | ${@logout}
+	<% end %>			
+		| ${@contact_us} | ${@languages}
+	</div>
+</div>

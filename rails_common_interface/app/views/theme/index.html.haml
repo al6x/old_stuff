@@ -1,0 +1,24 @@
+- layouts = b.options do |o|
+	- o.default [[:home, :default], [:style, :default], [:blog, :default], [:post, :default]]
+	- o.simple_organization [[:home, :home], [:style, :default], [:blog, :default], [:post, :default]]
+
+- AbstractInterface.available_themes.each do |theme|
+	%h1= "'#{theme.humanize}' Theme"
+
+	%b Core:
+	- %w{aspects basic folder items list page selector}.each do |action|
+		%a{:href => url_for(:controller => :theme, :action => action, :_theme => theme)} #{action.humanize}
+	%br
+
+	%b Special Cases:
+	- %w{user style}.each do |action|
+		%a{:href => url_for(:controller => :theme, :action => action, :_theme => theme)} #{action.humanize}
+	%br
+	
+	%b Site: 
+	- layouts[theme].each do |action, ltemplate|
+		%a{:href => url_for(:controller => :theme_site, :action => action, :_theme => theme, :_layout_template => ltemplate)} #{action.to_s.humanize}
+	%br
+
+%p
+	Sources are <a href='http://github.com/alexeypetrushin/common_interface'>here</a>.

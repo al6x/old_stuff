@@ -1,0 +1,31 @@
+<table class="container font input padding wide"><tbody>
+    <tr class="color">
+        <td colspan="2"><div class="font h2"><%= `Login` %></div></td>
+    </tr>
+	<tr>
+        <td width="30%" style="vertical-align:middle"><div class="font"><%= `Name` %>:</div></td>        
+		<td style="vertical-align:middle">
+			${@name}
+		</td>
+	</tr>
+	<tr>
+        <td width="30%" style="vertical-align:middle"><div class="font"><%= `Password` %>:</div></td>        
+		<td style="vertical-align:middle">
+			${@password}
+		</td>
+	</tr>
+	<tr>
+        <td colspan="2">
+        	<table class="minimal padding"><tbody>
+				<tr>
+					<td>
+						${@ok}
+					</td>
+					<td>
+						${@cancel}
+					</td>
+				</tr>
+			</tbody></table>
+        </td>
+	</tr>
+</tbody></table>

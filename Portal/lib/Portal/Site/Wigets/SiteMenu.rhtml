@@ -1,0 +1,11 @@
+<% unless @level1.empty? %>
+<table class="container font padding"><tbody>
+	<tr>
+		<% @level1.each_with_index do |link, index| %>					
+		<td>
+			${link}
+		</td>				
+		<% end %>					
+	</tr>
+</tbody></table>
+<% end %>

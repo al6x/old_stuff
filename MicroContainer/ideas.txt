@@ -1,0 +1,14 @@
+CRITICAL
+- Specs doesn't runs simultaneously by rake.
+
+LOW
+----
+- Add ability to work in multi concurrent threads per session (via synchronization per session)
+- Add aliases to scopes
+- Add hierarchical scopes
+- Single-thread per session (and then i'll can use continuations, and have more clear MicroContainer architecture)
+
+DONE
+- change 'include Managed' to 'extend Managed'
+- Reimplement AsyncObserver
+- Document it

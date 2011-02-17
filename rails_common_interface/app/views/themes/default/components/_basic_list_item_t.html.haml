@@ -1,0 +1,4 @@
+- if object.content?
+	- content_tag :div, object.merge_html_attributes(:class => " dlist_item") do
+		.dcheck_box= object.check_box if object.check_box?
+		.dcontent= object.content

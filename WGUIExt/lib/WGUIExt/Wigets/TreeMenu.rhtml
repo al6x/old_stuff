@@ -1,0 +1,93 @@
+<script type="text/javascript">
+    function wgui_treemenu_open(component_id, id_opened, id_closed){	
+		var menu = dojo.byId(component_id)					    
+    	dojo.query('.tm_level1_opened').forEach(function(c, i){
+    		c.style.display = "none"
+    	})    						
+		dojo.query('.tm_level1_closed').forEach(function(c, i){
+    		c.style.display = "block"
+    	})
+		dojo.byId(id_closed).style.display = "none"
+    	dojo.byId(id_opened).style.display = "block"
+    }
+	function wgui_treemenu_close(id_opened, id_closed){			
+		dojo.byId(id_closed).style.display = "block"
+    	dojo.byId(id_opened).style.display = "none"
+    }
+</script>
+<table class="container padding wide"><tbody>
+	<% index, parents = 0, object.parents %>
+	<% source.each(:children) do |item| %>	
+	<% items2 = []; item.each(:children){|item2| items2 << item2}; %>	
+	<% id_opened, id_closed = "c_#{component_id}_#{index}", "#{component_id}_#{index}"; index += 1 %>
+	<% opened = items2.any?{|item2| parents.include?(item2.link)}%>
+	<% w1 = @to_link[item] %>
+    <tr>    	
+		<td>
+			<% unless items2.empty? %>						
+			<table class="container wide tm_level1_closed" id="<%= id_closed %>" style="display:<%= opened ? "none" : "block" %>"><tbody>
+				<tr>
+					<td width="1%">
+						<a href="#" onclick="wgui_treemenu_open('<%= component_id %>', '<%= id_opened %>', '<%= id_closed %>'); return false;">
+			    			<img src="/<%= STATIC_RESOURCE%>/skins/<%= window.skin %>/images/aright" alt="+"/>
+						</a>
+					</td>
+					<td>
+						<div <% if w1.is_a? WLabel %>class="color"<% end %>>
+${w1}
+						</div>
+					</td>
+				</tr>
+			</tbody></table>						
+			<table class="container wide tm_level1_opened" id="<%= id_opened %>" style="display:<%= opened ? "block" : "none" %>"><tbody>
+				<tr>
+					<td width="1%">
+						<a href="#" onclick="wgui_treemenu_close('<%= id_opened %>', '<%= id_closed %>'); return false;">
+			    			<img src="/<%= STATIC_RESOURCE%>/skins/<%= window.skin %>/images/adown" alt="-"/>
+						</a>
+					</td>
+					<td>
+						<div <% if w1.is_a? WLabel %>class="color"<% end %>>
+${w1}
+						</div>
+					</td>
+				</tr>				
+				<tr>
+					<td>						
+					</td>
+					<td>								
+						<div class="tab1">
+							<table class="container wide"><tbody>
+								<% items2.each do |item2| %>
+								<% w2 = @to_link[item2] %>
+								<tr>								
+									<td <% if w2.is_a? WLabel %>class="color"<% end %>>												
+${w2}										
+									</td>
+								</tr>
+								<% end %>
+							</tbody></table>												
+						</div>
+					</td>
+				</tr>
+			</tbody></table>			
+			<% else %>
+			<table class="container wide"><tbody>
+				<tr>
+					<td width="1%">
+						<a href="#" onclick="return false;">
+							<img src="/<%= STATIC_RESOURCE%>/skins/<%= window.skin %>/images/ablank" alt=" "/>						
+						</a>
+					</td>
+					<td>
+						<div <% if w1.is_a? WLabel %>class="color"<% end %>>
+${w1}
+						</div>
+					</td>
+				</tr>
+			</tbody></table>									
+			<% end %>
+    	</td>        
+	</tr>
+	<% end %>	
+</tbody></table>

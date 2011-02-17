@@ -1,0 +1,31 @@
+<% content_for :content do %>
+	Show youtube clips. <div id="tip4" title="'Zombieland' Trailer" href="http://www.youtube.com/watch?v=M-cIjPOJdFM&amp;fs=1">Try now</div>
+	
+	
+<% end %>
+
+
+<% content_for :bottom do %>
+	<% javascript_tag do %>
+		$("#tip4").click(function() {
+			$.fancybox({
+				'padding'		: 0,
+//				'autoScale'		: false,
+				'transitionIn'	: 'none',
+				'transitionOut'	: 'none',
+//				'title'			: this.title,
+//				'width'		: 680,
+//				'height'		: 495,
+//				'href'			: this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
+				'href'			: "http://www.youtube.com/watch?v=xbnr30901r8&playnext_from=TL&videos=y6xDII95RKg&feature=feedu".replace(new RegExp("watch\\?v=", "i"), 'v/'),				
+				'type'			: 'swf',
+				'swf'			: {
+				   	 'wmode'		: 'transparent',
+					'allowfullscreen'	: 'true'
+				}
+			});
+
+			return false;
+		});
+	<% end %>
+<% end %>

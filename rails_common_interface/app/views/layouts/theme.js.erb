@@ -1,0 +1,11 @@
+try{
+	<% unless params[:target].blank? -%>
+	var target = $('#<%= params[:target] %>');
+	<% end -%>
+	
+	<%= yield %>
+	
+	<% if msg = flash[:error] || flash[:info] -%>
+	$.infoMessage("<%= j msg %>");
+	<% end -%>
+}catch(e){console.log(e)};

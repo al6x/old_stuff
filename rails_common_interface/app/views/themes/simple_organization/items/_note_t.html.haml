@@ -1,0 +1,16 @@
+- content_tag :div, object.merge_html_attributes(:class => " _note") do
+	- if object.name?
+		%h1= object.name
+
+	.text._markup.so_markup= object.text
+	._clear
+	
+	%br
+	- if object.tags?
+		.post-date.item_tags= object.tags.join(' ')		
+	- if object.details?
+		.post-date.item_details= object.details.to_a.join(', ')			
+	- if object.controls?
+		.post-date.item_controls= object.controls.join(' ') 
+
+	._clear

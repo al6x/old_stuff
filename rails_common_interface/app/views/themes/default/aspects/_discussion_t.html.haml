@@ -1,0 +1,9 @@
+- content_tag :div, object.merge_html_attributes(:class => " ddiscussion _discussion aspect _aspect") do
+	/ .ddivider._hidden
+	/ 	.ddivider_title= object.name
+	
+	._comments= object.content.to_a.join("\n")
+	
+	- if object.controls?
+		.dcontrols= object.controls.to_a.join("\n")
+	._clear

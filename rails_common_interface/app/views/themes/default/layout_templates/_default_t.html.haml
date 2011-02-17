@@ -1,0 +1,11 @@
+._layout_content.dlayout_content.dcolumns
+	.delastic.dcolumn
+		._main
+			= yield :aspects_top
+			._content
+				= yield :content
+			= yield :aspects
+			= yield :aspects_bottom
+
+	.dfixed.dcolumn{:style => 'width:200px'} 
+		.dtools= yield :tools

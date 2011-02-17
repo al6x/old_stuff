@@ -1,0 +1,16 @@
+- classes = " dlist_item dtask_list_item _list_item dselectable_item "
+- classes << "dfinishedlist_item _finished" if object.finished
+- content_tag :div, object.merge_html_attributes(:class => classes) do
+	.dhover_controls_container
+		- unless object.controls.blank?
+			.dhover_controls= object.controls.join(' ')
+				
+		- unless object.check_box.blank?
+			.dcheck_box= object.check_box
+		.dcontent= object.content
+	
+		/ - if object.tags?
+		/ 	.ditem_tags= object.tags.join(' ')			
+		- if object.details?
+			.ditem_details= object.details.to_a.join(', ')
+		._clear		

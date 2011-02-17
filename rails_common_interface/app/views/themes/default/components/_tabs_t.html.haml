@@ -1,0 +1,4 @@
+- if object.content?
+	- content_tag :div, object.merge_html_attributes(:class => " dtabs") do
+		= object.content.to_a.join("\n")
+		._clear

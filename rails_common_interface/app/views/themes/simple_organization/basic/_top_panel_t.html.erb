@@ -1,0 +1,14 @@
+<% if object.right? %>
+	<div class="user_menu">
+		<% object.right.each do |item| %>
+			<%= item.blank? ? "<span class='delimiter'>&nbsp;</span>" : content_tag(:span, item, :class => 'um_item') %>
+		<% end %>
+	</div>
+	<div class='_clear'/>
+<% end %>
+
+<div class="left" id="logo">	
+	<!-- Logo, image 235x100 px -->
+	<!-- <a href="index.html"><img src="img/logo.gif" alt=""></a> -->
+	<%= object.logo %>
+</div>

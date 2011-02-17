@@ -1,0 +1,1 @@
+require 'ActivePoint/_require'

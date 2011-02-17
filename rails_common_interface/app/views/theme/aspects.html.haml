@@ -1,0 +1,32 @@
+= render :partial => 'theme_shared/top_navigation_bottom'
+
+= render :partial => 'theme_shared/tools'
+
+- content_for :aspects do
+	= b.divider "Controls"
+	- b.controls :id => "controls_id", :class => "controls_class" do |o|
+		- o.left do |a|
+			- a.add link_to('Compose', "#", :class => 'icn_compose')
+			- a.add link_to('Move', "#")
+			- a.add link_to('Delete', "#")
+
+		- o.right do |a|
+			- a.add link_to('Archive', "#", :class => 'icn_compose')
+			- a.add link_to('Filter', "#")
+
+	= b.divider "Tags and Details"
+	- b.details :id => "details_id", :class => "details_class" do |o|
+		- o.tags @common_tags
+		- o.details @common_details
+
+	= b.divider "Comments"
+	= render :partial => 'theme_shared/comments'
+
+	= b.divider "Visibility Tags"
+	- visibility_tags = [['owner', '__owner_visibility'], ['member', '__member_visibility']].collect{|t, v| content_tag :div, t, :class => v}
+	- item_type = [content_tag :div, 'Note', :class => '__item_type']
+	- b.details do |o|
+		- o.tags @common_tags + visibility_tags + item_type
+		
+	= b.divider "Paginator"
+	= render :partial => 'theme_shared/paginator'

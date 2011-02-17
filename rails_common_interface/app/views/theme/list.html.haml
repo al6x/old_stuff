@@ -1,0 +1,23 @@
+= render :partial => 'theme_shared/top_navigation_bottom'
+
+= render :partial => 'theme_shared/tools'					
+
+- content_for :content do
+	= b.divider "List"
+	- b.list :id => "list_id", :class => "_item list_class _sortable_container", :html_attributes => {"data-item_class" => '_item'} do |o|
+		- o.name "List of Tasks"
+		- o.controls @common_controls
+		- o.tags @common_tags			
+		- o.details @common_details
+		- o.content do
+			- 5.times do |i|
+				- b.list_item "First Line", :id => "a#{i}", :class => '_item' do |o|
+					- o.check_box check_box_tag(:tmp)
+					- o.controls(@common_controls + [link_to('move', '#', :class => '_handle')])
+					- o.details @common_details
+					
+			- 13.times do |i|
+				- b.list_item "First Line", :id => "b#{i}", :class => '_item' do |o|
+					- o.controls(@common_controls + [link_to('move', '#', :class => '_handle')])
+					- o.details @common_details
+					- o.finished true

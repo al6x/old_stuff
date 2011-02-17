@@ -1,0 +1,34 @@
+._inline {display: inline;}
+
+._space {margin-bottom: $step;}
+
+._highlight {
+  background: $light_yellow_color;
+  padding-left: $step;
+  padding-right: $step;
+}
+
+._tiny {
+  color: $light_color !important;
+  a {color: $light_color !important;}
+}
+
+._hidden {display: none;}
+
+/* Styles */
+._markup {
+  object {
+    clear: both;
+    display: block;
+    margin-bottom: $step;
+	}
+
+	.clear {clear: both;}
+	.space {clear: both;}
+	
+	table tr td {
+		vertical-align: top;
+	}
+}
+
+._clear {clear: both;}

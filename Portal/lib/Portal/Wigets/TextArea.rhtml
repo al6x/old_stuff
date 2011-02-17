@@ -1,0 +1,13 @@
+<table class="container padding font wide"><tbody>
+	<% if @title and !@title.empty? %>
+	<tr class="color">
+		<td><%== @title %></td>
+	</tr>
+	<% end %>
+	<tr><td>
+		${@content_wiget}
+	</td></tr>
+	<tr><td>
+		${@edit}
+	</td></tr>	
+</tbody></table>

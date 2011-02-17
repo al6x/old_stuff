@@ -1,0 +1,17 @@
+CRITICAL
+
+MEDIUM
+- Add path/select Editor
+- Drop-Down Button
+- Pagination Control
+- Add CSS (text and popup dialogs)
+
+LOW
+- Reimplement using ExtJS?
+- MaxSize for images
+- Add 'empty?' to Container and do not display nested empty containers.
+
+DONE
+- Optimize TinyMCE and fix some problems with it (table cells doesn't works, add HTML button, remove <br/> and <p> tags)
+- Hidde tabs if there is only one
+- Add Form DSL

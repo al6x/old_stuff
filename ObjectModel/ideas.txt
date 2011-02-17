@@ -1,0 +1,198 @@
+CRITICAL
+- Error in restoring custom classes from YAML, testcase:
+
+ObjectModel::Types::ObjectType.yaml_load %{--- 
+:en: !ruby/object:WGUIExt::Editors::RichTextData 
+  resources: []
+
+  text: ""}
+
+- Use small Objects and Big collections (kind of in-memory indexes) (objects refers to big collections)
+- Dipatch events also to Class
+- Autoupdate Schema
+
+MEDIUM
+- add has_children? method to Entity
+- Add Array Container type
+
+- add :validate to :child and :reference (child :posts, :bag, :validate => lambda{|p| p.is_a? Post})
+- Import/Export Object Tree
+----
+- ? Forbid to use complex method (path, up, ... in transaction mode) (or explicitly enable ability to use it in 
+transactin mode - !, true,)
+
+- Resume transaction after error (validation error).
+
+- Add Child/Reference specification field ('CHILD', 'REF') to DB.
+- ability to create Entities with empty ID
+- om_version can work incorrect - someone got reference to Entity, and by the time the same Entity
+has ben deleted from cache and recreated and updated, but on the first entity om_version will be the same!?
+So always check om_version on the nevest one.
+And also forbid to modify such kind of entities, that where removed from Cache.
+- Add Spec for Proc type
+- Add Spec for ObjectType to save Class
+
+- add SymbolType
+- Validation for Mandatory Attributes.
+- Validation for Entity/Child Type.
+- Improve preformance of OGBag
+
+LOW
+- Use also 'weak' mode, with CouchDB, when we can work with non-consistent data (ignore broken links, relations, data, no transactions,
+replication without care about data consistency, ...)
+- Implement multiple parents?
+----
+- Performance, add ability to declare large attributes as "stream", it behaves absolytelly the same but has been stored as Stream.
+- StateMachine Entity
+- Storage implementation tokyo-cabinet, YAML-files'
+- Use 'Clonable' for deep copy (from facets).
+- Maybe it's worth to use 'Simple Transactional' gem?
+
+
+DONE
+- GC for Stream
+- Spec for Stream
+- Split Repository to Root entity and Engine.
+- Add am_i_copy? to Entity?
+- Ability to delete refernces (Cascading delete)
+
+- Events
+	BeforeUpdate updated, new (read lock)
+	Updating ... (exclusive lock)
+	AfterUpdate update, new (read lock)
+- Add JoinCommit
+- Transaction scope can be custom (:object, and so on ...)
+- Add Spec for commit inside isolate, and reimplement Synchronization mechanizm.
+- change include Transactional to extend Transactional
+- Safe Copy
+- Cashe Entity.transient
+- Add ability to use different TransactionStrategies simultaneously (MicroContainer + Custom + OpePerThread) (Disclined we'll use
+completelly different persistence mechanizm)
+- Use http://www.igvita.com/2009/02/13/tokyo-cabinet-beyond-key-value-store/ as storage (disclined it's hardly crossplatform and buggy)
+- Remove complex universal logic, object is object only, not an Object/Array/Map ? (disclined)
+- Remove REXML/XML storage and use SQLite (disclined)
+- Cashe OGObject.attributes and OGObject.og_types
+- Add spec for StreamID
+- Add Spec for Date
+- Use following system (disclined)
+	/storage_folder/entity_name_folder/entity.xml
+	/storage_folder/entity_name_folder/<multiple entity.xml if it's collection>
+	/storage_folder/entity_name_folder/<inner inner object files>								
+	/storage_folder/entity_name_folder/<multiple inner object files if it's collection>
+- Add Aspects spec for Entity and ValueObject
+- Use "UniversalObject" concept, where there is no difference between Object/Array/Map, and accesor are
+'accessor_get/set', 'key', 'value'	
+- Use arbitrary name as og_id and stream_id (and stream extension)
+- All copy/dump/load/each_xxx/... are specific for each object type and defined by it's class.
+- Introduce BigArray (Hash, copy doesn't really copy all array, just link to it and uses journal to 
+record changes and to writes them back during commit and also to looks as changed object to its transaction).
+- Import/Export system, just point to folder with tree part and it's adds it with robust reference resolving,
+the same for export. It doesn't evaluate child/references and so on, just dump and exchange predefined set 
+of entities. (Implemented as SQL import/export)
+- Add $debug enabled different checks mechanizms (disclined)
+	- Add Memory/Disk comparison check after each commit
+	- Reference of inner Entity structure
+	- Reference to another Entity's ValueObject.
+	- Read operations should be always inside 'Query' block.
+- Add check before write that it's inside transaction, it's should be 
+impossible to change Entity outside transaction.
+- ValueObjects also stores og_id, to be enable quickly dump it 
+without evaluating every time to wich entity it's belongs.
+- Add ability not to reset transaction during exception 
+(to retry it later if validation was invalid for example)
+- Do not write_back entity inner state, just change it, it's value objects, without any ID.(disclined)
+- Refactor EntityHelper, define accessor methods for Object/Array/Hash
+- Change vay it updates values, remove all tricky mashinery and use instead callback block that vill be first prepared and 
+then given to OG to execute (disclined)
+	* We can chain this callbacks and implement such way long transaction
+	* Use optimistic locking and version control
+- Query objects the same vay as Updating, in callback block
+- Use also non-blocked update model, Service will form list of block's that will change Persistent objects and then 
+delegates that list to OG, and og transactionally performs it.(disclined)
+- Add check for original modification in $debug mode 
+- Use back references list for objects and maybe for streams.
+- Repository contains Hash - list of all Entities (Repository.by_id[name] => Entity)
+- Create system listener (checks types in :before, "value.should! :be_a, Entity", and other checks)
+- After xxx Events comes after transaction so it can't be rollbacked. In exception case it will be just logged.
+- Check for synchronization each hour (disclined)
+- Check for references to ValueObjects from another Entities in $debug mode after each 'commit'. (disclined, VO are frozen, so it doesn't matter)
+- Right now it will be Robust (but not transactional) in the next version i'll just will 
+use transactional XML DB to implement transactional support. (disclined)
+- Cascading delete
+- Validations
+- Metadata Inheritance
+- Events :new, :update, :delete
+- Initaializers (initial values)
+- Add OnReferenceDelete event
+- Add Type (string, integer, entity, ...) check to Listener.
+- Use 'Cashed methods' for inheritance
+- Add transient helper :meta method to Entity
+- Manage :parent automatically
+- Add aspects (like Layout, and also with events, like (Auditable - when created, when modified, and so_on))
+- Move resources from entity to another class // othervise all Entity sublasees also inherite it's resources
+- Refactor metadata rules (split logic and rules)
+	...
+	mandatory merge left_to_right ...
+	...
+- Custom inherited properties
+- Support for MicroContainer Transaction management
+- Operations
+- Documentation
+- Refactor Types and Inheritance (via Business Rules)
+- Use Operation Processor, that receive operation name and operation parameters and executes it.
+- Unbind Changed Entities from OGEngine, instead record events on Entity.
+- Add ability to use Custom Transactions with TransactionStrategies (disclined, will be used different transaction mechanizm)
+- Aspects
+- Cashe for dmeta will not be works with aspects!
+- Add :group to attribute (and default group name) (disclined)
+- Delete :index from EditChild/EditReference its forbiden for Children and very rarelly for Reference (disclined)
+when multiple the same items in list. These cases will be processed specially.
+- Add Events and Validation
+- Events isn't inherited! (call super if you wish) (disclined)
+- Provide way to explicit check validation for entity
+- Security (before read attribute and before write attribute) (before read should be enabledn only in $debug mode)
+- Define attribute actions on attribute level (validation, ...) (disclined)
+- Define events on attribute level (on delete, create, delete (move), change, ...) for collection use special Array. (disclined)
+- Event Model
+	after_initialize	
+	Attribute Level (if old_value == nil_value events will be skipt)
+		update new_value, old_value 	-always called, any change
+		new value 						-handy method, called only if old_value == nil
+		delete value					-handy method, called only if new_value == nil
+	Child Level (if old_value == nil_value events will be skipt)
+		update new_parent, old_parent 	-always called, any change
+		new parent						-handy method, called only if old_value == nil
+		delete parent					-handy method, called only if new_value == nil
+		move new_parent, old_parent		-handy method, called only if old and new both != nil
+	Parent Level (if old_value == nil_value events will be skipt)
+		update new_child, old_child 	-always called, any change
+		new child 						-handy method, called only if old_value == nil
+		delete child					-handy method, called only if new_value == nil
+
+- Steal Security implementation from Rails?
+- Add ability to disable some checks (disclined)
+- Apply all validations also to :array attributes.(disclined)
+- Add parent/child correctnes check (parent should have child in its childs)
+- Use Custom Entities as types! (disclined)
+- Add spec to catch error for firing :deleted by children moving (disclined)
+- Add spec to check it deletes all descendants
+- Add attribute-level events (disclined)
+- Add Events to UObject, via Aspects (on_create, on_update, on_child_adding, on_save, ...) (disclined)
+- Use 'validatable' gem for Model validations (disclined)
+- Document
+- Add Indexes
+- add Entity[relative_path] and Entity.include?(relative_path) to Entity
+- Document Indexes
+- Add Class data type (or ability for ObjectType to save it).
+- Rename Engine to Repository
+- Use Database ADapter (CouchDB, GoogleDB) declined
+- refactor om_id => :entity_id, :entity_id => name, :path => path
+- add indexes
+- add :clear method for Repository
+- Localizable 
+	object.local.name/object.local.name=
+	locale implemented as @locale = {}
+	object + array of hashes (one hash for each locale)	
+- Add richtext type
+- When loading outdated attribute instead of :default check for :initialize
+- change :name to :entity_name, and :entity_id to :name

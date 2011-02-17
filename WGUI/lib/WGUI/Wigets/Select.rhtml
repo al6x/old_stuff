@@ -1,0 +1,23 @@
+
+<% if modify %>
+<table>
+	<tbody>
+		<tr><td>			
+<input type="text" id="st_id_<%= component_id %>" name="<%= component_id %>" value="<%== (selected || '') %>" <% if disabled? %>disabled="disabled"<% end %>/>
+		</td></tr>
+		<tr><td>
+<select <% if disabled? %>disabled="disabled"<% end %> onchange="var st = dojo.byId('st_id_<%= component_id %>'); st.value = this.value">
+	<% values.each do |value| %>
+	<option <% if value == selected %>selected="selected"<% end %>><%== value %></option>
+	<% end %>				
+</select>
+		</td></tr>
+	</tbody>
+</table>
+<% else %>
+<select name="<%= component_id %>" <% if disabled? %>disabled="disabled"<% end %>>
+	<% values.each do |value| %>
+	<option <% if value == selected %>selected="selected"<% end %>><%== value %></option>
+	<% end %>
+</select>
+<% end %>

@@ -1,0 +1,15 @@
+<% if object.items? %>
+	<% content_tag :div, object.merge_html_attributes(:class => " left navigation main-nav") do %>
+	<!-- <div class="left navigation" id="main-nav"> -->
+		<ul class="tabbed">
+			<% object.items.each do |item| %>
+				<% if item.hash? and item.active? %>
+					<li class="current-tab"><a href="#"><%= item.content %></a></li>
+				<% else %>
+					<li><%= item.content %></li>
+				<% end %>
+			<% end %>
+		</ul>	
+		<div class="clearer">&nbsp;</div>
+	<% end %>
+<% end %>

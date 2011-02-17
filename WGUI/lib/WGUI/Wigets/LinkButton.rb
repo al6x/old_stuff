@@ -1,0 +1,3 @@
+class LinkButton < Button
+
+end

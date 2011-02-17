@@ -1,0 +1,6 @@
+- content_tag :div, object.merge_html_attributes(:class => " ddetails_aspect _details aspect _aspect") do
+	- if object.tags?
+		.ditem_tags= object.tags.join(' ')		
+	- if object.details?
+		.ditem_details= object.details.to_a.join(', ')			
+	._clear

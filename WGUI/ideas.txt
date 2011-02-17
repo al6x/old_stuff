@@ -1,0 +1,70 @@
+CRITICAL
+- Update Specs
+- don't use _sid for static files.
+
+MEDIUM
+- Use Rack::Lint in $debug (checks for HTTP complience)
+- change order of <script> and <css> for performance
+- add autentification wrapper for brige_servlet
+
+
+----
+- On image click it should be opened in DOJO image viewer
+- Multiselect Modify uses x.innerHTML, this fails when user deselect some element and then adds custom, 
+selection will be reset. Reimplement without x.innerHTML, using JS API.
+
+
+LOW
+- :favicon and :add_css methods on Window, they are refreshed in each request
+- InnerFrame portlets
+----
+- Simple Multiple Terms Editor (Textarea, each line is item)
+- Write UIDRiver Specs for SearchSelect and SearchMultiselect.
+- Check for visible and disabled wigets in visitors and skip it or throw error.
+- HTML formatting.
+- Reimplemet 'refreshed', simple elements should provide this method by themselves, for WComponent, WContinuation 
+use 'refreshed' that will remember the hash sum or other techniques for all his members, and return 'true' if somethin has been changed.
+- Forbid to call subflow on WPortlet?
+- Add SPEC for 'visible' and 'enabled'
+- If you go to one url and then open another url in another browser tab, and then return to first url and press 
+any ajax button, it will fire error, becouse thouse first url is not exist more on the server. 
+Add 'location' (url) paramether to the ajax cals, and if ajax call from an old url warn 'page has been expired, refresh it!'.
+- Remove WGUI stack trace from exceptions
+- Create 'logger' rest interface, so that AJAX client can log failed requests on server.
+- Rack::Cascade (performance, serve many parallel same APPs)
+
+DONE
+- Ability to register static resources 
+- Should not 'render' after 'redirect'. I.e. we change state, perform some business logic and return generated html, but, if state has been changed, browser will be redirected and ask for the same html one more time. So all logic will be executed one more time. Solution - skip doing 'render' right after 'redirect'.
+- BUG, Different appearance in FF and IE
+- Wrap each WComponent template into <div></div> wrapper
+- Add Favicon & Title setting
+- ! Add the 'cancel' exit to WContinuation.
+- SECURITY! Add check if component 'editable' or 'visible' before update it's values or perform any action on it.
+- ! Add 'static_resource' method to Wiget
+- ! Add 'add_to_header' method to Wiget
+- Remove 'Container' popup message (wait/warn) and use instead: disable content of 'body' and show message at the top.
+- For AJAX messages use messages defined in Page.xhtml (<div id="warn">bla-bla</div> <div id="pause">bla-bla</div>)
+- !use 'Expirable' for mark session as expired (from facets)
+- Template as Resource
+- Add ability to add custom values to Select and to SearchSelect (Two fields one for select and another for write, select via JS change value).
+- Add GZIP compression to JS
+- Add HTML Cashe Header Parameters for JS and Static Images
+- Move StaticResource Header from Ruby Code to File (style.css + style.css.header)
+- Cashe static resources lookup.
+- Image, make as link, on_click should open image in another tab.
+- Rename RichEditor to RichText
+- Rename 'childs' to 'children'
+- clean HTML (TinyMCE as XHTML, RubyfulSoup corrupts '&nbsp;', )
+- Change HTML Header Cashe parameters for JS and Images
+- Skins works as follows - you specify 'skin' attribute on Windows, and then occurs follows (disclined)
+	* Favicon -> skin/images/favicon (without extension)
+	* CSS -> skin/style.css
+	* Templates -> skin/<FULL_QUALIFIED_CLASS_SCOPE>/<CLASS_NAME>.xhtml. 
+	render_template will first lookup in 'skin'directory and if not found uses original template file.
+
+- Check for valid XHTML only in $debug mode
+- Create Includable module Action (ability to create wigets with multiple actions, right-click dialogs, ...)
+- Do not use 'skin' use TemplateHelper.custom_template Extension and list of *.css files on Window.
+- Use session_id in URL
+- Enable cashe in ERubis

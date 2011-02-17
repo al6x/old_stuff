@@ -1,0 +1,8 @@
+.dprint-only{display:none;}
+.dno-print{display:none;}
+.dno-print-content{visibility:hidden;}
+.dprint-only,div.dprint-only{display:block;}
+span.dprint-only,label.dprint-only{display:inline;}
+table.dprint-only{display:table;}
+tr.dprint-only{display:table-row;}
+td.dprint-only{display:table-cell;}

@@ -1,0 +1,45 @@
+<table class="container wide input padding font"><tbody>
+	<tr>
+		<td>
+${@search_field}
+		</td>		
+		<td>
+${@search_button}			
+		</td>				
+	</tr>
+<% if @found.values.size > 0 %>	
+	<tr>
+		<td>
+${@found}			
+		</td>		
+		<td>
+${@add}			
+		</td>		
+	</tr>
+<% end %>	
+<% if modify %>	
+	<tr>
+		<td>
+${@add_field}			
+		</td>		
+		<td>
+${@add_button}			
+		</td>		
+	</tr>
+<% end %>	
+	<tr>
+		<td colspan="2">
+<%== to_l("Selected") %>
+		</td>		
+	</tr>
+<% if @selected_list.values.size > 0 %>		
+	<tr>
+		<td>
+${@selected_list}
+		</td>		
+		<td>
+${@delete}			
+		</td>
+	</tr>			
+<% end %>			
+</tbody></table>

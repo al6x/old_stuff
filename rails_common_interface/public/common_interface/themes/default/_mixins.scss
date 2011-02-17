@@ -1,0 +1,39 @@
+/* Styles */
+@mixin small_text {font-size: 90%;}
+@mixin medium_text {
+  font-size: 110%;
+  font-weight: bold;
+}
+@mixin big_text {
+  font-size: 180%;
+  font-weight: bold;
+}
+@mixin h1 {
+  @include big_text;
+  margin-top: 0px;
+  margin-bottom: $big_step;
+}
+
+@mixin h2 {
+  font-size: 120%;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: $step;
+}
+
+@mixin overflow {
+  position: absolute;
+  z-index: 1;
+}
+
+@mixin controls {
+  font-size: 100%;
+
+  a {@include as_link;}
+}
+
+@mixin as_link {
+  color: $select_color;
+  text-decoration: underline;
+  &:visited {color: $select_color;}
+}

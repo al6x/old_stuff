@@ -1,0 +1,38 @@
+= render :partial => 'theme_shared/top_navigation_bottom'
+
+= render :partial => 'theme_shared/tools'					
+
+- content_for :content do	
+	- options = b.options do |o|
+		- o.name @common_name
+		- o.controls @common_controls
+		- o.tags @common_tags
+		
+	= b.divider "Selector (Thumb without Title)"
+	- b.selector options do |o|
+		- o.text @note_text
+	- 12.times do 
+		- i = rand(3) + 1
+		- b.thumb :class => "_item" do |o|
+			- o.thumb url_for_path("/common_interface/images/img#{i}_thumb.jpg")
+			- o.url url_for_path("/common_interface/images/img#{i}.jpg")
+			- o.controls @common_controls
+	._clear
+				
+
+	= b.divider "Selector (Thumb with Title)"
+	= b.selector options
+	- 3.times do |i|
+		- i = i + 1
+		- b.thumb :name => "The Salvator", :class => "_item" do |o|
+			- o.thumb url_for_path("/common_interface/images/img#{i}_thumb.jpg")
+			- o.url url_for_path("/common_interface/images/img#{i}.jpg")
+			- o.controls @common_controls
+	._clear
+
+
+	= b.divider "Selector (Lines)"
+	= b.selector options
+
+	= render :partial => 'theme_shared/line_previews'
+	._clear

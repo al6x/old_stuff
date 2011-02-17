@@ -1,0 +1,130 @@
+/* 
+Hardcoded changes:
+
+.label => .decoration
+delete input from reset styles section
+#main-nav => .main-nav
+*/
+
+/* User menu */
+.user_menu {
+	float: right;
+	
+	.um_item > a {color: #445566;}
+	
+	.delimiter {
+		margin-right: 1px;
+		border-right: 1px solid #DDDDDD;
+	}
+}
+
+/* Top panel */
+.main-nav {
+	float: right;
+	
+	li {
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-right: 0px;
+		margin-left: 1.5em;
+	}
+}
+
+#logo-rem {border-right: none;}
+
+/* Users are loading logo different sises, we resize it by CSS */
+#logo img {
+	height: 100px;
+	width: 235px;
+}
+
+/* Style for Search Tool */
+input[type=text] {
+	background: #FCFCFC;
+  border: 1px inset #AAA;
+  margin: 0.5em 0;
+  padding: 4px 5px;	
+}
+
+/* Tags */
+.tags {
+	text-align: center;
+
+	span{margin: 5px;}
+	
+	.size-1{font-size: 120%;}
+	.size-2{font-size: 150%;}
+	.size-3{font-size: 180%;}
+	.size-4{font-size: 220%;}
+	
+	.selected_tag a {
+		background: #557799;
+		color: white;
+		padding: 2px 5px 0;
+	}
+}
+
+/* Tags on page */
+.item_tags a {
+	color:#999999 !important;
+	font-size:11px;
+}
+
+/* Hidding item tags and controls on homepage */
+.home {
+	.item_tags, .item_details {display: none};
+	> .more {float: right;}
+}
+
+/* Item controls */
+.item_controls a {
+	margin-left: 5px;
+	float: right;
+	color: #557799;
+	text-decoration: underline;
+}
+
+/* Theme Placeholder */
+._theme_wrapper {
+	border:1px solid #7A7A7A;
+	margin:2px;
+	padding:2px;
+}
+
+/* More */
+.more a {
+	color: #999999;
+}
+
+/* Comment */
+.comment-gravatar img {
+	width: 40px;
+	height: 40px;
+}
+
+/* Styles */
+.so_markup {
+	.left {
+		float: left;
+		margin: 5px;
+    margin-left: 0;
+    margin-right: 5px;
+	}
+	
+	.right {
+		float: right;
+		margin: 5px;
+    margin-right: 0;
+    margin-left: 5px;
+	}
+	
+	a {text-decoration:underline;}
+	h1, h2, h3, h4, h5, h6 {clear: both;}
+  object {
+    clear: both;
+    display: block;
+    margin-bottom: 5px;
+	}
+
+	.space {height: 1em;}
+}

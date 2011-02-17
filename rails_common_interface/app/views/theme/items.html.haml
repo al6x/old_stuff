@@ -1,0 +1,91 @@
+= render :partial => 'theme_shared/top_navigation_bottom'
+
+= render :partial => 'theme_shared/tools'					
+
+- content_for :content do
+	= b.divider "Note"
+	- b.note :id => "note_id", :class => "note_class" do |o|
+		- o.name "Terminator movie series"
+		- o.text @note_text
+		- o.controls [link_to('edit', '#'), link_to('delete', '#')]
+		- o.tags @common_tags			
+		- o.details @common_details
+						
+	= b.divider "Thumb"
+	- b.thumb :id => 'thumb_id', :class => "thumb_class" do |o|
+		- o.controls @common_controls
+		- o.thumb url_for_path("/common_interface/images/img1_thumb.jpg")
+		- o.url url_for_path("/common_interface/images/img1.jpg")
+		- o.name 'Picture 1.jpg'
+	._clear					
+		
+	= b.divider "Line"
+	- b.line :id => "line_id", :class => "line_class" do |o|
+		- o.name @common_name
+		- o.icon url_for_path("/common_interface/images/img1_icon.jpg")
+		- o.url url_for_path("/common_interface/images/img1_icon.jpg")
+		- o.text @detail_text
+		- o.controls @common_controls
+		- o.tags @common_tags			
+		- o.details @common_details
+	
+	= b.divider "File"
+	- b.file :id => "file_id", :class => "file_class" do |o|
+		- o.name "Product Overview.pdf"
+		- o.icon url_for_path("/common_interface/images/img1_icon.jpg")
+		- o.url url_for_path("/common_interface/images/img1_icon.jpg")
+		- o.controls @common_controls
+		- o.tags @common_tags
+		- o.details @common_details
+					
+	= b.divider "Selector"
+	- b.selector :id => "selector_id", :class => "selector_class" do |o|
+		- o.name "Top 10 Movies"
+		- o.controls @common_controls
+		- o.content do
+			- 2.times do |i|
+				- i = i + 1
+				- b.line :id => "line_id", :class => "line_class" do |o|
+					- o.name @common_name
+					- o.icon url_for_path("/common_interface/images/img#{i}_icon.jpg")
+					- o.url url_for_path("/common_interface/images/img#{i}_icon.jpg")
+					- o.text @detail_text
+					- o.controls @common_controls
+					- o.tags @common_tags	if i == 1
+					- o.details @common_details if i == 1
+		
+	= b.divider "Folder"
+	- b.folder :id => "folder_id", :class => "folder_class _item _sortable_container", :html_attributes => {"data-item_class" => '_item'} do |o|
+		- o.name "Pictures for Terminator Movie"
+		- o.controls @common_controls
+		- o.tags @common_tags			
+		- o.details @common_details
+		- o.content do
+			- 7.times do |i|
+				- i = rand(3) + 1			
+				- b.thumb :class => '_item' do |o|
+					- o.thumb url_for_path("/common_interface/images/img#{i}_thumb.jpg")
+					- o.url url_for_path("/common_interface/images/img#{i}.jpg")
+					- o.controls(@common_controls + [link_to('move', '#', :class => '_handle')])
+					
+	= b.divider "List"
+	- b.list :id => "list_id", :class => "list_class _item _sortable_container", :html_attributes => {"data-item_class" => '_item'} do |o|
+		- o.name "List of Tasks"
+		- o.controls @common_controls
+		- o.tags @common_tags			
+		- o.details @common_details
+		- o.content do
+			- 7.times do |i|
+				- b.list_item "First Line", :id => "list_id_#{i}", :class => "_item list_class_#{i}" do |o|
+					- o.check_box check_box_tag(:tmp) if i.odd? and i <= 4
+					- o.controls(@common_controls + [link_to('move', '#', :class => '_handle')])
+					- o.details @common_details
+					- o.finished true if i > 4
+
+	= b.divider "Selector"
+	- b.selector :id => "selector_id", :class => "selector_class" do |o|
+		- o.name @common_name
+		- o.text @detail_text
+		- o.controls @common_controls
+		- o.tags @common_tags			
+		- o.details @common_details

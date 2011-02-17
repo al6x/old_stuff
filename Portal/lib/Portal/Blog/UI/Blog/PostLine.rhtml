@@ -1,0 +1,36 @@
+<table class="container padding font wide"><tbody>
+	<tr>
+		<td><div class="font h2">${@title}</div></td>
+	</tr>	
+	<tr>
+		<td>
+			<table class="container padding font"><tbody>
+				<tr>
+					<td>
+						${@icon}
+					</td>								
+					<td>
+						${@details}
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>	
+	<tr>
+		<td>
+			<table class="container padding font"><tbody>
+				<tr>
+					<td>
+						<%= object.comments.size %> Comments
+					</td>
+					<td>
+						${@author}
+					</td>								
+					<td>
+						${@date}
+					</td>					
+				</tr>
+			</tbody></table>
+		</td>				
+	</tr>	
+</tbody></table>

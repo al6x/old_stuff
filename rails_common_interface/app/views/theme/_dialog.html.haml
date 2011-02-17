@@ -1,0 +1,7 @@
+- b.dialog do
+	= b.title "Dialog Title"
+	- b.form do |f|
+		= f.hidden_field_tag :_theme, params[:_theme]
+		= f.text_field_tag :name, "Some Name", :label => "Name"
+		= f.text_area_tag :body, "Some text"
+		= f.line_with_delimiters ok_button, cancel_button

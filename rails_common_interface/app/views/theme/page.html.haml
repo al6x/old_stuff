@@ -1,0 +1,19 @@
+= render :partial => 'theme_shared/top_navigation_bottom'
+
+= render :partial => 'theme_shared/tools'					
+
+- content_for :content do
+		
+	- b.page :class => "_sortable_container", :html_attributes => {"data-item_class" => '_item'} do |o|
+		- o.name "Pictures for Terminator Movie"
+		- o.controls @common_controls
+		- o.toolbar [link_to('Note', '#'), link_to('Folder', '#')]
+		- o.tags @common_tags
+		- o.icon url_for_path("/common_interface/images/img1_thumb.jpg")
+		- o.content do
+			= render(:partial => 'theme/page/note', :locals => {:text => "#{image_tag(url_for_path("/common_interface/images/img1_thumb.jpg"))} #{@note_text} #{@note_text}"})
+			= render(:partial => 'theme/page/note', :locals => {:text => @note_text})
+			= render(:partial => 'theme/page/folder')
+			= render(:partial => 'theme/page/note', :locals => {:text => @note_text})			
+
+	= render :partial => 'theme_shared/comments'

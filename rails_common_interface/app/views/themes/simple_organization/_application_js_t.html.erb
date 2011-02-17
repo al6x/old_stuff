@@ -1,0 +1,12 @@
+<% javascript_tag do %>
+	$(function(){
+		// Delimiter between blog posts
+		$('.post:not(:last)').after("<div class='archive-separator'></div>");		
+		
+		// Add .alignleft to images in text if other not specified
+		// $('.so_markup img:not([class])').addClass('alignleft');
+		
+		// Add borders to all images inside markup
+		// $('.so_markup img').addClass('bordered');
+	});	
+<% end %>

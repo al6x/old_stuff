@@ -1,0 +1,58 @@
+<% if @names.size > 0 %>
+<table class="<%= css || '' %> border_top <% if @wide %>wide<% end %>"><tbody>
+    <tr>    	
+    	<td class="color">    											
+    		<table class="container wide padding"><tbody>
+                <tr>
+                    <td class="color">
+                    	<div class="<%= title_css ? title_css : 'h2' %> font"><%== (title ? title : "") %></div>	
+					</td>
+                </tr>
+            </tbody></table>
+    	</td>
+        <td class="color" style="vertical-align: bottom;">
+			<% if @names.size > 1 %>
+            <table class="container" align="right"><tbody>
+                <tr>            	
+				<% @names.each_with_index do |name, index| %>	
+				<% control = @controls[index] %>				
+                    <td>
+                        <table class="container wide padding"><tbody>
+                            <tr>
+                            <% if name == active %>
+                                <td class="background">
+                            <% else %>
+								<td class="color">
+							<% end %>
+									<div class="font">
+                                    ${control}
+									</div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+				<% end %>	
+					<td class="color">&nbsp;</td>													
+                </tr>
+            </tbody></table>
+			<% else %>
+			&nbsp;
+			<% end %>
+        </td>
+    </tr>
+	<!--<tr>
+		<td width="20px" colspan="2"></td>
+	</tr>-->
+    <tr>
+        <td colspan="2">
+            <table class="container wide"><tbody> <!-- TODO padding, should i use it? -->
+                <tr>
+                    <td>
+                        ${@content}
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+<% end %>

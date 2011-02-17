@@ -1,0 +1,9 @@
+<% content_tag :div, object.merge_html_attributes(:class => " section _tool") do %>
+	<% if object.name? %>
+		<div class="section-title"><%= object.name %></div>
+	<% end %>
+
+	<div class="section-content">
+		<%= object.content %>
+	</div>
+<% end %>

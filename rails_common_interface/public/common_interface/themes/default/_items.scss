@@ -1,0 +1,88 @@
+/* selector */
+.dselector {
+  .dtext a {@include as_link}
+}
+
+/* list */
+.dlist {
+  .dcontrols {
+		@include small_text;
+    margin-left: $big_step;
+   
+    a {@include as_link;}
+	}
+}
+
+/* file */
+.dfile_item {
+  .ddetails {
+    margin-left: $step;
+
+    .dtitle {font-weight: bold;}
+    a {@include as_link}
+	}
+}
+
+/* thumb */
+.dthumb_item {
+  float: left;
+  min-width: 150px;
+  min-height: 150px;
+  padding-right: $step;
+
+  .dhover_controls {@include small_text}
+  .dtitle {
+    @include small_text;
+    max-width: 150px;
+	}
+}
+
+/* line */
+.dline_item {
+  .dicon {margin-right: $step;}
+  .ditem_tags {margin: 0px;}
+  .dsingle_line {
+    .ditem_tags {
+      margin-right: $step;
+      float: left;
+		}
+	}
+}
+
+/* user */
+.duser {
+  .dproperties {margin-top: $step;}
+}
+
+/* item */
+.dselectable_item {  
+  padding-top: $step;
+  padding-bottom: $step;
+	border: #{$small_step} solid #{$inverse_color};
+}
+
+.dselectable_item_padding {
+  padding-left: $step;
+  padding-right: $step;
+}
+
+.dselectable_item_hover {border-color: $very_light_color;}
+
+/* page */
+.dpage {
+  ._container h1.item_title{@include h2}
+}
+
+/* folder */
+
+/* note */
+
+/* list */
+
+/* list item */
+.dtask_list_item {padding: $small_step;}
+
+.dfinishedlist_item {
+  div, a {@include small_text}
+  .dcontent {text-decoration: line-through;}
+}

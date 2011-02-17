@@ -1,0 +1,123 @@
+= render :partial => 'theme_shared/top_navigation_bottom'
+
+= render :partial => 'theme_shared/tools'
+					
+- content_for :content do
+	= b.divider "Dialog"
+	= link_to('Show Dialog', :action => 'dialog', :format => :js, :_theme => params[:_theme]) 	
+
+	= b.divider "Title"
+	= b.title "The Title", :id => "title_id", :class => "title_class"	
+
+	= b.divider "Messages"
+	
+	= b.message 'Info message'
+	- b.message :type => :error do
+		Error Message
+	
+	= b.narrow b.message('Narrow content')
+	
+
+	= b.divider "Tabs"
+	
+	- b.tabs :id => "tabs_id", :class => "tabs_class" do |o|
+		- o.content do
+			- @tabs.each do |name|
+				- if @active_tab == name
+					= b.tabs_item name, :active => true
+				- else
+					= b.tabs_item link_to(name, "#")
+				
+	
+	= b.divider "Toolbar"
+
+	- b.toolbar :id => "toolbar_id", :class => "toolbar_class" do |o|
+		- o.left do |a|
+			- a.add link_to('Compose', "#", :class => 'icn_compose')
+			- a.add link_to('Move', "#")
+			- a.add link_to('Delete', "#")
+
+		- o.right do |a|
+			- a.add link_to('Archive', "#", :class => 'icn_compose')
+			- a.add link_to('Filter', "#")
+			
+	
+	= b.divider "List"
+	
+	- b.basic_list :id => "list_id", :class => "list_class" do |o|
+		- o.content do
+			= b.basic_list_item "First Line", :id => "list_id_1", :class => "list_class_1"
+			= b.basic_list_item "Second Line", :check_box => check_box_tag(:tmp), :id => "list_id_2", :class => "list_class_2"
+	
+	
+	= b.divider "Form"
+
+	- b.form do |f|
+		= f.error_messages "First", "Second" 
+	
+		= f.hidden_field_tag :name, "value" 
+	
+		= f.check_box_tag :active, true, :label => "" 
+		= f.text_field_tag :name, "Some Name", :label => "Field with error", :errors => ["Error 1", "Error 2"] 
+		= f.text_field_tag :name, "Some Name", :label => "Type something here", :description => "Add something valuable, (its description for this text_field)" 
+		= f.text_area_tag :body, "Some text"
+		= f.text_field_tag :name, "", :required => true, :label => "Required field"
+		
+		= f.field_tag %w{one two three}.collect{|n| radio_button_tag('group', n) + label_tag("group_#{n}", n)}.join(' '), :label => "Visibility"
+		
+		- b.more :id => 'stub', :name => "...", :class => '_tiny' do
+			= f.text_field_tag :extra_field, "", :label => "Extra Fields"
+	
+		= f.line f.submit("Ok"), link_to("Cancel", "#") 
+		= f.line_with_delimiters f.submit("Ok"), link_to("Cancel", "#") 
+
+
+	= b.divider "Form for" 
+
+	- b.form_for Samples.build_stub!, :url => '' do |f| 
+		= f.error_messages 
+
+		= f.hidden_field_tag :some_hidden_field, "value" 
+		= f.hidden_field :name 
+
+		= f.check_box :active, :label => "" 
+		= f.text_field :name, :label => "Type something here", :description => "Add something valuable, (its description for this text_field)" 
+		= f.text_area :body, :label => false 
+
+		= f.text_field_tag :name, "value" 
+
+		= f.line f.submit("Ok"), link_to("Cancel", "#") 
+		= f.line_with_delimiters f.submit("Ok"), link_to("Cancel", "#") 
+
+
+	= b.divider "Table" 
+
+	- b.table :id => "table_id", :class => "table_class", :on => 3 do |o| 
+		- o.head ["Name", "Position", "Actions"]
+		- o.rows do |a|
+			- a.add b.table_row(["Alex", "Manager", "<a href='#'>Delete</a>"], :id => "table_id_1", :class => "table_class_1")
+			- a.add b.table_row(["Bob", "Worker", "<a href='#'>Delete</a>"])
+			- a.add b.table_row(["Fred", "Executer", "<a href='#'>Delete</a>"])
+
+
+	= b.divider "Table without header" 
+
+	- b.table do |o| 
+		- o.rows do |a|
+			= a.add b.table_row(["Alex", "Manager", "<a href='#'>Delete</a>"])
+			- a.add do
+				- b.table_row do |o| 
+					- o.content do |a|
+						- a.add "Fred"
+						- a.add "Executer"
+						- a.add "<a href='#'>Delete</a>" 
+
+
+	= b.divider "Text" 
+
+	- b.text do
+		Some Text <a href='#'>Some Link</a>
+		
+	= b.divider "Custom content" 
+	
+	= render :partial => themed_partial('basic/html')

@@ -1,0 +1,58 @@
+/* dpaginator */
+.dpaginator {
+  margin-top: $step;
+
+  > * {margin-right: $step;}
+
+  a {@include as_link;}
+
+  .dcurrent {font-weight: bold;}
+}
+
+/* details */
+.ddetails_aspect {
+  margin-top: $big_step;
+}
+
+/* discussion */
+.ddiscussion {
+  margin-top: $big_step;
+
+  .dcontrols {
+    float: right;
+
+    @include controls;
+	}
+}
+
+/* comment */
+.dcomment {
+  .dtext {margin-left: $step;}
+  .ditem_details {margin-top: 0;}
+}
+
+/* tag selector */
+.dtag_selector {
+  .dtags {
+    text-align: center;
+
+    .dselected {
+      color: $inverse_color;
+      padding-left: $step;
+      padding-right: $step;
+      background: $select_color;
+
+      a {color: $inverse_color;}
+		}
+	
+    .dtag { 
+      display: inline-block;
+      margin: 3px;
+		}
+	
+    .dsize_1 {font-size: 90%;}
+    .dsize_2 {font-size: 120%;}
+    .dsize_3 {font-size: 130%;}
+    .dsize_4 {font-size: 140%;}
+	}
+}

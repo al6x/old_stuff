@@ -1,0 +1,39 @@
+- b.line do |o|
+	- o.name @common_name
+	- o.icon url_for_path("/common_interface/images/img#{rand(3) + 1}_icon.jpg")
+	- o.text @detail_text
+	- o.url url_for_path("/common_interface/images/img#{rand(3) + 1}_icon.jpg")					
+	- o.controls @common_controls
+		
+- b.line do |o|
+	- o.name @common_name
+	- o.icon url_for_path("/common_interface/images/img#{rand(3) + 1}_icon.jpg")
+	- o.text @detail_text
+	- o.url url_for_path("/common_interface/images/img#{rand(3) + 1}_icon.jpg")					
+	- o.controls @common_controls
+	- o.tags @common_tags + ["Note"]
+	- o.details @common_details
+
+- b.line do |o|
+	- o.name @common_name
+	- o.text @detail_text
+	- o.url url_for_path("/common_interface/images/img#{rand(3) + 1}_icon.jpg")					
+	- o.controls @common_controls
+	- o.tags @common_tags + ["Page"]
+	- o.details @common_details
+				
+- b.line do |o|
+	- o.name @common_name
+	- o.url url_for_path("/common_interface/images/img#{rand(3) + 1}_icon.jpg")					
+	- o.controls @common_controls
+	- o.tags @common_tags + ["Task"]
+	- o.details @common_details		
+		
+- b.line :class => "_item" do |o|
+	- o.name @common_name
+	- o.icon url_for_path("/common_interface/images/img#{rand(3) + 1}_icon.jpg")
+	- o.text @detail_text
+	- o.url url_for_path("/common_interface/images/img#{rand(3) + 1}_icon.jpg")					
+	- o.controls @common_controls
+	- o.tags @common_tags + ["Note"]
+	- o.details @common_details

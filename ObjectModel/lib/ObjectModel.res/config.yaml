@@ -1,0 +1,5 @@
+---
+:directory: "."
+:buffer_size: 8192
+:cache: "ObjectModel::Tools::InMemoryCache"
+:cache_parameters: 0.2,

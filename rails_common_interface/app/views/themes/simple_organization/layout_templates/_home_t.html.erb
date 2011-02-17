@@ -1,0 +1,14 @@
+<div class="main home _main _layout_content">
+	<%= yield :aspects_top %>			
+	
+	<%= content_tag :div, yield(:content), :class => '_content' %>
+	
+	<% unless (tools = yield :tools).blank? %>
+		<% b.more :name => t(:show_more), :id => 'tools' do %>
+			<%= tools %>
+		<% end %>
+	<% end %>
+	
+	<%= yield :aspects %>
+	<%= yield :aspects_bottom %>
+</div>

@@ -1,0 +1,79 @@
+en:
+  # 
+  # Authentication
+  # 
+  cas_try_more: "Please try again"
+  choose_name: "Choose username"
+  choose_name_description: "Choose username (can't be changed in future)"
+  edit_password_title: "Update password"
+  email_verification_code_sent: "To complete registration please follow the link sent to your email {{email}}."
+  failed_reset_password: "No user with such email {{email}}!"
+  forgot_password_hint: "Link for password restore will be send to your email"
+  forgot_password_link: "Forgot password?"  
+  forgot_password: "Restore password"
+  invalid_email_verification_token: "Email confirmation code is invalid or expired"
+  invalid_identity: "No user with such ID ({{identity_url}})"
+  invalid_login: "Invalid login or password"
+  invalid_old_password: "Invalid old password"
+  invalid_reset_password_token: "The code for password restoration is invalid or expired"
+  login_title: "Login"
+  login_using_open_id: "Login using OpenID"  
+  new_password: "New password"
+  new_user_title: "Signup"
+  not_unique_email: "User with such email already exists"
+  old_password: "Old password"
+  open_id: "OpenID"
+  openid_identifier: "OpenID"  
+  password_restored: "Password updated"
+  password_updated: "Pasword updated"
+  register_link: "Signup"  
+  reset_password: "Reset password"
+  should_not_be_blank: "should not be blank"
+  signup_email_description: "To finish registration please follow the link that will be send to your email"  
+  successfully_identified_by_open_id: "Identification is successfully finished"
+  successfully_logged_in: "You are logged in"
+  successfully_logged_out: "You are logged out"
+  successfull_open_id_registration: "You are successfully registered and can log in"
+  successfully_registered: "You are successfully registered"
+  sucessfully_reset_password: "Link for password restoration sent to your email: {{email}}"
+  update_password: "Update password"
+
+  # 
+  # EMail
+  # 
+  email_verification_title: "Registration on site {{host}}"
+  email_verification_text: |
+    To finish registration on site {{host}} please follow this link:
+    {{url}}
+  
+  forgot_password_title: "Password reset for {{name}} on the {{host}} site"
+  forgot_password_text: |
+    You (or somebody else by entering your email) requested password reset for your account {{name}} on the {{host}} site.
+
+    To reset password please follow this link {{url}}
+    (or just delete this email and your password will remain intact)
+
+
+  # 
+  # Paperclip
+  # 
+  invalid_file_size: "File should be less than {{max_size}} KB"
+  maximum_user_files_size_exceeded: "The maximum files size allowed for the user {{max_files_size}} KB are exceeded (current files size is {{files_size}} KB)"
+  maximum_space_files_size_exceeded: "The maximum files size allowed for the space {{max_files_size}} KB are exceeded (current files size is {{files_size}} KB)"
+    
+  # email_registration_title: "{{name}}, ваш аккаунт для {{host}} создан"
+  # email_registration_text: |
+  #   Ваш аккаунт для {{host}} зарегистрирован.
+  # 
+  #   Имя пользователя {{name}}
+  #   Пароль {{password}}
+  # 
+  #   Чтобы активировать его пожалуйста перейдите по ссылке:
+  #   {{url}}
+    
+  # 
+  # Authorization
+  # 
+  # member_role: "Сообществу"
+  # owner_role: "Только мне"
+  # user_role: "Всем"

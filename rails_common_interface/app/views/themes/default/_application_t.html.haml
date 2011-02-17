@@ -1,0 +1,29 @@
+!!! 5
+%html{:lang => I18n.locale}
+	
+	%head 
+		%meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
+		- unless (title = @html_title || @title).blank?
+			%title= h title
+			
+		%link{:rel => "icon", :href => "/favicon.ico", :type => "image/x-icon"}
+		
+		= stylesheet_link_tag merged_stylesheets(:common_interface_base)
+		
+		= yield :head
+		
+	%body
+		.dlayout
+			= yield :top_panel
+
+			.dmax_width
+				= yield :navigation
+
+				= render :partial => themed_partial("layout_templates/#{current_theme.layout_template}")				
+
+			= yield :bottom_panel		
+
+		= javascript_include_tag merged_javascripts(:common_interface_base)		
+		= javascript_tag "$.refresh_js_css();"
+		
+		= yield :bottom

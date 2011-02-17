@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Six Shooter Media  </title>
+
+<meta name="generator" content="WordPress 2.6.1" /> <!-- leave this for stats -->
+<meta name="verify-v1" content="7h21uScnhgurNKjcmFe9ka8jpaX36rhev5hIRpXLZak=" />
+
+<link rel="stylesheet" href="http://www.sixshootermedia.com/wp-content/themes/ssm0808/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/wp-content/themes/ssm0808/screen.css" type="text/css" media="screen" />
+
+<script type="text/javascript" src="/js/jquery.js"></script>
+
+<script type="text/javascript" src="/js/jquery.galleria.pack.js"></script>
+
+<script type="text/javascript">
+	
+	jQuery(function($) {
+		
+		$('.gallery').addClass('gallery'); // adds new class name to maintain degradability
+		
+		$('ul.gallery').galleria({
+			history   : true, // activates the history object for bookmarking, back-button etc.
+			clickNext : true, // helper for making the image clickable
+			insert    : '#main_image', // the containing selector for our main image
+			onImage   : function(image,caption,thumb) { // let's add some image effects for demonstration purposes
+				
+				// fade in the image & caption
+				if(! ($.browser.mozilla && navigator.appVersion.indexOf("Win")!=-1) ) { // FF/Win fades large images terribly slow
+					image.css('display','none').fadeIn(1000);
+				}
+				caption.css('display','none').fadeIn(1000);
+				
+				// fetch the thumbnail container
+				var _li = thumb.parents('li');
+				
+				// fade out inactive thumbnail
+				_li.siblings().children('img.selected').fadeTo(500,0.3);
+				
+				// fade in active thumbnail
+				thumb.fadeTo('fast',1).addClass('selected');
+				
+				// add a title for the clickable image
+				image.attr('title','Next image >>');
+			},
+			onThumb : function(thumb) { // thumbnail effects goes here
+				
+				// fetch the thumbnail container
+				var _li = thumb.parents('li');
+				
+				// if thumbnail is active, fade all the way.
+				var _fadeTo = _li.is('.active') ? '1' : '0.3';
+				
+				// fade in the thumbnail when finnished loading
+				thumb.css({display:'none',opacity:_fadeTo}).fadeIn(1500);
+				
+				// hover effects
+				thumb.hover(
+					function() { thumb.fadeTo('fast',1); },
+					function() { _li.not('.active').children('img').fadeTo('fast',0.3); } // don't fade out if the parent is active
+				)
+			}
+		});
+	});
+	
+</script>
+
+<link rel="alternate" type="application/rss+xml" title="Six Shooter Media RSS Feed" href="http://www.sixshootermedia.com/feed/" />
+<link rel="pingback" href="http://www.sixshootermedia.com/xmlrpc.php" />
+
+
+
+
+
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.sixshootermedia.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.sixshootermedia.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 2.6.1" />
+
+
+<style type='text/css'>
+.hilite {
+	color: #fff;
+	background-color: #f93;
+}
+</style>
+<script type="text/javascript">var sifrpath = "http://www.sixshootermedia.com/wp-content/plugins/wpSifrLite/"</script><script type="text/javascript" src="http://www.sixshootermedia.com/wp-content/plugins/wpSifrLite/sifrlite.js"></script>
+
+
+</head>
+<body id="interior" class="">
+<div class="container">
+<div class="span-24 header last">
+<h3 style="font-size:90%; color:#ccc;">Six Shooter Media; a <strong>web site</strong> and <strong>identity</strong> / <strong>logo design</strong> firm based in Peterborough, Cambridgeshire.</h3>
+</div>
+<div class="span-24 logo last">
+		<h1><a href="http://www.sixshootermedia.com/">Six Shooter Media</a></h1>
+</div>
+<div class="span-24 last header">
+<!--<ul class="nav">
+     <li><a href="/blog" title="Blog">Blog</a></li>
+     <li><a href="/services" title="Services">Services</a></li>
+     <li><a href="/logo-design" title="Logo Design">Logo Design</a></li>
+     <li><a href="/web-design" title="Web Design">Web Design</a></li>
+     <li><a href="/free-templates" title="Free Templates">Free Templates</a></li>
+     <li><a href="/contact" title="Get in Touch">Contact</a></li>
+</ul>-->
+</div>
+<br class="clear" />
+
+
+	<div class="span-24 last" style="margin-top:85px;">
+
+		<h1 class="center">Error 404 - Not Found</h1>
+        
+        <h3>Try the <a href="/sitemap/" title="Sitemap">Sitemap</a></h3>
+        
+       
+
+	</div>
+
+
+
+<div class="span-24 footer">
+	<p class="footerlink">
+		<a href="/"><strong>Six Shooter Media</strong></a>
+	</p>
+<!--<ul class="nav">
+                     <li><a href="/blog/" title="Blog">Blog</a></li>
+                     <li><a href="/services" title="Services">Services</a></li>
+                     <li><a href="/logo-design/" title="Logo Design">Logo Design</a></li>
+                     <li><a href="/web-design/" title="Web Design">Web Design</a></li>
+                     <li><a href="/contact/" title="Get in Touch">Contact</a></li>
+                     <li><a href="/sitemap/" title="Sitemap">Sitemap</a></li>
+                     <li><a href="http://www.themegalaxy.net" title="Premium WordPress Themes">Theme Galaxy</a></li>
+<li><a href="/web-design-directory"/ title="Web Design Directory">Web Design Directory</a></li>
+<li><a href="/free-templates/" title="Free Web Site Templates">Free Web Templates</a></li>
+                     <li><a href="http://www.sixshootermedia.com/feed/">Entries (RSS)</a></li>
+                     <li><a href="http://www.sixshootermedia.com/comments/feed/">Comments (RSS)</a></li>
+</ul>--><br style="clear:both;" />
+<script type="text/javascript">
+Vertical1237044 = false;
+ShowAdHereBanner1237044 = true;
+RepeatAll1237044 = false;
+NoFollowAll1237044 = false;
+BannerStyles1237044 = new Array(
+	"a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;}",
+	"img{border:0;clear:right;}",
+	"a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}",
+	"a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}"
+);
+
+document.write(unescape("%3Cscript src='"+document.location.protocol+"//s3.buysellads.com/1237044/1237044.js?v="+Date.parse(new Date())+"' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+</div>
+
+
+		<!-- http://www.sixshootermedia.com/ostemplates/aqueous_light/twocolumns.html --><script type="text/javascript">targetedmuseo.replace();</script><script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-182647-2";
+urchinTracker();
+</script>
+<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
+<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/sixshootermedia.json?callback=twitterCallback2&amp;count=3"></script>
+</body>
+</html>

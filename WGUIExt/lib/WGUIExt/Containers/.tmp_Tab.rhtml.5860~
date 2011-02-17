@@ -1,0 +1,39 @@
+<% if @names.size > 0 %>
+<table class="general_container border"><tbody>
+    <tr>
+        <td class="color1">
+            <table class="floating_container" align="right"><tbody>
+                <tr>            	
+				<% @names.each_with_index do |name, index| %>	
+				<% control = @controls[index] %>				
+                    <td>
+                        <table class="general_container container_padding"><tbody>
+                            <tr>
+                            <% if name == active %>
+                                <td class="bg_color">
+                            <% else %>
+								<td>
+							<% end %>
+                                    ${control}
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+				<% end %>									
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table class="general_container container_padding"><tbody>
+                <tr>
+                    <td>
+                        ${@content}
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+<% end %>

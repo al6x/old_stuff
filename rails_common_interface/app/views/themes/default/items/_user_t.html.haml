@@ -1,0 +1,12 @@
+- content_tag :div, object.merge_html_attributes(:class => " duser _user dcontrols_container") do
+	- if object.controls?
+		.dcontrols= object.controls.join(' ')
+		
+	%h1= object.name
+	
+	.dcolumns.don-4
+		.dcolumn
+			.davatar= object.avatar
+			.dproperties= object.properties
+		.dcolumn.dspan-3
+			.dcontent= object.content

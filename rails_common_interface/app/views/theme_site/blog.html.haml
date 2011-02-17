@@ -1,0 +1,13 @@
+= render :partial => 'theme_shared/top_navigation_bottom'
+
+= render :partial => 'theme_shared/tools'
+
+- content_for :content do	
+	- b.selector do |o|
+		- o.name @common_name
+		- o.text @note_text
+		- o.controls @common_controls
+
+	= render :partial => 'theme_shared/line_previews'
+	
+	= render :partial => 'theme_shared/paginator'

@@ -1,0 +1,7 @@
+<% if object.content? %>
+	<% 
+		type = object.type.to_s == 'info' ? 'notice' : object.type 
+		type ||= 'notice'
+	%>
+	<%= content_tag :div, object.content, object.merge_html_attributes(:class => " #{type}") %>
+<% end %>

@@ -1,0 +1,9 @@
+--- 
+:paths: []
+:uidriver_mode: false
+#- "add yours paths here"
+#:dojo: "/home/alex/Software/dojo-release-1.2.2"
+:default_language: :en
+:port: 8080
+:sid_bits: 64
+:template_cache: true

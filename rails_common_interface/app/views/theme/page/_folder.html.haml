@@ -1,0 +1,10 @@
+- b.folder :class => "_item _sortable_container", :html_attributes => {"data-item_class" => '_item'} do |o|
+	- o.name "Pictures for Terminator Movie"
+	- o.controls [link_to('add', '#'), link_to('edit', '#'), link_to('delete', '#'), link_to('move', '#', :class => '_handle')]
+	- o.content do
+		- 5.times do 			
+			- i = rand(3) + 1
+			- b.thumb :name => "The Salvator", :class => '_item' do |o|
+				- o.thumb url_for_path("/common_interface/images/img#{i}_thumb.jpg")
+				- o.url url_for_path("/common_interface/images/img#{i}.jpg")
+				- o.controls [link_to('edit', '#'), link_to('delete', '#'), link_to('move', '#', :class => '_handle')]

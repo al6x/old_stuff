@@ -1,0 +1,13 @@
+# wgui.js
+"Operation failed!": "Не удалось выполнить операцию!"
+"Please wait until previous operation will finished!": "Операция выполняется, пожалуйста подождите!"
+"Connection with Server has been broken! This page will be disabled!": "Соединение с сервером разорвано. Страница отключена!"
+"Invalid AJAX Responce, can't find New Element!": "Invalid AJAX Responce, can't find New Element!"
+"Element for Update is not found in DOM!": "Element for Update is not found in DOM!"
+"JavaScript must be enabled!": "JavaScript должен быть включен!"
+
+# Window.xhtml
+"Loading ...": "Загрузка ..."
+
+# Wigets
+Add: Добавить

@@ -1,0 +1,5 @@
+- unless object.empty?
+	.dcolumn.dspan-4
+		.dbase_errors
+			- object.each do |message|
+				.dbase_error= message

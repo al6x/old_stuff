@@ -1,0 +1,34 @@
+- content_tag :div, object.merge_html_attributes(:class => " dselectable_item dline_item") do
+	.dhover_controls_container
+		.dhover_controls= object.controls.join(' ') if object.controls?
+		- object_name = object.name? ? object.name : '&nbsp;'
+		- if object.icon? or object.text?
+			- if object.icon?
+				.dcolumns
+					.dfixed.dcolumn{:width => 50}					
+						.dicon
+							%a{:href => object.url}
+								%img{:src => object.icon}
+					.delastic.dcolumn				
+						.ddetails
+							- if object.name?
+								%a{:href => object.url}
+									.dpreview_title= object_name
+							.dtext= object.text if object.text?
+			- else
+				.ddetails
+					- if object.name?
+						%a{:href => object.url}
+							.dpreview_title= object_name
+					.dtext= object.text if object.text?
+							
+		- else
+			.dsingle_line
+				%a{:href => object.url}
+					.dpreview_title= object_name
+				
+		- if object.tags?
+			.ditem_tags= object.tags.join("\n")
+		- if object.details?
+			.ditem_details= object.details.to_a.join(', ')
+		._clear

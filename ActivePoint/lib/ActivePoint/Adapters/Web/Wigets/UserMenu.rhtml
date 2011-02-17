@@ -1,0 +1,18 @@
+<table class="container wide padding font"><tbody>
+	<tr class="color">
+		<td><div class="font h2"><%== user_name %></div></td>
+	</tr>
+	<tr><td>
+		<% if C.user.anonymous? %>
+			${@login}
+		<% else %>
+			${@logout}
+		<% end %>
+	</td></tr>	
+	<tr><td>
+		${@contact_us}
+	</td></tr>
+	<tr><td>
+		${@languages}
+	</td></tr>
+</tbody></table>

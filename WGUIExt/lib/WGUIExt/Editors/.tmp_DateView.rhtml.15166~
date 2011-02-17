@@ -1,0 +1,11 @@
+<% if @value %>
+<table class="float_container"><tbody>
+	<tr>
+		<td><%= @year %></td>	
+		<td>/</td>	
+		<td><%= @month %></td>
+		<td>/</td>		
+		<td><%= @day %></td>
+	</tr>
+</tbody></table>
+<% end %>

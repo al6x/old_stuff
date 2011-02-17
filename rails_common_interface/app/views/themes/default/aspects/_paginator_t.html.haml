@@ -1,0 +1,8 @@
+.dpaginator
+	= object.prev if object.prev?
+	- object.pages.each do |page|
+		- if page == object.current_page
+			= content_tag(:span, page, :class => :dcurrent)
+		- else
+			= object.to_link.call(page)
+	= object.next if object.next?

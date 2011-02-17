@@ -1,0 +1,40 @@
+<% if @center or @left or @right or @top or @bottom %>
+<table class="<%= css || '' %> <% if @wide %>wide<% end %>"><tbody>
+<% if @left or @top or @right %>
+<% high = (@top ? 1 : 0) + (@center ? 1 : 0) + (@bottom ? 1 : 0) %>
+<tr>		    
+	<% if @left %>
+	<td <%= high > 0 ? "rowspan=\"3\"" : "" %> width="1%">    	
+${@left}    
+    </td>    
+	<% end %>
+	<% if @top %>
+	<td height="1%">
+${@top}
+    </td>	
+	<% end %>
+	<% if @right %>
+    <td <%= high > 0 ? "rowspan=\"3\"" : "" %> width="1%">
+${@right}		
+    </td>	
+	<% end %>
+</tr>
+	<% end %>
+<% if @center or @bottom %>
+<% if @center %>
+<tr>	
+	<td>
+${@center}
+    </td>	
+</tr>
+<% end %>
+<% if @bottom %>
+<tr>
+	<td height="1%">
+${@bottom}
+    </td>	
+</tr>
+<% end %>
+<% end %>
+</tbody></table>
+<% end %>

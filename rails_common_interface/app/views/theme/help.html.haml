@@ -1,0 +1,7 @@
+- if params[:_theme].blank?
+	%h1 Help for Themes
+	- AbstractInterface.available_themes.each do |theme|
+		%a{:href => url_for(:controller => :theme, :action => :help, :_theme => theme)}= theme.humanize
+		%br
+- else
+	= render :partial => themed_partial('help')

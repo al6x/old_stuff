@@ -1,0 +1,23 @@
+- content_tag :div, object.merge_html_attributes(:class => " _folder dfolder dselectable_item") do
+	.dhover_controls_container
+		.dhover_controls= object.controls.join(' ') if object.controls?
+	
+		- if object.name?
+			%h1.item_title= object.name? ? object.name : '&nbsp;'
+		- else
+			%h1.item_title.empty_title
+				&nbsp;		
+	
+		._container
+			= object.content.to_a.join("\n")
+		._clear
+		
+		- unless object.name? or object.content?
+			.dtitle= "(#{t(:empty)})"
+
+		- if object.tags?
+			.ditem_tags= object.tags.join("\n") 
+			
+		- if object.details?
+			.ditem_details= object.details.to_a.join(', ')
+		._clear

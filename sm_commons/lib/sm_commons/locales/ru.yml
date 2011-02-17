@@ -1,0 +1,82 @@
+ru:
+  # 
+  # Authentication
+  # 
+  cas_try_more: "Попробуйте еще раз"
+  choose_name: "Выберите имя пользователя"
+  choose_name_description: "Выберите имя пользователя (в дальнейшем изменить нельзя)"
+  edit_password_title: "Изменение пароля"
+  email_verification_code_sent: "Чтобы завершить регистрацию перейдите пожалуйста по ссылке высланной вам на почту {{email}}"
+  failed_reset_password: "Пользвателя с почтой {{email}} не существует!"
+  forgot_password_hint: "Ссылка для восстановления пароля будет выслана вам на почту"
+  forgot_password_link: "Забыли пароль?"  
+  forgot_password: "Восстановление пароля"
+  invalid_email_verification_token: "Неверный код подтверждения почты, возможно у него истек срок действия"
+  invalid_identity: "Пользователя с таким ID не существует ({{identity_url}})"
+  invalid_login: "Неверный логин или пароль"
+  invalid_old_password: "Неверный старый пароль"
+  invalid_reset_password_token: "Неверный код восстановления пароля, возможно у него истек срок действия"
+  login_title: "Войти"
+  login_using_open_id: "Войти используя OpenID"  
+  new_password: "Новый пароль"
+  new_user_title: "Регистрация"
+  not_unique_email: "Пользователь с таким адресом уже существует"
+  old_password: "Старый пароль"
+  open_id: "OpenID"
+  openid_identifier: "OpenID"  
+  password_restored: "Пароль изменен"
+  password_updated: "Пароль изменен"
+  register_link: "Регистрация"  
+  reset_password: "Сброс пароля"
+  should_not_be_blank: "не заполнен"
+  signup_email_description: "Вам на почту будет выслана ссылка для завершения решистрации"  
+  successfully_identified_by_open_id: "Идентификация успешно завершена"
+  successfully_logged_in: "Вы вошли"
+  successfully_logged_out: "Вы вышли"
+  successfull_open_id_registration: "Вы успешно зарегистрированы и можете войти"
+  successfully_registered: "Вы успешно зарегистрировались"
+  sucessfully_reset_password: "Ссылка для восстановления пароля выслана вам на почту: {{email}}"
+  update_password: "Изменить пароль"
+
+  # 
+  # EMail
+  # 
+  email_verification_title: "Регистрация аккаунта на {{host}}"
+  email_verification_text: |
+    Чтобы завершить решистрацию на {{host}} перейдите пожалуйста по ссылке:
+    {{url}}
+  
+  # email_activation_title: "{{name}}, ваш аккаунт на {{host}} активирован"
+  # email_activation_text: |
+  #   {{name}} ваш аккаунт на {{host}} активирован.
+
+  forgot_password_title: "Сброс пароля пользователя {{name}} на {{host}}"
+  forgot_password_text: |
+    Вы (или кто-то другой введя вашу почту) запросили сброс пароля для вашего аккаунта {{name}} на {{host}}
+
+    Чтобы сбросить пароль перейдите по ссылке {{url}}
+    (или просто удалите это письмо, ваш пароль останется как и раньше)
+
+  # 
+  # Paperclip
+  # 
+  invalid_file_size: "Файл должен быть меньше {{max_size}} КБ"
+  maximum_user_files_size_exceeded: "Превышен рабмер максимально допустимого обьема файлов для пользователя {{max_files_size}} КБ (сейчас занято {{files_size}} КБ)"
+  maximum_space_files_size_exceeded: "Превышен рабмер максимально допустимого обьема файлов для рабочего пространства {{max_files_size}} КБ (сейчас занято {{files_size}} КБ)"
+  
+  # email_registration_title: "{{name}}, ваш аккаунт для {{host}} создан"
+  # email_registration_text: |
+  #   Ваш аккаунт для {{host}} зарегистрирован.
+  # 
+  #   Имя пользователя {{name}}
+  #   Пароль {{password}}
+  # 
+  #   Чтобы активировать его пожалуйста перейдите по ссылке:
+  #   {{url}}
+    
+  # 
+  # Authorization
+  # 
+  # member_role: "Сообществу"
+  # owner_role: "Только мне"
+  # user_role: "Всем"

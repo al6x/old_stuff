@@ -1,0 +1,16 @@
+--- 
+javascripts:
+- sm:
+  - /javascripts/wigets/service_mix.js
+
+  - /javascripts/wigets/votable.js
+  - /javascripts/wigets/commentable.js
+
+  # - /plugins/jquery.swfupload/swfupload/swfupload.js
+  # - /plugins/jquery.swfupload/swfupload/swfupload.queue.js
+  # - /plugins/jquery.swfupload/jquery.swfupload.js
+  # - /javascripts/folder.js
+
+stylesheets:
+- sm:
+  - /plugins/jquery.swfupload/style.css # stub, sm can't be empty

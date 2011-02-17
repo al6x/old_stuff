@@ -1,0 +1,2 @@
+class ThemeSiteController < ThemeController
+end

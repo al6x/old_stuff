@@ -1,0 +1,52 @@
+require 'rake'
+require 'spec/rake/spectask'
+
+Dir.chdir File.dirname(__FILE__)	
+
+# Spec
+task :default => :spec
+
+Spec::Rake::SpecTask.new('spec') do |t|
+	t.spec_files = FileList["spec/**/*_spec.rb"]
+	t.libs = ["lib", "spec", "#{File.expand_path "./.."}"]
+end
+
+# Gem
+require 'rake/clean'
+require 'rake/gempackagetask'
+require 'fileutils'
+
+spec = Gem::Specification.new do |s|
+	s.name = "WGUIExt"
+	s.version = "0.2.0"
+	s.summary = "Component's set for WGUI"
+	s.description = "Component's set for WGUI"
+	s.author = "Alexey Petrushin"
+	#	s.email = ""
+	s.homepage = "http://www.bos-tec.com"
+	s.rubyforge_project = "WGUIExt"
+	
+	s.platform = Gem::Platform::RUBY
+	s.has_rdoc = true
+	s.extra_rdoc_files = ["README"]
+	
+	s.files = (%w{rakefile README} + Dir.glob("{data,lib,spec}/**/*"))\
+	.select{|f| f !~ /^\./}
+	#	s.executables = ['restclient']
+	
+	s.add_dependency "WGUI"
+	
+	s.require_path = "lib"
+end
+
+Rake::GemPackageTask.new(spec) do |p|
+	package_dir = "#{File.expand_path File.dirname(__FILE__)}/../build"
+	#	FileUtils.mkdir package_dir unless File.exist? package_dir	
+	p.need_tar = true if RUBY_PLATFORM !~ /mswin/
+	p.need_zip = true
+	p.package_dir = package_dir
+end
+
+CLEAN.include [ 'pkg', '*.gem']
+
+task :release => [:gem, :clean]

@@ -1,0 +1,5 @@
+- raise "you should provide unique id for b.more element (to allow it remember it's state in ajax requests')!" unless object.id?
+- if object.content?
+	- content_tag :div, object.merge_html_attributes(:class => " dmore _more") do
+		%a{:href => '#', :class => '_button'}= object.name
+		._content._hidden= object.content

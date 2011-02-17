@@ -1,0 +1,40 @@
+<% if @names.size > 0 %>
+<table class="<%= css || '' %> border_top <% if @wide %>wide<% end %>"><tbody>
+    <tr>
+        <td class="color" style="vertical-align: bottom;">
+            <table class="container" align="right"><tbody>
+                <tr>            	
+				<% @names.each_with_index do |name, index| %>	
+				<% control = @controls[index] %>				
+                    <td>
+                        <table class="container wide padding"><tbody>
+                            <tr>
+                            <% if name == active %>
+                                <td class="background">
+                            <% else %>
+								<td>
+							<% end %>
+                                    ${control}
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+				<% end %>
+					<td>&nbsp;</td>											
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table class="container wide padding"><tbody>
+                <tr>
+                    <td>
+                        ${@content}
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+<% end %>

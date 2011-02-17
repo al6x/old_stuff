@@ -1,0 +1,6 @@
+- if object.items?
+	.dcolumn.dspan-4
+		.dform_item.line
+			- object.items.each_with_index do |item, index|
+				= (object.delimiter? ? " | " : "") if index != 0
+				.control= item

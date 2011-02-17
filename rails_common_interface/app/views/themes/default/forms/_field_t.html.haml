@@ -1,0 +1,19 @@
+- errors = object.errors.collect{|msg| content_tag(:div, msg, :class => "derror")}.join("\n")
+- if object.label?
+	.dcolumn
+		%div{:class => "dcontainer dform_item #{'requiredfield' if object.required?}"}= object.label
+	.delastic.dcolumn.dspan-3
+		.dform_item.dfield
+			.dinput= object.input
+			- unless errors.blank?
+				.derrors= errors
+			- if object.description?
+				.ddescription= object.description
+- else
+	.dcolumn.dspan-4
+		.dform_item.dfield
+			.dinput= object.input
+			- unless errors.blank?
+				.derrors= errors
+			- if object.description?
+				.ddescription= object.description

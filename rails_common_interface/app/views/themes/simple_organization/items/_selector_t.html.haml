@@ -1,0 +1,11 @@
+- content_tag :div, object.merge_html_attributes(:class => " _selector") do
+	- if object.name?
+		%h1= object.name
+		
+	- if object.text?
+		._markup.so_markup= object.text
+		
+	- if object.controls?
+		.post-date.item_controls= object.controls.join(' ')
+	
+	._clear

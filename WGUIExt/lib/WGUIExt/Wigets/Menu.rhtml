@@ -1,0 +1,12 @@
+<table class="container wide padding font"><tbody>
+<% @menu.each_with_index do |item, i| %>	
+    <tr>
+        <td>
+        	<div class="nowrap <%= @menu2.include?(i) ? 'tab1' : '' %> <%= i == @current ? 'h2' : '' %>">
+${item}
+			</div>
+        </td>
+    </tr>
+<% end %>	
+</tbody></table>
+<div>&nbsp;</div>

@@ -1,0 +1,9 @@
+- if object.items?
+	- content_tag :div, object.merge_html_attributes(:class => " dnavigation dtabs") do
+		- object.items.each do |item|				
+			- if item.hash? and item.active?
+				.dtab_item.dactive= item.content
+			- else
+				.dtab_item= item.content
+						
+		._clear

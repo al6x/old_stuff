@@ -1,0 +1,14 @@
+- if object.left? or object.right?
+	- content_tag :div, object.merge_html_attributes(:class => " dpage_toolbar dleft_right") do
+	
+		- if object.left?
+			.dleft
+				- object.left.each do |item|
+					.dlr_item= item.content
+
+		- if object.right?
+			.dright
+				- object.right.each do |item|
+					.dlr_item= item.content
+	
+		._clear

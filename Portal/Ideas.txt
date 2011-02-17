@@ -1,0 +1,14 @@
+CRITICAL
+
+MEDIUM
+- Add Breadcrumb to Site
+- Move some aspects (Layout, Security, ...) to Wigets?
+- Implement Taggable as Wiget
+- Side Menu
+- Multilevel Main Menu
+
+LOW
+
+
+DONE
+- Add Messages to Site

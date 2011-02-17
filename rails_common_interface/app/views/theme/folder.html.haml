@@ -1,0 +1,45 @@
+= render :partial => 'theme_shared/top_navigation_bottom'
+
+= render :partial => 'theme_shared/tools'					
+
+- content_for :content do	
+	- options = b.options :class => "_sortable_container", :html_attributes => {"data-item_class" => '_item'} do |o|
+		- o.name @common_name
+		- o.controls @common_controls
+		- o.tags @common_tags
+		
+	= b.divider "Folder (Thumb without Title)"
+	- b.folder options do |o|
+		- o.content do
+			- 12.times do 
+				- i = rand(3) + 1
+				- b.thumb :class => "_item" do |o|
+					- o.thumb url_for_path("/common_interface/images/img#{i}_thumb.jpg")
+					- o.url url_for_path("/common_interface/images/img#{i}.jpg")
+					- o.controls(@common_controls + [link_to('move', '#', :class => '_handle')])
+				
+				
+	= b.divider "Folder (Thumb with Title)"
+	- b.folder options do |o|
+		- o.content do
+			- 3.times do |i|
+				- i = i + 1
+				- b.thumb :name => "The Salvator", :class => "_item" do |o|
+					- o.thumb url_for_path("/common_interface/images/img#{i}_thumb.jpg")
+					- o.url url_for_path("/common_interface/images/img#{i}.jpg")
+					- o.controls(@common_controls + [link_to('move', '#', :class => '_handle')])
+
+	= b.divider "Folder (Lines)"
+	- b.folder options do |o|
+		- o.content do
+			- 3.times do |i|
+				- i = i + 1
+				- b.line :class => "_item" do |o|
+					- o.name @common_name
+					- o.icon url_for_path("/common_interface/images/img#{i}_icon.jpg")
+					- o.url url_for_path("/common_interface/images/img#{i}_icon.jpg")
+					- o.text @detail_text
+					- o.controls(@common_controls + [link_to('move', '#', :class => '_handle')])
+					- unless i == 2
+						- o.tags @common_tags			
+						- o.details @common_details

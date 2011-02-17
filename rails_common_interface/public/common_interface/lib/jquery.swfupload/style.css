@@ -1,0 +1,8 @@
+/*#swfupload-control p{ margin:10px 5px; font-size:0.9em; }*/
+.files .log{ margin:0; padding:0; width:500px;}
+.files .log li{ list-style-position:inside; margin:2px; border:1px solid #ccc; padding:10px; font-size:12px; font-family:Arial, Helvetica, sans-serif; color:#333; background:#fff; position:relative;}
+.files .log li .progressbar{ border:1px solid #333; height:5px; background:#fff; }
+.files .log li .progress{ background:#999; width:0%; height:5px; }
+.files .log li p{ margin:0; line-height:18px; }
+.files .log li.success{ border:1px solid #339933; background:#ccf9b9; }
+.files .log li span.cancel{ position:absolute; top:5px; right:5px; width:20px; height:20px; background:url('cancel.png') no-repeat; cursor:pointer; }

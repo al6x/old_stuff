@@ -1,0 +1,40 @@
+<% if editors.size > 0 %>
+<table class="<%= css || '' %> padding <% if @wide %>wide<% end %>"><tbody>
+	<% if title %>	
+    <tr class="color <%= title_css ? title_css : "" %>">
+        <td colspan="3"><div class="font h2"><%== title %></div></td>
+    </tr>
+	<% end %>	
+	<% editors.each_with_index do |child, index| %>
+	<% label = @labels[index] %>
+	<tr>
+		<% if label %>    
+        <td width="30%" style="vertical-align:middle"><div class="font"><%== label %>:</div></td>        
+		<% end %>
+		<% if child.size == 1 %>
+		<td colspan="<%= (label ? 0 : 1) + 2 %>" style="vertical-align:middle">
+${child[0]}
+		</td>
+		<% elsif child.size > 1 %>	
+		<td style="vertical-align:middle">
+${child[0]}
+		</td>
+		<td style="vertical-align:middle;" width="1%">
+			<table class="container"><tbody>
+				<tr>
+			<% child[1..child.size].each do |e| %>
+					<td>
+${e}						
+					</td>
+					<td>&nbsp;</td>
+			<% end %>
+				</tr>
+			</tbody></table>
+		</td>		
+		<% else %>
+		<% raise "Invalid format for #{index} Line of :#{name} Attributes Container!" %>
+		<% end %>					
+    </tr>
+	<% end %>	
+</tbody></table>
+<% end %>

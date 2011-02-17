@@ -1,0 +1,12 @@
+- content_tag :div, object.merge_html_attributes(:class => " dselectable_item dthumb_item") do
+	.dhover_controls_container
+		.dhover_controls= object.controls.join(' ') if object.controls?
+		
+		%a._image_box{:href => object.url}
+			%img{:src => object.thumb}				
+			
+		%a{:href => object.url}
+			- if object.url? or object.name?
+				.dtitle= object.name if object.name?			
+			- else
+				.dtitle= "(#{t(:empty)})"

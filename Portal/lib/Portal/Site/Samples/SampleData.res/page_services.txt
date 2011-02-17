@@ -1,0 +1,53 @@
+<p>Proin vestibulum, leo quis accumsan interdum, felis nisl tristique enim, non rhoncus tellus justo at nulla. Phasellus in velit. Vivamus porttitor sagittis ipsum. Nullam in nisi ut metus imperdiet condimentum. Nullam malesuada sapien quis mi. Suspendisse porttitor ipsum. Phasellus urna augue, fringilla quis, ultrices ac, iaculis vitae, orci. Nulla in dui. Sed consectetuer. Proin elementum ligula eu felis blandit varius. Nunc sapien.</p>
+<p>
+<table border="0">
+<tbody>
+</tbody>
+<tbody>
+</tbody>
+<tbody>
+</tbody>
+<tbody>
+<tr>
+<td>
+<div class="leftitem">
+<p class="bold">SERVICE 1</p>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam orci elit, fermentum in, vulputate rutrum, tincidunt id, urna. Duis sed elit. Vivamus adipiscing. Nam sed urna non nulla imperdiet pharetra. Nullam scelerisque, sapien elementum interdum blandit, ipsum diam pretium dolor, nec commodo massa nulla nec lorem</p>
+</div>
+</td>
+<td>
+<div class="rightitem">
+<p class="bold">SERVICE 2</p>
+<p>Vestibulum malesuada. Suspendisse non turpis sed erat tempus cursus. Nullam molestie, odio id pulvinar aliquet, urna velit vestibulum lorem, a ultrices neque dui sit amet nisl. Donec ut lacus feugiat augue mollis eleifend. Donec et orci vestibulum lacus aliquam laoreet. Praesent nec nunc interdum pede congue pellentesque. Sed nunc pede, gravida id, porta eu, consectetuer ac, pede. Nam interdum nisl vel lacus.</p>
+</div>
+</td>
+<td>
+<div class="leftitem">
+<p class="bold">SERVICE 3</p>
+<p>Proin vestibulum, leo quis accumsan interdum, felis nisl tristique enim, non rhoncus tellus justo at nulla. Phasellus in velit. Vivamus porttitor sagittis ipsum. Nullam in nisi ut metus imperdiet condimentum. Nullam malesuada sapien quis mi. Suspendisse porttitor ipsum. Phasellus urna augue, fringilla quis, ultrices ac, iaculis vitae, orci. Nulla in dui. Sed consectetuer. Proin elementum ligula eu felis blandit varius. Nunc sapien.</p>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="rightitem">
+<p class="bold">SERVICE 4</p>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam orci elit, fermentum in, vulputate rutrum, tincidunt id, urna. Duis sed elit. Vivamus adipiscing. Nam sed urna non nulla imperdiet pharetra. Nullam scelerisque, sapien elementum interdum blandit, ipsum diam pretium dolor, nec commodo massa nulla nec lorem</p>
+</div>
+</td>
+<td>
+<div class="leftitem">
+<p class="bold">SERVICE 5</p>
+<p>Vestibulum malesuada. Suspendisse non turpis sed erat tempus cursus. Nullam molestie, odio id pulvinar aliquet, urna velit vestibulum lorem, a ultrices neque dui sit amet nisl. Donec ut lacus feugiat augue mollis eleifend. Donec et orci vestibulum lacus aliquam laoreet. Praesent nec nunc interdum pede congue pellentesque. Sed nunc pede, gravida id, porta eu, consectetuer ac, pede. Nam interdum nisl vel lacus.</p>
+</div>
+</td>
+<td>
+<div class="rightitem">
+<p class="bold">SERVICE 6</p>
+<p>Proin vestibulum, leo quis accumsan interdum, felis nisl tristique enim, non rhoncus tellus justo at nulla. Phasellus in velit. Vivamus porttitor sagittis ipsum. Nullam in nisi ut metus imperdiet condimentum. Nullam malesuada sapien quis mi. Suspendisse porttitor ipsum. Phasellus urna augue, fringilla quis, ultrices ac, iaculis vitae, orci. Nulla in dui. Sed consectetuer. Proin elementum ligula eu felis blandit varius. Nunc sapien.</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</p>

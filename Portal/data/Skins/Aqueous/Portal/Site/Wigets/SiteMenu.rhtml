@@ -1,0 +1,23 @@
+<% unless @level1.empty? %>
+
+<div id="nav">                                
+	<% @level1.each_with_index do |link, index| %>
+	<% active = (index == @active) ? "active" : "" %>
+	<div class="mitem <%= active %>">                        
+		${link}
+	</div>
+	<% end %>	
+</div>
+
+<% if @active and !@level2[@active].empty? %>
+<div id="subnav">
+	<div class="mitem2">&nbsp;</div>
+	<% @level2[@active].each do |link| %>	
+	<div class="mitem2">
+		${link}
+	</div>    
+	<% end %>
+</div>
+<% end %>
+
+<% end %>
