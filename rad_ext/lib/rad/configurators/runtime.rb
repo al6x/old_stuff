@@ -1,0 +1,2 @@
+class Runtime < Abstract
+end

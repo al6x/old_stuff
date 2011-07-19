@@ -1,0 +1,12 @@
+= b.title form_title_for(@page)
+- b.form_for :page, @page, action: form_action do |f|
+  = f.error_messages
+
+  = f.text_field :name, required: true
+  = f.text_area :original_text, label: t(:text)
+  
+  = common_fields_for_item f    
+
+  = f.line
+
+  = f.line ok_button, cancel_button

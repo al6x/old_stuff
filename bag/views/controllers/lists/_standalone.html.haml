@@ -1,0 +1,16 @@
+- b.list id: object.dom_id, class: '_item _sortable_container' do |o|
+  - o.html_attributes 'data-update_order_url' => container_order_item_path(object), 'data-item_class' => '_item'
+  - o.name h(object.name)
+  - o.controls do |a|
+    - a.add link_to(t(:add_task), new_task_path(container_id:  object, index: 0, format: :js)) if can? :update, object
+    - a.add link_to(t(:edit), edit_list_path(object, format: :js)) if can? :update, object
+    - a.add link_to(t(:delete), destroy_list_path(object, format: :js), method: :post, confirm: t(:are_you_shure)) if can? :destroy, object    
+    - a.add link_to(t(:move), '#', class: '_handle') if embedded? and can?(:update, object)
+
+  - o.tags item_tags(object)
+  - o.details item_details(object)
+  
+  - o.content do |a|
+    - set_container object do
+      - object.ordered_items.each do |item|
+        - a.add render_item(item, :embedded)

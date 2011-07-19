@@ -1,0 +1,18 @@
+- b.page id: object.dom_id, class: "_item _sortable_container" do |o|
+  - o.html_attributes 'data-update_order_url' => container_order_item_path(object), 'data-item_class' => '_item'
+  - o.name h(object.name)
+  - o.text object.text
+  / - o.icon object.icon.url # TODO files_stub
+  - o.controls do |a|
+    - a.add link_to(t(:edit), edit_page_path(object, format: :js)) if can? :update, object
+    - a.add link_to(t(:delete), destroy_page_path(object, format: :js), method: :post, confirm: t(:are_you_shure)) if can? :destroy, object
+
+  - o.toolbar controls_for_creating_items(Item.embeddable_items, container_id: object, format: :js) if can? :update, object
+  
+  - o.tags item_tags(object)
+  - o.details item_details(object)
+  
+  - o.content do
+    - set_container object do
+      - object.ordered_items.each do |item|
+        = render_item item, :embedded

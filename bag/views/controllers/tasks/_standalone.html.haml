@@ -1,0 +1,11 @@
+- b.note id: object.dom_id, class: '_item' do |o|
+  - o.name h(object.name)
+  - o.text h(object.text)
+  - o.controls do |a|
+    - a.add link_to(t(:edit), edit_task_path(object, format: :js)) if can? :update, object
+    - a.add link_to(t(:delete), destroy_task_path(object, format: :js), method: :post, confirm: t(:are_you_shure)) if can? :destroy, object
+
+  - o.tags item_tags(object)
+  - o.details item_details(object)
+  
+  .todo add state

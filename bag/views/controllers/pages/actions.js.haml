@@ -1,0 +1,16 @@
+- case action_name
+- when :new
+  - form = js b.dialog(render('form', locals: {form_action: create_page_path}))
+  target.showDialog('#{form}');
+  
+- when :edit
+  - form = js b.inplace(render('form', locals: {form_action: update_page_path(@page)}))
+  target.edit_inplace('#{@page.dom_id}', '#{form}')
+  
+- when :update
+  - html = js render('standalone', object: @page)
+  target.update_inplace('#{@page.dom_id}', '#{html}');
+  
+  
+- else
+  - must_be.never_called

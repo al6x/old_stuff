@@ -1,0 +1,10 @@
+- b.thumb id: object.dom_id, class: '_item' do |o|
+  - o.name h(object.file.file_name)
+  - o.thumb object.smart_url(:thumb)
+  - o.url object.file.url
+  - o.controls do |a|
+    - a.add link_to(t(:edit), edit_file_path(object, container_id: container, view: 'folder_thumb', format: :js)) if can? :update, object
+    - a.add link_to(t(:delete), destroy_file_path(object, container_id: container, format: :js), method: :post, confirm: t(:are_you_shure)) if can? :destroy, object
+    - a.add link_to(t(:move), '#', class: '_handle') if can? :update, container
+    - a.add link_to(t(:file), object.file.url(:original, false)) # TODO_LOW add cache for images without timestamp in nginx
+    - a.add link_to(t(:go), show_file_path(object))

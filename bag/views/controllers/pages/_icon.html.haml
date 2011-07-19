@@ -1,0 +1,7 @@
+- b.thumb class: '_item' do |o|
+  / - o.icon object.icon.url # TODO files_stub
+  - o.url show_page_path(object)
+  - o.name h(object.name)
+  - o.text object.text
+  - o.style :line
+  - o.tags item_tags(object)

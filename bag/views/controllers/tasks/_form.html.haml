@@ -1,0 +1,16 @@
+= b.title form_title_for(@task)
+- b.form_for :task, @task, action: form_action do |f|
+  = f.error_messages
+  
+  = hidden_fields_for_embedded_form
+
+  = f.text_field :name, required: true
+  - if embedded? and (@task.text.blank? or @task.original_text.blank?)
+    - b.more id: "task_text_for_#{@task.dom_id}", name: t(:show_more) do
+      = f.text_area :original_text, label: false
+  - else
+    = f.text_area :original_text, label: false
+
+  = f.line
+  
+  = f.line ok_button, cancel_button

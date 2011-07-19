@@ -1,0 +1,7 @@
+ru:
+  name: "Имя"
+  comments_count:
+    one: "%{count} комментарий"
+    few: "%{count} комментария"
+    many: "%{count} комментариев"
+    other: "%{count} комментариев"

@@ -1,0 +1,42 @@
+- case action_name
+- when :new
+  - form = js b.dialog(render('form', locals: {form_action: create_task_path}))
+  target.showDialog('#{form}');
+  
+- when :edit
+  - form = js b.inplace(render('form', locals: {form_action: update_task_path(@task)}))
+  target.edit_inplace('#{@task.dom_id}', '#{form}')
+  
+- when :update
+  - html = js render('standalone', object: @task)
+  target.update_inplace('#{@task.dom_id}', '#{html}');
+
+- when :refresh  
+  - html = js render('standalone', object: @task)
+  $('##{@task.dom_id}').replaceWith('#{html}');
+  
+  
+- when :new_embedded
+  - form = js b.inplace(render('form', locals: {form_action: create_task_path}))
+  var container = $('##{container.dom_id} ._container:first');
+  target.add_inplace(container, '#{form}', 'prepend');
+  
+- when :edit_embedded
+  - form = js b.inplace(render('form', locals: {form_action: update_task_path(@task)}))
+  target.edit_inplace('#{@task.dom_id}', '#{form}');
+
+- when :update_embedded
+  - html = js render(view_from_params, object: @task)
+  target.update_inplace('#{@task.dom_id}', '#{html}');      
+  
+- when :destroy_embedded
+  $('##{@task.dom_id}').remove();
+    
+- when :refresh_embedded
+  - html = js render(view_from_params, object: @task)
+  $('##{@task.dom_id}').replaceWith('#{html}');
+  = render 'move_finished_task_to_bottom' if @task_finished
+
+
+- else
+  - must_be.never_called

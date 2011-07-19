@@ -1,0 +1,33 @@
+- case action_name
+- when :new
+  - form = js b.dialog(render('form', locals: {form_action: create_list_path}))
+  target.showDialog('#{form}');
+  
+- when :edit
+  - form = js b.inplace(render('form', locals: {form_action: update_list_path(@list)}))
+  target.edit_inplace('#{@list.dom_id}', '#{form}')
+  
+- when :update
+  - html = js render('standalone', object: @list)
+  target.update_inplace('#{@list.dom_id}', '#{html}');
+
+
+- when :new_embedded
+  - form = js b.inplace(render('form', locals: {form_action: create_list_path}))
+  var container = $('##{container.dom_id} ._container:first');
+  target.add_inplace(container, '#{form}');
+
+- when :edit_embedded
+  - form = js b.inplace(render('form', locals: {form_action: update_list_path(@list)}))
+  target.edit_inplace('#{@list.dom_id}', '#{form}')  
+
+- when :update_embedded
+  - html = js render(view_from_params, object: @list)
+  target.update_inplace('#{@list.dom_id}', '#{html}');
+
+- when :destroy_embedded
+  $('##{@list.dom_id}').remove();
+  
+
+- else
+  - must_be.never_called

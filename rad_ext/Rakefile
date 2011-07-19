@@ -1,0 +1,12 @@
+require 'rake_ext'
+
+project(
+  name: "rad_ext",
+  gem: true,
+  summary: "Extensions for Rad Framework",
+
+  bin: 'bin',
+
+  author: "Alexey Petrushin",
+  homepage: "http://github.com/alexeypetrushin/rad_ext"
+)

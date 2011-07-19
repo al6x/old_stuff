@@ -1,0 +1,4 @@
+var task = $('#<%= @task.dom_id %>');
+var container = task.parents('._container:first');
+var latest_active_task = container.find('> ._item:not(._finished):last');
+if(!latest_active_task.blank()) task.remove().insertAfter(latest_active_task);

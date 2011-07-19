@@ -1,0 +1,13 @@
+= b.title form_title_for(@list)
+- b.form_for :list, @list, action: form_action do |f|
+  = f.error_messages
+  
+  = hidden_fields_for_embedded_form
+
+  = f.text_field :name, required: true
+  
+  = common_fields_for_item f
+
+  = f.line 
+
+  = f.line ok_button, cancel_button

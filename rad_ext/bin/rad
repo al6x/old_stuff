@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+# sadly it's impossible to pass '-Ku' argument to ruby via shebang, use RUBYOPT to set it, something like:
+# $ export RUBYOPT="-Ku -rrubygems"        
+
+require 'rad'
+require 'rad_ext/utils/cli_helper'
+
+# version
+if ARGV.first =~ /-v|version|-version/
+  puts "Rad #{Rad::VERSION}"
+  exit
+end
+
+# mode and environment
+mode = (%w(server console).include? ARGV.first) ? ARGV.shift : 'server'
+environment = (%w(production development test).include? ARGV.first) ? ARGV.shift : :development
+rad.mode = environment
+
+# config options
+ARGV.each do |expression|
+  name, value = expression.split('=')
+  name.sub!(/^-+/, '')
+  if name =~ /\./
+    component_name, key = name.split('.').collect{|s| s.to_sym}
+    rad.config[component_name] ||= {}
+    rad.config[component_name][key] = value
+  else
+    rad.config[name.to_sym] = value
+  end
+end
+  
+# running
+Rad::CliHelper.send "run_#{mode}"

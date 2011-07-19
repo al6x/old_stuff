@@ -1,0 +1,15 @@
+- b.list_item h(object.name), id: object.dom_id, class: '_item' do |o|
+  - o.controls do |a|
+    - a.add link_to(t(:edit), edit_task_path(object, format: :js, container_id: container)) if can? :update, object
+    - a.add link_to(t(:delete), destroy_task_path(object, container_id: container, format: :js), method: :post, confirm: t(:are_you_shure)) if can? :update, object
+    - a.add link_to(t(:move), '#', class: '_handle') if can?(:update, container)
+    - a.add link_to(t(:go), show_task_path(object))
+
+  - o.details t(:comments_count, count: object.comments_count)  if object.comments_count > 0
+  
+  - if object.active?
+    - o.finished false
+    - o.check_box check_box_tag('', false, 'data-url' => state_task_path(object, event: 'finish', container_id: container), class: '_onclick_checkbox') if can? :update, object
+  - else
+    - o.finished true
+    -  o.check_box check_box_tag('', true, 'data-url' => state_task_path(object, event: 'activate', container_id: container), class: '_onclick_checkbox') if can? :update, object
