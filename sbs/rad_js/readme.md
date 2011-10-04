@@ -1,0 +1,1 @@
+# JavaScript support for Rad Framework (MooTools, jQuery)

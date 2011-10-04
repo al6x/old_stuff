@@ -1,0 +1,12 @@
+require 'rake_ext'
+
+project(
+  name: "js",
+  official_name: "rad_js",
+  gem: true,
+  summary: "JavaScript support for Rad Framework (MooTools, jQuery)",
+  dirs: 'static',
+
+  author: "Alexey Petrushin",
+  homepage: "http://github.com/alexeypetrushin/rad_js"
+)

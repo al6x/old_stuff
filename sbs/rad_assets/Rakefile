@@ -1,0 +1,11 @@
+require 'rake_ext'
+
+project(
+  name: "assets",
+  official_name: "rad_assets",
+  gem: true,
+  summary: "Assets for Rad Framework",
+
+  author: "Alexey Petrushin",
+  homepage: "http://github.com/alexeypetrushin/rad_assets"
+)
