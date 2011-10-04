@@ -1,0 +1,18 @@
+= b.title form_title_for(@model)
+- b.form_for :model, @model, action: form_action, enctype: "multipart/form-data" do |f|
+  = f.error_messages
+
+  = f.text_field :name
+  = f.text_field :price
+  / = f.text_field :quantity
+  
+  = f.text_area :original_text, label: false, required: true
+  
+  = f.attachments :attachments_as_attachments, label: t(:attachments) unless rad.user.anonymous?
+  
+  = common_fields_for_item f
+  / = f.text_field :currency  
+
+  = f.line
+  
+  = f.line ok_button, cancel_button

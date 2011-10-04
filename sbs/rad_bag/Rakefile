@@ -1,0 +1,12 @@
+require 'rake_ext'
+
+project(
+  name: "bag",
+  official_name: "rad_bag",
+  summary: "Simple and handy Organizer",
+  dirs: ['app', 'config'],
+  gem: true,
+
+  author: "Alexey Petrushin",
+  homepage: "http://github.com/alexeypetrushin/rad_bag"
+)

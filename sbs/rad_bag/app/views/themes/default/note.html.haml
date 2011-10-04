@@ -1,0 +1,12 @@
+- tag :div, object.merge_html_attributes(class: " the_note m_selectable") do
+  - if object.controls?
+    .m_hover_controls= object.controls.join(' ')
+
+  - if object.name?
+    %h1.m_title= object.name
+
+  .l_text.m_markup
+    = object.text
+    .css_clear
+
+  = render themed_partial('/shared/details'), object: object

@@ -1,0 +1,34 @@
+ru:
+  buy_product: "Купить"
+  checkout: "Купить"
+  currency: "Валюта"    
+  # quantity: "Количество"
+  price: "Цена"  
+  store: "Магазин"  
+  
+  
+  # Product
+  product: "Товар"
+  create_product: "Создать продукт" 
+  product_created: "Продукт создан"
+  product_destroyed: "Продукт удален"
+  product_updated: "Продукт обновлен"  
+  
+  # Order
+  checkout_details: "Вы покупаете '%{name}' за %{price}"
+  order_created: "Вы купили '%{name}', за %{price}. Спасибо за покупку."
+  order_details: "Примечания"
+  order_details_description: "Адрес доставки, замечания"
+  order_name: "Ваше имя"
+  order_phone: "Ваш телефон"  
+  
+  # Order Mailer
+  submit_order_text: |
+    Заказ из %{store_url}
+    Продукт: %{product_url} заказан за %{product_price}.
+    Покупатель:
+      Имя:        %{buyer_name}
+      Телефон:    %{buyer_phone}
+      Примечания: 
+    %{buyer_details}
+  submit_order_title: "Заказ: продукт '%{product_name}' за %{product_price}"

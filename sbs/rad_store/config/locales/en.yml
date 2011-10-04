@@ -1,0 +1,33 @@
+en:
+  buy_product: "Buy"
+  checkout: "Buy"
+  currency: "Currency"    
+  # quantity: "Quantity"
+  price: "Price"
+  store: "Store"    
+  
+  # Product
+  product: "Product"
+  create_product: "Create product" 
+  product_created: "Product created"
+  product_destroyed: "Product deleted"
+  product_updated: "Product updated"
+  
+  # Order
+  checkout_details: "You are buying '%{name}' for %{price}"  
+  order_created: "You are buyed '%{name}' for %{price}. Thank You for purchase."
+  order_details: "Details"
+  order_details_description: "Shipping addrress, other details"
+  order_name: "Your name"
+  order_phone: "Your phone"
+  
+  # OrderMailer
+  submit_order_text: |
+    Order from %{store_url}
+    Product %{product_url} has been purchased for %{product_price}.
+    Buyer:
+      Name:    %{buyer_name}
+      Phone:   %{buyer_phone}
+      Details: 
+    %{buyer_details}                     
+  submit_order_title: "Order: product '%{product_name}' for %{product_price}"

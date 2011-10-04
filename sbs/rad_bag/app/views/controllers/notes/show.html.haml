@@ -1,0 +1,11 @@
+- b.note id: @model.dom_id do |o|
+  - o.name h(@model.name)
+  - o.text @model.text
+
+  - o.controls do |a|
+    - a.add link_to(t(:edit), edit_path(@model, format: :js)) if can? :update, @model
+    - a.add link_to(t(:delete), destroy_path(@model, format: :js), method: :post, confirm: t(:are_you_shure)) if can? :destroy, @model
+
+  - o.attachments @model.attachments_as_attachments
+  - o.tags render_item_tags(@model)
+  - o.details render_item_details(@model)

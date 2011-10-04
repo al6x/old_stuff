@@ -1,0 +1,14 @@
+= b.title t(:checkout)
+
+= b.text t(:checkout_details, name: @model.name, price: @model.price_with_currency)
+
+- b.form_for :order, @order, action: form_action do |f|
+  = f.error_messages
+
+  = f.text_field :name,      label: t(:order_name),      required: true
+  = f.text_field :phone, label: t(:order_phone), required: true
+  = f.text_area  :details,   label: t(:order_details),   description: t(:order_details_description)
+
+  = f.line
+  
+  = f.line ok_button, cancel_button

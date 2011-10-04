@@ -1,0 +1,14 @@
+- b.product id: @model.dom_id do |o|
+  - o.name h(@model.name)
+  - o.text @model.text
+  - o.price @model.price
+  - o.currency rad.store.currency
+  - o.buy link_to(t(:buy_product), buy_path(@model, format: :js))
+
+  - o.controls do |a|
+    - a.add link_to(t(:edit), edit_path(@model, format: :js)) if can? :update, @model
+    - a.add link_to(t(:delete), destroy_path(@model, format: :js), method: :post, confirm: t(:are_you_shure)) if can? :destroy, @model
+
+  - o.attachments @model.attachments_as_images
+  - o.tags render_item_tags(@model)
+  - o.details render_item_details(@model)

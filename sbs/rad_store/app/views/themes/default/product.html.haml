@@ -1,0 +1,30 @@
+- tag :div, object.merge_html_attributes(class: " the_product m_selectable") do
+  - if object.controls?
+    .m_hover_controls= object.controls.join(' ')
+  
+  - if object.name?
+    %h1.m_title= object.name
+  
+  .l_text.m_markup
+    - if object.attachments?
+      .left
+        %a{href: object.attachments.first.url}
+          %img{src: object.attachments.first.thumb_url}
+
+    - if object.price? or object.currency? or object.buy?
+      .right.l_cart
+        .l_price= "#{object.price} #{object.currency}"
+        .l_buy= object.buy              
+  
+    = object.text        
+    
+    - if object.attachments.size > 1
+      .space
+      
+      - object.attachments[1..-1].each do |attachment|
+        .left
+          %a{href: attachment.url}
+            %img{src: attachment.thumb_url}
+      .css_clear          
+  
+  = render themed_partial('/shared/details'), object: {tags: object.tags, details: object.details}.to_openobject

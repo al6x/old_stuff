@@ -1,0 +1,17 @@
+= b.title form_title_for(@model)
+- b.form_for :model, @model, action: form_action, enctype: "multipart/form-data" do |f|
+  = f.error_messages
+
+  = f.text_field :name, required: true
+  = f.text_field :query_as_string, required: true, label: t(:query), description: t(:query_description)
+
+  - values = Models::Selector::VIEWS.collect{|view| [t(view), view]}
+  = f.select :view, values, required: true
+
+  - common_fields_for_item f do
+    = f.text_area :original_text, label: t(:selector_description)
+    = f.attachments :attachments_as_attachments, label: t(:attachments) unless rad.user.anonymous?
+
+  = f.line
+
+  = f.line ok_button, cancel_button

@@ -1,0 +1,45 @@
+en:
+  # Selectors
+  create_selector: "Create Selector"
+  invalid_selectors: "Invalid selector name"
+  query: "Query"
+  query_description: |
+    Select tags to display, for example - "News, Public". 
+    You can also use special _class tag, for example to select only products type "Featured, _class:Models::Product".
+  query_errors: "There are errors in query"
+  query_too_long: "Query is too long"
+  selector_created: "Selector created"
+  selector_destroyed: "Selector deleted"
+  selector_description: "Description"
+  selector_updated: "Selector updated"
+
+  # Note
+  create_note: "Create note"
+  ether_name_or_text_should_be_filled: "Ether name or text should be filled"
+  note_created: "Note created"
+  note_destroyed: "Note deleted"
+  note_updated: "Note updated"
+
+  # Page
+  add_embedded_item: "Add"
+  create_page: "Create Page"
+  page_created: "Page created"
+  page_destroyed: "Page deleted"
+  page_updated: "Page updated"
+
+  # Container
+  order_updated: "Order updated"
+
+  # List
+  add_task: "Add Task"
+  create_list: "Create List"
+  list_created: "List created"
+  list_destroyed: "List deleted"
+  list_updated: "List updated"
+
+  # Task
+  create_task: "Create Task"
+  state_updated: "State updated"
+  task_created: "Task created"
+  task_destroyed: "Task deleted"
+  task_updated: "Task updated"
