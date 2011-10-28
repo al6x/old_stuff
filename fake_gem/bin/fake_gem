@@ -1,0 +1,49 @@
+#!/usr/bin/env ruby
+
+if ARGV.empty? or %w(-h --help help).any?{|k| ARGV.include? k}
+  puts <<-TEXT
+  fake_gem makes any directory looks like ruby gem.
+
+  Usage:
+    $ fake_gem ~/projects ~/other_projects
+
+  Details:
+    Let's suppose Your projects are located
+    in the /my_projects dir, and there is 3 folders:
+    ~/my_projects
+      /app
+      /lib1
+      /lib2
+
+    You want lib1 and lib2 to be available as a gems
+    while You are developing Your app, do following steps:
+    1. mark lib1 as fake_gem:
+      create /projects/lib/fake_gem file
+      and add there following lines:
+        name: lib1
+        libs: lib
+    2. do the same for lib2
+    3. enable fake_gem in current bash session, type:
+      $ fake_gem ~/projects
+
+    All done, now lib1 and lib2 will be
+    availiable as real gems in ruby scripts.
+TEXT
+  exit
+end
+
+dir = File.expand_path("#{__FILE__}/../..")
+
+rubyopt = ENV['RUBYOPT'] || ""
+rubyopt = "#{rubyopt} -r#{dir}/lib/fake_gem.rb" unless rubyopt =~ /fake_gem/
+
+fake_gem_paths = (ENV['FAKE_GEM_PATHS'] || "").split(':')
+fake_gem_paths = (fake_gem_paths + ARGV).uniq.join(':')
+
+puts <<-TEXT
+Please execute script below or add it to Your bash profile (usually ~/.profile)
+
+export RUBYOPT="#{rubyopt}"
+export FAKE_GEM_PATHS="#{fake_gem_paths}"
+
+TEXT

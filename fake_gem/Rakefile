@@ -1,0 +1,14 @@
+require 'rake_ext'
+
+project(
+  name: "fake_gem",
+  gem: true,
+  summary: "Makes any directory looks like Ruby Gem",
+
+  bin: 'bin',
+  executables: ['fake_gem'],
+  dirs: %w(bin),
+
+  author: "Alexey Petrushin",
+  homepage: "http://github.com/alexeypetrushin/fake_gem"
+)
