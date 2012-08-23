@@ -1,0 +1,19 @@
+- logo_url, the_title = rad.config.logo_url, rad.config.title
+- b.top_panel do |o|
+  - o.logo_image tag(:a, image_tag(logo_url), href: '/') if logo_url
+  - o.logo_text tag(:a, the_title, href: '/') if the_title
+
+  - if breadcrumb?
+    - o.left do |a|
+      - breadcrumb.each do |o|
+        - a.add o
+
+  - o.right do |a|
+    - if Models::User.current.registered?
+      - a.add link_to(Models::User.current.name, user_path(Models::User.current))
+      - a.add link_to(t(:logout), logout_path)
+    - else
+      - a.add link_to(t(:anonymous), login_path)
+      - a.add link_to(t(:login), login_path)
+      - a.add link_to(t(:signup), signup_path)
+    - rad.extension(:user_menu, self, a)

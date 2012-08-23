@@ -1,0 +1,12 @@
+require 'rake_ext'
+
+project \
+  name: "saas",
+  official_name: "rad_saas",
+
+  summary: "SaaS support for RadKit Framework",
+
+  author: "Alexey Petrushin",
+  homepage: "http://github.com/alexeypetrushin/rad_saas"
+
+remove_task 'gem:release'

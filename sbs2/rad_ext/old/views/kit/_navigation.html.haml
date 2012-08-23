@@ -1,0 +1,19 @@
+- menu, additional_menu = rad.config.menu, rad.config.additional_menu
+- if menu or additional_menu
+  - b.navigation do |o|
+    / - o.items do ||
+    - if menu
+      - o.left do |a|
+        - menu.each do |name, link|
+          - if request.path.include? link
+            - a.add content: h(name), active: true
+          - else
+            - a.add link_to(h(name), h(link))
+
+    - if additional_menu
+      - o.right do |a|
+        - additional_menu.each do |name, link|
+          - if request.path.include? link
+            - a.add content: h(name), active: true
+          - else
+            - a.add link_to(h(name), h(link))

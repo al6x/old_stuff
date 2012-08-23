@@ -1,0 +1,5 @@
+- if object.content?
+  - tag :div, object.merge_html_attributes(class: " l_item") do
+    - if object.check_box?
+      .l_check_box= object.check_box
+    .l_content= object.content

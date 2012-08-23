@@ -1,0 +1,4 @@
+session:
+  key: users_development
+  secret: my_secret_token
+url_root: /

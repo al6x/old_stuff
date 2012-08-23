@@ -1,0 +1,23 @@
+- tag :li, object.merge_html_attributes(class: " comment comment-single") do
+  .comment-profile-wrapper.left
+    .comment-profile
+      .comment-gravatar= object.avatar if object.avatar?
+      .comment-author= object.owner
+        
+  
+  .comment-content-wrapper.right
+    .comment-content-wrapper-2
+      .comment-body
+        .comment-arrow
+        - if object.details?
+          .post-date
+            .right
+              = object.details.to_a.join(', ') if object.details?
+              = object.controls.join(' ') if object.controls?
+            .clearer &nbsp;
+        
+        .comment-text= object.text
+
+        .clearer &nbsp;
+
+  .clearer &nbsp;

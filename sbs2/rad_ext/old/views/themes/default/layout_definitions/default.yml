@@ -1,0 +1,27 @@
+layout_template: default
+slots:
+  top_panel: "/kit/top_panel"
+  navigation: "/kit/navigation"
+  bottom_aspects:
+  - "/kit/aspects/comments"
+  tools:
+  - "/tools/buttons"
+  - "/tools/search"
+  - "/tools/tags"
+  - "/tools/access"
+  - "/tools/context_menu"
+  bottom_panel: "/kit/bottom_panel"
+
+# dashboard:
+#   navigation:
+#     - navigation
+#
+#   tools:
+#     - buttons
+#     - search
+#     - tags
+#     - access
+#     - context_menu
+#
+#   bottom_aspects:
+#     - comments

@@ -1,0 +1,44 @@
+= render '/rad/face/demo/shared/top_navigation_bottom'
+
+= render '/rad/face/demo/shared/tools'          
+
+- options = b.options class: "_sortable_container" do |o|
+  - o.name samples.name
+  - o.controls samples.controls
+  - o.tags samples.tags
+  
+= b.divider "Folder (Thumb without Title)"
+- b.folder options do |o|
+  - o.content do
+    - 12.times do 
+      - attachment = random_attachment
+      - b.thumb do |o|
+        - o.image attachment
+        - o.url attachment.url
+        - o.controls(samples.controls + [link_to('move', '#', class: '_handle')])
+      
+      
+= b.divider "Folder (Thumb with Title)"
+- b.folder options do |o|
+  - o.content do
+    - 3.times do |i|
+      - attachment = random_attachment
+      - b.thumb name: "The Salvator" do |o|
+        - o.image attachment
+        - o.url attachment.url
+        - o.controls(samples.controls + [link_to('move', '#', class: '_handle')])
+
+= b.divider "Folder (Lines)"
+- b.folder options do |o|
+  - o.content do
+    - 3.times do |i|
+      - attachment = random_attachment
+      - b.line do |o|
+        - o.name samples.name
+        - o.image attachment
+        - o.url attachment.url
+        - o.text samples.detail_text
+        - o.controls(samples.controls + [link_to('move', '#', class: '_handle')])
+        - unless i == 2
+          - o.tags samples.tags      
+          - o.details samples.details

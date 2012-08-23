@@ -1,0 +1,8 @@
+url_root: /
+email: admin@localhost.net
+host: localhost
+# open_id_store: :file
+port: 4000
+
+avatars_path: ""
+# avatars_path: "https://<your_bucket_name>.s3.amazonaws.com"

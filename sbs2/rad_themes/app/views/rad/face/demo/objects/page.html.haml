@@ -1,0 +1,17 @@
+= render '/rad/face/demo/shared/top_navigation_bottom'
+
+= render '/rad/face/demo/shared/tools'          
+
+- b.page class: "_sortable_container" do |o|
+  - o.name "Pictures for Terminator Movie"
+  - o.controls samples.controls
+  - o.toolbar [link_to('Note', '#'), link_to('Folder', '#')]
+  - o.tags samples.tags
+  - o.image url_for("/static/demo/images/img1_thumb.jpg")
+  - o.content do
+    = render('page/note', locals: {text: "#{image_tag(url_for("/static/demo/images/img1_thumb.jpg"))} #{samples.text} #{samples.text}"})
+    = render('page/note', locals: {text: samples.text})
+    = render('page/folder')
+    = render('page/note', locals: {text: samples.text})      
+
+= render '/rad/face/demo/shared/comments'

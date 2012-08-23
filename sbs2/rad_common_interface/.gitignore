@@ -1,0 +1,13 @@
+*~
+.DS_Store
+.require_paths
+Thumbs.db
+tmp
+
+static/common_interface/static/themes/default/.sass-cache/
+
+runtime/public/common_interface
+runtime/public/jquery
+runtime/public/mootools
+
+runtime/log

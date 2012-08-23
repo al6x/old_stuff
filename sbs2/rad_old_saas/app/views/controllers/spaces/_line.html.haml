@@ -1,0 +1,9 @@
+- edit = link_to(t(:edit), edit_space_path(object, account_id: @account, format: :js))
+- delete = link_to(t(:delete), destroy_space_path(object, account_id: @account, format: :js), method: :post, confirm: t(:are_you_shure))
+
+- controls = (object.name == 'default') ? [edit] : [edit, delete]
+- b.table_row id: object.dom_id do |o|
+	- o.content do |a|
+		- a.add object.name
+		- a.add object.space_tags.join(', ')
+		- a.add controls.join(" | ")

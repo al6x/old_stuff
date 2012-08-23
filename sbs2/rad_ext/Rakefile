@@ -1,0 +1,11 @@
+require 'rake_ext'
+
+project \
+  name: "kit",
+  official_name: 'rad_ext',
+  summary: "Rapid Application Development Kit for Rad Framework",
+  dirs: %w(assets lib locales),
+  gem: true,
+
+  author: "Alexey Petrushin",
+  homepage: "http://github.com/alexeypetrushin/rad_ext"

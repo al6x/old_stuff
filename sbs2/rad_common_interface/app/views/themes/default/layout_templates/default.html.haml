@@ -1,0 +1,22 @@
+.css_box
+  - content = capture do
+    - if (top_aspects = yield :top_aspects).present?
+      .the_aspects= top_aspects
+    - if (content = yield :content).present?
+      .the_content= content
+    - if (aspects = yield :aspects).present? or (bottom_aspects = yield :bottom_aspects).present?
+      .the_aspects
+        = aspects
+        = bottom_aspects
+  - if (tools = yield :tools).present?
+    %table.css_table
+      %tbody
+        %tr
+          %td.css_td1        
+            = content
+          %td.css_td2
+            .the_tools
+              = tools
+  - else
+    .css_box
+      = content

@@ -1,0 +1,13 @@
+- tag :div, object.merge_html_attributes(class: " selector") do
+  - if object.name?
+    %h1= object.name
+    
+  - if object.text?
+    .m_markup.so_markup
+      = object.text
+      .css_clear
+    
+  - if object.controls?
+    .post-date.item_controls= object.controls.join(' ')
+  
+  .clear

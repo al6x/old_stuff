@@ -1,0 +1,57 @@
+.m_tiny {color: @light_color !important;
+  a     {color: @light_color !important;}}
+.m_bold {font-weight: bold;}
+  
+.m_hidden {display: none !important;}
+
+
+.s_small_text ()  {font-size: 90%;}
+.s_normal_text () {font-size: 110%; font-weight: bold;}
+.s_big_text ()    {font-size: 180%; font-weight: bold; padding-top: @normal; padding-bottom: @normal; margin-top: 0px; margin-bottom: 0px;}
+
+
+.s_a_link () {color: @select_color; text-decoration: underline; 
+  &:visited  {color: @select_color;}}
+.s_link () {
+  a        {.s_a_link;}}
+
+
+.s_round_tl (@r: @normal_radius) {-moz-border-radius-topleft: @r; -webkit-border-top-left-radius: @r; border-top-left-radius: @r;}
+.s_round_tr (@r: @normal_radius) {-moz-border-radius-topright: @r; -webkit-border-top-right-radius: @r; border-top-right-radius: @r;}
+.s_round_bl (@r: @normal_radius) {-moz-border-radius-bottomleft: @r; -webkit-border-bottom-left-radius: @r; border-bottom-left-radius: @r;}
+.s_round_br (@r: @normal_radius) {-moz-border-radius-bottomright: @r; -webkit-border-bottom-right-radius: @r; border-bottom-right-radius: @r;}
+.s_round (@r: @normal_radius)    {-moz-border-radius: @r; -webkit-border-radius: @r; border-radius: @r;}
+
+
+.s_narrow () {margin-left: 20%; margin-right: 20%;}
+
+
+.s_controls () {.s_link; font-size: 100%;}
+
+
+/*.s_width () {max-width: @max_width; margin-left: auto; margin-right: auto;}*/
+
+
+.s_box (@size: @normal)  {background: @background_color; border: solid @small @background_color; padding: @size; margin: @size;}
+.s_vbox (@size: @normal) {background: @background_color; border: solid @small @background_color; padding-top: @size; padding-bottom: @size; margin-top: @size; margin-bottom: @size;}
+
+
+.s_border (@color: @light_color) {border-color: @color;}
+
+
+//
+// Global
+//
+a           {color: @color; text-decoration: none;
+  &:visited {color: @color;}}
+
+
+//
+// Special
+//
+.css_clear {display: block !important; clear: both !important; width: 0px !important; height: 0px !important; min-width: 0px !important; min-height: 0px !important; margin: 0px !important; padding: 0px !important; border: 0px !important;}
+
+table.css_table {margin: 0; padding: 0; border: 0; width: 100%;
+  > tbody       {margin: 0; padding: 0; border: 0; 
+    > tr        {margin: 0; padding: 0; border: 0; 
+      > td      {margin: 0; padding: 0; border: 0;  vertical-align: top;}}}}

@@ -1,0 +1,17 @@
+- sites = Rad::Face::Demo::Sites
+- objects = Rad::Face::Demo::Objects
+- stores = Rad::Face::Demo::Stores
+
+- b.basic_list do |o|
+  - o.content do
+    - layouts = {home: :home, style: :default, blog: :default, post: :default}
+    - urls = %w{home style blog post}.collect{|action| link_to action.humanize, sites, action.to_sym, theme: 'simple_organization', layout_template: layouts[action.to_sym]}
+    = b.basic_list_item urls.join(', ')    
+
+    - urls = %w{items folder list page selector user}.collect{|action| link_to action.humanize, objects, action.to_sym, theme: 'simple_organization'}
+    = b.basic_list_item urls.join(', ')
+
+    - urls = []
+    - {product: :default, products: :home}.each do |action, ltemplate| 
+      - urls << link_to(action.to_s.humanize, stores, action.to_sym, theme: 'simple_organization', layout_template: ltemplate)
+    = b.basic_list_item urls.join(', ')

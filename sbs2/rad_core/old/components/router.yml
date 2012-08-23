@@ -1,0 +1,11 @@
+root: ''
+default_path: '/'
+default_method: 'call'
+default_format: 'html'
+
+routes:
+- "Rad::Router::AliasRouter"
+- "Rad::Router::ResourceRouter"
+- "Rad::Router::ObjectRouter"
+
+# formatter: "Rad::Router::DotFormatter"

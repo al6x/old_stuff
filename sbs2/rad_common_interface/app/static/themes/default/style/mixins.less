@@ -1,0 +1,72 @@
+.t_tabs ()  {
+  .l_item {float: left;}}
+  
+.s_tabs (@w: @normal, @h: @small) {padding-left: @w; padding-right: @w; background: @background_color;
+  .l_item {padding-left: @w; padding-right: @w; padding-top: @h; padding-bottom: @h;}  
+  .l_active {background: @light_color; font-weight: bold}}
+
+
+.m_title {.s_big_text; margin-top: 0px; padding-top: 0px}
+
+
+.m_details_t () {float: right;
+  > *, > a      {float: left;}}
+.m_details {.m_details_t; .s_link; color: @light_color;
+  > *      {padding-right: @normal;}
+  a        {color: @light_color !important;}}
+
+
+.t_tags () {float: left;
+  > *, > a {float: left;}}  
+.m_tags    {.t_tags; margin-top: @normal; margin-bottom: @normal;
+  > *, > a {.s_round(@small_radius); .s_small_text; padding-left: @normal; padding-right: @normal; background: @very_light_color; margin-right: @normal;}
+  
+  .m_owner_visibility, .m_member_visibility, .m_custom_visibility, .m_item_type {background: @background_color;}
+  .m_owner_visibility                                                           {color: @red_color;}
+  .m_member_visibility, .m_custom_visibility                                    {color: @yellow_color;}
+  .m_item_type                                                                  {.m_tiny;}}
+  
+
+.t_attachments () {float: left;
+  > *, > a        {float: left;}}  
+.m_attachments    {.t_attachments; .s_link; margin-top: @normal; margin-bottom: @normal;
+  > *, > a        {padding-right: @normal;}}
+  
+
+.t_hover_controls () {position: absolute; right: 0px; top: 0px; z-index: 1; display: none;}
+
+.m_hover_controls {.t_hover_controls; .s_controls; text-align: right;}
+
+
+.m_selectable         {
+  > .m_hover_controls {.s_box; .s_border; .s_round_bl(@small_radius); border-right: 0px; border-top: 0px; margin: 0px;}}
+  
+.m_selectable_hover   {border-color: @light_color !important;}
+
+
+.t_toolbar ()    {
+  .l_left        {float: left;    
+    .l_item      {float: left;}}	
+	.l_right       {float: right;	  
+	  .l_item      {float: right;}}}
+	  
+.s_toolbar (@w: @normal, @h: @small) {  
+  .l_left                            {padding-left: @w;    
+    .l_item                          {padding-left: @w; padding-right: @w; padding-top: @h; padding-bottom: @h;}}	
+	.l_right                           {padding-right: @w;	  
+	  .l_item                          {padding-left: @w; padding-right: @w; padding-top: @h; padding-bottom: @h;}}}
+
+
+.t_list ()       {
+  .l_item        {
+    .l_check_box {display: inline;}
+    .l_content   {display: inline;
+  		> div      {display: inline;}}}}
+  		
+.s_list ()       {
+  .l_item        {}}
+
+
+/*.t_left ()  {float: left;}
+.t_right () {float: right;}
+*/

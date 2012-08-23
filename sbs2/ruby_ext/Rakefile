@@ -1,0 +1,12 @@
+lib_dir = "#{File.expand_path(File.dirname(__FILE__))}/lib"
+$LOAD_PATH << lib_dir unless $LOAD_PATH.include? lib_dir
+
+require 'rake_ext'
+
+project \
+  name: "ruby_ext",
+  gem: true,
+  summary: "Ruby Extensions",
+
+  author: "Alexey Petrushin",
+  homepage: "http://github.com/alexeypetrushin/ruby_ext"

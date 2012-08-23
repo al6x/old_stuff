@@ -1,0 +1,1 @@
+rad.register :request, scope: :cycle

@@ -1,0 +1,10 @@
+- tag :div, object.merge_html_attributes(class: " the_thumb m_selectable") do  
+  - if object.controls?
+    .m_hover_controls= object.controls.join(' ')
+  
+  - if object.image?
+    %a.l_image.l_image_box{href: object.url}
+      %img{src: object.image.thumb_url}        
+    
+  - if object.url? or object.name?
+    %a{href: object.url, class: 'l_title'}= object.name? ? object.name : "(#{t(:empty)})"

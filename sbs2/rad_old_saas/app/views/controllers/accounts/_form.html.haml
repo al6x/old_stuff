@@ -1,0 +1,18 @@
+= b.title(form_title)
+
+- b.form_for :account, @account, action: form_action do |f|
+	= f.error_messages
+
+	= f.text_field :name, required: true
+	= f.text_area :domains_as_string, label: t(:domains)
+	= f.text_field :web_analytics_token, description: t(:web_analytics_token_description)
+	= f.check_box :enabled
+
+	= f.line
+	= f.line ok_button, cancel_button
+
+
+/ - b.more id: 'account_edit_form', name: t(:show_more) do
+/   = f.text_field :files_size, disabled: true
+/   = f.text_field :max_file_size
+/   = f.text_field :max_account_files_size

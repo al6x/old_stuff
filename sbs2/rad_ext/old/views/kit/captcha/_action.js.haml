@@ -1,0 +1,2 @@
+rad.dialog().show("#{js render('/kit/captcha/form')}");
+Recaptcha.create("#{rad.captcha.public_key}", document.getElementById('dynamic_recaptcha'), {theme: 'clean', lang: '#{I18n.locale}'});

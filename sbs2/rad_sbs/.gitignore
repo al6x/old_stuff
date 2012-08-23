@@ -1,0 +1,13 @@
+runtime/public/*
+!runtime/public/emptygit
+
+runtime/log/*.log
+
+runtime/tmp/*
+!runtime/tmp/emptygit
+
+tmp/*
+
+*~
+.DS_Store
+Thumbs.db

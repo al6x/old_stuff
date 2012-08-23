@@ -1,0 +1,27 @@
+host: 'localhost'
+port: 4000
+root: ''
+default_format: 'html'
+
+maximum_data_size: 512000 # 0.5 Mb
+
+# used in forgery protection and captcha
+browser_generated_types:
+  - text/html
+  - text/plain
+  - text/javascript
+  - application/x-www-form-urlencoded
+  - multipart/form-data
+
+browser_generated_formats:
+  - html
+  - js
+  - json
+
+# session sample
+# session:
+#   key: 'rack.session'
+#   domain: 'foo.com'
+#   path: '/'
+#   expire_after: 2592000
+#   secret: 'change_me'

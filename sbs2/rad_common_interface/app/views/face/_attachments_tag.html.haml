@@ -1,0 +1,17 @@
+.the_attachments
+  - if object.value?
+    - object.value.each do |file|
+      .l_item
+        %a{href: file.url}= file.name
+        %a{href: '#', class: 'l_remove_button'}= t(:remove_attachment)
+        = hidden_field_tag object.name, file.name
+        .css_clear
+
+  %textarea.l_file_field_template.hidden
+    .l_item
+      = file_field_tag object.name
+      .l_attachment_stub{style: 'display: none'}
+      %a{href: '#', class: 'l_remove_button', style: 'display: none;'}= t(:remove_attachment)
+      .css_clear
+
+  .css_clear

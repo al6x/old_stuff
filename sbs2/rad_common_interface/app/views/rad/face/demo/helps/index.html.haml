@@ -1,0 +1,25 @@
+- helps = Rad::Face::Demo::Helps
+- commons = Rad::Face::Demo::Commons
+- dialogs = Rad::Face::Demo::Dialogs
+
+- theme = (params.theme || 'default').to_sym
+
+= b.title "The :#{theme} theme:"
+
+- b.basic_list do |o|
+  - o.content do
+    = b.basic_list_item link_to('Help', helps, :help, theme: theme)          
+    
+    - urls = %w{basic forms aspects style items}.collect{|action| link_to action.humanize, commons, action.to_sym, theme: theme}
+    = b.basic_list_item urls.join(', ')
+    
+    = b.basic_list_item link_to('Dialogs', dialogs, :show, theme: theme)
+
+%br
+        
+= render themed_partial('/index')
+= render themed_partial('/index2') if theme == :default and template.exist?(themed_partial('/index2'))
+
+%br
+
+= b.text "Sources: <a href='http://github.com/alexeypetrushin/rad_common_interface'>http://github.com/alexeypetrushin/rad_common_interface</a>."

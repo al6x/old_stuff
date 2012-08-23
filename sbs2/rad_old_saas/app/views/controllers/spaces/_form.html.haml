@@ -1,0 +1,50 @@
+= b.title(form_title)
+- b.form_for :the_space, @space, action: form_action, enctype: "multipart/form-data" do |f|
+  = f.error_messages
+
+  = f.text_field :name, required: true, disabled: @space.default? #, disabled: !@space.new_record?
+  = f.text_field :title
+  - values = rad.environment.available_languages.collect{|ln| [ln, ln]}
+  = f.select :language, values
+  = f.select :access_type, Models::Space::ACCESS_TYPES
+
+  - b.more id: 'space_edit_form', name: t(:show_more) do
+    = f.line
+
+    - b.tabs do |o|
+      - o.add name: t(:appearance), active: true do
+        - if @space.logo.blank?
+          = f.file_field :logo
+        - else
+          - img = image_tag(@space.logo_url, style: 'max-width: 150px; max-height: 150px;')
+          = f.file_field :logo, label: "#{t(:logo)}#{"<br/>" + img}"
+
+        = f.text_area :original_bottom_text, label: t(:bottom_text)
+
+        - values = rad.face.available_themes.collect{|t| [t, t]}
+        = f.select :theme, values
+
+      - o.add name: t(:links) do
+        = f.text_field :default_url, description: t(:default_url_description) # if @space.default?
+        = f.text_area :menu_as_string, label: t(:menu), description: t(:menu_description)
+
+        = f.text_field :space_tags_as_string, label: t(:space_tags), description: t(:space_tags_description)
+        = f.text_field :space_home_tag, label: t(:space_home_tag), description: t(:space_home_tag_description)
+
+        / = f.text_area :additional_menu_as_string, label: t(:additional_menu), description: t(:additional_menu_description)
+
+      - o.add name: t(:access) do
+        = f.text_area :custom_permissions_as_string, label: t(:permissions), description: t(:permissions_description)
+        = f.text_area :custom_viewers_as_string, label: t(:default_viewers), description: t(:default_viewers_description)
+        = f.text_area :custom_roles_as_string, label: t(:custom_roles), description: t(:custom_roles_description)
+
+      - o.add name: t(:store) do
+        = f.text_field :order_processing_email, description: t(:order_processing_email_description)
+        = f.text_field :currency
+
+      / - o.add name: t(:miscellaneous) do
+      /   = f.text_field :max_user_files_size, description: t(:max_user_files_size_description)
+
+  = f.line
+
+  = f.line ok_button, cancel_button

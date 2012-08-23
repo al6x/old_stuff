@@ -1,0 +1,51 @@
+// the_layout
+body                    {
+  > .css_box            {max-width: @max_width; margin-left: auto; margin-right: auto;
+    > table.css_table   {
+      > tbody           {
+        > tr            {
+          > td.css_td1  {}
+          > td.css_td2  {width: @tools_width;}}}}
+    > .css_box          {}}}
+    
+    
+.the_content {}
+
+
+.the_aspects {}
+
+
+.the_tools {.s_box; .s_border; .s_round;}
+
+.panel_t () {.t_toolbar;
+  .css_box  {max-width: @max_width; margin-left: auto; margin-right: auto;}}
+.panel_s       {.s_toolbar; .s_small_text;
+  .css_box     {
+    .l_left    {// padding-left: @normal + @small + @normal;
+      .l_logo  {font-weight: bold;}
+      .l_item  {}}
+    .l_right   {// padding-right: @normal + @small + @normal;
+      .l_item  {}}}}
+
+.the_top_panel {.panel_t; .panel_s; background: @light_color;
+  .css_box     {
+    .l_left    {
+      .l_item  {}
+      .l_logo  {font-weight: bold;}}
+    .l_right   {
+      .l_item  {}}}}
+  	
+
+.the_bottom_panel {.panel_t; .panel_s; background-color: @light_color; padding-top: @big; padding-bottom: @big;}
+
+
+.the_navigation {.panel_t; .panel_s;
+  .css_box      {
+    .l_active   {font-weight: bold; background-color: @light_color; .s_round_bl(@small_radius); .s_round_br(@small_radius);}}}
+
+/*.the_navigation_t {.t_tabs;
+  > .css_box      {.t_max_width;}}
+.the_navigation         {.the_navigation_t; .s_tabs; .s_small_text; padding-left: 0; padding-right: 0;
+  > .css_box            {
+    .l_item:first-child {margin-left: @normal + @small;}
+    .l_active           {.s_round_bl(@small_radius); .s_round_br(@small_radius);}}}*/

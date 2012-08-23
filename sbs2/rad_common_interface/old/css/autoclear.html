@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<head> 
+  <meta content='text/html; charset=utf-8' http-equiv='Content-Type' /> 
+  <title>Css, auto-clear floating elements</title>   
+  <link href="css.css" media="screen" rel="stylesheet" type="text/css"></link>
+  <link href="autoclear.css" media="screen" rel="stylesheet" type="text/css"></link>
+</head> 
+<body>     
+  <h1>Css, auto-clear floating elements</h1>
+  <div class='app'>
+    <div class='line'>
+      <div class='left'>
+        <div class='item'>A</div>
+        <div class='item'>B</div>
+      </div>
+      <div class='right'>
+        <div class='item'>A</div>
+        <div class='item'>B</div>
+      </div>
+    </div>
+    <div class='line'>
+      <div class='item'>A</div>
+      <div class='item'>B</div>
+      <div class='item'>C</div>
+    </div>
+  </div>
+  
+  <h1>Features:</h1>
+  <ul>    
+    <li>Automatically adds 'div.clear:both' element after floating elements</li>
+    <li>Works in any browser, there's no CSS hacks, it uses old "clear: both" (and a little JS), exactly the same way as if you did it by hand</li>
+    <li>Browser should have JavaScript enabled</li>
+    <li>Current implemetation depends on MooTools (it's trivial to port it to another libraries, jQuer for example, but I'm too lazy to do it, maybe someone else someday will do that)</li>
+  </ul>
+  
+  <script src="mootools.js" type="text/javascript"></script> 
+  <script src="mootools-more.js" type="text/javascript"></script> 
+  <script src="css.js" type="text/javascript"></script>
+  <script>
+    window.addEvent('resize', css.update.bind(css));
+    window.addEvent('domready', css.update.bind(css));
+  </script>
+</body> 
+</html>

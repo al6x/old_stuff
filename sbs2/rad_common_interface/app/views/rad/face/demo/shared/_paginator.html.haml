@@ -1,0 +1,7 @@
+- pages = %w{1 2 3 4 5 6 7}.collect{|t| "<a href='#'>#{t}</a>"}
+- b.paginator do |o|
+  - o.prev "<a href='#'>Prev</a>"
+  - o.pages [1, 2, 3, 4, 5, 6, 7]
+  - o.to_link lambda{|t| "<a href='#'>#{t}</a>"}
+  - o.current_page 3
+  - o.next "<a href='#'>Next</a>"

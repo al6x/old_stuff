@@ -1,0 +1,7 @@
+- tag :div, object.merge_html_attributes(class: " the_discussion") do
+  / .divider.hidden
+  /   .divider_title= object.name  
+  .l_comments= object.content.to_a.join("\n") 
+  - if object.controls? 
+    .l_controls= object.controls.to_a.join("\n")
+  .css_clear

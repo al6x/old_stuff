@@ -1,0 +1,12 @@
+- objects = Rad::Face::Demo::Objects
+- stores = Rad::Face::Demo::Stores
+
+- b.basic_list do |o|
+  - o.content do
+    - urls = %w{items folder list page selector user}.collect{|action| link_to action.humanize, objects, action.to_sym, theme: 'default'}
+    = b.basic_list_item urls.join(', ')
+
+    - urls = []
+    - {product: :default, products: :default}.each do |action, ltemplate| 
+      - urls << link_to(action.to_s.humanize, stores, action.to_sym, theme: 'default', layout_template: ltemplate)
+    = b.basic_list_item urls.join(', ')

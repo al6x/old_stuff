@@ -1,0 +1,10 @@
+- b.folder class: " _sortable_container" do |o|
+  - o.name "Pictures for Terminator Movie"
+  - o.controls [link_to('add', '#'), link_to('edit', '#'), link_to('delete', '#'), link_to('move', '#', class: '_handle')]
+  - o.content do
+    - 5.times do       
+      - attachment = random_attachment
+      - b.thumb name: "The Salvator" do |o|
+        - o.image attachment
+        - o.url attachment.url
+        - o.controls [link_to('edit', '#'), link_to('delete', '#'), link_to('move', '#', class: '_handle')]

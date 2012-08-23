@@ -1,0 +1,10 @@
+- content_for :nothing do
+  - content_for :css do
+    = stylesheet_link_tag '/themes/default/style.css'
+
+  - content_for :top_panel,    render('/kit/top_panel')
+  - content_for :navigation,   render('/saas/menu')
+  - content_for :bottom_panel, render('/kit/bottom_panel')
+
+  - @build_layout = false
+= render '/kit/layout'

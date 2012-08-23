@@ -1,0 +1,49 @@
+<html>
+<head>
+  <title>Rad lib Spec</title>
+
+  <!-- CoffeeScript -->
+  <script type="text/javascript" src="vendor/coffee-script.js"></script>
+
+  <!-- Vendor libraries -->
+  <script type="text/javascript" src="vendor/underscore.js"></script>
+
+  <!-- Libraries -->
+  <script type="text/coffeescript" src="lib/stdlib.coffee"></script>
+  <script type="text/coffeescript" src="lib/dependency-injector.coffee"></script>
+
+  <!-- Specs -->
+  <link rel="stylesheet" href="vendor/jasmine/jasmine.css">
+  <script type="text/javascript" src="vendor/jasmine/jasmine.js"></script>
+  <script type="text/javascript" src="vendor/jasmine/jasmine-html.js"></script>
+  <script type="text/coffeescript" src="vendor/mary.coffee"></script>
+
+  <script>
+    var Spec = {};
+  </script>
+
+  <script type="text/coffeescript" src="lib_spec/stdlib_spec.coffee"></script>
+  <script type="text/coffeescript" src="lib_spec/dependency-injector-spec.coffee"></script>
+
+  <!-- Runner -->
+  <script type="text/coffeescript">
+    jasmineEnv = jasmine.getEnv()
+    jasmineEnv.updateInterval = 1000
+
+    trivialReporter = new jasmine.TrivialReporter();
+
+    jasmineEnv.addReporter(trivialReporter)
+
+    jasmineEnv.specFilter = (spec) ->
+      trivialReporter.specFilter(spec)
+
+    currentWindowOnload = window.onload;
+
+    jasmineEnv.execute();
+  </script>
+
+</head>
+
+<body>
+</body>
+</html>

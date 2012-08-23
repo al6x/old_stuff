@@ -1,0 +1,53 @@
+= b.divider "Note"
+- b.note id: "note_id", class: "note_class" do |o|
+  - o.name "Terminator movie series"
+  - o.text samples.text
+  - o.controls samples.controls
+  - o.attachments samples.attachments
+  - o.tags samples.tags      
+  - o.details samples.details
+    
+= b.divider "File"
+- b.file id: "file_id", class: "file_class" do |o|
+  - o.name "Product Overview.pdf"
+  - o.image samples.attachments.first
+  - o.url samples.attachments.first.url
+  - o.controls samples.controls
+  - o.tags samples.tags
+  - o.details samples.details
+
+= b.divider "Folder"
+- b.folder id: "folder_id", class: "folder_class _sortable_container" do |o|
+  - o.name "Pictures for Terminator Movie"
+  - o.controls samples.controls
+  - o.tags samples.tags      
+  - o.details samples.details
+  - o.content do
+    - 7.times do |i|
+      - attachment = random_attachment
+      - b.thumb do |o|
+        - o.image attachment
+        - o.url attachment.url
+        - o.controls(samples.controls + [link_to('move', '#', class: '_handle')])
+
+= b.divider "List"
+- b.list id: "list_id", class: "list_class _sortable_container" do |o|
+  - o.name "List of Tasks"
+  - o.controls samples.controls
+  - o.tags samples.tags      
+  - o.details samples.details
+  - o.content do
+    - 7.times do |i|
+      - b.list_item "First Line", id: "list_id_#{i}", class: " list_class_#{i}" do |o|
+        - o.check_box check_box_tag(:tmp) if i.odd? and i <= 4
+        - o.controls(samples.controls + [link_to('move', '#', class: '_handle')])
+        - o.details samples.details
+        - o.finished true if i > 4
+
+= b.divider "Selector"
+- b.selector id: "selector_id", class: "selector_class" do |o|
+  - o.name samples.name
+  - o.text samples.detail_text
+  - o.controls samples.controls
+  - o.tags samples.tags      
+  - o.details samples.details

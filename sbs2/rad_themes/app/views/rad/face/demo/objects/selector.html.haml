@@ -1,0 +1,34 @@
+= render '/rad/face/demo/shared/top_navigation_bottom'
+
+= render '/rad/face/demo/shared/tools'          
+
+- options = b.options do |o|
+  - o.name samples.name
+  - o.controls samples.controls
+  - o.tags samples.tags
+  
+= b.divider "Selector (Thumb without Title)"
+- b.selector options do |o|
+  - o.text samples.text
+- 12.times do 
+  - attachment = random_attachment
+  - b.thumb do |o|
+    - o.image attachment
+    - o.url attachment.url
+    - o.controls samples.controls  
+      
+
+= b.divider "Selector (Thumb with Title)"
+= b.selector options
+- 3.times do |i|
+  - attachment = random_attachment
+  - b.thumb name: "The Salvator" do |o|
+    - o.image attachment
+    - o.url attachment.url
+    - o.controls samples.controls
+
+
+= b.divider "Selector (Lines)"
+= b.selector options
+
+= render '/rad/face/demo/shared/line_previews'

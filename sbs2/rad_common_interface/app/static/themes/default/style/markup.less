@@ -1,0 +1,16 @@
+.m_markup {.s_link;  
+	.left   {float: left; margin-top: @normal / 2; margin-right: @normal;} // margin: @normal; margin-left: 0; margin-right: @big;}	
+	.right  {float: right; margin-top: @normal / 2; margin-left: @normal;} // margin: @normal; margin-right: 0; margin-left: @big;}	
+	.clear  {clear: both;}	
+	.space  {height: @big; clear: both;}
+	.tiny   {.m_tiny;}
+	
+	table tr td            {vertical-align: top;}
+  p                      {margin-bottom: @big;}
+  h1, h2, h3, h4, h5, h6 {clear: both;}  
+  object                 {clear: both; display: block; margin-bottom: @normal;}
+  
+  // .hl_code, code {margin-left: @big;}
+  pre {padding: @normal; margin-bottom: @normal; .s_round; background-color: @very_light_color; max-width: @max_width - @max_width * 0.2 - 2 * @normal - 2 * @small;}
+  .left pre, .right pre {width: @half_markup; margin-left: @normal;}
+}

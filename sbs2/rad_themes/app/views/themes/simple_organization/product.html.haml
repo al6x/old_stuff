@@ -1,0 +1,33 @@
+- tag :div, object.merge_html_attributes(class: ' so_product') do
+  - if object.name?
+    %h1= object.name
+
+  .text.m_markup.so_markup
+    - if object.attachments?
+      .left
+        %a{href: object.attachments.first.url}
+          %img{src: object.attachments.first.thumb_url}
+
+    - if object.price? or object.currency? or object.buy?
+      .right.l_cart
+        .l_price= "#{object.price} #{object.currency}"
+        .l_buy= object.buy              
+  
+    = object.text        
+    
+    - if object.attachments.size > 1
+      .space
+      
+      - object.attachments[1..-1].each do |attachment|
+        .left
+          %a{href: attachment.url}
+            %img{src: attachment.thumb_url}
+      .css_clear
+    .css_clear
+  .clear
+  
+  %br
+  - if object.controls?
+    .post-date.item_controls= object.controls.join(' ') 
+
+  .clear

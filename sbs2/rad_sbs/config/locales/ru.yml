@@ -1,0 +1,79 @@
+ru:
+  # Selectors
+  create_selector: "Создать селектор"
+  invalid_selectors: "Неверное имя селектора"
+  query: "Запрос"
+  query_description: |
+    Выберети теги для фильтрации результатов, например - "Новости, Публичный".
+    Вы также можете использовать спецаильный тег _class, например чтобы выбрать только продукты напишите "Игрушки, _class:Models::Product".
+  query_errors: "В запросе есть ошибки"
+  query_too_long: "Слишком длинный запрос"
+  selector_created: "Селектор создан"
+  selector_destroyed: "Селектор удален"
+  selector_description: "Описание"
+  selector_updated: "Селектор обновлен"
+
+  # Note
+  create_note: "Создать заметку"
+  ether_name_or_text_should_be_filled: "Имя или Текст должны быть заполнены"
+  note_created: "Заметка создана"
+  note_destroyed: "Заметка удалена"
+  note_updated: "Заметка обновлена"
+
+  # Page
+  add_embedded_item: "Добавить"
+  create_page: "Создать страницу"
+  page_created: "Страница содана"
+  page_destroyed: "Страница удалена"
+  page_updated: "Страница обновлена"
+
+  # Container
+  order_updated: "Порядок обновлен"
+
+  # List
+  add_task: "Добавить задачу"
+  create_list: "Создать список"
+  list_created: "Список создан"
+  list_destroyed: "Список удален"
+  list_updated: "Список обновлен"
+
+  # Task
+  create_task: "Создать задачу"
+  state_updated: "Статус изменен"
+  task_created: "Задача создана"
+  task_destroyed: "Задача удалена"
+  task_updated: "Задача обновлена"
+
+  # Store
+  buy_product: "Купить"
+  checkout: "Купить"
+  currency: "Валюта"
+  # quantity: "Количество"
+  price: "Цена"
+  store: "Магазин"
+
+  # Product
+  product: "Товар"
+  create_product: "Создать продукт"
+  product_created: "Продукт создан"
+  product_destroyed: "Продукт удален"
+  product_updated: "Продукт обновлен"
+
+  # Order
+  checkout_details: "Вы покупаете '%{name}' за %{price}"
+  order_created: "Вы купили '%{name}', за %{price}. Спасибо за покупку."
+  order_details: "Примечания"
+  order_details_description: "Адрес доставки, замечания"
+  order_name: "Ваше имя"
+  order_phone: "Ваш телефон"
+
+  # Order Mailer
+  submit_order_text: |
+    Заказ из %{store_url}
+    Продукт: %{product_url} заказан за %{product_price}.
+    Покупатель:
+      Имя:        %{buyer_name}
+      Телефон:    %{buyer_phone}
+      Примечания:
+    %{buyer_details}
+  submit_order_title: "Заказ: продукт '%{product_name}' за %{product_price}"

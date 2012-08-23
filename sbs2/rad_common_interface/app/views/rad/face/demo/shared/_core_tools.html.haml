@@ -1,0 +1,6 @@
+- content_for :tools do
+  - b.tool name: "Parameters" do        
+    - b.more name: "...", id: 'more' do
+      - b.basic_list do
+        = b.basic_list_item(tag(:a, "Update icon", href: '#'))
+        = b.basic_list_item(tag(:a, "Edit", href: '#') + " " + tag(:a, "Delete", href: '#'))

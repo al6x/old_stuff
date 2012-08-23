@@ -1,0 +1,14 @@
+= render '/rad/face/demo/shared/top_navigation_bottom'
+
+= render '/rad/face/demo/shared/tools'   
+
+- b.product id: "product_id", class: "product_class" do |o|
+  - o.name "Terminator movie"
+  - o.text samples.text
+  - o.controls samples.controls
+  - o.attachments samples.attachments
+  - o.tags samples.tags
+  - o.details samples.details
+  - o.price '99.9'
+  - o.currency '$'
+  - o.buy link_to('Buy', '#')

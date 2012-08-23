@@ -1,0 +1,14 @@
+- classes = " l_item m_selectable "
+- classes << " l_finished" if object.finished
+- tag :div, object.merge_html_attributes(class: classes) do
+  - unless object.controls.blank?
+    .m_hover_controls= object.controls.join(' ')
+
+  - unless object.check_box.blank?
+    .l_check_box= object.check_box
+  .l_content= object.content
+
+  / .m_tags= object.tags.join(' ') if object.tags?
+  - if object.details?
+    .m_details= object.details.to_a.join(', ')
+  .css_clear

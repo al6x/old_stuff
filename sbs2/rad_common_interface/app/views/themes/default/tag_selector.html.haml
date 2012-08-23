@@ -1,0 +1,10 @@
+- if object.tags?
+  - tag :div, object.merge_html_attributes(class: " the_tag_selector") do  
+    - classes = ['l_size_1', 'l_size_2', 'l_size_3', 'l_size_4']
+    - tag_cloud object.tags, classes do |tag, aclass|    
+      - if object.selected.include? tag.name
+        .l_tag.l_selected{class: aclass}
+          = object.selected_tag_to_link.call tag
+      - else
+        .l_tag{class: aclass}
+          = object.tag_to_link.call tag      

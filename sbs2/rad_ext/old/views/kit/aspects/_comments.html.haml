@@ -1,0 +1,8 @@
+- if @model and partials.show?(:comments)
+  - b.discussion do |o|
+    - o.controls do |a|
+      - a.add link_to(t(:comment_it), new_comment_path(item_id: @model, format: :js), method: :get) if can? :create_comment
+
+    - o.content do
+      - @model.comments.each do |comment|
+        = render '/controllers/comments/embedded', object: comment

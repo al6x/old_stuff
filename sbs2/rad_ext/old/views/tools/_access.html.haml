@@ -1,0 +1,12 @@
+- if partials.show?(:context_menu) and @model and can?(:update_access, @model)
+  - b.tool name: t(:access), id: 'access_tool' do |o|
+    - o.content do
+      - b.basic_list do
+        / Viewers
+        - basic, more = viewers_controls_for(@model)
+        - b.basic_list_item do
+          = basic + " " + b.more(id: 'viewers_controls', name: t(:show_more), content: more)
+
+        - basic, more = collaborators_controls_for(@model)
+        - b.basic_list_item do
+          = basic + " " + b.more(id: 'collaborators_controls', name: t(:show_more), content: more)

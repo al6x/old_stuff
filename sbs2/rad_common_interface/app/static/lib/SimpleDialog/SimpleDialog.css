@@ -1,0 +1,12 @@
+.simple_dialog {
+  outline: none;
+  position: absolute;
+  z-index: 20;  
+}
+
+.simple_dialog_mask {
+  position:absolute;
+  z-index:10;
+  background-color:#000;
+  opacity: 0.3;
+}

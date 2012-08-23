@@ -1,0 +1,6 @@
+/ TODO3 remove or refactor it
+- unless (menu = main_menu).blank?
+  - b.navigation do |o|
+    - o.items do |a|
+      - menu.each do |name, link, active|
+        = a.add content: link_to(name, link), active: active

@@ -1,0 +1,11 @@
+- b.comment id: @model.dom_id do |o|
+  - o.user link_to(@model.owner_name, user_path(@model.owner_name))
+
+  - avatar_img = image_tag(Models::User.avatar_url(@model.owner_name), onerror: "this.style.display = 'none'")
+  - o.avatar link_to(avatar_img, user_path(@model.owner_name))
+
+  - o.details render_item_details(@model, skip: :comments)
+  - o.text @model.text
+  - o.controls do |a|
+    - a.add link_to(t(:edit), edit_path(@model, format: :js)) if can? :update, @model
+    - a.add link_to(t(:delete), delete_path(@model, format: :js), method: :post, confirm: t(:are_you_shure)) if can? :delete, @model

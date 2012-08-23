@@ -1,0 +1,11 @@
+require 'rake_ext'
+
+project \
+  name: "common_interface",
+  official_name: "rad_common_interface",
+  gem: true,
+  dirs: ['app', 'config'],
+  summary: "User Interface for Rad Framework",
+
+  author: "Alexey Petrushin",
+  homepage: "http://github.com/alexeypetrushin/rad_common_interface"

@@ -1,0 +1,20 @@
+<div class="main layout_content" id="main-two-columns">
+
+  <div class="left main" id="main-content">
+    <%= yield :top_aspects %>      
+    
+    <%= tag :div, yield(:content), class: 'content' %>
+    
+    <%= yield :aspects %>
+    <%= yield :bottom_aspects %>
+
+    <div class="clearer">&nbsp;</div>
+    
+  </div>
+
+  <div class="right sidebar" id="sidebar">
+    <%= yield :tools %>
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+</div>

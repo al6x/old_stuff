@@ -1,0 +1,18 @@
+- if object.logo_text? or object.left? or object.right?
+  - tag :div, object.merge_html_attributes(class: " the_top_panel") do
+    .css_box
+      - if object.left? or object.logo_text?
+        .l_left
+          - if object.logo_text?
+            .l_item.l_logo= object.logo_text
+          - (object.left || []).each do |item|
+            .l_item= item        
+          .css_clear
+
+      - if object.right?
+        .l_right
+          - object.right.reverse.each do |item|
+            .l_item= item          
+        .css_clear
+    
+      .css_clear      

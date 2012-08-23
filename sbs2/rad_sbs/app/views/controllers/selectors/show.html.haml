@@ -1,0 +1,13 @@
+- b.selector id: @model.dom_id do |o|
+  - o.name h(@model.name)
+  - o.text @model.text if selected_tags.blank?
+  - o.controls do |a|
+    - a.add link_to(t(:edit), edit_path(@model, format: :js)) if can? :update, @model
+    - a.add link_to(t(:delete), destroy_path(@model, format: :js), method: :post, confirm: t(:are_you_shure)) if can? :destroy, @model
+
+- @model.items.each do |item|
+  = render "/previews/#{@model.view}", object: item
+.css_clear
+
+- html = paginator_for(@page, @model.items.size, @per_page){|t, n| link_to t, url_for(Controllers::Items, action_name, page: n, id: @model.to_param)}
+- content_for :aspects, html unless html.blank?

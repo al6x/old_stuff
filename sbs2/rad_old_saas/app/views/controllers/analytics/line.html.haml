@@ -1,0 +1,6 @@
+- b.table_row id: object.dom_id do |o|
+  - o.content do |a|
+    / - a.add link_to(object.name, all_spaces_path(account_id: object))
+    - a.add object.name
+    - object.by_months[0..(Time.now.month - 1)].each do |n|
+      - a.add n.to_s

@@ -1,0 +1,2 @@
+- update cache to use one hash with @cache[key] = [value, present]
+- remove :inherit and use ActiveSupport::Concern instead?

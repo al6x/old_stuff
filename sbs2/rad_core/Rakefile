@@ -1,0 +1,14 @@
+require 'rake_ext'
+
+project \
+  name: 'rad',
+  official_name: 'rad_core',
+  gem: true,
+  summary: 'Rad - Toolkit for building Network Application',
+
+  bin: 'bin',
+  executables: ['rad'],
+  dirs: %w(bin views assets),
+
+  author: 'Alexey Petrushin',
+  homepage: 'http://github.com/alexeypetrushin/rad_core'

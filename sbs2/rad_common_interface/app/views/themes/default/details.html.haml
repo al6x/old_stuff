@@ -1,0 +1,6 @@
+- tag :div, object.merge_html_attributes(class: " the_details") do
+  - if object.tags?
+    .m_tags= object.tags.join(' ')
+  - if object.details?
+    .m_details= object.details.to_a.join(', ')
+  .css_clear

@@ -1,0 +1,5 @@
+- b.thumb id: object._id do |o|
+  - o.name h(object.name)
+  - unless object.attachments_as_images.empty?
+    - o.image object.attachments_as_images.first
+  - o.url path(object)

@@ -1,0 +1,40 @@
+- attachment = samples.attachments.first
+- b.line do |o|
+  - o.name samples.name
+  - o.image attachment
+  - o.text samples.detail_text
+  - o.url attachment.url
+  - o.controls samples.controls
+    
+- b.line do |o|
+  - o.name samples.name
+  - o.image attachment
+  - o.text samples.detail_text
+  - o.url attachment.url
+  - o.controls samples.controls
+  - o.tags samples.tags + ["<div class='m_item_type'>Note</div>"]
+  - o.details samples.details
+
+- b.line do |o|
+  - o.name samples.name
+  - o.text samples.detail_text
+  - o.url attachment.url
+  - o.controls samples.controls
+  - o.tags samples.tags + ["<div class='m_item_type'>Page</div>"]
+  - o.details samples.details
+        
+- b.line do |o|
+  - o.name samples.name
+  - o.url attachment.url
+  - o.controls samples.controls
+  - o.tags samples.tags + ["<div class='m_item_type'>Task</div>"]
+  - o.details samples.details    
+    
+- b.line do |o|
+  - o.name samples.name
+  - o.image attachment
+  - o.text samples.detail_text
+  - o.url attachment.url
+  - o.controls samples.controls
+  - o.tags samples.tags + ["<div class='m_item_type'>Note</div>"]
+  - o.details samples.details

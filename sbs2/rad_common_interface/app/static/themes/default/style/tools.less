@@ -1,0 +1,15 @@
+.the_tool    {padding-bottom: @big;
+  > .l_title {color: @light_color; font-weight: bold;}}
+
+
+.the_tag_selector_t () {
+  .l_tag            {display: inline-block;}}
+.the_tag_selector {.the_tag_selector_t; text-align: center;
+  .l_selected     {.s_round(@small_radius); color: @background_color; padding-left: @normal; padding-right: @normal; background: @select_color; 
+  a               {color: @background_color;}}
+  .l_tag          {margin: @small;}
+
+  .l_size_1       {font-size: 90%;}
+  .l_size_2       {font-size: 120%;}
+  .l_size_3       {font-size: 130%;}
+  .l_size_4       {font-size: 140%;}}

@@ -1,0 +1,10 @@
+require 'rake_ext'
+
+project \
+  name: "themes",
+  official_name: "rad_themes",
+  summary: "Themes for Rad Face (rad_face)",
+  gem: true,
+
+  author: "Alexey Petrushin",
+  homepage: "http://github.com/alexeypetrushin/rad_themes"

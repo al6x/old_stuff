@@ -1,0 +1,4 @@
+- if flash.info?
+  = javascript_tag %{rad.info("#{j(h(flash.info))}")}
+- if flash.error?
+  = javascript_tag %{rad.error("#{j(h(flash.error))}")}

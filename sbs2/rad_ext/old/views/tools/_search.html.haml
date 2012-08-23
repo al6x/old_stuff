@@ -1,0 +1,5 @@
+/ TODO3 search
+- if false && partials.show?(:search)
+  - b.tool name: "Search" do
+    - form_tag(action: search_path, method: :get) do
+      = text_field_tag :q, @query

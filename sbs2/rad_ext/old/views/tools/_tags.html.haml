@@ -1,0 +1,10 @@
+- if partials.show?(:tags)
+  - b.tool name: t(:tags) do
+    - b.tag_selector do |o|
+      - o.selected @selected_tags
+      - o.selected_tag_to_link lambda{|tag| link_to tag.name, action_name, {_tags: remove_tag(tag.name)}}
+      / TODO2 move this to somewhere else
+      - top_tags = Models::Tag.where(context: {_exists: false}).limit(rad.kit.tags_count).sort([:count, -1]).all
+      - o.tags top_tags.sort{|a, b| a.name <=> b.name}
+      / - o.tag_to_link lambda{|tag| link_to tag.name, {_tags: add_tag(tag.name)}, title: t(:tags_count, count: tag.count)}
+      - o.tag_to_link lambda{|tag| tag_link(tag.name, tag.count)}

@@ -1,0 +1,49 @@
+.the_more {.m_tiny; .s_a_link;}
+
+
+.the_narrow {margin-left: 20%; margin-right: 20%;}
+
+
+.the_tabs     {
+  > .l_panel  {.t_tabs; .s_tabs; border-bottom: @small solid @light_color;  
+    .l_active {.s_round_tl(@small_radius); .s_round_tr(@small_radius); cursor: text;
+      a       {cursor: text;}}
+    a         {outline: none;}}
+  > .l_content{}}
+
+
+.the_basic_list {.t_list; .s_list; 
+  .l_item       {.s_link;
+    .l_check_box {}
+    .l_content {}}}
+
+
+.the_info_message  {.s_box; .s_round; .s_narrow; .s_link; background: @light_yellow_color;}
+.the_error_message {.s_box; .s_round; .s_narrow; .s_link; background: @light_red_color;}
+
+
+.the_divider_t () {.s_box; clear: both;}
+.the_divider {.the_divider_t; .s_normal_text; text-align: right; border-bottom: @small solid @color;}
+
+
+.the_table_t () {width: 100%;}
+.the_table            {.the_table_t; .s_link;
+	thead               {
+    tr                {
+      th              {background: @light_color; .s_normal_text; text-align: left; padding: @normal;
+        &:first-child {.s_round_tl;}
+        &:last-child  {.s_round_tr;}}}}
+  tbody               {
+    tr                {
+      td              {padding: @normal;}}
+    .l_even           {background: @very_light_color;}}}
+
+
+.the_toolbar {.t_toolbar; .s_toolbar; .s_link;  
+  .l_left    {
+    .l_item  {}}	
+	.l_right   {
+	  .l_item  {}}}
+	  
+
+.the_title {.s_box}

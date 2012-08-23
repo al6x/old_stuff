@@ -1,0 +1,17 @@
+- if object.attachments?
+  .m_attachments
+    - object.attachments.each do |file|
+      %a{href: file.url}= file.name
+    .css_clear
+  .css_clear
+
+- if object.tags?
+  .m_tags
+    = object.tags.join(' ')
+    .css_clear
+- if object.details?
+  .m_details
+    = object.details.to_a.join(', ')
+    .css_clear
+- if object.tags? or object.details?
+  .css_clear

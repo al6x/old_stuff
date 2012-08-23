@@ -1,0 +1,23 @@
+- tag :div, object.merge_html_attributes(class: " the_page") do
+  - if object.controls?
+    .m_hover_controls= object.controls.join(' ')
+
+  - if object.toolbar?
+    %textarea.hidden
+      .toolbar
+        %br
+        .m_hover_controls
+          = t(:add_embedded_item) + ':'
+          = object.toolbar.join(' ')
+
+  - if object.name?
+    %h1.m_title= object.name
+
+  - if object.text?
+    .l_text.m_markup
+      = object.text
+      .css_clear
+
+  .l_content= object.content.to_a.join("\n")
+
+  = render themed_partial('/shared/details'), object: object

@@ -1,0 +1,11 @@
+- if partials.show?(:buttons) and can?(:create)
+  - b.tool do
+    - buttons_html = rad.kit.items.collect{|name| link_to(t(name), send("new_#{name}_path", format: :js), method: :get)}.join(tag(:span, ', '))
+    - if rad.kit.default_item
+      - b.more id: 'add_buttons', name: t(:show_more), class: 'm_tiny' do |o|
+        - o.core do
+          = link_to(t(:add), send("new_#{rad.kit.default_item}_path", format: :js), method: :get) + ",\n"
+        - o.more do
+          = buttons_html
+    - else
+      = buttons_html

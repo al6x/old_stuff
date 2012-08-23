@@ -1,0 +1,20 @@
+- tag :div, object.merge_html_attributes(class: " the_comment m_selectable") do
+  - body = capture do
+    .l_text.m_markup
+      = object.text
+      .css_clear
+  - if object.controls?
+    .m_hover_controls= object.controls.join(' ')
+  - if object.avatar?
+    %table.css_table
+      %tbody
+        %tr
+          %td.css_td1
+            .l_image= object.avatar
+          %td.css_td2
+            = body  
+  - else
+    = body
+  .m_details= (object.details.to_a + object.owner.to_a).join(', ')
+  .css_clear
+    

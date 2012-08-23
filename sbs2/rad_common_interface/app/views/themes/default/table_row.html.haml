@@ -1,0 +1,4 @@
+- if object.content?
+  - tag :tr, object do
+    - object.content.each do |cell|
+      %td= cell.content

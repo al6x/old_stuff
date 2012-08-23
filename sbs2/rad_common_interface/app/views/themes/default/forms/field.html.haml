@@ -1,0 +1,18 @@
+- errors = object.errors.collect{|msg| tag(:div, msg, class: "l_error")}.join("\n")
+- body = capture do
+  .l_input= object.content
+  - unless errors.blank?
+    .l_errors= errors
+  - if object.description?
+    .l_description= object.description
+.l_field
+  - if object.label?
+    %table.css_table
+      %tbody
+        %tr
+          %td.css_td1        
+            %div{class: "l_label#{' l_required' if object.required?}"}= object.label
+          %td.css_td2
+            = body
+  - else
+    = body

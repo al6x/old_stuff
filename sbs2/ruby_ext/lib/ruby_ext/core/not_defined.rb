@@ -1,0 +1,2 @@
+module NotDefined
+end

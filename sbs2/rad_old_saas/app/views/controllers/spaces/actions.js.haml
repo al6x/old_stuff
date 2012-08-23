@@ -1,0 +1,26 @@
+var table = rad.table('#spaces');
+
+- case action_name
+- when :new
+  - form_action = create_space_path(@space, account_id: @account, format: :js)
+  - form = js render('form', locals: {form_action: form_action, form_title: t(:create_space)})
+  rad.dialog().show("#{form}");
+
+- when :create
+  - line = js render('line', object: @space)
+  table.create("#{line}");
+
+- when :destroy
+  table.line("##{@space.dom_id}").destroy();
+
+- when :edit
+  - form_action = update_space_path(@space, account_id: @account, format: :js)
+  - form = js render('form', locals: {form_action: form_action, form_title: t(:update_space)})
+  rad.dialog().show("#{form}");
+
+- when :update
+  - line = js render('line', object: @space)
+  table.line("##{@space.dom_id}").update("#{line}");
+
+- else
+  - must.be_never_called

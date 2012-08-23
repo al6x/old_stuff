@@ -1,0 +1,21 @@
+- tag :div, object.merge_html_attributes(class: " the_list m_selectable") do
+  - if object.controls?
+    .m_hover_controls= object.controls.join(' ')
+
+  - if object.name?
+    %h1.m_title= object.name
+  - elsif object.content.blank?
+    %h1.m_title= "(#{t(:empty)})"
+
+  - if object.content?
+    .l_content= object.content.to_a.join("\n")
+
+  / Show or Hide Finished tasks
+  .l_controls
+    %a{href: '#', class: 'l_show_more hidden'}= t(:show_more)
+    %a{href: '#', class: 'l_show_less hidden'}= t(:show_less)
+
+  / needed for JavaScript
+  .l_hidden_tasks.hidden
+
+  = render themed_partial('/shared/details'), object: object

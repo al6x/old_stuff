@@ -1,0 +1,4 @@
+= render 'items'
+
+- html = paginator_for(@page, @models.size, @per_page){|t, n| link_to t, build_url(action_name, page: n)}
+- content_for :aspects, html unless html.blank?

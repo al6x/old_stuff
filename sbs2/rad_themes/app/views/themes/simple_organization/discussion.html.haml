@@ -1,0 +1,14 @@
+- tag :div, object.merge_html_attributes(class: " comments the_discussion") do
+  - if object.name?
+    .left
+      %h2= object.name
+  
+  - if object.controls?
+    %h3.right= object.controls.to_a.join("\n")
+    
+    
+  .clearer &nbsp;
+  
+  / - if object.content?
+  .comment-list-wrapper
+    %ul.comment-list.comments.l_comments= object.content.to_a.join("\n")

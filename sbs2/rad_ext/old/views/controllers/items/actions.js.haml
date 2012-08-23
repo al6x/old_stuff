@@ -1,0 +1,23 @@
+- case action_name
+- when :new
+  - form = js render('form', locals: {form_action: build_url(:create, format: :js)})
+  rad.dialog().show('#{form}');
+
+- when :edit
+  - form = js render('form', locals: {form_action: update_path(@model, format: :js)})
+  rad.inplace('##{@model.dom_id}').edit('#{form}');
+
+- when :update
+  - html = js render('show', object: @model)
+  rad.inplace('##{@model.dom_id}').update('#{html}');
+
+- when :access
+  - html = js render('/tools/access')
+  $("access_tool").replaceWith("#{html}");
+
+- else
+  - must.be_never_called
+
+/ - when :context_menu
+/   - html = js render('/bag/slots/context_menu')
+/   $("#_context_menu").replaceWith("#{html}");

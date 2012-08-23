@@ -1,0 +1,8 @@
+.the_paginator
+  = object.prev if object.prev?
+  - object.pages.each do |page|
+    - if page == object.current_page
+      %span.l_active= page
+    - else
+      = object.to_link.call(page)
+  = object.next if object.tnext?

@@ -1,0 +1,10 @@
+= b.title t(:enter_captcha)
+- b.form_tag action: request.path do |f|
+  = f.line tag(:div, '', id: :dynamic_recaptcha)
+
+  - request.raw_params.each do |k, v|
+    - next if %w(format recaptcha_challenge_field recaptcha_response_field).include?(k)
+    - next unless v.is_a? String
+    = hidden_field_tag k, v
+
+  = f.line ok_button, cancel_button

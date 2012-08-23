@@ -1,0 +1,17 @@
+<% if object.logo_image? %>
+  <div class="left" id="logo">  
+    <!-- Logo, image 235x100 px -->
+    <!-- <a href="index.html"><img src="img/logo.gif" alt=""></a> -->
+    <%= object.logo_image %>
+  </div>
+<% end %>
+
+<% if object.right? %>
+  <div class='user_menu'>
+    <% object.right.each_with_index do |item, i| %>
+      <%= tag(:div, item, class: 'um_item') %>
+      <%= tag(:div, '&nbsp;', class: 'delimiter') if i < object.right.size - 1 %>
+    <% end %>
+    <div id='right_menu_clearer' class="clearer">&nbsp;</div>
+  </div>
+<% end %>

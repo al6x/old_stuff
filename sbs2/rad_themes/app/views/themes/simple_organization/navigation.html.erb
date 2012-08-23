@@ -1,0 +1,28 @@
+<% if object.left? or object.right? %>
+  <% if object.left? %>
+    <% tag :div, object.merge_html_attributes(class: "right navigation main-nav") do %>
+    <!-- <div class="left navigation" id="main-nav"> -->
+      <ul class="tabbed">
+        <% object.left.each do |item| %>
+          <% if item.hash? and item.active? %>
+            <li class="current-tab"><a href="#"><%= item.content %></a></li>
+          <% else %>
+            <li><%= item.content %></li>
+          <% end %>
+        <% end %>
+      </ul>
+      <div class="clearer">&nbsp;</div>      
+    <% end %>
+  <% end %>
+  
+  <% if object.right? %>
+    <div id='right_menu_hack'>
+      <span id='right_menu_delimiter'>&nbsp;</span>
+      <% object.right.each_with_index do |item, i| %>        
+        <%= tag(:div, item.content, class: "um_item #{'um_active_item' if item.hash? and item.active?}") %>
+        <%= tag(:div, '&nbsp;', class: 'delimiter') if i < object.right.size - 1  %>
+      <% end %>            
+    </div>
+    <!-- <div class="left navigation" id="main-nav"> -->
+  <% end %>    
+<% end %>

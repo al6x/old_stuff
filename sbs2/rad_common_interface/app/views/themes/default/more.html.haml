@@ -1,0 +1,8 @@
+- more = object.more || object.content
+- if object.core? or present?(more)
+  - raise "you should provide unique id for b.more element (to allow it remember its state in ajax requests')!" unless object.id?
+  - core_id, more_id = "#{object.id}_core", "#{object.id}_more"
+  = tag :span, object.core, id: core_id if object.core?
+  - if more.present?
+    = tag :a, object.name, class: "the_more", href: '#', 'data-id' => object.id
+    .hidden{id: more_id}= more

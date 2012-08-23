@@ -1,0 +1,16 @@
+- if object.left? or object.right?
+  - tag :div, object.merge_html_attributes(class: " the_navigation") do
+    .css_box
+      - if object.left?
+        .l_left
+          - object.left.each do |item|
+            = tag :div, item.content, class: "l_item #{'l_active' if item.hash? and item.active?}"            
+          .css_clear
+
+      - if object.right?
+        .l_right
+          - object.right.each do |item|
+            = tag :div, item.content, class: "l_item #{'l_active' if item.hash? and item.active?}"
+        .css_clear
+    
+      .css_clear

@@ -1,0 +1,10 @@
+= b.title "#{t(:domains)} (#{Time.now.year})"
+
+- b.table id: 'domains' do |o|
+  - o.head [t(:name)] + (1..Time.now.month).to_a.collect{|i| Date::MONTHNAMES[i]}
+  - o.rows do |a|
+    - @domains.each do |domain|
+      - a.add render('line', object: domain)
+
+- content_for :aspects do
+  = paginator_for(@page, @domains.size, @per_page){|t, n| link_to t, url_for(action_name, page: n)}

@@ -1,0 +1,19 @@
+- tag :div, object.merge_html_attributes(class: " the_file m_selectable") do
+  - if object.controls?
+    .m_hover_controls= object.controls.join(' ')
+  - body = capture do
+    - if object.name?
+      %a{href: object.url, class: 'l_title'}= object.name
+  - if object.url? and object.image?
+    %table.css_table
+      %tbody
+        %tr
+          %td.css_td1
+            .l_image
+              %a{href: object.url}
+                %img{src: object.image.icon_url}
+          %td.css_td2
+            = body
+  - else
+    = body
+  = render themed_partial('/shared/details'), object: object

@@ -1,0 +1,8 @@
+- b.form_for :model, object, action: form_action do |f|
+  = hidden_field_tag :item_id, params.item_id if params.item_id
+
+  = f.error_messages
+
+  = f.text_area :original_text, label: false
+
+  = f.line ok_button, cancel_button

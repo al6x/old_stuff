@@ -1,0 +1,25 @@
+- content_for :tools do
+  - b.tool do  
+    - b.more name: "...", id: 'add_button' do |o|
+      - o.core do
+        = link_to 'Add', '#'
+      - o.more do
+        = link_to('Note', '#') + tag(:span, ', ')
+        = link_to 'Selector', '#'
+
+  - b.tool name: "Search" do
+    - form_tag do
+      = text_field_tag ''
+
+  - b.tool name: "Tags" do
+    - b.tag_selector do |o|
+      - o.selected ['hot', 'low']
+      - o.selected_tag_to_link lambda{|tag| link_to tag.name, '#'}
+      - o.tags [{name: 'top', count: 10}, {name: 'low', count: 1}, {name: 'hot', count: 7}, {name: 'middle', count: 3}, {name: 'middle', count: 3}, {name: 'middle', count: 3}, {name: 'ajax', count: 1}, {name: 'important', count: 4}, {name: 'artifical_intelligence', count: 6}, {name: 'google', count: 1}, {name: 'body', count: 2}, {name: 'sport', count: 8}].collect{|hash| hash.to_openobject}
+      - o.tag_to_link lambda{|tag| link_to tag.name, '#'}
+      
+  - b.tool name: "Parameters" do        
+    - b.more name: "...", id: 'more' do
+      - b.basic_list do
+        = b.basic_list_item(tag(:a, "Update icon", href: '#'))
+        = b.basic_list_item(tag(:a, "Edit", href: '#') + " " + tag(:a, "Delete", href: '#'))

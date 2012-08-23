@@ -1,0 +1,24 @@
+var table = rad.table('#accounts');
+
+- case action_name
+- when :new
+  - form = js render('form', locals: {form_action: create_account_path(@account, format: :js), form_title: t(:create_account)})
+  table.anew("#{form}");
+
+- when :create
+  - line = js render('line', object: @account)
+  table.create("#{line}");
+
+- when :destroy
+  table.line("##{@account.dom_id}").destroy();
+
+- when :edit
+  - form = js render('form', locals: {form_action: update_account_path(@account, format: :js), form_title: t(:update_account)})
+  table.edit("#{form}");
+
+- when :update
+  - line = js render('line', object: @account)
+  table.line("##{@account.dom_id}").update("#{line}");
+
+- else
+  - must.be_never_called

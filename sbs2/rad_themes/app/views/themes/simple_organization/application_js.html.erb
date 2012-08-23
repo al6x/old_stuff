@@ -1,0 +1,31 @@
+<% javascript_tag do %>  
+  // adding delimiters between posts
+  var posts = $$('.post');
+  posts.pop();      
+  posts.each(function(post){    
+    (new Element('div.archive-separator')).inject(post, 'after');
+  });  
+  
+  // hack, moving right menu to the navigation section  
+  var right_menu = $('right_menu_hack')
+  if (right_menu) right_menu.getChildren().inject($('right_menu_clearer'), 'before');
+  
+  // Add .alignleft to images in text if other not specified
+  $$('.so_markup img:not([class])').addClass('alignleft');
+  
+  //   Add borders to all images inside markup
+  $$('.so_markup img').addClass('bordered');
+  
+  // Old jQuery stuff
+  //
+  // $(function(){
+  //   Delimiter between blog posts
+  //   $('.post:not(:last)').after("<div class='archive-separator'></div>");
+  //   
+  //   Add .alignleft to images in text if other not specified
+  //   $('.so_markup img:not([class])').addClass('alignleft');
+  //   
+  //   Add borders to all images inside markup
+  //   $('.so_markup img').addClass('bordered');
+  // });    
+<% end %>

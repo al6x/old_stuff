@@ -1,0 +1,13 @@
+.hl_code                                {color: black; background-color: #FFFFFF;}
+.hl_code pre, hl_code span              {font-family: courier, monospace;}
+.hl_c                                   {color: #0066FF; font-style: italic;}
+.hl_r, .hl_di, .hl_ty                   {color: #0000FF; font-weight: bold;}
+.hl_i, .hl_pc                           {color: #0000CD;}
+.hl_sy                                  {color: #C5060B; font-weight: bold;}
+.hl_co                                  {}
+.hl_iv, .hl_gv                          {color: #318495;}
+.hl_s, .hl_rx                           {color: #036A07;}
+.hl_il                                  {color: black;}
+.hl_idl                                 {color: #26B31A;}
+.hl_fu                                  {color: #0000A2;}
+.hl_cl                                  {text-decoration: underline;}

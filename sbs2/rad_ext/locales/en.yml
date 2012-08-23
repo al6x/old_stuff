@@ -1,0 +1,136 @@
+en:
+  # General
+  access_denied: "Access denied!"
+  add: "Add"
+  all_items: "All"
+  anonymous: "Welcome, Guest"
+  are_you_shure: "Are you sure?"
+  created_by: "%{owner}"
+  common: "Common"
+  comments: "Comments"
+  email: "eMail"
+  empty: "Empty"
+  empty_search_query: "Empty query"
+  empty_title: "Empty title"
+  enabled: "Enabled"
+  failed: "Operation failed"
+  file: "File"
+  files: "Files"
+  folder: "Folder"
+  folders: "Folders"
+  go: "Go to"
+  go_next: "Next"
+  go_prev: "Prev"
+  icon: "Icon"
+  item: "Item"
+  items: "Items"
+  layout: "Layout"
+  language: "Language"
+  line: "Line"
+  list: "List"
+  lists: "Lists"
+  login: "Login"
+  # login_not_required: "You are already logged in"
+  login_required: "You need to be logged in"
+  logout: "Logout"
+  member_visibility: "Members"
+  miscellaneous: "Miscellaneous"
+  name: "Name"
+  no_search_result_for: "You searched for %{query}, nothing was found"
+  note: "Note"
+  notes: "Notes"
+  nothing_more: "Nothing more"
+  owner_visibility: "Private"
+  page: "Page"
+  page_not_found: "Page not found"
+  pages: "Pages"
+  parameters: "Parameters"
+  password: "Password"
+  search_result_for:
+    one: "You searched for %{query}, %{count} page found"
+    other: "You searched for %{query}, %{count} pages found"
+  security: "Security"
+  selector: "Selector"
+  selectors: "Selectors"
+  signup: "Signup"
+  slug: "Link"
+  slug_description: "You should manually update current page url after changing the link!"
+  show_less: "Hide"
+  show_more: "..."
+  tag: "Tag"
+  tags: "Tags"
+  task: "Task"
+  teaser: "Teaser"
+  thumb: "Thumbnail"
+  text: "Text"
+  title: "Title"
+  type: "Type"
+  username: "Username"
+  view: "View"
+
+  # Common actions
+  cancel: "Cancel"
+  delete: "Delete"
+  edit: "Edit"
+  move: "Move"
+  new: "New"
+  ok: "Ok"
+
+  # Tags
+  invalid_tags: "Invalid tags"
+  invalid_tag_name: "Invalid tag name"
+  tags_count:
+    one: "%{count} page"
+    other: "%{count} pages"
+
+  # Comments
+  comment_created: "Comment created"
+  comment_deleteed: "Comment deleted"
+  comment_it: "Leave a comment"
+  comment_updated: "Comment updated"
+  comments_count:
+    one: "%{count} comment"
+    other: "%{count} comments"
+
+  # Authorization
+  access: "Access"
+  collaborators: "Collaborators"
+  collaborators_updated: "Collaborators updated"
+  only_owner: "owner only"
+  member_role: "member"
+  user_role: "all"
+  viewers: "Visibility"
+  viewers_updated: "Access updated"
+
+  # Item
+  attachments: "Attachments"
+  # icon_updated: "Icon updated"
+  layout_updated: "Layout updated"
+  # set_icon: "Update icon"
+
+  # Authentication
+  access_denied: "Access Denied!"
+
+  # Other
+  powered_by: "Powered by %{company}"
+
+  # Captcha
+  registered_user_or_human_required: "Registered user or human required!"
+  enter_captcha: "Please enter symbols displayed on image"
+
+  # email_registration_title: "%{name}, ваш аккаунт для %{host} создан"
+  # email_registration_text: |
+  #   Ваш аккаунт для %{host} зарегистрирован.
+  #
+  #   Имя пользователя %{name}
+  #   Пароль %{password}
+  #
+  #   Чтобы активировать его пожалуйста перейдите по ссылке:
+  #   %{url}
+
+  #
+  # Authorization
+  #
+  # member_role: "Сообществу"
+  # owner_role: "Только мне"
+  # user_role: "Всем"

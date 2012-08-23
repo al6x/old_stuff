@@ -1,0 +1,12 @@
+= render '/rad/face/demo/shared/top_navigation_bottom'
+
+= render '/rad/face/demo/shared/core_tools'
+
+- 11.times do
+  - attachment = random_attachment
+  - b.thumb id: 'thumb_id', class: "thumb_class" do |o|
+    - o.controls samples.controls
+    - o.image attachment
+    - o.url attachment.url
+    - o.name "Picture #{'dddddd df' if rand(2).odd?}.jpg"
+.css_clear

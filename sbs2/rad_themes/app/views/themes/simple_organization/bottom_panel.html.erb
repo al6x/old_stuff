@@ -1,0 +1,13 @@
+<% if object.content? or object.left? or object.right? %>
+  <div class="left" id="footer-left">
+    <%= "#{object.content}\n#{object.left.content}" %>
+    <div class="clearer">&nbsp;</div>
+  </div>
+
+  <div class="right" id="footer-right">  
+    <p class="quiet">
+      <%= object.right.content %>
+      <br>Design by <a href="http://arcsin.se/">Arcsin</a>
+    </p>
+  </div>
+<% end %>

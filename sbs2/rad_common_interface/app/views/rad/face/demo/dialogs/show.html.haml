@@ -1,0 +1,27 @@
+= b.divider "Context Menu"
+%a{href: "#", class: "the_context_menu_button", "data-content_id" => "add_content_menu"}
+  Add
+#add_content_menu.hidden
+  %a{href: "#"} Page
+  %a{href: "#"} Note
+  %a{href: "#"} File
+  
+= b.divider "Dialog"
+= link_to('Show Dialog', :dialog_form, format: :js, theme: params.theme)
+
+= b.divider "Images"
+- b.text do
+  %a{href: url_for("/static/demo/images/img1.jpg")}
+    %img{src: url_for("/static/demo/images/img1_icon.jpg")}
+  %a{href: url_for("/static/demo/images/img2.jpg")}
+    %img{src: url_for("/static/demo/images/img2_icon.jpg")}
+  %a{href: url_for("/static/demo/images/img3.jpg")}
+    %img{src: url_for("/static/demo/images/img3_icon.jpg")}
+  %a{href: url_for("/static/demo/images/img_big.jpg")}
+    %img{src: url_for("/static/demo/images/img_big_icon.jpg")}    
+  .clear  
+  
+  Use Left/Right arrows to navigate between images.
+
+= b.divider "In-place editor"
+= render 'inplace/element'

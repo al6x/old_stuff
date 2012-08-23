@@ -1,0 +1,8 @@
+layout_template: home
+slots:
+  top_panel: "/kit/top_panel"
+  navigation: "/kit/navigation"
+  tools:
+    - "/tools/access"
+    - "/tools/context_menu"
+  bottom_panel: "/kit/bottom_panel"

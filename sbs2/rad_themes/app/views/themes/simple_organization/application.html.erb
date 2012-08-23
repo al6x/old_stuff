@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>  
+  
+  <% unless (title = @html_title || @title || respond_to(:title)).blank? %>
+    <title><%= h title %></title>
+  <% end %>
+  
+  <%#= tag :link, '', rel: "icon", href: "/favicon.ico", type: "image/x-icon" %>
+    
+  <%= stylesheet_link_tag '/face.css' %>
+  <%= yield :head %>
+  <%= stylesheet_link_tag '/themes/simple_organization/style.css' %>
+</head>
+
+<body>
+  <div id="site-wrapper">
+
+    <div id="header">
+      <div id="top">
+        <%= yield :top_panel %>
+        <%= yield :navigation %>
+        <div class="clearer">&nbsp;</div>
+      </div>
+    </div>
+        
+    <%= render themed_partial("/layout_templates/#{theme.layout_template}") %>
+  
+    <div id="footer">
+      <%= yield :bottom_panel %>
+
+      <div class="clearer">&nbsp;</div>
+    </div>
+
+  </div>
+
+  <%= javascript_include_tag '/face.js' %>  
+  <%= render themed_partial('/application_js') %>
+  <%= yield :bottom %>
+  <%= call_deferred_js %>
+  <%= yield :analytics %>
+</body>
+</html>

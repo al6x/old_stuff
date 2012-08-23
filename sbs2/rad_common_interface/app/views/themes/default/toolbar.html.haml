@@ -1,0 +1,16 @@
+- if object.left? or object.right?
+  - tag :div, object.merge_html_attributes(class: " the_toolbar") do
+  
+    - if object.left?
+      .l_left
+        - object.left.each do |item|
+          .l_item= item.content
+        .css_clear
+
+    - if object.right?
+      .l_right
+        - object.right.each do |item|
+          .l_item= item.content
+        .css_clear
+    
+    .css_clear

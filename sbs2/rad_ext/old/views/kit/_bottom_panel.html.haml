@@ -1,0 +1,9 @@
+- bottom_text, powered_by = rad.config.bottom_text, rad.config.powered_by
+- if bottom_text or powered_by or rad.development? or @debug
+  - b.bottom_panel do |o|
+    - if bottom_text or rad.development? or @debug
+      - o.left do
+        = bottom_text if bottom_text
+        = render '/kit/debug' if rad.development?
+    - if powered_by
+      - o.right t(:powered_by, company: powered_by)

@@ -1,0 +1,27 @@
+- if object.content?  
+  - tag :div, object.merge_html_attributes(class: " the_tabs") do
+    - tab_ids, has_content = [], false
+    .l_panel    
+      - object.content.each do |item|
+        - classes = item.active? ? "l_item l_active" : "l_item"        
+        - unless item.content?
+          %div{'class' => classes}= item.name
+        - else
+          - has_content ||= true          
+          - tab_ids << (id = "tab_#{unique_id}")
+          %div{'class' => classes}
+            %a{href: '#', 'data-content_id' => id}= item.name
+      .css_clear
+    
+    - if has_content
+      .l_content
+        - object.content.each_with_index do |item, i|
+          - id = tab_ids[i]
+          - if item.content?
+            - if item.active?
+              .l_item{id: id}
+                = item.content
+            - else
+              .l_item{id: id, style: 'display: none;'}
+                = item.content
+        .css_clear

@@ -1,0 +1,111 @@
+<% b.text do %>
+  
+
+  <h1>Heading, Paragraphs, Line Breaks, Links, Bold, Italic</h1>
+  <h1>Heading 1</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <h2>Heading 2</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <h3>Heading 3</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>    
+  <p>The Terminator (1984) <a href='#'>More at IMDbPro</a></p>
+  <p>In the Year of Darkness, 2029, the rulers of this planet devised the ultimate plan. They would reshape the Future by changing the Past. The plan required something that felt no pity. No pain. No fear. Something unstoppable. <b>They created 'THE TERMINATOR'</b>
+  <br/>The thing that won't die, in the <i>nightmare that won't end</i>. A human-looking, apparently unstoppable cyborg is sent from the future to kill Sarah Connor; Kyle Reese is sent to stop it.</p>
+  <p>Your future is in his hands.</p>
+  <h3>Unsorted list</h3>
+  <ul>
+    <li>Blandit in, interdum a</li>
+    <li>Ultrices non lectus</li>
+    <li>Nunc id odio</li>
+    <li>Fusce ultricies</li>
+  </ul>
+  <h3>Ordered list</h3>
+  <ol>
+    <li>Blandit in, interdum a</li>
+    <li>Ultrices non lectus</li>
+    <li>Nunc id odio</li>
+    <li>Fusce ultricies</li>
+  </ol>
+  
+
+  <h1>Images inside links should be modified to ImageBox</h1>
+  <a href="<%= url_for("/static/demo/images/img1.jpg") %>">
+    <img src="<%= url_for("/static/demo/images/img1_icon.jpg") %>"></img>
+  </a>
+  <a href="<%= url_for("/static/demo/images/img2.jpg") %>">
+    <img src="<%= url_for("/static/demo/images/img2_icon.jpg") %>"></img>
+  </a>
+  <a href="<%= url_for("/static/demo/images/img3.jpg") %>">
+    <img src="<%= url_for("/static/demo/images/img3_icon.jpg") %>"></img>
+  </a>
+
+
+  <h1>Left and right styles for images</h1>
+  <div class='left'>
+    <a href="<%= url_for("/static/demo/images/img1.jpg") %>">
+      <img src="<%= url_for("/static/demo/images/img1_icon.jpg") %>"></img>
+    </a>
+  </div>
+  <p>In the Year of Darkness, 2029, the rulers of this planet devised the ultimate plan. They would reshape the Future by changing the Past. The plan required something that felt no pity. No pain. No fear. Something unstoppable. They created 'THE TERMINATOR'</p>
+  <div class='right'>
+    <a href="<%= url_for("/static/demo/images/img2.jpg") %>">
+      <img src="<%= url_for("/static/demo/images/img2_icon.jpg") %>"></img>
+    </a>
+  </div>
+  <p>The thing that won't die, in the nightmare that won't end. A human-looking, apparently unstoppable cyborg is sent from the future to kill Sarah Connor; Kyle Reese is sent to stop it.</p>
+  <p>In the Year of Darkness, 2029, the rulers of this planet devised the ultimate plan. They would reshape the Future by changing the Past. The plan required something that felt no pity. No pain. No fear. Something unstoppable. They created 'THE TERMINATOR'
+  <br/>The thing that won't die, in the nightmare that won't end. A human-looking, apparently unstoppable cyborg is sent from the future to kill Sarah Connor; Kyle Reese is sent to stop it.</p>
+
+
+  <h1>Left and right styles for arbitrary content</h1>
+  <div class='left'>
+    <b>The Terminator (1984) <a href='#'>More at IMDbPro</a> <br/> A human-looking, apparently unstoppable cyborg.</b>
+  </div>
+  <p>In the Year of Darkness, 2029, the rulers of this planet devised the ultimate plan. They would reshape the Future by changing the Past. The plan required something that felt no pity. No pain. No fear. Something unstoppable. They created 'THE TERMINATOR'</p>
+  <div class='right'>
+    <b>The Terminator (1984) <a href='#'>More at IMDbPro</a> <br/> A human-looking, apparently unstoppable cyborg.</b>
+  </div>
+  <p>The thing that won't die, in the nightmare that won't end. A human-looking, apparently unstoppable cyborg is sent from the future to kill Sarah Connor; Kyle Reese is sent to stop it.</p>
+  <p>In the Year of Darkness, 2029, the rulers of this planet devised the ultimate plan. They would reshape the Future by changing the Past. The plan required something that felt no pity. No pain. No fear. Something unstoppable. They created 'THE TERMINATOR'
+  <br/>The thing that won't die, in the nightmare that won't end. A human-looking, apparently unstoppable cyborg is sent from the future to kill Sarah Connor; Kyle Reese is sent to stop it.</p>
+
+
+  <h1>Image by default should be alligned to the Left</h1>
+  <img src="<%= url_for("/static/demo/images/img1_thumb.jpg") %>"></img>
+  <p>In the Year of Darkness, 2029, the rulers of this planet devised the ultimate plan. They would reshape the Future by changing the Past. The plan required something that felt no pity. No pain. No fear. Something unstoppable. They created 'THE TERMINATOR'</p>
+  <p>The thing that won't die, in the nightmare that won't end. A human-looking, apparently unstoppable cyborg is sent from the future to kill Sarah Connor; Kyle Reese is sent to stop it.</p>
+
+  
+  <h1>Image by default should be alligned to the Left, even if it wrapped (from error)</h1>    
+  <img src="<%= url_for("/static/demo/images/img1_thumb.jpg") %>"></img>
+  <p>      
+    In the Year of Darkness, 2029, the rulers of this planet devised the ultimate plan. They would reshape the Future by changing the Past. The plan required something that felt no pity. No pain. No fear. Something unstoppable. They created 'THE TERMINATOR'
+  </p>
+  <p>The thing that won't die, in the nightmare that won't end. A human-looking, apparently unstoppable cyborg is sent from the future to kill Sarah Connor; Kyle Reese is sent to stop it.</p>
+
+
+  <h1>Image by default should be alligned to the Left</h1>
+  <a href="http://www.youtube.com/watch?v=pdPy4crWuCA" title="Zombieland Trailer" class='_video'>
+    <img src="<%= url_for("/static/demo/images/video_icon.png") %>"></img>
+  </a>
+  <p>In the Year of Darkness, 2029, the rulers of this planet devised the ultimate plan. They would reshape the Future by changing the Past. The plan required something that felt no pity. No pain. No fear. Something unstoppable. They created 'THE TERMINATOR'</p>
+  <p>The thing that won't die, in the nightmare that won't end. A human-looking, apparently unstoppable cyborg is sent from the future to kill Sarah Connor; Kyle Reese is sent to stop it.</p>
+
+
+  <h1>Clear and Space</h1>
+  <div class='left'>This text splitted</div> <div class='clear'></div> <div class='left'>in two lines by clear div.</div>
+  <div class='clear'></div>
+  <div class='left'>This text splitted</div> <div class='space'></div> <div class='left'>in two lines by space div.</div>
+  <div class='clear'></div>
+  
+  
+  <!-- <h1>Autoclear after last image in line</h1>
+  <a href="<%= url_for("/static/demo/images/img1.jpg") %>">
+    <img src="<%= url_for("/static/demo/images/img1_icon.jpg") %>"></img>
+  </a>
+  <a href="<%= url_for("/static/demo/images/img2.jpg") %>">
+    <img src="<%= url_for("/static/demo/images/img2_icon.jpg") %>"></img>
+  </a>
+  This text should be on the newline -->
+      
+<% end %>

@@ -1,0 +1,22 @@
+- case action_name
+- when :delete
+  rad.discussion().comment('##{@model.dom_id}').delete();
+
+- when :edit
+  - form = js render('form', object: @model, locals: {form_action: update_path(@model, format: :js)})
+  rad.discussion().comment('##{@model.dom_id}').edit('#{form}');
+
+- when :new
+  - form = js render('form', object: @model, locals: {form_action: create_comment_path(format: :js)})
+  rad.discussion().anew('#{form}');
+
+- when :create
+  - html = js render('embedded', object: @model)
+  rad.discussion().create("#{html}");
+
+- when :update
+  - html = js render('embedded', object: @model)
+  rad.discussion().comment('##{@model.dom_id}').update('#{html}');
+
+- else
+  - must.be_never_called

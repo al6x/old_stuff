@@ -1,0 +1,8 @@
+- b.line id: object._id do |o|
+  - o.name h(object.name.blank? ? t(:empty_title) : object.name)
+  - unless object.attachments_as_images.empty?
+    - o.image object.attachments_as_images.first
+  - o.url path(object)
+  - o.text object.teaser
+  - o.tags render_item_tags(object) + [tag(:div, t(object.class.alias.underscore), class: 'm_item_type')]
+  - o.details render_item_details(object)

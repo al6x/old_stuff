@@ -1,0 +1,10 @@
+require 'rake_ext'
+
+project \
+  name: "file_model",
+  gem: true,
+  # version: '0.1.0',
+  summary: "File storage for Models",
+
+  author: "Alexey Petrushin",
+  homepage: "http://github.com/alexeypetrushin/file_model"

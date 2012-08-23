@@ -1,0 +1,15 @@
+- tag :div, object.merge_html_attributes(class: " the_folder m_selectable") do
+  - if object.controls?
+    .m_hover_controls= object.controls.join(' ')
+
+  - if object.name?
+    %h1.m_title= object.name
+  - elsif object.content.blank?
+    %h1.m_title= "(#{t(:empty)})"
+
+  - if object.content?
+    .l_content
+      = object.content.to_a.join("\n")
+      .css_clear
+
+  = render themed_partial('/shared/details'), object: object

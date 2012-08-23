@@ -1,0 +1,32 @@
+= render '/rad/face/demo/shared/top_navigation_bottom'
+
+= render '/rad/face/demo/shared/tools'          
+
+= b.divider "Item"
+- b.item id: "item_id", class: "item_class" do |o|
+  - o.name "Terminator movie series"
+  - o.text samples.text
+  - o.controls samples.controls
+  - o.attachments samples.attachments
+  - o.tags samples.tags      
+  - o.details samples.details
+          
+= b.divider "Thumb"
+- 10.times do
+  - attachment = random_attachment
+  - b.thumb id: 'thumb_id', class: "thumb_class" do |o|
+    - o.controls samples.controls
+    - o.image attachment
+    - o.url attachment.url
+    - o.name 'Picture 1.jpg'
+.css_clear 
+  
+= b.divider "Line"
+- b.line id: "line_id", class: "line_class" do |o|
+  - o.name samples.name
+  - o.image samples.attachments.first
+  - o.url samples.attachments.first.url
+  - o.text samples.detail_text
+  - o.controls samples.controls
+  - o.tags samples.tags      
+  - o.details samples.details

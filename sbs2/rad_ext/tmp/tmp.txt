@@ -1,0 +1,25 @@
+<div class="line">
+  <div id="recaptcha_widget" class="captcha">
+    <div id="recaptcha_image"></div>
+    <div><a href="javascript:Recaptcha.reload()">Получить другую картинку</a></div>
+    <input type="text" id="recaptcha_response_field" name="recaptcha_response_field"/>
+    <%= captcha_html %>
+  </div>
+</div>
+
+
+/ = 'a' + 'b' recaptcha_tags +
+= b.title t(:enter_captcha)
+.a
+  = recaptcha_tags
+- b.form_tag action: workspace.request.path do |f|
+  = f.error_messages @error_messages if @error_messages
+
+  = f.line text_field_tag(:captcha, "")
+  / = f.text_field_tag :captcha, ""
+
+  - params.each do |k, v|
+    - next if k == :format
+    = f.hidden_field_tag k, v
+
+  = f.line ok_button, cancel_button

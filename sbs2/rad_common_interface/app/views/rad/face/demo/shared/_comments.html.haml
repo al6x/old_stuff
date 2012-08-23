@@ -1,0 +1,11 @@
+- b.discussion id: "discussion_id", class: "discussion_class" do |o|
+  - o.name "3 comments"
+  - o.controls "<a href='#'>comment</a>"
+  - o.content do
+    - 3.times do |i|
+      - b.comment id: 'comment_id', class: 'comment_class' do |o|
+        - o.details samples.comment_details
+        - o.owner link_to("admin", '#')
+        - o.avatar image_tag(url_for("/static/demo/images/img1_icon.jpg")) unless i == 1
+        - o.text samples.comment_text
+        - o.controls samples.controls

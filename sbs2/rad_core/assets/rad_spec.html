@@ -1,0 +1,60 @@
+<html>
+<head>
+  <title>Rad Spec</title>
+
+  <!-- CoffeeScript -->
+  <script type="text/javascript" src="vendor/coffee-script.js"></script>
+
+  <!-- libraries -->
+  <script type="text/javascript" src="vendor/jquery.js"></script>
+  <script type="text/javascript" src="vendor/jquery.url.js"></script>
+
+  <script type="text/javascript" src="vendor/underscore.js"></script>
+  <script type="text/coffeescript" src="lib/stdlib.coffee"></script>
+
+  <script type="text/javascript" src="vendor/backbone.js"></script>
+
+  <script type="text/coffeescript" src="lib/dependency-injector.coffee"></script>
+
+  <!-- Rad Libraries -->
+  <script type="text/coffeescript" src="rad/prepare.coffee"></script>
+  <script type="text/coffeescript" src="rad/misc.coffee"></script>
+  <script type="text/coffeescript" src="rad/jquery.coffee"></script>
+  <script type="text/coffeescript" src="rad/backbone.coffee"></script>
+  <script type="text/coffeescript" src="rad/models.coffee"></script>
+  <script type="text/coffeescript" src="rad/server.coffee"></script>
+  <script type="text/coffeescript" src="rad/form_builder.coffee"></script>
+  <script type="text/coffeescript" src="rad.coffee"></script>
+
+  <!-- Specs -->
+  <link rel="stylesheet" href="vendor/jasmine/jasmine.css">
+  <script type="text/javascript" src="vendor/jasmine/jasmine.js"></script>
+  <script type="text/javascript" src="vendor/jasmine/jasmine-html.js"></script>
+  <script type="text/coffeescript" src="vendor/mary.coffee"></script>
+  <script type="text/coffeescript" src="rad/spec.coffee"></script>
+
+  <script type="text/coffeescript" src="rad_spec/model_spec.coffee"></script>
+  <script type="text/coffeescript" src="rad_spec/misc_spec.coffee"></script>
+
+  <!-- Runner -->
+  <script type="text/coffeescript">
+    jasmineEnv = jasmine.getEnv()
+    jasmineEnv.updateInterval = 1000
+
+    trivialReporter = new jasmine.TrivialReporter();
+
+    jasmineEnv.addReporter(trivialReporter)
+
+    jasmineEnv.specFilter = (spec) ->
+      trivialReporter.specFilter(spec)
+
+    currentWindowOnload = window.onload;
+
+    jasmineEnv.execute();
+  </script>
+
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,2 @@
+- form = js render('checkout_form', locals: {form_action: checkout_path(@model, format: :js)})
+rad.dialog().show('#{form}');

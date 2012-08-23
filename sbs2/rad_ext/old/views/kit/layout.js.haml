@@ -1,0 +1,15 @@
+= "try{"
+
+- unless params._target.blank?
+  var target = $('#{params._target}');
+- else
+  var target = $('body');
+
+= yield
+
+- if msg = flash.error || flash.sticky_error
+  rad.error("#{h(js(msg))}");
+- if msg = flash.info || flash.sticky_info
+  rad.info("#{h(js(msg))}");
+
+= "}catch(e){console.log(e)};"

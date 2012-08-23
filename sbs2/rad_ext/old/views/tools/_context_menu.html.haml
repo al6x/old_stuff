@@ -1,0 +1,12 @@
+- if @model and partials.show?(:context_menu)
+  - model_name = @model.class.alias.underscore
+  - b.tool name: t(:parameters), id: '_context_menu' do |o|
+    - o.content do
+      - b.more id: 'item_context_menu', name: t(:show_more), class: 'm_tiny' do
+        - b.basic_list do
+          = b.basic_list_item item_layout_selector if can?(:update, @model)
+
+          - common_controls = []
+          - common_controls << link_to(t(:edit), edit_path(@model, format: :js)) if can? :update, @model
+          - common_controls << link_to(t(:delete), delete_path(@model, format: :js), method: :post, confirm: t(:are_you_shure)) if can? :delete, @model
+          = b.basic_list_item common_controls.join(",\n") unless common_controls.empty?

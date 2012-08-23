@@ -1,0 +1,1 @@
+rad.mode = :test, true

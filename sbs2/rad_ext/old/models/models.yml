@@ -1,0 +1,3 @@
+fs:
+  host: http://localhost
+  prefix: /fs

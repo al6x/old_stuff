@@ -1,0 +1,14 @@
+= b.title t(:accounts)
+
+- b.toolbar do |o|
+  - o.left do |a|
+    - a.add link_to(t(:new), new_account_path(format: :js))
+
+- b.table id: 'accounts' do |o|
+  - o.head [t(:name), t(:domains), t(:spaces), '']
+  - o.rows do |a|
+    - @accounts.each do |account|
+      - a.add render('line', object: account)
+
+- content_for :aspects do
+  = paginator_for(@page, @accounts.size, @per_page){|t, n| link_to t, url_for(action_name, page: n)}

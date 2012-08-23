@@ -1,0 +1,11 @@
+._css_clear {
+  display: block !important;
+  clear: both !important;
+  width: 0px !important;
+  height: 0px !important;
+  min-width: 0px !important;
+  min-height: 0px !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  border: 0px !important;
+}

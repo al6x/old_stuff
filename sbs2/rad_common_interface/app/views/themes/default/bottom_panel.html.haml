@@ -1,0 +1,16 @@
+- if object.content? or object.left? or object.right?
+  - tag :div, object.merge_html_attributes(class: " the_bottom_panel") do
+    .css_box
+      - if object.content? or object.left?
+        .l_left
+          .l_item
+            = object.content
+            = object.left.content
+          .css_clear
+
+      - if object.right?
+        .l_right
+          .l_item= object.right.content
+          .css_clear
+    
+      .css_clear

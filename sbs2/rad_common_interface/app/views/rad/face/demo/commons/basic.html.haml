@@ -1,0 +1,86 @@
+= render '/rad/face/demo/shared/top_navigation_bottom'
+
+= render '/rad/face/demo/shared/tools'
+
+- content_for :top_aspects do
+  = b.divider "Messages"
+
+  = b.message 'Info message'
+  - b.message type: :error do
+    Error Message
+    
+- content_for :bottom_aspects do
+  = b.divider "Custom content" 
+
+  = render themed_partial('/html')
+          
+= b.divider "Title"
+= b.title "The Title", id: "title_id", class: "title_class"    
+
+= b.divider "Tabs"
+
+- b.tabs id: "tabs_id", class: "tabs_class" do |o|
+  - samples.tabs.each do |name|
+    - if samples.active_tab == name
+      - o.add name: name, active: true
+    - else
+      - o.add name: link_to(name, "#")
+      
+= b.divider "Tabs with content"
+
+- b.tabs id: "tabs_id", class: "tabs_class" do |o|
+  - o.add name: 'Contacts', active: true do
+    Contacts ...
+  - o.add name: 'Import' do
+    Import ...
+  - o.add name: 'Cathegories' do
+    Cathegories ...
+
+
+= b.divider "Toolbar"
+
+- b.toolbar id: "toolbar_id", class: "toolbar_class" do |o|
+  - o.left do |a|
+    - a.add link_to('Compose', "#", class: 'icn_compose')
+    - a.add link_to('Move', "#")
+    - a.add link_to('Delete', "#")
+
+  - o.right do |a|
+    - a.add link_to('Archive', "#", class: 'icn_compose')
+    - a.add link_to('Filter', "#")
+    
+
+= b.divider "List"
+
+- b.basic_list id: "list_id", class: "list_class" do |o|
+  - o.content do
+    = b.basic_list_item "First Line", id: "list_id_1", class: "list_class_1"
+    = b.basic_list_item "Second Line", check_box: check_box_tag(:tmp), id: "list_id_2", class: "list_class_2"  
+
+= b.divider "Table" 
+
+- b.table id: "table_id", class: "table_class", on: 3 do |o| 
+  - o.head ["Name", "Position", "Actions"]
+  - o.rows do |a|
+    - a.add b.table_row(["Alex", "Manager", "<a href='#'>Delete</a>"], id: "table_id_1", class: "table_class_1")
+    - a.add b.table_row(["Bob", "Worker", "<a href='#'>Delete</a>"])
+    - a.add b.table_row(["Fred", "Executer", "<a href='#'>Delete</a>"])
+
+
+= b.divider "Table without header" 
+
+- b.table do |o| 
+  - o.rows do |a|
+    = a.add b.table_row(["Alex", "Manager", "<a href='#'>Delete</a>"])
+    - a.add do
+      - b.table_row do |o| 
+        - o.content do |a|
+          - a.add "Fred"
+          - a.add "Executer"
+          - a.add "<a href='#'>Delete</a>" 
+
+
+= b.divider "Text" 
+
+- b.text do
+  Some Text <a href='#'>Some Link</a>

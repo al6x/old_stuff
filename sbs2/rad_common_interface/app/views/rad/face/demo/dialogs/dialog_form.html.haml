@@ -1,0 +1,7 @@
+= b.title "Dialog Title"
+- b.form_tag action: url_for(:dialog, format: :js) do |f|
+  = f.hidden_field_tag :theme, params.theme
+  = f.text_field_tag :name, "Some Name", label: "Name"  
+  = f.text_area_tag :body, "Some text"
+  = f.check_box_tag :valid, true, label: 'Valid'
+  = f.line ok_button('Ok'), cancel_button('Cancel')

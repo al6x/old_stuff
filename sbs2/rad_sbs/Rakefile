@@ -1,0 +1,38 @@
+require 'rake_ext'
+
+project \
+  name: "sbs",
+  official_name: "rad_sbs",
+  summary: "Simple eCommerce, CMS and Organizer",
+  dirs: %w(app config),
+  gem: true,
+
+  author: "Alexey Petrushin",
+  homepage: "http://github.com/alexeypetrushin/rad_sbs"
+
+require 'kit/tasks'
+require 'users/tasks'
+
+desc "Initialize database"
+task initialize: 'users:initialize'
+
+desc "Import sample data"
+task import_sample_data: :environment do
+  # mongoexport --db sbs_development --collection items --out items.json
+  # mongoexport --db sbs_development --collection tags --out tags.json
+
+  if Models::Item.count > 0 or Models::Tags.count > 0
+    warn "can't import, database not empty"
+    exit
+  end
+
+  # importing database
+  sample_data = rad.runtime_path.to_dir[:sample_data]
+  %x(mongoimport --db sbs_development --collection items --file #{sample_data['items.json'].path})
+  %x(mongoimport --db sbs_development --collection tags --file #{sample_data['tags.json'].path})
+
+  # importing files
+  fs = sample_data[:fs]
+  public_path = rad.http.public_path.to_dir
+  fs.copy_to public_path[:fs]
+end

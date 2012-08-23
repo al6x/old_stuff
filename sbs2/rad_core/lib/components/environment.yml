@@ -1,0 +1,30 @@
+backtrace_filters:
+  - /timeout.rb
+  - rubygems/custom_require
+  - /bin/spec
+  - /monitor
+  - /synchronize
+  - internal:lib/
+
+  - /gems/haml
+  - /gems/tilt
+  - /gems/rack
+  - /gems/rspec
+  - /gems/thin
+  - /gems/eventmachine
+
+  - lib/fake_gem
+  - /class_loader
+  - /micon
+
+  # - /kit/
+  # - /rad/
+  # - /face/
+
+  - /rad/template
+  - /rad/support
+  - /ruby_ext/more/callbacks
+  - /face/view_builder
+  - /face/view_helper
+
+  - /ruby_ext/more/callbacks

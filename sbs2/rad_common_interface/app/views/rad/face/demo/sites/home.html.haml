@@ -1,0 +1,8 @@
+= render '/rad/face/demo/shared/top_navigation_bottom'
+
+= render '/rad/face/demo/shared/core_tools'
+
+- b.item id: "note_id", class: "note_class" do |o|
+  - o.text demo_metadata.homepage_html
+  - o.controls [link_to('edit', '#'), link_to('delete', '#')]
+  - o.details samples.details

@@ -1,0 +1,22 @@
+= render '/rad/face/demo/shared/top_navigation_bottom'
+
+= render '/rad/face/demo/shared/tools'          
+
+= b.divider "List"
+- b.list id: "list_id", class: " list_class _sortable_container" do |o|
+  - o.name "List of Tasks"
+  - o.controls samples.controls
+  - o.tags samples.tags      
+  - o.details samples.details
+  - o.content do
+    - 5.times do |i|
+      - b.list_item "First Line", id: "a#{i}" do |o|
+        - o.check_box check_box_tag(:tmp)
+        - o.controls(samples.controls + [link_to('move', '#', class: '_handle')])
+        - o.details samples.details
+        
+    - 13.times do |i|
+      - b.list_item "First Line", id: "b#{i}" do |o|
+        - o.controls(samples.controls + [link_to('move', '#', class: '_handle')])
+        - o.details samples.details
+        - o.finished true

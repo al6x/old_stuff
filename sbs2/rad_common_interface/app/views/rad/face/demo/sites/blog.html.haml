@@ -1,0 +1,12 @@
+= render '/rad/face/demo/shared/top_navigation_bottom'
+
+= render '/rad/face/demo/shared/tools'
+
+- b.item do |o|
+  - o.name samples.name
+  - o.text samples.text
+  - o.controls samples.controls
+
+= render '/rad/face/demo/shared/line_previews'
+
+= render '/rad/face/demo/shared/paginator'

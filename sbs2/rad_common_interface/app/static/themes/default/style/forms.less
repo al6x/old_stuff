@@ -1,0 +1,34 @@
+.the_form_t ()         {
+  .l_field             {
+    > table.css_table  {
+      > tbody          {
+        > tr           {
+          > td.css_td1 {width: 30%;}
+          > td.css_td2 {}}}}}  
+  .l_line              {.t_tabs;}}
+  
+.the_form          {.the_form_t; // .s_box; .s_border; .s_round;
+	.l_errors        {
+    .l_error       {.s_small_text; color: @red_color;}}  
+	.l_field         {.s_vbox(@small); .s_link;
+    .l_required    {font-weight: bold;}
+		.l_label       {}		
+    .l_input       {
+      
+      select               {min-width: 30%}
+      input, textarea      {width: 100%;}
+      textarea             {min-height: @textarea_height !important;}
+      input[type=checkbox] {width: auto;}
+      input[type=radio]    {width: auto;}
+      label                {margin-left: @normal; margin-right: @big;}}        
+      
+    .l_description {.s_small_text; color: @light_color;}						
+		.l_errors      {}}
+  .l_line          {.s_tabs; .s_vbox; .s_link;
+    .l_item        {
+      a            {padding: 3px 0px 4px; display: block;}}}} // to be the same size as button in formalize.css
+
+
+// special cases
+.the_form   {
+  .the_more {float: right;}}

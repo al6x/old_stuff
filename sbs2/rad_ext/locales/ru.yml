@@ -1,0 +1,142 @@
+ru:
+  # General
+  access_denied: "Доступ запрещен!"
+  add: "Добавить"
+  all_items: "Все"
+  anonymous: "Добро пожаловать, Гость"
+  are_you_shure: "Вы уверены?"
+  created_by: "%{owner}"
+  comments: "Комментарии"
+  common: "Общие"
+  email: "Почта"
+  empty: "Пусто"
+  empty_search_query: "Пустой запрос"
+  empty_title: "Нет заголовка"
+  enabled: "Активен"
+  failed: "Не удалось выполнить операцию"
+  file: "Файл"
+  files: "Файлы"
+  folder: "Папка"
+  folders: "Папки"
+  go: "Перейти"
+  go_next: "Вперед"
+  go_prev: "Назад"
+  icon: "Иконка"
+  item: "Элемент"
+  items: "Элементы"
+  layout: "Лайаут"
+  language: "Язык"
+  line: "Линия"
+  list: "Список"
+  lists: "Списки"
+  login: "Войти"
+  # login_not_required: "Вы уже вошли"
+  login_required: "Для получения доступа необходимо войти в систему"
+  logout: "Выйти"
+  member_visibility: "Участники"
+  miscellaneous: "Разное"
+  name: "Имя"
+  no_search_result_for: "Вы искали %{query}, ничего не найдено"
+  note: "Заметка"
+  notes: "Заметки"
+  nothing_more: "Больше ничего нет"
+  owner_visibility: "Личное"
+  page: "Страница"
+  page_not_found: "Страница не найдена"
+  pages: "Страницы"
+  parameters: "Параметры"
+  password: "Пароль"
+  search_result_for:
+    one: "Вы искали %{query}, найдена %{count} страница"
+    few: "Вы искали %{query}, найдено %{count} страницы"
+    many: "Вы искали %{query}, найдено %{count} страниц"
+    other: "Вы искали %{query}, найдено %{count} страниц"
+  security: "Безопасность"
+  selector: "Селектор"
+  selectors: "Селекторы"
+  signup: "Регистрация"
+  slug: "Ссылка"
+  slug_description: "После изменения этого поля вы должны вручную обновить соответствующим образом URL страницы"
+  show_less: "Скрыть"
+  show_more: "..."
+  tag: "Тег"
+  tags: "Теги"
+  task: "Задача"
+  teaser: "Тизер"
+  thumb: "Картинка"
+  text: "Текст"
+  title: "Название"
+  type: "Тип"
+  username: "Логин"
+  view: "Вид"
+
+  # Common actions
+  cancel: "Отмена"
+  delete: "Удалить"
+  edit: "Редактировать"
+  move: "Двигать"
+  new: "Создать"
+  ok: "Ок"
+
+  # Tags
+  invalid_tags: "Неверное значение категории"
+  invalid_tag_name: "Неверное имя тега"
+  tags_count:
+    one: "%{count} страница"
+    few: "%{count} страницы"
+    many: "%{count} страниц"
+    other: "%{count} страниц"
+
+  # Comments
+  comment_created: "Комментарий создан"
+  comment_deleteed: "Комментарий удален"
+  comment_it: "Оставить комментарий"
+  comment_updated: "Комментарий обновлен"
+  comments_count:
+    one: "%{count} комментарий"
+    few: "%{count} комментария"
+    many: "%{count} комментариев"
+    other: "%{count} комментариев"
+
+  # Authorization
+  access: "Доступ"
+  collaborators: "Правят"
+  collaborators_updated: "Доступ изменен"
+  only_owner: "только владелец"
+  member_role: "участники"
+  user_role: "все"
+  viewers: "Видят"
+  viewers_updated: "Доступ изменен"
+
+  # Item
+  attachments: "Файлы"
+  # icon_updated: "Иконка изменена"
+  layout_updated: "Лайаут изменен"
+  # set_icon: "Изменить иконку"
+
+  # Authentication
+  access_denied: "Доступ запрещен!"
+
+  # Other
+  powered_by: "Сайт сделан %{company}"
+
+  # Captcha
+  registered_user_or_human_required: "Требуется зарегистрированный пользователь или человек!"
+  enter_captcha: "Пожалуйста введите символы изображенные на картинке"
+
+  # email_registration_title: "%{name}, ваш аккаунт для %{host} создан"
+  # email_registration_text: |
+  #   Ваш аккаунт для %{host} зарегистрирован.
+  #
+  #   Имя пользователя %{name}
+  #   Пароль %{password}
+  #
+  #   Чтобы активировать его пожалуйста перейдите по ссылке:
+  #   %{url}
+
+  #
+  # Authorization
+  #
+  # member_role: "Сообществу"
+  # owner_role: "Только мне"
+  # user_role: "Всем"

@@ -1,0 +1,4 @@
+- if object.content?
+  - tag :div, object.merge_html_attributes(class: " m_markup") do
+    = object.content
+    .css_clear

@@ -1,0 +1,10 @@
+require 'rake_ext'
+
+project \
+  name: "face",
+  official_name: "rad_face",
+  gem: true,
+  summary: "User Interface tools for Rad Framework",
+
+  author: "Alexey Petrushin",
+  homepage: "http://github.com/alexeypetrushin/rad_face"

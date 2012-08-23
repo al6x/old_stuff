@@ -1,0 +1,57 @@
+= render '/rad/face/demo/shared/top_navigation_bottom'
+
+= render '/rad/face/demo/shared/tools'
+
+= b.divider "Form"
+
+- b.form_tag id: 'basic_form_tag', action: '/some_action' do |f|
+  = f.error_messages "First", "Second"
+
+  = f.hidden_field_tag :hidden_field, "value"
+    
+  = f.check_box_tag :check_box, true, label: ""
+  = f.text_field_tag :text_field1, "Some Name", label: "Field with error", errors: ["Error 1", "Error 2"]
+  = f.text_field_tag :text_field2, "Some Name", label: "Type something here", description: "Add something valuable, (its description for this text_field)" 
+  = f.text_area_tag :text_area, "Some text"
+  = f.text_field_tag :text_field3, "", required: true, label: "Required field"
+  
+  - f.form_field label: "Visibility" do 
+    = %w{one two three}.collect{|n| radio_button_tag('radio_button', n, theme: false) + label_tag("group_#{n}", n)}.join(' ')
+  
+  - b.more id: 'stub', name: "..." do
+    = f.text_field_tag :text_field4, "", label: "Extra Fields"
+    
+  = f.line submit_tag("Ok"), link_to("Cancel", "#")
+
+= b.divider "Form for"
+
+- b.form_for :model, samples.model, id: 'basic_form_for', action: '/some_action' do |f| 
+  = f.error_messages 
+
+  = f.hidden_field_tag :somehidden_field, "value" 
+  = f.hidden_field :name 
+
+  = f.check_box :active, label: "" 
+  = f.text_field :name, label: "Type something here", description: "Add something valuable, (its description for this text_field)" 
+  = f.text_area :body, label: false 
+  
+  = f.text_field_tag :name, "value" 
+  
+  = f.line f.submit("Ok"), link_to("Cancel", "#")
+  
+  
+= b.divider "Form with Attachments"
+
+- model = {files_as_attachments1: [{name: 'image1.jpg', url: '/some_path/image1.jpg'}, {name: 'image2.jpg', url: '/some_path/image2.jpg'}], files_as_attachments2: []}
+- b.form_for :model, model do |f|
+  = f.text_field :name, label: "Name"
+
+  = f.line
+
+  = f.attachments :files_as_attachments1, label: false
+
+  = f.line
+
+  = f.attachments :files_as_attachments2, label: 'Images'
+
+  = f.line submit_tag("Ok"), link_to("Cancel", "#")

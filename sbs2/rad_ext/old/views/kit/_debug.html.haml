@@ -1,0 +1,13 @@
+Params: #{params.inspect}
+- permissions = Models::User.current.effective_permissions.select{|op, perm| perm}.collect{|op, perm| op}.join(', ')
+- if permissions.present?
+  %br
+  Permissions: #{permissions}
+- if @model and Models::User.current.owner?(@model)
+  - opermissions = Models::User.current.effective_permissions_as_owner.to_a.select{|op, perm| perm}.collect{|op, perm| op}.join(', ')
+  - if opermissions.present?
+    %br
+    Permissions as Owner: #{}
+
+- if @debug
+  %p= @debug

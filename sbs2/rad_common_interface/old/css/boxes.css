@@ -1,0 +1,42 @@
+/* Basic Example */
+.app {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+.app > * {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+.top{
+}
+.left{      
+  width: 20%;
+  float: left;
+}
+.center{
+  float: left;
+  min-height: 100px;
+}
+.right{
+  width: 200px;
+  float: left;
+}
+.bottom{
+}
+
+/* Simple Example */
+.line {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+.line > * {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+  min-height: 100px;
+}
+
+/* Advanced Example */

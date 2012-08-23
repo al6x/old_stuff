@@ -1,0 +1,20 @@
+db:
+  default:
+    name: sbs_development
+
+fs:
+  prefix: /fs
+  driver_class: 'Vos::Drivers::Local'
+  options:
+    :root:     './public'
+
+# Use setting below to connect to AWS S3 storage
+# fs:
+#   host: https://<your_bucket_name>.s3.amazonaws.com
+#   prefix: /fs
+#   driver_class: 'Vos::Drivers::S3'
+#   options:
+#     :access_key_id:     '<your_id'
+#     :secret_access_key: '<your_secret_key>'
+#     :bucket:            :<your_bucket_name>
+#     :acl:               :public_read

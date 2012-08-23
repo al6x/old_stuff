@@ -1,0 +1,43 @@
+.the_attachments_t () {
+  .l_item             {float: left;
+    > a, div          {float: left;}}}
+.the_attachments      {.the_attachments_t;
+  .l_item             {
+    > a, div          {margin-right: @normal;}}
+  .l_item_style       {.s_box; .s_round; .s_border; margin-left: 0; margin-right: @normal * 2;}
+  .l_empty_item_style {.s_box; margin-left: 0; margin-right: @normal * 2;}}
+
+  
+.the_comment_t ()     {
+  > table.css_table   {
+    > tbody           {
+      > tr            {
+        > td.css_td1  {width: @icon_size1;}
+        > td.css_td2  {}}}}}  
+.the_comment {.the_comment_t; .s_box; .s_round;
+  .l_image   {margin-right: @normal;}
+  .l_text    {}
+  .m_details {}}
+  
+    
+.the_thumb_t () {float: left; .s_box; .s_round;
+  .l_title      {display: block;}}  
+.the_thumb          {.the_thumb_t; min-width: @icon_size2; min-height: @icon_size2; margin: 0px;
+  .m_hover_controls {.s_small_text;}
+  .l_title          {.s_small_text; max-width: @icon_size2;}}
+
+
+.the_line_t ()        {
+  > table.css_table   {
+    > tbody           {
+      > tr            {
+        > td.css_td1  {width: @icon_size1;}
+        > td.css_td2  {}}}}}
+.the_line     {.the_line_t; .s_box; .s_round;
+  .l_image    {width: @icon_size1; margin-right: @normal;}    
+  .l_title    {.s_normal_text; color: @select_color;    
+    &:visited {color: @select_color;}}}
+    
+    
+.the_item {.s_box; .s_round;
+  .l_text {}}

@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+require 'rad'
+
+# Parsing options.
+require 'optparse'
+OptionParser.new do |opts|
+  opts.banner =  <<-TEXT
+Rad Application Framework
+
+Usage:
+  $ rad
+  $ rad production
+  $ rad console production
+
+TEXT
+
+  opts.on('-v', "--version", "Version.") do |v|
+    puts "Rad Toolkit #{Rad::VERSION}"
+    exit
+  end
+end.parse!
+
+runner   = %w(server console).include?(ARGV.first)              ? ARGV.shift : :server
+rad.mode = %w(production development test).include?(ARGV.first) ? ARGV.shift : :development
+
+# Running.
+Rad::Cli.new.send "run_#{runner}"

@@ -1,0 +1,10 @@
+- b.toolbar do |b|
+  - b.left do |a|
+    - a.add link_to(t(:new), new_space_path(format: :js, account_id: @account))
+
+- b.table id: 'spaces' do |o|
+  - o.head [t(:name), t(:tags), '']
+  - o.rows do |a|
+    - @spaces.each do |space|
+      - a.add do
+        = render('line', object: space)

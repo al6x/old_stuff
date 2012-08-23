@@ -1,0 +1,17 @@
+- tag :div, object.merge_html_attributes(class: " post") do
+
+  / - if object.image?
+  /   .archive-post-date
+  /     %a{href: object.url}
+  /       %img{src: object.image, width: '45px', height: '45px'}
+
+  - if object.name?
+    .archive-post-title
+      %h3
+        %a{href: object.url}= object.name
+        
+  - if object.text?
+    %p= object.text
+        
+  - if object.details?
+    .post-date= object.details.to_a.join(', ')

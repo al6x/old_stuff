@@ -1,0 +1,4 @@
+- object.merge_html_attributes(id: object.id) if object.id?
+- tag :div, object.merge_html_attributes(class: " the_form") do
+	- form_tag *object.form_attributes do
+		= object.content

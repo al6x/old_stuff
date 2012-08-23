@@ -1,0 +1,5 @@
+- if object.content?
+  - tag :div, object.merge_html_attributes(class: " the_tool") do
+    - if object.name?
+      .l_title= object.name
+    .l_content= object.content

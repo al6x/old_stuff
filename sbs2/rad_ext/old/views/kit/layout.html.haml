@@ -1,0 +1,22 @@
+- content_for :nothing do
+  - content_for :head do
+    = stylesheet_link_tag '/kit.css'
+    = yield(:css) || stylesheet_link_tag('/themes/default/style.css')
+
+  - content_for :bottom do
+    = initialize_js_commons
+    = javascript_include_tag '/kit.js'
+    - if rad.captcha.enabled? and rad.user.anonymous?
+      = javascript_include_tag "http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"
+    = yield :js
+    = render '/kit/messages'
+
+  - content_for :analytics do
+    = render '/kit/web_analytics'
+
+  - prepend_to :top_aspects, b.message(type: :error, content: h(flash.sticky_error)) if flash.sticky_error?
+  - prepend_to :top_aspects, b.message(h(flash.sticky_info)) if flash.sticky_info?
+  - prepend_to :content, b.title(h(@title)) if @title
+
+  - build_layout(@model.try(:layout)) unless @build_layout == false
+= render themed_partial('/application')

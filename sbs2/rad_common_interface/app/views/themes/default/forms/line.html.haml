@@ -1,0 +1,8 @@
+- if object.items?
+  .l_line      
+    - object.items.each do |item|
+      .l_item= item      
+    .css_clear
+- else 
+  / preserving space if line empty
+  .l_line

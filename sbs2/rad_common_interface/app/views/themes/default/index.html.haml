@@ -1,0 +1,6 @@
+- sites = Rad::Face::Demo::Sites
+
+- b.basic_list do |o|
+  - o.content do
+    - urls = %w{home style blog post}.collect{|action| link_to action.humanize, sites, action.to_sym, theme: 'default'}
+    = b.basic_list_item urls.join(', ')

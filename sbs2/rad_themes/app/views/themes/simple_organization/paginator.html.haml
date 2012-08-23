@@ -1,0 +1,5 @@
+.archive-pagination.archive-pagination-bottom
+  - if object.prev?
+    .left= "« #{object.prev}"
+  - if object.next?
+    .right= "#{object.next} »"

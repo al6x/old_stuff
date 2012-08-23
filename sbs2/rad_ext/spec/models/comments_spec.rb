@@ -1,0 +1,1 @@
+# TODO2 check that comments are inherited properties of item, see CONTAINER_INHERITABLE_ATTRIBUTES

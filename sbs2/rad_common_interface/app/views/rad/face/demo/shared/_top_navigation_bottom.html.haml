@@ -1,0 +1,34 @@
+- content_for :top_panel do
+  - b.top_panel id: "top_panel_id", class: "top_panel_class" do |o|
+    - o.logo_image demo_metadata.logo_image
+    - o.logo_text demo_metadata.logo_text
+    - o.left do |a|
+      - a.add 'Documents'
+      - a.add 'Main'
+    
+    - o.right do |a|
+      - a.add "Hello, Guest"
+      - a.add link_to("Log In", "#")
+      - a.add link_to("Register", "#")
+
+
+- content_for :navigation do
+  - b.navigation do |o|    
+    - o.left do |a|      
+      - samples.top_menu_items.each do |menu|
+        - if samples.active_top_menu == menu
+          - a.add content: menu, active: true
+        - else
+          - a.add link_to(menu, Rad::Face::Demo::Commons, :select_menu, top_menu: menu)
+      
+    - o.right do |a|
+      - a.add content: 'en', active: true
+      - a.add link_to('ru', '#')
+
+
+- content_for :bottom_panel do
+  - b.bottom_panel do |o|
+    - o.left do
+      Some bottom links
+    - o.right do
+      Powered by <a href='http://4ire.net'>4ire.net</a>

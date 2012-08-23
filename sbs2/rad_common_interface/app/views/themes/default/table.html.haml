@@ -1,0 +1,9 @@
+- if object.head? or object.rows?
+  - tag :table, object.merge_html_attributes(class: " the_table") do
+    - if object.head?
+      %thead
+        %tr
+          - object.head.each do |item|
+            %th= item
+
+    %tbody= object.rows.to_a.join("\n")
