@@ -1,0 +1,18 @@
+- b.item id: @model.dom_id do |o|
+  - o.name h(@model.name)
+  - o.text h(@model.text)
+
+  - o.controls do |a|
+    - a.add link_to(t(:edit), edit_path(@model, format: :js))
+    - a.add link_to(t(:delete), destroy_path(@model, format: :js), method: :post, confirm: t(:are_you_shure))
+    
+    - comments_details = @model.comments_count > 0 ? [t(:comments_count, count: @model.comments_count)] : []
+    - o.details [@model.created_at.time_ago_in_words] + comments_details
+  
+- b.discussion do |o|
+  - o.controls do |a|
+    - a.add link_to(t(:comment_it), new_comment_path(node_id: @model, format: :js))
+
+  - o.content do
+    - @model.comments.limit(rad.blog.collection_limit).each do |comment|
+      = render '/controllers/comments/show', object: comment

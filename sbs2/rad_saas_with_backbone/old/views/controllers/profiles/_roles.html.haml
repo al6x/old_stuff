@@ -1,0 +1,6 @@
+- unless @user.anonymous?
+  #user_roles
+    / = b.subtitle t(:roles)
+    - b.basic_list do
+      - roles_control_links_for(@user).each do |text|
+        = b.basic_list_item text

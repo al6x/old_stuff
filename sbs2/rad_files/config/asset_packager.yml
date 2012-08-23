@@ -1,0 +1,20 @@
+--- 
+js:
+  files:
+
+  #
+  # Files Upload, TODO3 (load it dynamically)
+  # using $.getScript("/some_script.js");
+  # - files_upload: 
+  - common_interface/static/lib/jquery.swfupload/swfupload/swfupload.js
+  - common_interface/static/lib/jquery.swfupload/swfupload/swfupload.queue.js
+  - common_interface/static/lib/jquery.swfupload/jquery.swfupload.js
+  - common_interface/static/js/files_upload.js  
+
+css:
+  files:
+  
+  #
+  # Files Upload, TODO3 (load it dynamically)
+  # - files_upload: 
+  - common_interface/static/lib/jquery.swfupload/style.css

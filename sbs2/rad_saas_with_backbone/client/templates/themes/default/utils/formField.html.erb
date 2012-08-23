@@ -1,0 +1,30 @@
+<% if(typeof errors != 'undefined'){ %>
+  <div class="clearfix error">
+    <% if(typeof label != 'undefined'){ %>
+      <label for="<%= name %>"><%= label %></label>
+    <% } %>
+    <div class="input">
+      <% errors.each(function(error){ %>
+        <span class="help-inline"><%= error %></span>
+        <br/>
+      <% }) %>
+      <%- build({'class': 'error'}) %>
+      <% if(typeof description != 'undefined'){ %>
+        <div class="help-inline"><%= description %></div>
+      <% } %>
+    </div>
+  </div>
+<% }else{ %>
+  <div class="clearfix">
+    <% if(typeof label != 'undefined'){ %>
+      <label for="<%= name %>"><%= label %></label>
+    <% } %>
+    <div class="input">
+      <%- build() %>
+      <% if(typeof description != 'undefined'){ %>
+        <br/>
+        <span class="help-inline"><%= description %></span>
+      <% } %>
+    </div>
+  </div>
+<% } %>

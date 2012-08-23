@@ -1,0 +1,14 @@
+<h1><%= t('edit') %> <%= model.name %></h1>
+<form>
+  <fieldset>
+    <% $.formBuilder(model ,function(f){ %>
+      <%- f.baseErrors() %>
+      <%- f.textField('first_name') %>
+      <%- f.textField('last_name') %>
+    <% }) %>
+  </fieldset>
+  <div class="actions">
+    <button class="_ok btn primary"><%= t('ok') %></button>&nbsp;
+    <button class="_cancel btn"><%= t('cancel') %></button>
+  </div>
+</form>

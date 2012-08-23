@@ -1,0 +1,43 @@
+<div>
+  <h1><%= model.name %></h1>
+  <div class="well">
+    <button class="_edit btn primary"><%= t('edit') %></button>&nbsp;
+    <button class="_delete btn"><%= t('delete') %></button>
+  </div>
+  <table>
+    <tbody>
+      <tr>
+        <td><%= t('name') %></td>
+        <td><%= model.name || '' %></td>
+      </tr>
+      <tr>
+        <td><%= t('title') %></td>
+        <td><%= model.title || '' %></td>
+      </tr>
+      <tr>
+        <td><%= t('language') %></td>
+        <td><%= model.language || '' %></td>
+      </tr>
+      <tr>
+        <td><%= t('default_url') %></td>
+        <td><%= model.default_url || '' %></td>
+      </tr>
+      <tr>
+        <td><%= t('bottom_text') %></td>
+        <td><%= model.bottom_text || '' %></td>
+      </tr>
+      <tr>
+        <td><%= t('theme') %></td>
+        <td><%= model.theme || '' %></td>
+      </tr>
+      <tr>
+        <td><%= t('logo_url') %></td>
+        <td><%= model.logo_url || '' %></td>
+      </tr>
+      <tr>
+        <td><%= t('default') %></td>
+        <td><%= model.default %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,17 @@
+- b.folder id: object.dom_id, class: '_item _sortable_container' do |o|
+	- o.html_attributes 'data-update_order_url' => container_order_path(object, collection: 'files'), 'data-item_class' => '_item'
+	- o.name h(object.name)
+	- o.controls do |a|
+		- if can? :update, object
+			- a.add link_to(t(:add_file), new_file_path(container_id: object, collection: :files, view: 'folder_thumb', format: :js)) 
+			- a.add link_to(t(:add_files), bunch_new_files_path(container_id: object, collection: :files, view: 'folder_thumb', format: :js))
+		- a.add link_to(t(:edit), edit_path(object, format: :js)) if can? :update, object
+		- a.add link_to(t(:delete), destroy_path(object, format: :js), method: :post, confirm: t(:are_you_shure)) if can? :destroy, object
+	
+	- o.tags render_item_tags(object)
+	- o.details render_item_details(object)
+	
+	- o.content do
+		- set_container object do
+			- object.ordered_files.each do |file|
+				= render '/bag/shared/embedded_views/folder_thumb', object: file

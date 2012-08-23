@@ -1,0 +1,8 @@
+rad.set('theme', {
+  notificationColor: {info: 'success', warn: 'warning', error: 'error'},
+
+  highlightRole: function(role){
+    var classes = {user: 'label', admin: 'label important', manager: 'label important', member: 'label success'};
+    return $.buildAsString('span', role, {'class': classes[role]});
+  }
+});

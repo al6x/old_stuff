@@ -1,0 +1,13 @@
+require 'rake_ext'
+
+project(
+  name: "files",
+  official_name: "rad_files",
+  # version: "0.0.1",
+  summary: "File Management for RadKit Framework",
+
+  author: "Alexey Petrushin",
+  homepage: "http://github.com/alexeypetrushin/rad_files"
+)
+
+remove_task 'gem:release'

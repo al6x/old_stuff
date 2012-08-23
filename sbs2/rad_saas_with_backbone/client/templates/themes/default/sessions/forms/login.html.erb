@@ -1,0 +1,17 @@
+<h1><%= t('login_title') %></h1>
+<form>
+  <fieldset>
+    <% $.formBuilder(model ,function(f){ %>
+      <%- f.baseErrors() %>
+      <%- f.textField('name', {required: true}) %>
+      <%- f.passwordField('password', {required: true}) %>
+    <% }) %>
+  </fieldset>
+  <div class="actions">
+    <button class="_ok btn primary"><%= t('ok') %></button>&nbsp;
+    <button class="_back btn"><%= t('back') %></button>&nbsp;
+
+    <a href="<%= rad.router().registerPath() %>"><%= t('register_link') %></a>&nbsp;
+    <a href="<%= rad.router().forgotPasswordPath() %>"><%= t('forgot_password_link') %></a>
+  </div>
+</form>

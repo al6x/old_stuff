@@ -1,0 +1,14 @@
+= b.title t(:posts)
+
+- b.toolbar do |o|
+  - o.left do |a|
+    - a.add link_to(t(:new), new_post_path(format: :js))
+    - a.add link_to(t(:delete_old), destroy_old_posts_path(format: :js), confirm: t(:are_you_shure))
+
+- @models.each do |model|
+  - b.line do |o|
+    - o.name h(model.name)
+    - o.text h(model.text)
+    - o.url path(model)
+    - comments_details = model.comments_count > 0 ? [t(:comments_count, count: model.comments_count)] : []
+    - o.details [model.created_at.time_ago_in_words] + comments_details

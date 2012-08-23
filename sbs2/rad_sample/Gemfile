@@ -1,0 +1,8 @@
+source :rubygems
+
+gem 'thin', '1.2.7'
+gem 'rad_core'
+gem 'rad_common_interface'
+gem 'mongoid_misc'
+gem 'rspec'
+gem 'factory_girl'

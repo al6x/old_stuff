@@ -1,0 +1,33 @@
+<div class="topbar">
+  <div class="fill">
+    <div class="container">
+      <a class="brand" href="<%= rad.router().defaultPath() %>">Home</a>
+
+      <ul class="nav">
+        <% view.links().each(function(item){ %>
+        <% if(item.active){ %>
+        <li class="active"><a><%= item.name %></a></li>
+        <% }else{ %>
+        <li><a href="<%= item.link %>"><%= item.name %></a></li>
+        <% } %>
+        <% }) %>
+
+        <li><a href="#">&nbsp;</a></li>
+      </ul>
+
+      <% if(rad.user().anonymous()){ %>
+      <form class="pull-right">
+        <input  class="input-small" name='name'     type="text"     placeholder="<%= t('name') %>">
+        <input  class="input-small" name='password' type="password" placeholder="<%= t('password') %>">
+        <button class="_login btn" type="submit"><%= t('login') %></button>
+      </form>
+      <% }else{ %>
+      <p class="pull-right">
+        <%= t('logged_in_as') %>
+        <a href="<%= rad.router().userPath(rad.user()) %>"><%= rad.user().name %></a>
+        <a href="#" class='_logout'><%= t('logout') %></a>
+      </p>
+      <% } %>
+    </div>
+  </div>
+</div>

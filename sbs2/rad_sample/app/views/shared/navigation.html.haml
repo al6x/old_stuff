@@ -1,0 +1,12 @@
+- content_for :navigation do
+  - b.navigation do |o|
+    - o.left do |a|
+      - a.add content: link_to(t(:posts), posts_path), active: (controller_name == "Controllers::Posts" and action_name == :all)
+      - a.add content: link_to(t(:sources), 'http://github.com/alexeypetrushin/rad_sample')
+      
+    - o.right do |a|
+      - rad.environment.available_languages.each do |l|
+        - if I18n.locale == l
+          - a.add content: l, active: true
+        - else
+          - a.add link_to(l, posts_path(l: l))

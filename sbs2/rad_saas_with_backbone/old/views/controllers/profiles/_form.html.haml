@@ -1,0 +1,15 @@
+- b.form_for :user, @user, action: form_action, enctype: "multipart/form-data" do |f|
+  = f.error_messages
+
+  = f.text_field :first_name
+  = f.text_field :last_name
+
+  - if @user.avatar.blank?
+    = f.file_field :avatar
+  - else
+    - img = image_tag(Models::User.avatar_url(@user.name), style: 'max-width: 150px; max-height: 150px;')
+    = f.file_field :avatar, label: "#{t(:avatar)}#{"<br/>" + img}"
+
+  = f.line
+
+  = f.line ok_button, cancel_button

@@ -1,0 +1,21 @@
+# Administration
+administrate: [admin]
+
+# User Management
+manage_admins: [admin]
+manage_managers: [admin]
+manage_members: [admin, manager]
+
+# CRUD
+create: [admin, manager, member]
+update: [admin, manager, owner]
+delete: [admin, manager, owner]
+
+# Access
+view: [admin, manager, owner]
+update_access: [admin, manager, owner]
+
+# Comments
+create_comment: [registered]
+update_comment: [admin, manager, owner]
+delete_comment: [admin, manager, owner]

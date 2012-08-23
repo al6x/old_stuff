@@ -1,0 +1,6 @@
+- b.comment id: object.dom_id do |o|
+  - o.details [object.created_at.time_ago_in_words]
+  - o.text h(object.text)
+  - o.controls do |a|
+    - a.add link_to(t(:edit), edit_path(object, format: :js))
+    - a.add link_to(t(:delete), destroy_path(object, format: :js), method: :post, confirm: t(:are_you_shure))

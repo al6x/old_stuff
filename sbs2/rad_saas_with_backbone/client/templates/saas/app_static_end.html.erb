@@ -1,0 +1,43 @@
+
+  </script>
+  <%= indent render('/saas/spec_runner.html'), 2 if rad.request.path =~ /\/spec$/ and rad.development? %>
+
+</head>
+<body>
+  <div id="application"></div>
+
+  <!-- Templates -->
+  <div class='views'>
+    <% theme = 'default' %>
+
+    <script type="text/javascript">
+      <%= indent rad.template.read("/themes/#{theme}/theme"), 6 %>
+    </script>
+
+    <%
+      templates_dir = File.expand_path "#{__FILE__}/../.."
+      theme_dir = "#{templates_dir}/themes/#{theme}"
+
+      templates = theme_dir.to_dir.files('**/**.erb').collect do |file|
+        file.path.sub(templates_dir, '').sub(/\..*$/, '')
+      end.sort
+    %>
+
+    <% templates.each do |name| %>
+    <script id="templates<%= name.sub("/themes/#{theme}", '').gsub('/', '-') %>" type="text/template">
+      <%= indent rad.template.read(name), 6 %>
+    </script>
+    <% end %>
+
+    <% if rad.development? %>
+    <% javascript_tag do %>
+      // Validating templates in development.
+      <% templates.each do |name| %>
+      <% name = name.sub("/themes/#{theme}", '').gsub('/', '-') %>
+      try{_.template($('#templates<%= name %>').html());}catch(error){console.warn("can't compile '<%= name %>' template!")}
+      <% end %>
+    <% end %>
+    <% end %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+- b.file id: object.dom_id do |o|
+	- o.name h(object.file.file_name)
+	- o.image object.smart_url(:icon)
+	- o.url object.file.url(:original, false)
+	- o.controls do |a|
+		- a.add link_to(t(:edit), edit_path(object, container_id: container, format: :js)) if can? :update, object
+		- a.add link_to(t(:delete), destroy_path(object, format: :js), method: :post, confirm: t(:are_you_shure)) if can? :destroy, object
+		- a.add link_to(t(:move), '#', class: '_handle') if can? :update, container

@@ -1,0 +1,1 @@
+rad.register :user, scope: :cycle

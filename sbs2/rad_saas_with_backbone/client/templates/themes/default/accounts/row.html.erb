@@ -1,0 +1,10 @@
+<tr>
+  <td>
+    <a href='<%= rad.router().accountPath(model) %>'><%= model.name %></a>
+    <% if(model.disabled){ %>
+    <%= t('disabled') %>
+    <% } %>
+  </td>
+  <td><%- view.spaceLinks().join("<br/>") %></td>
+  <td><%- model.domains.join("<br/>") %></td>
+</tr>

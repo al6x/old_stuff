@@ -1,0 +1,27 @@
+en:  
+  are_you_shure: Are You shure?
+  cancel: Cancel
+  create_post: Create Post
+  comment_created: Comment created
+  comment_destroyed: Comment deleted
+  comment_updated: Comment updated  
+  comment_it: Comment
+  comments_count:
+    one: "%{count} comment"
+    other: "%{count} comments"
+  delete: Delete
+  delete_old: Delete old  
+  edit: Edit  
+  logo: My Blog
+  name: Name
+  new: New
+  ok: Ok
+  old_posts_destroyed: Old Posts deleted
+  post_created: Post created  
+  post_destroyed: Post deleted
+  post_updated: Post updated
+  posts: Posts
+  powered_by_rad: "Powered by Rad"
+  sources: Sources
+  
+  # update_post: Update Post

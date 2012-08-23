@@ -1,0 +1,21 @@
+rad.dialog().show("<%= js render('/bag/files/form') %>");
+$('._ajax_file_upload .submit').click(function() { 
+	// We can't update page in server-side script, becouse it will be executed in iFrame
+	// and returned data will be corrupted.
+	// So, we first submit file and then refreshing it in another request.
+	$('._ajax_file_upload').ajaxSubmit({
+		dataType: 'script', 
+		iframe: true,
+		success: function(){
+			$.ajax({
+				data: $.param({format: 'js'}), 
+				dataType: 'script', 
+				type: 'get', 
+				url: '<%= @refresh_file_url %>'
+			});
+			$('._dialog').remove();
+			$.infoMessage("<%= js t(:file_updated) %>");
+		}
+	}); 
+	return false;
+});

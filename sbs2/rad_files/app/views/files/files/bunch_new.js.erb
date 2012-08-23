@@ -1,0 +1,21 @@
+rad.dialog().show("<%= js render 'bunch_form' %>");
+<%=
+	params = {
+    
+  }
+
+  opt = {
+    upload_url: create_file_path(
+			l: I18n.locale,
+			
+			container_id: container, 
+			collection: 'files', 
+			index: container.files.size,
+			
+			view: self.params.view
+		), 
+    select_files: t(:select_files)
+  }
+
+	build_files_uploader_for params, opt 
+%>

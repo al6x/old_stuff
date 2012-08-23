@@ -1,0 +1,10 @@
+= b.title t(:create_post) if @model.new_record?
+- b.form_for :model, @model, action: form_action do |f|
+  = f.error_messages
+
+  = f.text_field :name, required: true
+  = f.text_area :text, label: false, required: true
+
+  = f.line
+  
+  = f.line ok_button, cancel_button

@@ -1,0 +1,12 @@
+- case action_name
+
+- when :edit
+  - form = js render('form', locals: {form_action: update_profile_path(@user, format: :js)});
+  rad.dialog().show('#{form}');
+
+- when :update
+  - html = js render('user');
+  $('{@user.dom_id}').replaceWith("#{html}");
+
+- else
+  - must.be_never_called

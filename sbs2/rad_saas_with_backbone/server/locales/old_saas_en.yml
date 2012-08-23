@@ -1,0 +1,78 @@
+en:
+  # General
+  account: "Account"
+  # accounts: "Accounts"
+  administration: "Administration"
+  # language: "Language"
+  logo: "Logo"
+  roles: "Roles"
+  # spaces: "Spaces"
+  # theme: "Theme"
+  # title: "Title"
+  web_analytics_token: "Your ID in Google Analytics"
+  web_analytics_token_description: |
+    To get access to site analytics enter here Your ID in
+    <a href='http://www.google.com/analytics/'>Google Analytics</a>
+    (it should be ID, like UA-XXXXX-X, not a script!)"
+
+  # Accounts Management
+  account_created: "Account created"
+  account_destroyed: "Account deleted"
+  # account_updated: "Account updated"
+  # create_account: "New Account"
+  # invalid_default_space_name: "invalid name"
+  update_account: "Update Account"
+
+  # Spaces Management
+  appearance: "Appearance"
+  # additional_menu: "Additional Menu"
+  # additional_menu_description: ""
+  # bottom_text: "Site bottom text"
+  # create_space: "New Space"
+  currency: "Default Currency"
+  # default_url: "Home page URL"
+  # default_url_description: |
+  #   Site's default page URL, this is the first page users will se on Your site<br/>
+  #   (use URL without domain - /some_link, instead of http://www.some_domain.com/some_link)"
+  forbiden_to_delete_default_space: "Forbidden to delete default Space"
+  space_home_tag: "Home tag"
+  space_home_tag_description: ""
+  links: "Links"
+  menu: "Menu"
+  menu_description: |
+    Site menu, enter here links that will be shown in site menu, sample:<br/>
+    Home:/some_link <br/>
+    (Use links without domain - /some_link, instead of http://www.some_domain.com/some_link). <br/>
+    To show all items use "All:/items" link
+  order_processing_email: "Order Processing Email"
+  order_processing_email_description: "Orders from online store will be submitted to this email"
+  space_tags: "Tags"
+  space_tags_description: ""
+  # space_created: "Space created"
+  # space_destroyed: "Space deleted"
+  # space_updated: "Space updated"
+  store: "Store"
+  update_space: "Edit Space"
+
+  # Files Audit
+  files_size: "Disk space used"
+  max_file_size: "Maximum file size"
+  max_user_files_size: "Maximum disk space avaliable to User"
+  max_user_files_size_description: "0 - no limit"
+  max_account_files_size: "Maximum disk space avaliable to Account"
+
+  # Permissions Management
+  access_type: "Access"
+  custom_roles: "Custom Roles"
+  custom_roles_description: "Custom roles for custom access setting"
+  cant_update_roles: "Can't update roles"
+  default_viewers: "Default Visibility"
+  default_viewers_description: "Default Visibility for new objects"
+  permissions: "Permissions"
+  permissions_description: "Fine grained permission tuning, example: create: [user]"
+  space_roles: "Roles in '%{space}'"
+  # user_updated: "User updated"
+
+  # Analytics
+  domains: "Domains"
+  views_count: "Views count"

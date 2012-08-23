@@ -1,0 +1,33 @@
+- case action_name
+- when :new
+	- form = js render('form', locals: {form_action: create_folder_path(format: :js)})
+	rad.dialog().show('#{form}');
+	
+- when :edit
+	- form = js render('form', locals: {form_action: update_path(@folder, format: :js)})
+	rad.inplace('##{@folder.dom_id}').edit('#{form}');
+	
+- when :update
+	- html = js render('standalone', object: @folder)
+	rad.inplace('##{@folder.dom_id}').update('#{form}');
+
+
+- when :new_embedded
+	- form = js render('form', locals: {form_action: create_folder_path(format: :js)})
+	var container = $$('##{container.dom_id} ._container:first').first();
+	rad.inplace(null, container).edit('#{form}');
+
+- when :edit_embedded
+	- form = js render('form', locals: {form_action: update_path(@folder, format: :js)})
+	rad.inplace('##{@folder.dom_id}').edit('#{form}');
+
+- when :update_embedded
+	- html = js render(view_from_params, object: @folder)
+	rad.inplace('##{@folder.dom_id}').edit('#{html}');
+
+- when :destroy_embedded
+	$('##{@folder.dom_id}').remove();
+
+
+- else
+	- must_be.never_called

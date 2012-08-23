@@ -1,0 +1,18 @@
+require 'ruby_ext'
+require 'rake_ext'
+
+project \
+  name: "saas",
+  official_name: 'rad_saas',
+  summary: "User Management and Administration for Rad SBS",
+  gem: false,
+
+  author: "Alexey Petrushin",
+  homepage: "http://github.com/alexeypetrushin/rad_saas"
+
+remove_task 'gem:release'
+
+saas_dir = __FILE__.dirname
+$LOAD_PATH << "#{saas_dir}/server" unless $LOAD_PATH.include? "#{saas_dir}/server"
+
+require 'saas/tasks'

@@ -1,0 +1,36 @@
+# 
+# Paperclip
+# 
+invalid_file_size: "File should be less than %{max_size} KB"
+maximum_user_files_size_exceeded: "The maximum files size allowed for the user %{max_files_size} KB are exceeded (current files size is %{files_size} KB)"
+maximum_space_files_size_exceeded: "The maximum files size allowed for the space %{max_files_size} KB are exceeded (current files size is %{files_size} KB)"
+
+# Folder
+add_file: "Upload file"
+add_files: "Upload files"
+create_folder: "Create folder" 
+current_file_version: "Current version of file: %{version}"
+
+folder_created: "Folder created"
+folder_destroyed: "Folder deleted"
+folder_updated: "Folder updated"  
+select_files: "Select"
+upload_files: "Upload"
+
+# Files
+cant_save_file: "Can't save file"
+create_file: "Create File"
+file_destroyed: "File deleted"
+file_created: "File saved"
+file_updated: "File updated"
+
+# Folders
+add_button: "Add"
+cancel_button: "Cancel"
+cant_upload: "Can't upload files"
+delete_button: "Delete"
+file_saved: "File saved"
+file_destroyed: "File deleted"
+folder_destroyed: "Folder deleted"
+internal_error: "Can't save, internal error"
+upload_button: "Upload"

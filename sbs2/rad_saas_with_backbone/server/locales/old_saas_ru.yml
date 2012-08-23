@@ -1,0 +1,78 @@
+ru:
+  # General
+  account: "Аккаунт"
+  # accounts: "Аккаунты"
+  administration: "Администрирование"
+  # language: "Язык"
+  logo: "Лого"
+  roles: "Роли"
+  # spaces: "Области"
+  # theme: "Тема"
+  # title: "Название"
+  web_analytics_token: "Ваш ID в Google Analytics"
+  web_analytics_token_description: |
+    Для анализа посещаемости вашего сайта вставьте в это поле ID вашего аккаунта
+    в <a href='http://www.google.com/analytics/'>Google Analytics</a>
+    (именно ID, вида UA-XXXXX-X, а не скрипт!)"
+
+  # Accounts Management
+  account_created: "Аккаунт создан"
+  account_destroyed: "Аккаунт удален"
+  # account_updated: "Аккаунт обновлен"
+  new_account: "Новый аккаунт"
+  # invalid_default_space_name: "invalid name"
+  update_account: "Обновить аккаунт"
+
+  # Spaces Management
+  appearance: "Дизайн"
+  # additional_menu: "Дополнительное меню"
+  # additional_menu_description: ""
+  # bottom_text: "Текст внизу сайта"
+  # create_space: "Создать область"
+  currency: "Валюта"
+  # default_url: "Главная страница"
+  # default_url_description: |
+  #   URL главной страницы, на которую пользователи попадут зайдя на ваш сайт<br/>
+  #   (используйте ссылку без домена - /some_link, вместо http://www.some_domain.com/some_link)"
+  forbiden_to_delete_default_space: "Нельзя удалять дефолтное пространство"
+  space_home_tag: "Тег домашней страницы"
+  space_home_tag_description: ""
+  links: "Ссылки"
+  menu: "Меню"
+  menu_description: |
+    Вставте сюда ссылки которые будут показаны в меню пространства, пример:<br/>
+    Главная:/some_link <br/>
+    (используйте ссылки без домена - /some_link, вместо http://www.some_domain.com/some_link). <br/>
+    Чтобы показать все элементы используйте ссылку "Все:/items"
+  order_processing_email: "Почта для обработки заказов"
+  order_processing_email_description: "Заказы сделанные в веб-магазине будут высылаться на этот адрес"
+  space_tags: "Теги"
+  space_tags_description: ""
+  # space_created: "Область создана"
+  # space_destroyed: "Область удалена"
+  # space_updated: "Область обновлена"
+  store: "Магазин"
+  update_space: "Редактировать рабочее пространство"
+
+  # Files Audit
+  files_size: "Занято дискового пространства"
+  max_file_size: "Максимальный размер файла"
+  max_user_files_size: "Максимальный размер диска доступный пользователю"
+  max_user_files_size_description: "0 - нет ограничений"
+  max_account_files_size: "Максимальный размер диска доступный аккаунту"
+
+  # Permissions Management
+  access_type: "Доступ"
+  custom_roles: "Дополнительные роли"
+  custom_roles_description: "Дополнительные роли для более гибкого управления правами доступа"
+  cant_update_roles: "Не могу обновить роли"
+  default_viewers: "Видимость по умолчанию"
+  default_viewers_description: "Видимость по умолчанию для новых обьектов"
+  permissions: "Разрешения"
+  permissions_description: "Детальная настройка расширений, например : create: [user]"
+  space_roles: "Роли в '%{space}'"
+  # user_updated: "Пользователь обновлен"
+
+  # Analytics
+  domains: "Домены"
+  views_count: "Число просмотров"

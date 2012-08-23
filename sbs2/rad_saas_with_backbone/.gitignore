@@ -1,0 +1,15 @@
+runtime/config/development/*
+runtime/config/production/*
+runtime/config/test/*
+
+runtime/public/*
+!runtime/public/emptygit
+runtime/log/*
+runtime/tmp/*
+
+tmp/*
+
+*~
+.DS_Store
+.idea
+Thumbs.db

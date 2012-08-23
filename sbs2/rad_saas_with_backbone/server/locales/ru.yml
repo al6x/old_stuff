@@ -1,0 +1,99 @@
+ru:
+  anonymous: "Добро пожаловать, Гость"
+  are_you_shure: "Уверены?"
+  avatar: "Аватар"
+  domains: "Домены"
+  email: "Почта"
+  home: "Главная"
+  login: "Войти"
+  login_not_required: "Вы уже вошли"
+  login_required: "Для получения доступа необходимо войти в систему"
+  name: "Имя"
+  password: "Пароль"
+  show_more: "..."
+  register: "Регистрация"
+  state: "Статус"
+  username: "Логин"
+  users: "Пользователи"
+
+  # User model
+  bad_email_message: "Должен быть правильным почтовым адресом"
+  bad_login_message: "Используйте буквы, цифры и .-_@"
+  # first_name: "Имя"
+  # last_name: "Фамилия"
+  # password_confirmation: "Подтверждение пароля"
+
+  # Space model
+  forbiden_to_change_default_space: "Нельзя менять дефолтную область"
+
+  # Wigets
+  callback_error: "Ошибка калбека Service Mix!"
+  callback_error_not_specified: "Ошибка калбека не определена!"
+
+  # Authorization
+  admin: "Админ"
+  # add_admin_role: "Сделать Админом"
+  # add_custom_role: "Сделать '%{role}'"
+  # add_manager_role: "Сделать Менеджером"
+  # add_member_role: "Принять в сообщество"
+  # custom_role: "%{role}"
+  manager: "Менеджер"
+  member: "Участник"
+  remove_admin_role: "Убрать права Админа"
+  remove_custom_role: "Убрать права '%{role}'"
+  remove_manager_role: "Убрать права Менеджера"
+  remove_member_role: "Удалить из сообщества"
+  role_granted: "Права даны"
+  role_removed: "Права убраны"
+  invalid_roles: "Неверные роли"
+
+  # Authentication
+  choose_name: "Выберите имя пользователя"
+  # choose_name_description: "Выберите имя пользователя (в дальнейшем изменить нельзя)"
+  # edit_password_title: "Изменение пароля"
+  # email_verification_code_sent: "Чтобы завершить регистрацию перейдите пожалуйста по ссылке высланной вам на почту %{email}"
+  failed_reset_password: "Пользвателя с почтой %{email} не существует!"
+  # forgot_password_hint: "Ссылка для восстановления пароля будет выслана вам на почту"
+  # forgot_password_link: "Забыли пароль?"
+  # forgot_password: "Восстановление пароля"
+  invalid_email_verification_token: "Неверный код подтверждения почты, возможно у него истек срок действия"
+  invalid_identity: "Пользователя с таким ID не существует (%{identity_url})"
+  invalid_login: "Неверный логин или пароль"
+  invalid_old_password: "Неверный старый пароль"
+  invalid_reset_password_token: "Неверный код восстановления пароля, возможно у него истек срок действия"
+  # login_title: "Войти"
+  new_password: "Новый пароль"
+  # new_user_title: "Регистрация"
+  not_unique_email: "Пользователь с таким адресом уже существует"
+  # old_password: "Старый пароль"
+  # password_restored: "Пароль изменен"
+  # password_updated: "Пароль изменен"
+  # register_link: "Регистрация"
+  # reset_password: "Сброс пароля"
+  should_not_be_blank: "не заполнен"
+  # register_email_description: "Вам на почту будет выслана ссылка для завершения решистрации"
+  # successfully_logged_in: "Вы вошли"
+  # successfully_logged_out: "Вы вышли"
+  # successfully_registered: "Вы успешно зарегистрировались и можете войти в систему"
+  # successfully_reset_password: "Ссылка для восстановления пароля выслана вам на почту: %{email}"
+  # update_password: "Изменить пароль"
+
+
+  #
+  # EMail
+  #
+  email_verification_title: "Регистрация аккаунта на %{host}"
+  email_verification_text: |
+    Чтобы завершить решистрацию на %{host} перейдите пожалуйста по ссылке:
+    %{url}
+
+  # email_activation_title: "%{name}, ваш аккаунт на %{host} активирован"
+  # email_activation_text: |
+  #   %{name} ваш аккаунт на %{host} активирован.
+
+  forgot_password_title: "Сброс пароля пользователя %{name} на %{host}"
+  forgot_password_text: |
+    Вы (или кто-то другой введя вашу почту) запросили сброс пароля для вашего аккаунта %{name} на %{host}
+
+    Чтобы сбросить пароль перейдите по ссылке %{url}
+    (или просто удалите это письмо, ваш пароль останется как и раньше)

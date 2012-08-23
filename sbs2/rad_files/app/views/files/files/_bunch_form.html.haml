@@ -1,0 +1,14 @@
+._upload_dialog
+  .log._queue
+  ._flash_holder
+  %a._upload{href: '#'}= t(:upload_files)
+  = cancel_button
+
+  %textarea._file_progress_template.hidden
+    %li{class: "_file_${id}"}
+      %em ${name}
+      (${size_in_kb} KB) 
+      %a._cancel{href: '#'}= t(:cancel)
+      %span.progressvalue._progressvalue
+      .progressbar
+        .progress._progress

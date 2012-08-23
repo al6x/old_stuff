@@ -1,0 +1,35 @@
+<div>
+  <h1><%= model.name %></h1>
+  <% if(view.showOwnerControls() || view.showUpgradeButton() || view.showDowngradeButton()){ %>
+  <div class="well">
+    <% if(view.showOwnerControls()){ %>
+    <button class="_edit btn primary"><%= t('edit') %></button>&nbsp;
+    <a href="<%= rad.router().updatePasswordPath() %>"><%= t('update_password') %></a>&nbsp;
+    <% } %>
+
+    <% if(view.showUpgradeButton()){ %>
+    <button class="_upgradeRole btn success"><%= view.upgradeButtonMessage() %></button>
+    <% } %>
+
+    <% if(view.showDowngradeButton()){ %>
+    <button class="_downgradeRole btn"><%= view.downgradeButtonMessage() %></button>
+    <% } %>
+  </div>
+  <% } %>
+  <table>
+    <tbody>
+      <tr>
+        <td><%= t('first_name') %></td>
+        <td><%= model.first_name || "" %></td>
+      </tr>
+      <tr>
+        <td><%= t('last_name') %></td>
+        <td><%= model.last_name || "" %></td>
+      </tr>
+      <tr>
+        <td><%= t('role') %></td>
+        <td><%- rad.theme().highlightRole(model.role) %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

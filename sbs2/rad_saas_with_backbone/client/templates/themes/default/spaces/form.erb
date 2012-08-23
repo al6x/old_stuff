@@ -1,0 +1,26 @@
+<h1>
+  <% if(model.isNew()){ %>
+  <%= t('create_space') %>
+  <% } else { %>
+  <%= t('edit') + ' ' + model.name %>
+  <% } %>
+</h1>
+<form>
+  <fieldset>
+    <% $.formBuilder(model ,function(f){ %>
+      <%- f.baseErrors() %>
+      <%- f.textField('name') %>
+      <%- f.textField('title') %>
+      <%- f.selectField('language', rad.locale().available) %>
+      <%- f.textField('default_url') %>
+      <%- f.textField('bottom_text') %>
+      <%- f.selectField('theme', rad.theme().available) %>
+      <%- f.textField('logo_url') %>
+      <%- f.checkboxField('default') %>
+    <% }) %>
+  </fieldset>
+  <div class="actions">
+    <button class="_ok btn primary"><%= t('ok') %></button>&nbsp;
+    <button class="_cancel btn"><%= t('cancel') %></button>
+  </div>
+</form>

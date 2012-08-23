@@ -1,0 +1,28 @@
+ru:  
+  are_you_shure: Вы уверены?
+  cancel: Отмена
+  create_post: Создать Пост
+  comment_created: Комментарий создан
+  comment_destroyed: Комментарий удален
+  comment_updated: Комментарий изменен  
+  comment_it: Комментировать
+  comments_count:
+    one: "%{count} комментарий"
+    few: "%{count} комментария"
+    many: "%{count} комментариев"
+    other: "%{count} комментариев"
+  delete: Удалить
+  delete_old: Удалить старые
+  edit: Редактировать  
+  logo: Мой Блог
+  name: Имя
+  new: Создать
+  ok: Ок
+  old_posts_destroyed: Старые Посты удалены
+  post_created: Пост создан  
+  post_destroyed: Пост удален
+  post_updated: Пост изменен
+  posts: Посты  
+  powered_by_rad: "Пример сделан с Rad"
+  sources: Исходники
+  # update_post: Изменить пост

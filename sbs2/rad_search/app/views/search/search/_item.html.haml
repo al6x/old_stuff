@@ -1,0 +1,10 @@
+- b.line id: object.dom_id do |o|
+	- o.name h(object.name.blank? ? t(:empty_title) : object.name)
+	- o.image object.icon.url	
+	- if object.independent?
+		- o.url send("show_#{object.class.model_name.underscore}_path", object)
+	- else
+		- o.url url_for(action: 'resolve_container', id: object.to_param)
+	- o.text hit.highlights.collect{|hl| hl.format{|word| "<span class='_highlight'>#{word}</span>" }}.join(" ... \n")
+	- o.tags render_item_tags(object) + [content_tag :div, t(object.class.model_name.underscore), class: 'm_item_type']
+	- o.details render_item_details(object)

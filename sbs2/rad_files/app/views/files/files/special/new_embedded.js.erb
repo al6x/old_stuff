@@ -1,0 +1,14 @@
+rad.dialog().show("<%= js render('new') %>");
+<%=
+	params = {
+    l: I18n.locale
+  }
+
+  opt = {
+    upload_url: create_file_path(container_id: container, collection: 'files', index: container.files.size),
+    refresh_url: refresh_path(container),
+    select_files: t(:select_files)
+  }
+
+	build_files_uploader_for params, opt 
+%>

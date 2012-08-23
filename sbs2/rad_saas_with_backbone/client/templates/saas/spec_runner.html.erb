@@ -1,0 +1,39 @@
+  <!-- Spec -->
+  <%= indent stylesheet_link_tag(*rad.assets.get('/vendor/jasmine/jasmine.css')), 2 %>
+  <%= indent javascript_include_tag(*rad.assets.get('/saas_spec.coffee')), 2 %>
+  <script type="text/javascript">
+    (function() {
+      var jasmineEnv = jasmine.getEnv();
+      jasmineEnv.updateInterval = 1000;
+
+      var trivialReporter = new jasmine.TrivialReporter();
+
+      jasmineEnv.addReporter(trivialReporter);
+
+      jasmineEnv.specFilter = function(spec) {
+        return trivialReporter.specFilter(spec);
+      };
+
+      var currentWindowOnload = window.onload;
+
+      window.onload = function() {
+        if (currentWindowOnload) {
+          currentWindowOnload();
+        }
+        execJasmine();
+      };
+
+      function execJasmine() {
+        jasmineEnv.execute();
+      }
+
+
+      // Cleaning page after tests.
+      var cleaner = new jasmine.Reporter()
+      cleaner.reportRunnerResults = function(){
+        $('#application').empty()
+        window.history.pushState(null, null, '/saas/spec');
+      }
+      jasmineEnv.addReporter(cleaner);
+    })();
+  </script>

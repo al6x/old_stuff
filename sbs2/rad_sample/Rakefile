@@ -1,0 +1,5 @@
+require 'rake_ext'
+
+require 'rad/tasks'
+require 'rad/assets/tasks'
+require 'mongo_migration/tasks'

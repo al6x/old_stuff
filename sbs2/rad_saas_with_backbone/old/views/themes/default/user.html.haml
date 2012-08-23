@@ -1,0 +1,8 @@
+- tag :div, object.merge_html_attributes(class: " the_user") do
+  - if object.controls?
+    .l_controls= object.controls.join(' ')
+
+  .l_name= object.name
+  .l_avatar= object.avatar
+  .l_properties= object.properties
+  .l_content= object.content

@@ -1,0 +1,15 @@
+- case action_name
+- when :new
+  - form = js render('form', locals: {form_action: url_for(:create, format: :js)})
+  rad.dialog().show('#{form}');
+  
+- when :edit
+  - form = js render('form', locals: {form_action: update_path(@model, format: :js)})
+  rad.inplace('##{@model.dom_id}').edit('#{form}');
+
+- when :update
+  - html = js render('show', object: @model)
+  rad.inplace('##{@model.dom_id}').update('#{html}');
+    
+- else
+  - must_be.never_called

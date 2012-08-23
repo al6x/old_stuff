@@ -1,0 +1,14 @@
+= b.title form_title_for(@file)
+- b.form_for :file, @file, action: form_action do |f|
+  = f.error_messages
+  
+  = hidden_fields_for_embedded_form
+
+  - opt = @file.file.blank? ? {} : {description: t(:current_file_version, version: @file.file.file_name)}
+  = f.file_field :file, opt.merge(required: true)
+  
+  = common_fields_for_item f, skip: :slug
+
+  = f.line
+
+  = f.line ok_button, cancel_button

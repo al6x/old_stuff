@@ -1,0 +1,13 @@
+<h1><%= t('new_user_title') %></h1>
+<form>
+  <fieldset>
+    <% $.formBuilder(model ,function(f){ %>
+      <%- f.baseErrors() %>
+      <%- f.textField('email', {required: true, description: t('register_email_description')}) %>
+    <% }) %>
+  </fieldset>
+  <div class="actions">
+    <button class="_ok btn primary"><%= t('ok') %></button>&nbsp;
+    <button class="_back btn"><%= t('back') %></button>
+  </div>
+</form>

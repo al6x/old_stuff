@@ -1,0 +1,12 @@
+- b.note id: object.dom_id do |o|
+	- o.name h(object.name)
+	- o.text object.text
+	
+	- o.controls do |a|
+		- a.add link_to(t(:edit), edit_path(object, format: :js)) if can? :update, object
+		- a.add link_to(t(:delete), destroy_path(object, format: :js), method: :post, confirm: t(:are_you_shure)) if can? :destroy, object
+		
+	- o.tags render_item_tags(object)
+	- o.details render_item_details(object)
+	.todo= image_tag(object.file.url(:thumb))
+	.todo add state

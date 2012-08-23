@@ -1,0 +1,31 @@
+<div>
+  <h1><%= model.name %></h1>
+  <div class="well">
+    <button class="_edit btn primary"><%= t('edit') %></button>&nbsp;
+    <button class="_delete btn"><%= t('delete') %></button>
+  </div>
+  <table>
+    <tbody>
+      <tr>
+        <td><%= t('name') %></td>
+        <td><%= model.name %></td>
+      </tr>
+      <tr>
+        <td><%= t('spaces') %></td>
+        <td><%- view.spaceLinks().join("<br/>") %></td>
+      </tr>
+      <tr>
+        <td><%= t('domains') %></td>
+        <td><%- model.domains.join("<br/>") %></td>
+      </tr>
+      <tr>
+        <td><%= t('default_space_name') %></td>
+        <td><%= model.default_space_name %></td>
+      </tr>
+      <tr>
+        <td><%= t('enabled') %></td>
+        <td><%= model.enabled %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

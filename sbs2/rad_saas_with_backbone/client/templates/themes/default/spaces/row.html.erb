@@ -1,0 +1,9 @@
+<tr>
+  <td>
+    <a href='<%= rad.router().spacePath(model) %>'><%= model.name %></a>
+    <% if(model.default){ %>
+    &nbsp;
+    <span class='label success'><%= t('default') %></span>
+    <% } %>
+  </td>
+</tr>

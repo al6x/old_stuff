@@ -1,0 +1,97 @@
+en:
+  # General
+  anonymous: "Welcome, Guest"
+  are_you_shure: "Are you sure?"
+  avatar: "Avatar"
+  domains: "Domains"
+  email: "eMail"
+  home: "Home"
+  login: "Login"
+  login_not_required: "You are already logged in"
+  login_required: "You need to be logged in"
+  name: "Name"
+  password: "Password"
+  show_more: "..."
+  register: "Signup"
+  state: "State"
+  username: "Username"
+  users: "Users"
+
+  # User model
+  bad_email_message: "Invalid email"
+  bad_login_message: "Invalid login (use only 0-9, a-z, and .-_@ symbols)"
+  # first_name: "First Name"
+  # last_name: "Last Name"
+  # password_confirmation: "Password confirmation"
+
+  # Space model
+  forbiden_to_change_default_space: "Forbidden to change default Space"
+
+  # Wigets
+  callback_error: "Service Mix callback error!"
+  callback_error_not_specified: "Callback error not defined!"
+
+  # Authorization
+  admin: "Admin"
+  # add_admin_role: "Add to Admins"
+  # add_custom_role: "Grant '%{role}' role"
+  # add_manager_role: "Add to Managers"
+  # add_member_role: "Add to Members"
+  # custom_role: "%{role}"
+  manager: "Manager"
+  member: "Member"
+  remove_admin_role: "Remove from Admins"
+  remove_custom_role: "Remove '%{role}' role"
+  remove_manager_role: "Remove from Managers"
+  remove_member_role: "Remove from Members"
+  role_granted: "Role granted"
+  role_removed: "Role removed"
+  invalid_roles: "Invalid roles"
+
+  # Authentication
+  choose_name: "Choose username"
+  # choose_name_description: "Choose username (can't be changed in future)"
+  # edit_password_title: "Update password"
+  # email_verification_code_sent: "To complete registration please follow the link sent to Your email %{email}."
+  failed_reset_password: "No user with such email %{email}!"
+  # forgot_password_hint: "Link for password restore will be send to Your email"
+  # forgot_password_link: "Forgot password?"
+  # forgot_password: "Restore password"
+  invalid_email_verification_token: "Email confirmation code is invalid or expired"
+  invalid_identity: "No user with such ID (%{identity_url})"
+  invalid_login: "Invalid login or password"
+  invalid_old_password: "Invalid old password"
+  invalid_reset_password_token: "The code for password restoration is invalid or expired"
+  # login_title: "Login"
+  new_password: "New password"
+  # new_user_title: "Signup"
+  not_unique_email: "User with such email already exists"
+  # old_password: "Old password"
+  # password_restored: "Password updated"
+  # password_updated: "Pasword updated"
+  # register_link: "Signup"
+  # reset_password: "Reset password"
+  should_not_be_blank: "should not be blank"
+  # register_email_description: "To finish registration please follow the link that will be send to Your email"
+  # successfully_logged_in: "You are logged in"
+  # successfully_logged_out: "You are logged out"
+  # successfully_registered: "You are successfully registered and can login"
+  # successfully_reset_password: "Link for password restoration has been sent to Your email: %{email}"
+  # update_password: "Update password"
+
+
+
+  #
+  # EMail
+  #
+  email_verification_title: "Registration on site %{host}"
+  email_verification_text: |
+    To finish registration on site %{host} please follow this link:
+    %{url}
+
+  forgot_password_title: "Password reset for %{name} on the %{host} site"
+  forgot_password_text: |
+    You (or somebody else by entering Your email) requested password reset for Your account %{name} on the %{host} site.
+
+    To reset password please follow this link %{url}
+    (or just delete this email and Your password will remain intact)

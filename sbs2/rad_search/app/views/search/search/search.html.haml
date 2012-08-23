@@ -1,0 +1,19 @@
+- b.selector id: 'search' do |o|	
+	- if @query.blank?
+		- o.name t(:empty_search_query)
+	- else 
+		- if @search.total > 0
+			- o.name t(:search_result_for, query: "'#{h(@query)}'", count: @search.total)
+		-	else
+			- o.name t(:no_search_result_for, query: "'#{h(@query)}'")
+
+	/ - o.text @selector.text
+	/ - o.controls do |a|
+	/ 	- a.add link_to(t(:edit), edit_selector_path(@selector, format: :js)) if can? :update, @selector
+	/ 	- a.add link_to(t(:delete), destroy_selector_path(@selector, format: :js), method: :post, confirm: t(:are_you_shure)) if can? :destroy, @selector
+
+= render 'items'
+
+- unless @query.blank?
+	- html = paginator_for(@current_page, @search.total, Item::PER_PAGE){|t, n| link_to t, url_for(page: n, q: @query)}
+	- content_for :aspects, html unless html.blank?

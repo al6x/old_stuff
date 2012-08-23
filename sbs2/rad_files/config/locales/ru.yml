@@ -1,0 +1,37 @@
+# 
+# Paperclip
+# 
+invalid_file_size: "Файл должен быть меньше %{max_size} КБ"
+maximum_user_files_size_exceeded: "Превышен рабмер максимально допустимого обьема файлов для пользователя %{max_files_size} КБ (сейчас занято %{files_size} КБ)"
+maximum_space_files_size_exceeded: "Превышен рабмер максимально допустимого обьема файлов для рабочего пространства %{max_files_size} КБ (сейчас занято %{files_size} КБ)"
+
+
+# Folder
+add_file: "Загрузить файл"
+add_files: "Загрузить файлы"
+create_folder: "Создать папку" 
+current_file_version: "Текущая версия файла: %{version}"
+
+folder_created: "Папка создана"
+folder_destroyed: "Папка удалена"
+folder_updated: "Папка обновлена"  
+select_files: "Выбрать"
+upload_files: "Загрузить"
+
+# Files
+cant_save_file: "Не могу сохранить файл"
+create_file: "Создать файл"
+file_destroyed: "Файл удален"
+file_created: "Файл сохранен"
+file_updated: "Файл обновлен"
+
+# Folders
+add_button: "Добавить"
+cancel_button: "Отменить"
+cant_upload: "Нельзя загружать файлы"
+delete_button: "Удалить"
+file_saved: "Файл сохранен"
+file_destroyed: "Файл удален"
+folder_destroyed: "Папка удалена"
+internal_error: "Не удалось сохранить"
+upload_button: "Загрузить"

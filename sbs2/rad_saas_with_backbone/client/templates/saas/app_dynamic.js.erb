@@ -1,0 +1,40 @@
+$(function(){
+  // Localization.
+  rad.locale().extend({
+    default   : "<%= rad.locale.default %>",
+    current   : "<%= rad.locale.current %>",
+    available : ['<%= rad.locale.available.join("', '") %>']
+  });
+
+  // Theme.
+  rad.theme().extend({
+    current   : "default",
+    available : ['default']
+  });
+
+  // User.
+  var user = new Models.User(<%= indent JSON.pretty_generate(rad.user().to_rson(:public_full)), 2 %>);
+  rad.set('user', user);
+
+  // Router.
+  rad.router().extend({
+    root         : '<%= rad.http.root %>',
+    port         : '<%= rad.http.port %>',
+    defaultRoute : '/default/users'
+  });
+
+  // Config.
+  rad.config().extend({
+    bottomText : "<%= rad.saas.bottom_text %>",
+    perPage    : <%= Mongo::Model::PER_PAGE %>
+  });
+
+  <% if result %>
+  // Caching server response.
+  <% path, json = rad.request.rack_request.fullpath, JSON.pretty_generate(result) %>
+  rad.server().cacheResponse("<%= path %>", <%= indent json, 2 %>);
+  <% end %>
+
+  // Starting Application.
+  Backbone.history.start({pushState: true, root: '<%= rad.http.root %>'});
+});

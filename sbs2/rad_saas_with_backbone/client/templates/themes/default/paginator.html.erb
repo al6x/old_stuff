@@ -1,0 +1,10 @@
+<div class="pagination">
+  <ul>
+    <% if(view.prevLink()){ %>
+    <li class="prev"><a href="<%= view.prevLink() %>">← <%= t('previous') %></a></li>
+    <% } %>
+    <% if(view.nextLink()){ %>
+    <li class="next"><a href="<%= view.nextLink() %>"><%= t('next') %> →</a></li>
+    <% } %>
+  </ul>
+</div>

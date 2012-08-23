@@ -1,0 +1,22 @@
+<h1>
+  <% if(model.isNew()){ %>
+  <%= t('create_account') %>
+  <% } else { %>
+  <%= t('edit') + ' ' + model.name %>
+  <% } %>
+</h1>
+<form>
+  <fieldset>
+    <% $.formBuilder(model ,function(f){ %>
+      <%- f.baseErrors() %>
+      <%- f.textField('name') %>
+      <% var domains = model.domains.join(String.fromCharCode(10)) %>
+      <%- f.formBuilder.textareaField('domains_as_string', domains, {label: t('domains'), errors: model.errors.name}) %>
+      <%- f.checkboxField('enabled') %>
+    <% }) %>
+  </fieldset>
+  <div class="actions">
+    <button class="_ok btn primary"><%= t('ok') %></button>&nbsp;
+    <button class="_cancel btn"><%= t('cancel') %></button>
+  </div>
+</form>
