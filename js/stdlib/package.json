@@ -1,0 +1,15 @@
+{
+  "stdlib"       : "stdlib",
+  "main"         : "./stdlib",
+  "dependencies" : {
+    "underscore" : ">=1.2.4"
+  },
+
+  "description"  : "Injecting underscore.js into Natives + some custom extensions.",
+  "keywords"     : ["underscorejs"],
+  "author"       : {
+    "name" : "Alexey Petrushin",
+    "url"  : "http://petrush.in"
+  },
+  "license"      : "MIT"
+}

@@ -1,0 +1,20 @@
+{
+  "name"         : "mary",
+  "main"         : "./mary",
+  "version"      : "0.1.1",
+  "homepage"     : "http://alexeypetrushin.github.com/mary",
+  "dependencies" : {
+    "jasmine-node" : ">=1"
+  },
+  "devDependencies": {
+    "fibers"        : ">=0.6",
+    "coffee-script" : ">=1.2"
+  },
+  "description"  : "Dr. Mary - JavaScript (CoffeeScript) BDD in Object-Oriented way.",
+  "keywords"     : ["BDD", "Jasmine", "TDD", "Testing", "Spec", "Specification", "RSpec"],
+  "author"       : {
+    "name" : "Alexey Petrushin",
+    "url"  : "http://petrush.in"
+  },
+  "license"      : "MIT"
+}

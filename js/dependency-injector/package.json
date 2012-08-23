@@ -1,0 +1,15 @@
+{
+  "name"         : "dependency-injector",
+  "main"         : "./dependency-injector",
+  "dependencies" : {
+    "underscore" : ">=1.2.4"
+  },
+
+  "description"  : "Simple Dependency Injector",
+  "keywords"     : ["di", "ioc", "Inversion of Control", "Dependency Injection"],
+  "author"       : {
+    "name" : "Alexey Petrushin",
+    "url"  : "http://petrush.in"
+  },
+  "license"      : "MIT"
+}

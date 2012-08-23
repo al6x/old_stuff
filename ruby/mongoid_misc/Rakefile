@@ -1,0 +1,10 @@
+require 'rake_ext'
+
+project(
+  name: "mongoid_misc",
+  gem: true,
+  summary: "Extensions for Mongoid",
+
+  author: "Alexey Petrushin",
+  homepage: "http://github.com/alexeypetrushin/mongoid_misc"
+)

@@ -1,0 +1,192 @@
+<!DOCTYPE html>  <html> <head>   <title>mary.coffee</title>   <meta http-equiv="content-type" content="text/html; charset=UTF-8">   <link rel="stylesheet" media="all" href="docco.css" /> </head> <body>   <div id="container">     <div id="background"></div>          <table cellpadding="0" cellspacing="0">       <thead>         <tr>           <th class="docs">             <h1>               mary.coffee             </h1>           </th>           <th class="code">           </th>         </tr>       </thead>       <tbody>                               <tr id="section-1">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-1">&#182;</a>               </div>               <p><a href="https://github.com/alexeypetrushin/mary">Dr. Mary</a> -
+JavaScript (CoffeeScript) BDD in Object-Oriented way.</p>
+
+<pre><code>'Mary'.should match: /ry/
+'Mary'.should be: 'Mary'
+'Mary'.should contain: 'ry'
+'Mary'.should beEqualTo: 'Mary'
+
+10.should beGreaterThan: 9
+
+fun = -&gt; throw 'some bug'
+(-&gt; fun()).should throw: 'some bug'
+
+_(null).should be: null
+</code></pre>
+
+<p>Every matcher also available in form of method.</p>
+
+<pre><code>'Mary'.should().match /ry/
+'Mary'.should().be 'Mary'
+'Mary'.should().contain 'ry'
+'Mary'.should().beEqualTo 'Mary'
+
+10.should().beGreaterThan 9
+
+fun = -&gt; throw 'some bug'
+(-&gt; fun()).should().throw 'some bug'
+
+_(null).should().be null
+</code></pre>
+
+<p>Mocks and stubs.</p>
+
+<pre><code>class Bob
+  hi: -&gt; 'hi'
+
+bob = new Bob()
+bob.spyOn 'hi', andReturn: 'Hello'
+bob.hi().should be: 'Hello'
+bob.hi.should().haveBeenCalled()
+</code></pre>
+
+<h3>Control flow helpers.</h3>
+
+<p><code>it.async</code> and <code>it.next</code> helpers allows You to write asynchronous specs. <code>it.async</code> will pause
+specs execution and will wait untill <code>it.next</code> will be called.</p>
+
+<pre><code>it.async "should save object to collection", -&gt;
+  db.collection 'units', (err, collection) -&gt;
+    obj = name: 'Probe',  status: 'alive'
+    collection.create obj, (err, result) -&gt;
+      _(err).should be: null
+      it.next()
+</code></pre>
+
+<p><code>it.sync</code> helper designed to be used with fiber-aware code and wraps the spec inside
+of <a href="https://github.com/laverdet/node-fibers">Fiber</a>, the previous sample will
+looks like this.</p>
+
+<pre><code>it.async "should save object to collection", -&gt;
+  collection = db.collection 'units'
+  obj = name: 'Probe',  status: 'alive'
+  collection.create obj
+</code></pre>
+
+<p>In short, <code>it.sync</code> helps to write asynchrnous code as if it's synchronous. If You need more samples
+please take a look at <a href="http://alexeypetrushin.github.com/mongo-model">Mongo Model</a> all its
+specs are writeen using <code>it.sync</code>.</p>
+
+<h3>Installation</h3>
+
+<p>Node.JS <code>npm install mary</code></p>
+
+<p>Broser <code>add jasmine.js and mary.js to the page</code></p>
+
+<p>You can also use Dr. Marys's own spec as a sample, run it with <code>cake spec</code> and see the result.</p>
+
+<p>Dr. Mary is a thin wrapper around the <a href="http://pivotal.github.com/jasmine">Jasmine</a> and
+<a href="https://github.com/mhevery/jasmine-node">jasmine-node</a> libraries.</p>
+
+<p>The project is <a href="https://github.com/alexeypetrushin/mary">hosted on GitHub</a>, You can report bugs and discuss features
+on the <a href="https://github.com/alexeypetrushin/mary/issues">issues page</a>.</p>
+
+<p>Copyright (c) Alexey Petrushin <a href="http://petrush.in">http://petrush.in</a>, released under the MIT license.</p>             </td>             <td class="code">               <div class="highlight"><pre></pre></div>             </td>           </tr>                               <tr id="section-2">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-2">&#182;</a>               </div>               <h3>Source Code</h3>             </td>             <td class="code">               <div class="highlight"><pre></pre></div>             </td>           </tr>                               <tr id="section-3">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-3">&#182;</a>               </div>               <p>Checking for presence of Jasmine.</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;no jasmine (mary requires jasmine BDD framework)!&quot;</span><span class="p">)</span> <span class="nx">unless</span> <span class="nx">jasmine</span><span class="o">?</span></pre></div>             </td>           </tr>                               <tr id="section-4">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-4">&#182;</a>               </div>               <p>Adding some useful matchers to Jasmine.</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nv">jasmine.Matchers.prototype.toInclude = </span><span class="nf">(expected) -&gt;</span>
+  <span class="k">if</span> <span class="nx">@actual</span><span class="p">.</span><span class="nx">indexOf</span>
+    <span class="nx">@actual</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">expected</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+  <span class="k">else</span>
+    <span class="nx">expected</span> <span class="k">of</span> <span class="nx">@actual</span>
+
+<span class="nv">jasmine.Matchers.prototype.toInclude = </span><span class="nx">jasmine</span><span class="p">.</span><span class="nx">Matchers</span><span class="p">.</span><span class="nx">matcherFn_</span><span class="p">(</span>
+  <span class="s1">&#39;toInclude&#39;</span><span class="p">,</span>
+  <span class="nx">jasmine</span><span class="p">.</span><span class="nx">Matchers</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toInclude</span>
+<span class="p">)</span></pre></div>             </td>           </tr>                               <tr id="section-5">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-5">&#182;</a>               </div>               <p>Mary.</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nv">Mary = </span><span class="p">{}</span></pre></div>             </td>           </tr>                               <tr id="section-6">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-6">&#182;</a>               </div>               <p>Matcher.</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="k">class</span> <span class="nx">Mary</span><span class="p">.</span><span class="nx">Matcher</span>
+  <span class="nv">constructor: </span><span class="nf">(@obj) -&gt;</span>
+    <span class="vi">@expect = </span><span class="nx">expect</span> <span class="nx">obj</span></pre></div>             </td>           </tr>                               <tr id="section-7">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-7">&#182;</a>               </div>               <p>Expectations with expected value.</p>             </td>             <td class="code">               <div class="highlight"><pre>  <span class="nv">include       : </span><span class="nf">(o) -&gt;</span> <span class="nx">@expect</span><span class="p">.</span><span class="nx">toInclude</span> <span class="nx">o</span>
+  <span class="nv">beEqualTo     : </span><span class="nf">(o) -&gt;</span> <span class="nx">@expect</span><span class="p">.</span><span class="nx">toEqual</span> <span class="nx">o</span>
+  <span class="nv">be            : </span><span class="nf">(o) -&gt;</span> <span class="nx">@expect</span><span class="p">.</span><span class="nx">toEqual</span> <span class="nx">o</span>
+  <span class="nv">match         : </span><span class="nf">(o) -&gt;</span> <span class="nx">@expect</span><span class="p">.</span><span class="nx">toMatch</span> <span class="nx">o</span>
+  <span class="nv">contain       : </span><span class="nf">(o) -&gt;</span> <span class="nx">@expect</span><span class="p">.</span><span class="nx">toContain</span> <span class="nx">o</span>
+  <span class="nv">beLessThan    : </span><span class="nf">(o) -&gt;</span> <span class="nx">@expect</span><span class="p">.</span><span class="nx">toBeLessThan</span> <span class="nx">o</span>
+  <span class="nv">beGreaterThan : </span><span class="nf">(o) -&gt;</span> <span class="nx">@expect</span><span class="p">.</span><span class="nx">toBeGreaterThan</span> <span class="nx">o</span>
+  <span class="k">throw</span>         <span class="o">:</span> <span class="nf">(o) -&gt;</span> <span class="nx">@expect</span><span class="p">.</span><span class="nx">toThrow</span> <span class="nx">o</span>
+  <span class="nv">raise         : </span><span class="nf">(o) -&gt;</span> <span class="nx">@expect</span><span class="p">.</span><span class="nx">toThrow</span> <span class="nx">o</span></pre></div>             </td>           </tr>                               <tr id="section-8">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-8">&#182;</a>               </div>               <p>Expectations without expected value.</p>             </td>             <td class="code">               <div class="highlight"><pre>  <span class="nv">beNull        : </span><span class="nf">()  -&gt;</span> <span class="nx">@expect</span><span class="p">.</span><span class="nx">toBeNull</span><span class="p">()</span>
+  <span class="nv">beTrue        : </span><span class="nf">()  -&gt;</span> <span class="nx">@expect</span><span class="p">.</span><span class="nx">toBeTruthy</span><span class="p">()</span>
+  <span class="nv">beFalse       : </span><span class="nf">()  -&gt;</span> <span class="nx">@expect</span><span class="p">.</span><span class="nx">toBeFalsy</span><span class="p">()</span>
+  <span class="nv">beDefined     : </span><span class="nf">()  -&gt;</span> <span class="nx">@expect</span><span class="p">.</span><span class="nx">toBeDefined</span><span class="p">()</span>
+  <span class="nv">beUndefined   : </span><span class="nf">()  -&gt;</span> <span class="nx">@expect</span><span class="p">.</span><span class="nx">toBeUndefined</span><span class="p">()</span></pre></div>             </td>           </tr>                               <tr id="section-9">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-9">&#182;</a>               </div>               <p>Stubs and mocks.</p>             </td>             <td class="code">               <div class="highlight"><pre>  <span class="nv">haveBeenCalled      : </span><span class="nf">()  -&gt;</span> <span class="nx">@expect</span><span class="p">.</span><span class="nx">toHaveBeenCalled</span><span class="p">()</span>
+  <span class="nv">haveBeenCalledWith  : </span><span class="nf">(args...)  -&gt;</span>
+    <span class="nx">@expect</span><span class="p">.</span><span class="nx">toHaveBeenCalledWith</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">@expect</span><span class="p">,</span> <span class="nx">args</span><span class="p">)</span></pre></div>             </td>           </tr>                               <tr id="section-10">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-10">&#182;</a>               </div>               <p>Apply matchers defined as hash, i.e. <code>be: null</code>.</p>             </td>             <td class="code">               <div class="highlight"><pre>  <span class="nv">applyHashMatchers: </span><span class="nf">(args) -&gt;</span>
+    <span class="k">if</span> <span class="nx">args</span> <span class="k">then</span> <span class="k">for</span> <span class="nx">matcher</span><span class="p">,</span> <span class="nx">value</span> <span class="k">of</span> <span class="nx">args</span>
+      <span class="err">@</span><span class="p">[</span><span class="nx">matcher</span><span class="p">](</span><span class="nx">value</span><span class="p">)</span>
+    <span class="err">@</span></pre></div>             </td>           </tr>                               <tr id="section-11">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-11">&#182;</a>               </div>               <p>Negative matcher.</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="k">class</span> <span class="nx">Mary</span><span class="p">.</span><span class="nx">NegativeMatcher</span> <span class="k">extends</span> <span class="nx">Mary</span><span class="p">.</span><span class="nx">Matcher</span>
+  <span class="nv">constructor: </span><span class="nf">(@obj) -&gt;</span>
+    <span class="vi">@expect = </span><span class="nx">expect</span><span class="p">(</span><span class="nx">obj</span><span class="p">).</span><span class="o">not</span></pre></div>             </td>           </tr>                               <tr id="section-12">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-12">&#182;</a>               </div>               <p><code>should</code> and <code>shouldNot</code> methods.</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nv">getValue = </span><span class="nf">(obj) -&gt;</span>
+  <span class="k">if</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;_wrapped&#39;</span><span class="p">)</span>
+    <span class="nx">obj</span><span class="p">.</span><span class="nx">_wrapped</span>
+  <span class="k">else</span>
+    <span class="nx">obj</span><span class="p">.</span><span class="nx">valueOf</span><span class="p">()</span>
+
+<span class="nv">methods =</span>
+  <span class="nv">should: </span><span class="nf">(args) -&gt;</span>
+    <span class="k">new</span> <span class="nx">Mary</span><span class="p">.</span><span class="nx">Matcher</span><span class="p">(</span><span class="nx">getValue</span><span class="p">(</span><span class="err">@</span><span class="p">)).</span><span class="nx">applyHashMatchers</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span>
+
+  <span class="nv">shouldNot: </span><span class="nf">(args) -&gt;</span>
+    <span class="k">new</span> <span class="nx">Mary</span><span class="p">.</span><span class="nx">NegativeMatcher</span><span class="p">(</span><span class="nx">getValue</span><span class="p">(</span><span class="err">@</span><span class="p">)).</span><span class="nx">applyHashMatchers</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span>
+
+  <span class="nv">spyOn: </span><span class="nf">(method, options) -&gt;</span>
+    <span class="nv">spy = </span><span class="nx">spyOn</span><span class="p">(</span><span class="nx">getValue</span><span class="p">(</span><span class="err">@</span><span class="p">),</span> <span class="nx">method</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nx">options</span> <span class="k">then</span> <span class="k">for</span> <span class="nx">method</span><span class="p">,</span> <span class="nx">arg</span> <span class="k">of</span> <span class="nx">options</span>
+      <span class="nx">spy</span><span class="p">[</span><span class="nx">method</span><span class="p">](</span><span class="nx">arg</span><span class="p">)</span>
+    <span class="nx">spy</span></pre></div>             </td>           </tr>                               <tr id="section-13">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-13">&#182;</a>               </div>               <p>Extending native types with <code>should</code> methods.</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nv">types = </span><span class="p">[</span>
+  <span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span>
+  <span class="nb">String</span><span class="p">.</span><span class="nx">prototype</span>
+  <span class="nb">Number</span><span class="p">.</span><span class="nx">prototype</span>
+  <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span>
+  <span class="nb">Boolean</span><span class="p">.</span><span class="nx">prototype</span>
+  <span class="nb">Date</span><span class="p">.</span><span class="nx">prototype</span>
+  <span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span>
+  <span class="nb">RegExp</span><span class="p">.</span><span class="nx">prototype</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="nx">type</span> <span class="k">in</span> <span class="nx">types</span>
+  <span class="k">for</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">method</span> <span class="k">of</span> <span class="nx">methods</span>
+    <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span>
+        <span class="nv">enumerable: </span><span class="kc">false</span>
+        <span class="nv">writable: </span><span class="kc">true</span>
+        <span class="nv">configurable: </span><span class="kc">true</span>
+        <span class="nv">value: </span><span class="nx">method</span></pre></div>             </td>           </tr>                               <tr id="section-14">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-14">&#182;</a>               </div>               <p>It's impossible to extend <code>null</code> and <code>undefined</code>,
+so we use a wrapper, i.e.  <code>_(null).shouldBe().undefined()</code>.</p>
+
+<p>Sometimes such wrapper may be already defined (by underscore.js
+for example), if it's not we defining it.</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nv">wrapper = </span><span class="nf">(obj) -&gt;</span>
+  <span class="nv">wrapper = </span><span class="k">new</span> <span class="nb">Object</span><span class="p">()</span>
+  <span class="nv">wrapper._wrapped = </span><span class="nx">obj</span>
+  <span class="nx">wrapper</span></pre></div>             </td>           </tr>                               <tr id="section-15">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-15">&#182;</a>               </div>               <p>Flow.</p>
+
+<p>Sample:</p>
+
+<p>it.async "should provide handy shortcuts to databases", ->
+    $db.collection 'test', (err, collection) ->
+      collection.name.should be: 'test'
+      it.next()</p>             </td>             <td class="code">               <div class="highlight"><pre></pre></div>             </td>           </tr>                               <tr id="section-16">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-16">&#182;</a>               </div>               <p>Block and waits untill <code>it.next()</code> is called.</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nv">it.async = </span><span class="nf">(desc, func) -&gt;</span>
+  <span class="nx">it</span> <span class="nx">desc</span><span class="p">,</span> <span class="o">-&gt;</span>
+    <span class="nv">it.finished = </span><span class="kc">false</span>
+    <span class="nx">func</span><span class="p">()</span>
+    <span class="nx">waitsFor</span> <span class="p">(</span><span class="o">-&gt;</span> <span class="nx">it</span><span class="p">.</span><span class="nx">finished</span><span class="p">),</span> <span class="nx">desc</span><span class="p">,</span> <span class="mi">1000</span></pre></div>             </td>           </tr>                               <tr id="section-17">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-17">&#182;</a>               </div>               <p>Resumes execution of <code>it.async</code>.</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nv">it.next = </span><span class="nf">(e) -&gt;</span>
+  <span class="nv">it.lastError = </span><span class="nx">e</span>
+  <span class="nv">it.finished = </span><span class="kc">true</span></pre></div>             </td>           </tr>                               <tr id="section-18">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-18">&#182;</a>               </div>               <p>Wraps spec into Fiber.</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nv">it.sync = </span><span class="nf">(desc, callback) -&gt;</span>
+  <span class="k">try</span>
+    <span class="nx">require</span> <span class="s1">&#39;fibers&#39;</span>
+  <span class="k">catch</span> <span class="nx">e</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">      WARN:</span>
+<span class="s2">        You are trying to use synchronous mode.</span>
+<span class="s2">        Synchronous mode is optional and requires additional `fibers` library.</span>
+<span class="s2">        It seems that there&#39;s no such library in Your system.</span>
+<span class="s2">        Please install it with `npm install fibers`.&quot;&quot;&quot;</span>
+    <span class="k">throw</span> <span class="nx">e</span>
+
+  <span class="nx">it</span><span class="p">.</span><span class="nx">async</span> <span class="nx">desc</span><span class="p">,</span> <span class="o">-&gt;</span>
+    <span class="nx">Fiber</span><span class="p">(</span><span class="o">-&gt;</span>
+      <span class="nx">callback</span><span class="p">()</span>
+      <span class="nx">it</span><span class="p">.</span><span class="nx">next</span><span class="p">()</span>
+    <span class="p">).</span><span class="nx">run</span><span class="p">()</span></pre></div>             </td>           </tr>                               <tr id="section-19">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-19">&#182;</a>               </div>               <p>Setting up globals.</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="k">if</span> <span class="nx">module</span><span class="o">?</span> <span class="o">and</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="o">?</span>
+  <span class="nv">exports.Mary = </span><span class="nx">Mary</span>
+  <span class="nv">exports._    = </span><span class="nx">wrapper</span>
+
+<span class="k">if</span> <span class="nb">window</span><span class="o">?</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nv">Mary = </span><span class="nx">Mary</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">_</span>    <span class="o">||=</span> <span class="nx">wrapper</span>
+
+</pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html>
