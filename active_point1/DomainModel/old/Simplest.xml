@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="Model.xsd"
+ name="Simplest"
+ entity_name="Simplest"
+ parent="Model::Entity">
+    <attributes>
+        <attribute name=":name" title="Name" type=":string" mandatory="true"/>
+        <attribute name=":select" title="Select" type=":string">
+            <parameters>
+                <select>lambda{["USA", "Australia"]}</select>
+            </parameters>
+        </attribute>
+        <attribute name=":child" title="Child" type=":entity" child="true"/>
+        <attribute name=":children" title="Children" type=":array" child="true"/>
+        <attribute name=":reference" title="Reference" type=":entity"/>
+        <attribute name=":references" title="References" type=":array"/>
+        <attribute name=":breference" title="Breference" type=":entity"/>
+        <attribute name=":breferences" title="Breferences" type=":array"/>
+        <attribute name=":rich" title="Rich" type=":text"/>
+        <attribute name=":file" title="File" type=":file"/>
+    </attributes>
+    <operations>
+        <operation name=":manage_properties" class="Model::Operations::Properties"/>
+        <operation name=":manage_child" class="Model::Operations::Child" property=":child">
+            <parameters>
+                <select>lambda{[Simplest]}</select>
+            </parameters>
+        </operation>
+        <operation name=":manage_children" class="Model::Operations::Child" property=":children">
+            <parameters>
+                <select>lambda{[Simplest]}</select>
+            </parameters>
+        </operation>
+        <operation name=":manage_reference" class="Model::Operations::Reference"
+            property=":reference">
+            <parameters>
+                <select>lambda{Scope[Model::Entity].children</select>
+                <fuck></fuck>
+            </parameters>
+        </operation>
+        <operation name=":manage_references" class="Model::Operations::Reference"
+            property=":references">
+            <parameters>
+                <select>lambda{Scope[Model::Entity].children</select>
+            </parameters>            
+        </operation>
+        <operation name=":manage_breference" class="Model::Operations::BReference"
+            property=":breference">
+            <parameters>
+                <select>lambda{Scope[Model::Entity].children</select>
+            </parameters>
+        </operation>
+        <operation name=":manage_breferences" class="Model::Operations::BReference"
+            property=":breferences">
+            <parameters>
+                <select>lambda{Scope[Model::Entity].children</select>
+            </parameters>
+        </operation>
+    </operations>    
+</class>

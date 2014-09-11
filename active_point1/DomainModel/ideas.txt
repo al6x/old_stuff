@@ -1,0 +1,85 @@
+CRITICAL
+- Asynchronous Actions (fired by BPM for example)
+- Use Tabbed View as default. Do not prepare 'Micelaneous' tab.
+- Aspect View checks if ObjectView is a TabView and if there is 'Micelaneous' tab, 
+if not creates one, if ObjectView isn't a TabView, then do nothing.
+- Use 'on_create' to initialize descendants, not Initializer
+- Use specific Root object, that contains Home, Home isn't Root!
+- Add MicroContainer Events to objects (Asynchronous Events)
+- Skin system (folder specified in config)
+- Bind Skin to Spaces
+- Add ability to use Transactions for Outside Updaters (not inside session)
+- Security (move to ClientPlatform?)
+	- filters for Actions? (as in Rails)
+- ':flash' scope (for errors and messages)
+- Messages and Errors
+- Tags
+
+----
+- Add 'control' attribute to Action Metadata.
+- Use view autogeneration like
+	...
+	build_view do |v|	
+		v.autogenerate list_of_attributes
+	end
+
+	
+
+MEDIUM
+- Define 'login' Action class in setting
+-----
+- use Image+Name combination
+- All updates, notification, and messages are going to Mail. If customers 
+like other Mail, they can easily redirect messages to it.
+- Actions and Operations can specify their own way to Inherite metadata.
+- Use Mail adapter (WebServices?) that automatically creates and configures Accaunts.
+- Tags! Use the same tags system as Labels in Gmail. In the right panel there is wiget 
+with Tags Tree and we can select as one by clicking (as maybe multiple by selecting it).
+And when we select tag - if object defines Tagable it process event by themself. If not 
+Tab Action will be started that will displayou all Childrens (or maybe only 1 level) of
+the current Element.
+Also there should be another vay to use it - as filter, we can select some tags and when
+we browse Objects content will be filtered correspondly.
+- Security. 
+		-There is no security on Attribute Level but it's possible to restrict access to attributes:
+		Use ViewOperation that returs set of allowed attributes it can return differend results for different
+		Users.
+		- Remove 'object' reference from action, it's forbidden to directly use it, use only set returned from 
+		operation? 
+		- Actions by themself provides their Control, so they also can deside is it allowed or not and don't
+		display it.
+
+LOW
+----
+- Debug console, as in Rails 
+- Use Feeds/Topics to notify Users about Events.
+	- Use RSS compatible Feeds/Topics, so as they can be used as inside as outside of DX.
+- Use 'default_action' with runtime parameters in VMeta instead of :on_view
+
+- Customize breadcrumb (right now it uses path as name)
+- Add extension to Breadcrumb, right now it uses path to object as name
+- Add rules to Mail, create Rules - universal Aspect avaliable to any UObject.
+- List of avaliable actions (Menu, implemented via Tool) is dependent on Object 
+and is different for different Objects.
+- Extend UObject model
+	* For each component add Workflow/State rules (Mail Letter for example), 
+	with ability to define element's visibility/edit|view mode/controls, and so on ...	
+- Create Vizualize and Navigation tools for development, it vizualize Gaph of UObjects 
+(containment, reference, ...	
+- Support for WEB standarts (RSS, ...)
+- Controller introduce BaseQueryController, that will contains User Qurey logic and will be 
+Base Class for EditChild and EditReference.
+
+DONE
+- First release
+- Demo TWiki
+- Split Metadata into DMeta and VMeta
+- Use Operation Processor to execute Operations. NEVER use Operations directly or directly modify Domain Objects.
+- Fill Action parameters from corresponding Operation.
+- Simplify Action/Operation API, remove 'parameters'
+- Use Specialized classes for metadata instead of Hashes
+- Actions rely on Operations and use it's Metadata
+- Bind Layouts and Tools to Spaces
+- Use 'up' method for Layout lookup.
+- Any object can be setted as home object, it will be defined in Config
+- Use Alfresco-like space based workflow (disclined, we'll use OpenWFe)

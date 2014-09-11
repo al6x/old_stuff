@@ -1,0 +1,1 @@
+# Add extension to Breadcrumb, right now it uses path to object as name

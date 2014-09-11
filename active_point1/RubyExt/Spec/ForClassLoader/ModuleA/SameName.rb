@@ -1,0 +1,2 @@
+class SameName
+end

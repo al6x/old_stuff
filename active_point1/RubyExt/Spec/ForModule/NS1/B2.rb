@@ -1,0 +1,1 @@
+class B2 < ForModule::NS1::A2; end

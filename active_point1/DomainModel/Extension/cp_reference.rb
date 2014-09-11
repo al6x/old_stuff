@@ -1,0 +1,1 @@
+WebClient::Wigets::Editors::Reference.name_get = lambda{|entity| entity.name}

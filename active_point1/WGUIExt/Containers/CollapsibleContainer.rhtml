@@ -1,0 +1,37 @@
+<% if mode == :closed %>
+<table class="float padding font"><tbody>
+	<tr>
+		<td>
+${closed}			
+		</td>
+		<td>
+${closed_control}			
+		</td>
+	</tr>
+</tbody></table>
+<% else %>
+<table class="float padding font"><tbody>
+	<tr>
+		<td>
+${open}			
+		</td>
+	</tr>
+	<tr>
+		<td>
+	<% if open_controls.is_a? Array %>			
+			<table class="minimal padding font"><tbody>
+				<tr>
+		<% open_controls.each do |cntrl| %>						
+					<td>
+${cntrl}									
+					</td>
+		<% end %>							
+				</tr>	
+			</tbody></table>	
+	<% else %>
+${open_controls}	
+	<% end %>
+		</td>
+	</tr>	
+</tbody></table>
+<% end %>

@@ -1,0 +1,11 @@
+def #{m}
+	Cache.monitor.synchronize do
+		@cache_versions_#{als} ||= {#{vnames_str}}
+		if @cache_versions_#{als}.all?{|vname, v| v == RubyExt::Cache.version(vname)}
+			return @cache_value_#{als}
+		else
+			@cache_versions_#{als}.keys.each{|vname| @cache_versions_#{als}[vname] = RubyExt::Cache.version(vname)}
+			return @cache_value_#{als} = cached_#{als}
+		end		
+	end
+end

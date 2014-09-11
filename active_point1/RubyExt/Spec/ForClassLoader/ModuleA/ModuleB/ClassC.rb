@@ -1,0 +1,3 @@
+class ClassC
+	ClassB
+end

@@ -1,0 +1,33 @@
+<% if @whead and @wrows and !@wrows.empty?%>
+<table class="general_container container_padding">
+	<thead class="color2">
+		<tr>
+		    <th>*</th>		
+	<% @whead.each do |title| %>			
+		    <th>
+${title}		    	
+			</th>
+	<% end %>			
+		</tr>
+	</thead>
+	<tfoot class="color2">
+		<tr>		
+		    <th colspan="<%= @head.size + 1 %>">1-50</th>
+		</tr>
+	</tfoot>
+	<tbody>
+	<% @wrows.each_with_index do |row, index| %>		
+		<tr>				
+		    <td>
+${@wcheckboxes[index]}		        
+		    </td>
+		<% row.each do |cell| %>						
+		    <td>
+${cell}		        
+		    </td>
+		<% end %>
+		</tr>
+	<% end %>	
+	</tbody>
+</table>
+<% end %>

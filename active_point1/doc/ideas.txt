@@ -1,0 +1,60 @@
+Ideas.txt
+- Use WebMin for administration (Guy from Rails Presentation uses it)
+- Use WebBeach for hosting (Guy from Rails Presentation uses it)
+- In WebIDE add ability to add Audio Documentation for Class.
+- Integrate with: Alfresco, Zimbra, Nuxeo, SugarCRM
+- Check Plone usages
+- Partnersheep with some Company, (Neuro-Net, ...)
+- Free CRM like Highrize (but free instead)
+- Create Game-Like design/ui for Enterprise Product.
+- Create the same CRM as Highrize and sell it with partners (Dvorchuck for 1C, webdesign firms, ...)
+- Use WebServices enabled Mail server
+- Create site about Intalio BPM & my system (Ruby BPM) as sample for Raisl integration for thouse who using Rails
+- Use ActionMailer and ActiveWebServices (they can autogenerate WSDL) from Rails
+- Use remote OGDomain and multiple Client Processes (maybe on multicore machine) and M
+essageBus (as in Igor Grigorik presentation) to communicate with it. (Also possible use multiple OGDomains and multiple clients).
+- Create blog on site, and in real time write there logs for project startup. And also write tutorial about startup for partners.
+- MetaBoss (project that uses simalar concept, if encounter trouble look at it, how it has been implemented)
+- JetEvolution, (Mind/Brain)Driven, (Mind/Brain)DrivenDevelopment, JetForge
+ 
+- Single-thread per session (and then i'll can use continuations, and have more clear MicroContainer architecture)
+- free-domain: http://www.corporate-brain.com/
+- Посмотреть деморолики классных ЦРМ и BPM и ЕЦМ и сделать такой-же функционал и такой-же ролик
+- Бесплатно - материалы о Альфреско
+
+- Sharing based on relationship and membership
+- Найти нишу (Критерии в ней используют компютеры, ...)
+- Искать форумы по ЕРП, ЦРМ, отраслевые, и смотреть какие у людей проблемы, решить конкретную отраслевую проблему.
+- Просмотреть список отраслевых применений Глобуса и выбрать конкретную область.
+- Искать проблемы на форумах удаленной работы.
+- Чего не хватает 1С? Сделать это и продать сопутствующий продукт.
+- Сделать сайт для общаги бауманской и педа.
+- Сделать сайт для сау
+- Вместо вики система тэгов
+- Иерархия тэгов и наследование свойств родителей
+- Настройка внешнего вида (список, таблица)
+- Правила и события
+- Тэг может выступать как контейнер
+- Examine Twitter and ning and steal their ideas and functional
+- Infoproduct - site with information about Groupware/ECM/CRM/BPM
+- Demo-Site without any registration, just click and try.
+- OpenSource model: OpenSource Product -> Download -> Book/Doc -> Training -> Enterprise Version -> Modernization -> Customization
+- Сделать информационный портал по Sharepoint и продвигать под его крышей свое решение, ну и заодно и Шарепоинт партнерам скидывать. 
+И альфреско может быть.
+
+
+- Добавит деление на срочные важные обычные
+- Посмотреть лоад баллансинг
+- Изучение иностранных (со ссылками в П2П или ФТП)
+- MS Money в топе скачиваемого софта
+- Сайт для Руби, онисмотрят на мой сайт -> хотят то-же для себя
+- Сайт для начинающих бизнесменов, описать мою историю, захотят себе тоже -> купят
+- Use BPEL to describe Development/Autotesting/Continuation/Deploj process.
+- Иконки брать из экономических игр
+
+- Code protection - rubyencoder.com, JRuby Compiler (jrubyc)
+- I Can use GDocs in conjunction with my project. (For example i can define business rules in excell in GDocs and then process it in RAD)
+- Examine all gems in ruby/gems, maybe some of them can be usefull for me
+- Ability to generate human-readable formal description(formal documentation) from domain model.
+
+

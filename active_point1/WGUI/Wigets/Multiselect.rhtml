@@ -1,0 +1,34 @@
+
+<% if modify %>
+<table>
+	<tbody>
+		<tr><td colspan="2">			
+<select id="st_id_<%= component_id %>" name="<%= component_id %>" multiple="multiple" size="<%= values.size > Multiselect["config.yaml"][:max_size] ? Multiselect["config.yaml"][:max_size] : values.size %>" <% if disabled? %>disabled="disabled"<% end %>>
+	<% values.each do |value| %>
+	<option <% if selected.include? value %>selected="selected"<% end %>><%== value %></option>
+	<% end %>
+	
+	<% selected.each do |value| %>
+	<% unless values.include? value %>
+	<option selected="selected"><%== value %></option>
+	<% end %>
+	<% end %>
+</select>
+		</td></tr>
+		<tr>
+			<td>
+<input id="vl_id_<%= component_id %>" type="text" value="" <% if disabled? %>disabled="disabled"<% end %>/>			
+			</td>
+			<td>
+<button onclick="var st = dojo.byId('st_id_<%= component_id %>'); vl = dojo.byId('vl_id_<%= component_id %>'); st.innerHTML = '\<option selected=\'selected\'\>' + vl.value + '\</option\>' + st.innerHTML;"><%= to_l("Add") %></button>				
+			</td>
+		</tr>
+	</tbody>
+</table>
+<% else %>
+<select name="<%= component_id %>" multiple="multiple" size="<%= values.size > Multiselect["config.yaml"][:max_size] ? Multiselect["config.yaml"][:max_size] : values.size %>" <% if disabled? %>disabled="disabled"<% end %>>
+	<% values.each do |value| %>
+	<option <% if selected.include? value %>selected="selected"<% end %>><%== value %></option>
+	<% end %>
+</select>
+<% end %>

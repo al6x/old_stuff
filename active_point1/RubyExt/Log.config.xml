@@ -1,0 +1,31 @@
+<log4r_config>
+	<pre_config>
+		<global level="ALL"/>
+	</pre_config>
+	
+	<outputter type="StderrOutputter" name="default" level="ALL"/>
+	<logger name="Default" level="ALL" outputters="default"/>
+	
+	<outputter type="StderrOutputter" name="console" level="WARN"/>
+	<outputter type="StderrOutputter" name="console_all" level="ALL"/>
+	<outputter type="FileOutputter" name="microcontainer" filename="./../logs/microcontainer.log"/>
+	<outputter type="FileOutputter" name="wgui" filename="./../logs/wgui.log"/>
+	<outputter type="FileOutputter" name="howt" filename="./../logs/howt.log"/>
+	<outputter type="FileOutputter" name="log" filename="./../logs/log.log"/>
+	<outputter type="FileOutputter" name="localization" filename="./../logs/localization.log"/>
+	<outputter type="FileOutputter" name="object_model" filename="./../logs/object_model.log" level="ALL"/>
+	<outputter type="FileOutputter" name="object_model_sql" filename="./../logs/object_model_sql.log" level="WARN"/>
+	<outputter type="FileOutputter" name="active_point" filename="./../logs/active_point.log" level="WARN"/>
+	
+	<logger name="MicroContainer" level="ALL" outputters="console, microcontainer"/>
+	<logger name="HOWT" level="ALL" outputters="console, howt"/>
+	<logger name="WGUI" level="ALL" outputters="console, wgui"/>
+	<logger name="WGUIExt" level="ALL" outputters="console, wgui"/>
+	<logger name="RubyExt" level="ALL" outputters="console, log"/>
+	<logger name="Localization" level="ALL" outputters="localization"/>
+	<logger name="ClassLoader" level="ALL" outputters="console_all"/>	
+	<logger name="ObjectModel::Repository::ObjectStorage" level="ALL" outputters="object_model_sql"/>
+	<logger name="ObjectModel::Indexes::IndexStorage" level="ALL" outputters="object_model_sql"/>
+	<logger name="ObjectModel" level="ALL" outputters="object_model, console_all"/>		
+	<logger name="ObjectModel" level="ALL" outputters="active_point, console_all"/>
+</log4r_config> 

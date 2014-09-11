@@ -1,0 +1,16 @@
+<% if children and children.size > 0 %>
+<table class="<%= style ? style : 'float font input padding' %>"><tbody>
+<% if title and !title.empty? %>
+	<tr class="color">
+		<td><div class="font h2"><%== title %></div></td>
+	</tr>
+<% end %>
+<% children.each do |child| %>			
+	<tr>
+		<td>
+${child}
+		</td>				
+	</tr>
+<% end %>			
+</tbody></table>
+<% end %>

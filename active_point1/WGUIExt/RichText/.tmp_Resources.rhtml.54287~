@@ -1,0 +1,50 @@
+<style>
+	.image64_64{
+		 max-width: 64px;
+		 max-height: 64px
+	}
+</style>
+
+<div id='<%= "resources_for_#{editor.editor_id}" %>'>
+	<table width="100%">
+		<tr><td colspan="2">
+<% @table.each do |res, del| %>                     
+			<table style="display:inline">
+				<tr><td>
+<input id="checkbox_for_<%= res.component_id %>" type="radio" name="checkboxes_for_<%= component_id %>" asrc="/<%= RESOURCE %>/<%= res.component_id %>" atitle="<%= res.component_id %>"/>
+				</td><td>
+${res}
+<script type="text/javascript">
+	dojo.query('img', '<%= res.component_id %>').onclick(function(){
+		 dojo.byId("checkbox_for_<%= res.component_id %>").checked = true
+	});
+</script>
+				</td><td>
+${del}
+				</td></tr>
+			</table>
+			&nbsp;
+<% end %>                    
+		</td></tr>
+	<tr><td>
+			<table>
+				<tr><td>
+${@upload}
+				</td><td>
+${@add}
+				</td></tr>
+			</table>
+		</td></tr>
+	</table>
+</div>
+<script type="text/javascript">			
+	dojo.query('img', '<%= "resources_for_#{editor.editor_id}" %>').addClass("image64_64");	
+	 
+	if(typeof(WGUI.RichEditor.resources) == "undefined") {                				        
+		WGUI.RichEditor.resources = {}
+	}	
+	if(typeof(WGUI.RichEditor.resources['<%= "resources_for_#{editor.editor_id}" %>']) == "undefined"){
+		 WGUI.RichEditor.resources['<%= "resources_for_#{editor.editor_id}" %>'] = true;
+		 var resources = dojo.byId('<%= "resources_for_#{editor.editor_id}" %>').style.display = "none";
+	}	
+</script>

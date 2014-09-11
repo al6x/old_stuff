@@ -1,0 +1,10 @@
+- 
+	Complete for general webapp
+	As simple as possible
+	As managed as possible
+	Truly Component and Object Oriented
+	As AJAX'ed as possible (even more there really no any AJAX or Web notion for developer)
+	Indexable
+	Bookmarkable
+	The same programming model for AJAX and Not AJAX
+	Dynamic	

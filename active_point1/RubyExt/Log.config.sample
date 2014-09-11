@@ -1,0 +1,57 @@
+<log4r_config>
+  <pre_config>
+    <global level="DEBUG"/>
+    
+    <parameter name="serverlog" value="./logs/server.log"/>
+  </pre_config>
+
+  
+  <outputter type="FileOutputter" name="server">
+    <filename>#{serverlog}</filename>
+    <trunc>false</trunc>
+  </outputter>
+  <outputter type="FileOutputter" name="client" 
+             filename="./../logs/client.log"/>
+  <outputter type="FileOutputter" name="gui" 
+             filename="./../logs/guidebug.log"/>
+  <outputter type="StderrOutputter" name="console" level="ERROR"/>
+
+  <logger name="server" level="ERROR" outputters="server, console"/>
+  <logger name="client" level="INFO"  outputters="client, console"/>
+  <logger name="client::gui" trace="true">
+    <level>DEBUG</level>
+    <outputter>gui</outputter>
+  </logger>
+
+</log4r_config> 
+
+
+
+
+<log4r_config>
+	<pre_config>
+		<global level="ALL"/>
+	</pre_config>
+	
+	<outputter type="StderrOutputter" name="default" level="ALL"/>
+	<logger name="Default" level="ALL" outputters="default"/>
+	
+	<outputter type="StderrOutputter" name="console" level="WARN"/>
+	<outputter type="StderrOutputter" name="console_all" level="ALL"/>
+	<outputter type="FileOutputter" name="microcontainer" filename="./../logs/microcontainer.log"/>
+	<outputter type="FileOutputter" name="rubyext" filename="./../logs/rubyext.log"/>
+	<outputter type="FileOutputter" name="wgui" filename="./../logs/wgui.log"/>
+	<outputter type="FileOutputter" name="howt" filename="./../logs/howt.log"/>
+	<outputter type="FileOutputter" name="log" filename="./../logs/log.log"/>
+	<outputter type="FileOutputter" name="localization" filename="./../logs/localization.log"/>
+	<outputter type="FileOutputter" name="object_model" filename="./../logs/object_model.log" level="ALL"/>
+	
+	<logger name="MicroContainer" level="ALL" outputters="console, microcontainer"/>
+	<logger name="HOWT" level="ALL" outputters="console, howt"/>
+	<logger name="WGUI" level="ALL" outputters="console, wgui"/>
+	<logger name="RubyExt" level="ALL" outputters="console, rubyext"/>
+	<logger name="Localization" level="ALL" outputters="localization"/>
+	<logger name="Log" level="ALL" outputters="console, log"/>
+	<logger name="ClassLoader" level="ALL" outputters="console_all"/>
+	<logger name="ObjectModel" level="ALL" outputters="object_model, console_all"/>
+</log4r_config> 

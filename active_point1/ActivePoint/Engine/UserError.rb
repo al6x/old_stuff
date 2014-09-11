@@ -1,0 +1,1 @@
+class UserError < RuntimeError; end

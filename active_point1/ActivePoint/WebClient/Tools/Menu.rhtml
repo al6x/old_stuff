@@ -1,0 +1,12 @@
+<table class="float padding"><tbody>
+<% @menu.each_with_index do |item, i| %>	
+    <tr>
+        <td>
+        	<div class="<%= @menu2.include?(i) ? 'tab1' : '' %> <%= i == @current ? 'color' : '' %>">
+${item}
+			</div>
+        </td>
+    </tr>
+<% end %>	
+</tbody></table>
+<div>&nbsp;</div>

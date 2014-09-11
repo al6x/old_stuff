@@ -1,0 +1,16 @@
+CRITICAL
+- Reloading resourses in ClassXXX.res folder doesn't works.
+
+MEDIUM
+	 
+LOW
+- Add macros functionality to Ruby. (for example replace all '!=' with 'not_equal')
+- Create project 'Flawless Ruby' (macros != to not_equal, and so on)
+- Automatically evaluate extension for resources, use Class["res"] instead of Class["res.yaml"]
+
+DONE
+- Add resource providers chaining.
+- Resource providers should be abstract (also for ObjectModel storage).
+- Cashe implementation    
+- Resource reloading doesn't works (fix and add spec).
+- Add raise_withoud_self 'bla-bla', [excludeAclass, excludeBclass]

@@ -1,0 +1,7 @@
+:path_to_selenium_server: "/home/alex/Software/selenium-server-1.0-beta-1/selenium-server.jar"
+:launcher: "*chrome /home/alex/Software/firefox/firefox-bin"
+#[*chrome U:\workspace\soft\Firefox\firefox.exe|*iehta]
+:path_to_selenium_rb: "/home/alex/Software/selenium-server-1.0-beta-1/selenium-ruby-client-driver-1.0-beta-1/selenium.rb"
+:timeout: 2000
+:speed: 0
+:mode: "standalone"

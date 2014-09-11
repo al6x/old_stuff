@@ -1,0 +1,3 @@
+class InvalidSessionError < RuntimeError
+	
+end

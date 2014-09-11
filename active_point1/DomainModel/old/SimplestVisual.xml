@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="Simplest">
+    <attributes>
+        <attribute name=":name" editor="UI::Properties::EString"/>
+        <attribute name=":select" editor="UI::Properties::ESelect">
+            <parameters>
+                <select_labels>lambda{|o| o.to_s}</select_labels>
+            </parameters>
+        </attribute>
+        <attribute name=":child" editor="UI::Properties::EEntity"/>
+        <attribute name=":children" editor="UI::Properties::ETable">
+            <parameters>
+                <columns>
+                    <column>:name</column>
+                    <column>:select</column>
+                </columns>
+            </parameters>
+        </attribute>
+        <attribute name=":reference" editor="UI::Properties::EEntity"/>
+        <attribute name=":references" editor="UI::Properties::ETable">
+            <parameters>
+                <columns>
+                    <column>:name</column>
+                    <column>:select</column>
+                </columns>
+            </parameters>
+        </attribute>
+        <attribute name=":breference" editor="UI::Properties::EEntity"/>
+        <attribute name=":breferences" editor="UI::Properties::ETable">
+            <parameters>
+                <columns>
+                    <column>:name</column>
+                    <column>:select</column>
+                </columns>
+            </parameters>
+        </attribute>
+        <attribute name=":rich" editor="UI::Properties::ERichText"/>
+        <attribute name=":file" editor="UI::Properties::EFile"/>
+    </attributes>
+    <operations>                
+        <operation name=":manage_properties" class="UI::Operations::ManageProperties" title="Edit"/>
+        <operation name=":manage_child" class="UI::Operations::ManageChild" title="Manage Child" end_location=":child">
+            <parameters>
+                <select_labels>lambda{|o| o.entity_name}</select_labels>
+            </parameters>
+        </operation>
+        <operation ame=":manage_children" class="UI::Operations::ManageChild" title="Manage Children"
+            end_location=":current">
+            <parameters>
+                <input>true</input>
+                <select_label>Select Class</select_label>
+                <select_labels>lambda{|o| o.entity_name}</select_labels>
+            </parameters>
+            <messages>
+                <message name="not_selected">Child isn't selected!</message>
+            </messages>
+        </operation>
+            <operation name=":manage_reference" class="UI::Operations::ManageReference" title="Manage Reference"
+            end_location=":reference">
+            <parameters>
+                <select_labels>lambda{|o| o.name}</select_labels>
+            </parameters>
+        </operation>
+            <operation name=":manage_references" class="UI::Operations::ManageReference" title="Manage References"
+            end_location=":current">
+            <parameters>
+                <input>true</input>
+                <select_labels>lambda{|o| o.name}</select_labels>
+            </parameters>
+            <messages>
+                <message name="select_label">Select Object</message>
+                <message name="not_selected">Object isn't selected!</message>
+            </messages>
+        </operation>
+            <operation name=":manage_breference" class="UI::Operations::ManageReference" title="Manage BReference"
+            end_location=":reference">
+            <parameters>
+                <select_labels>lambda{|o| o.name}</select_labels>
+            </parameters>
+        </operation>
+            <operation name=":manage_breferences" class="UI::Operations::ManageReference" title="Manage BReferences"
+            end_location=":current">
+            <parameters>
+                <input>true</input>
+                <select_labels>lambda{|o| o.name}</select_labels>
+            </parameters>
+            <messages>
+                <message name="select_label">Select Object</message>
+                <message name="not_selected">Object isn't selected!</message>
+            </messages>
+        </operation>
+    </operations>
+</class>

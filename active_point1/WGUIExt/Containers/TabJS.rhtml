@@ -1,0 +1,72 @@
+<script type="text/javascript">
+function wgui_tabjs_show(component_id, index, length) {
+	for(var i = 0; i != length; i++){		
+		var id = component_id + '_' + i.toString();
+		var e = dojo.byId(id);
+		if(i == index){
+			e.style.display = "block"
+		}else{
+			e.style.display = "none"
+		}
+	}	
+}
+</script>
+<% if @names.size > 0 %>
+<% @names.each_with_index do |current_name, index| %>	
+<% pane = @panes[index] %>
+<% if current_name == active %>
+<div id="<%= "#{component_id}_#{index}" %>" style="display:block">
+<% else %>
+<div id="<%= "#{component_id}_#{index}" %>" style="display:none">
+<% end %>
+<table class="<%= style ? style : 'float font input' %> border_top"><tbody>
+    <tr>
+    	<td class="color">    											
+    		<table class="float padding"><tbody>
+                <tr>
+                    <td>
+                    	<div class="h2 font"><%== (title ? title : "") %></div>	
+					</td>
+                </tr>
+            </tbody></table>
+    	</td>
+        <td class="color" style="vertical-align: bottom;">
+            <table class="minimal" align="right"><tbody>
+                <tr>            	
+				<% @names.each_with_index do |name, i| %>
+                    <td>
+                        <table class="float padding"><tbody>
+                            <tr>
+                            <% if name == current_name %>
+                                <td class="background">
+                                	<div class="font"><%== name %></div>
+                                </td>
+                            <% else %>
+								<td>
+									<a href="#" onclick="wgui_tabjs_show('<%= component_id %>', <%= i %>, <%= @names.size %>); return false;" class="font"><%== name %></a>
+                                </td>
+							<% end %>                                    
+                            </tr>
+                        </tbody></table>
+                    </td>
+				<% end %>			
+					<td>&nbsp;</td>								
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table class="float padding"><tbody>
+                <tr>
+                    <td>
+                        ${pane}
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+</div>
+<% end %>
+<% end %>

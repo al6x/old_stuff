@@ -1,0 +1,91 @@
+/* --------------- Core --------------- */
+table.float, table.minimal { 
+	border-collapse: separate; 
+	border-spacing: 0; 
+	padding: 0;    
+    margin: 0;       	
+}
+table.float > thead > tr > th,
+table.float > tfoot > tr > th,
+table.float > tbody > tr > td,
+table.minimal > thead > tr > th,
+table.minimal > tfoot > tr > th,
+table.minimal > tbody > tr > td  {
+    padding: 0;    
+    margin: 0;       	
+    text-align: left;
+	font-size: inherit;	
+	font-weight: inherit;
+}
+table.float {
+    width: 100%;    
+}
+table.float > tbody > tr > td {
+    vertical-align: top;    
+}
+table.minimal > tbody > tr > td {
+    vertical-align: top;	
+}
+
+table.padding > thead > tr > th,
+    table.padding > tfoot > tr > th,
+    table.padding > tbody > tr > td{
+    padding: 3px;    
+}
+
+.border {border: solid 1px #C6D8FF;}
+.border_left {border-left: solid 1px #C6D8FF;}
+.border_top {border-top: solid 1px #C6D8FF;}
+.border_right {border-right: solid 1px #C6D8FF;}
+.border_bottom {border-bottom: solid 1px #C6D8FF;}
+.border_color2 {border-color: #E5ECF9;}
+
+.tab1{padding-left: 10px;}
+.tab2{padding-left: 20px;}
+
+/* --------------- Effects --------------- */
+.reference a {color:#0000CC;}
+.input input,
+.input textarea,
+.input select {
+	width:98%;
+}
+
+.h1 {font-weight:bold;}
+.h2 {font-weight:bold;}
+.h3 {font-weight:bold;}
+
+.color{background: #C6D8FF;}
+.color2{background: #E5ECF9;}
+.background{background: white}
+.color_info{background: #E5ECF9;}
+.color_warn{background: #FAE5B0}
+.color_error{background: #ff6666;}
+
+.font{
+	font-family: DeJavu Sans;
+	font-size: 12px;
+}
+
+#wgui_progress_container{
+    position:fixed;
+    left:3px;
+    top:3px;
+    float:left;
+}
+
+/* --------------- Temp --------------- */
+/** {
+	color: blue; 
+}
+img[src="small.gif"] { 
+	border: 1px solid #000; 
+}
+.tabs {
+	position: relative;
+	right: 0;
+    text-align: right;
+    border-bottom: solid 1px blue;
+}
+
+table{border: solid 1px black;}*/

@@ -1,0 +1,6 @@
+
+<select name="<%= component_id %>" <% if disabled? %>disabled="disabled"<% end %> size="<%= values.size > Multiselect["config.yaml"][:max_size] ? Multiselect["config.yaml"][:max_size] : values.size %>">
+	<% values.each do |value| %>
+	<option <% if value == selected %>selected="selected"<% end %>><%== value %></option>
+	<% end %>
+</select>

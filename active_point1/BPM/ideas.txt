@@ -1,0 +1,12 @@
+CRITICAL
+- Use it for User Registration process
+
+MEDIUM
+Ruote
+- Use engine.get_participant name
+- There is the Journal Class maybe it's possible to use it for events recording.
+- There is the Worklist Class maybe it's possible to use it as task list.
+- Look at ar_participants.rb for example of creating UserInput Item.
+and to workitems_controller.rb (line "OpenWFE::Extras::ArWorkitem.destroy(wi.id)")
+for example how to proceed it further.
+- Use ruote-rest (web envelope arount ruote engine) as example

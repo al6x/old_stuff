@@ -1,0 +1,9 @@
+require 'yaml'
+
+puts YAML.dump({
+		:default_language => "en",
+		:format_html => false,
+		:validate_html => true,
+    :port => 8080,
+    :paths => ["/home/alex/Software/dojo-release-1.2.2", "/home/alex/Software/tinymce/jscripts"]
+  })

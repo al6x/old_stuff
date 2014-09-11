@@ -1,0 +1,6 @@
+
+<% values.each_with_index do |value, i| %>
+<% if i > 0 %><br/><% end %>
+<input type="radio" name="<%= component_id %>" value="<%== value %>" <% if value == selected %>checked="checked"<% end %> <% if disabled? %>disabled="disabled"<% end %>/>
+<label><%== value %></label>
+<% end %>

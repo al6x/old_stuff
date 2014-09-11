@@ -1,0 +1,1 @@
+OGDomain::DMeta::INITIALIZATION[:richtext] = WGUIExt::RichText::RTData.new

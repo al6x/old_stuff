@@ -1,0 +1,57 @@
+-Can works as Copy and as Entity, Entity  is an usual Entity.
+-Copy can be implemented as follows:
+	1 If :copy method will be called, all ordinary state accessor method will be redefined (via alias_method) 
+	to work as Copy/Entity methods (synchronization for alias_method?).
+	2 There is boolean :copy variable, and accessors checks if it true, and behave accordingly (is boolean assignment atomic?).
+
+-If entity will be in Copy mode, all referenced Entities that attr_readers returns became also Copies.
+
+-We can easily check for original modification.
+
+-Arrays and Hashes and ValueObjects also records their state and behave the same way as the Entity does.
+
+-And also dynamic loading can works
+
+-And we can easily implement Effective Arrays
+
+-And we can easily implement Transactional Scopes like:
+	transaction tr1 do
+		e ... # Behaves like copy in tr1
+	end
+	e ... # Behaves like entity
+	transaction tr2 do
+		e ... # Behaves like copy in tr2
+	end
+	transaction tr1 do
+		e ... # Behaves like copy in tr1
+	end
+	
+-Need to operate only with 1 transaction instead of N copies
+
+-What if two transaction will goes simultaneously and one cancels before another and marks entities as originals - but second transaction is still not finished?
+	- maybe use EX mode to clean all enties marked as copies and before each 'begin' block check and renitialize them?
+	
+-We can use _attr_accessor methods for fast search that contains no logic and give us direct access to original state.
+
+-Eliminates need for Transaction Strategy we can easily manipulate one transaction by hand
+	transaction tr1, commit = true do
+		e ... # Behaves like copy in tr1
+	end
+	
+-In commit do not walk all tree, just dump all changed classes do disk, if any have been changed and then deleted no matter, 
+they will be later collected by GC.
+
+-Use following folder structure for storage
+	Entity.dat
+	Entity/ValueObject1.dat
+	...
+	Entity/ValueObjectN.dat
+
+-Use CustomID
+
+-Make it Robust
+
+-Collect Garbage on startup, mark all loaded objects and delete others.
+
+-Add check for :EX, :SH mode if $debug
+

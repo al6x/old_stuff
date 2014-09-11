@@ -1,0 +1,62 @@
+<% if self.class.logged.call %>
+<table class="float padding border_left"><tbody>
+    <tr>
+        <td class="color"><%= to_l("User") %></td>
+    </tr>
+	<tr>
+        <td><%= self.class.user_name.call %></td>
+    </tr>
+    <tr>
+        <td>
+${@blogout}            
+        </td>
+    </tr>
+</tbody></table>
+<% else %>
+<table class="float padding border_left"><tbody>
+    <tr>
+        <td class="color"><%= to_l("User") %></td>
+    </tr>
+	<% if @message %>
+    <tr>
+        <td>
+        	<table class="float padding"><tbody>
+				<tr>
+					<td class="color_warn"><%= @message %></td>
+				</tr>
+			</tbody></table>	
+		</td>
+    </tr>
+	<% end %>
+	<tr>
+        <td><%= to_l("Name:") %></td>
+    </tr>
+	<tr>
+        <td>
+${@name}        	
+		</td>
+    </tr>
+	<tr>
+        <td><%= to_l("Password:") %></td>
+    </tr>
+	<tr>
+        <td>
+${@password}        	
+		</td>
+    </tr>
+    <tr>
+        <td>
+			<table class="float padding"><tbody>
+				<tr>
+					<td>
+${@blogin}						
+					</td>
+					<td>
+${@bregister}						
+					</td>					
+				</tr>
+			</tbody></table>	
+        </td>
+    </tr>
+</tbody></table>
+<% end %>

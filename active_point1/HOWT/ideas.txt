@@ -1,0 +1,3 @@
+
+LOW
+- It should not find buttons (<button>THE TEXT!</button>) in 'text' search, but it does.

@@ -1,0 +1,11 @@
+def #{m} *params
+	Cache.monitor.synchronize do
+		@cache_value_#{als} ||= {}
+		if @cache_version_#{als} == RubyExt::Cache.version("#{vnames}") and @cache_value_#{als}.include?(params) 
+			return @cache_value_#{als}[params]
+		else
+			@cache_version_#{als} = RubyExt::Cache.version("#{vnames}")
+			return @cache_value_#{als}[params] = cached_#{als}(*params)
+		end		
+	end
+end

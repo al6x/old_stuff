@@ -1,0 +1,3 @@
+class WParent < WComponent
+	
+end

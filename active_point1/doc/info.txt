@@ -1,0 +1,4 @@
+- Marketing materials, "Site for what it is?" http://dev.ingate.ru/develop-targets/
+- This Ruby Project http://webby.rubyforge.org/ uses http://www.graphviz.org/Gallery.php, it can dispays complex Diagrams for example BPM.
+- Distributed web framework (using rinda) http://www.mackwiki.com/using_the_mack-distributed_gem
+- Load balancing http://ramaze.net/advanced-deployment

@@ -1,0 +1,17 @@
+<% if @value %>
+<table class="float_container container_padding"><tbody>
+	<tr>
+		<td>
+${@year}			
+		</td>	
+		<td>/</td>	
+		<td>
+${@month}			
+		</td>
+		<td>/</td>		
+		<td>
+${@day}			
+		</td>
+	</tr>
+</tbody></table>
+<% end %>

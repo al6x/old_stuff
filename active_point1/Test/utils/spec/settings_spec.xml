@@ -1,0 +1,9 @@
+<config>
+	<string>a string</string>
+	<integer>2</integer>
+	<float>2.2</float>
+	<boolean>true</boolean>
+	<node>
+		<value>value</value>
+	</node>
+</config>

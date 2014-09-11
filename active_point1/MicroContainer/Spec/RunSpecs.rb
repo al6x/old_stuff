@@ -1,0 +1,6 @@
+require "#{File.dirname(__FILE__)}/ConcurrencySpec"
+require "#{File.dirname(__FILE__)}/CustomInitializationSpec"
+require "#{File.dirname(__FILE__)}/CustomScopeSpec"
+require "#{File.dirname(__FILE__)}/GeneralSpec"
+require "#{File.dirname(__FILE__)}/MessageQueueSpec"
+require "#{File.dirname(__FILE__)}/SessionManagementSpec"

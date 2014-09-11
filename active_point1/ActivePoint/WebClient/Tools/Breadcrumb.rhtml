@@ -1,0 +1,14 @@
+<% if @path.size > 1 %>
+<table class="floating_container padding"><tbody>
+	<tr>
+<% @path.each_with_index do |item, index| %>		
+<% unless index == 0 %>
+		<td>&gt;</td>
+<% end %>
+		<td>
+${item}			
+		</td>
+<% end %>		
+	</tr>	
+</tbody></table>
+<% end %>

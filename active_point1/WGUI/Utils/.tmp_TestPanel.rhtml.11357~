@@ -1,0 +1,21 @@
+<% if box %>
+<table>
+<% childs.each do |child| %>
+  <tr>
+	<td>
+${child}
+	</td>
+  </tr>
+<% end %>
+</table>
+<% else %>
+<table>
+  <tr>
+<% childs.each do |child| %>
+	<td>
+${child}
+	</td>
+<% end %>
+  </tr>
+</table>
+<% end %>

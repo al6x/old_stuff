@@ -1,0 +1,41 @@
+CRITICAL
+- Online Welcome Page and Help, as in Rails
+
+- Use View.autobuild (list of attributes)
+	- Use set of rules to perform autobuild
+	- Some Actions and its Controls should be created automatically (:child/:reference)
+	- Use Attribute Group
+	- Sort Attributes alphabetically
+	- For edit also use tabbed view 
+
+MEDIUM
+----
+- Move Editors/Containers/... out from Wigets
+
+
+- MaxSize for images
+- Add 'empty?' to Container and do not display nested empty containers.
+- Add :parent, :sibling, :children extensions to Menu Tool
+- References inside Table (add spec)
+- Remove Gap between top and center
+
+LOW
+----
+- Move TreeMenu to Portal
+- Add additional Template system to WYSIWYG, via 'method_missing' in template.
+- Use folding sections for attribute groups as in Youtube.
+
+DONE
+- TODO Recheck all testcases and rebuild editors (split it to two - edit&view).
+- Create tab container
+- Introduce 'View' concept
+- Implement 'View' inheritance. There is linear list of components and it's possible to alter its and add new.
+- Custom Table Cell Wigets (table inside Table, :richtext_view, ...)
+- Add 'weight' to Containers.
+- Introduce ViewContext, copy :wigets from View to ViewContext.
+- Reimplemente View.wigets as returning list instead of hash
+- Add Tab Container maded by AJAX
+- Use 'ObjectContext.view_state' to preserve complex component state during view refresh.
+- Provide way for Wigets to get access to Object Metadata.
+- Make :border and :padding optional parameters for Tab.
+- Instead of explicitly defined :border and so on use .style = "border padding" on Components

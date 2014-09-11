@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="class">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="attributes"/>
+        <xs:element ref="operations"/>
+      </xs:sequence>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="attributes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="attribute"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="attribute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="parameters"/>
+      </xs:sequence>
+      <xs:attribute name="editor" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="name" use="required" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="operations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="operation"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="operation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="parameters"/>
+        <xs:element minOccurs="0" ref="messages"/>
+      </xs:sequence>
+      <xs:attribute name="ame" type="xs:NMTOKEN"/>
+      <xs:attribute name="class" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="end_location" type="xs:NMTOKEN"/>
+      <xs:attribute name="name" type="xs:NMTOKEN"/>
+      <xs:attribute name="title" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="messages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="message"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="message">
+    <xs:complexType mixed="true">
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="parameters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="input"/>
+        <xs:element minOccurs="0" ref="select_label"/>
+        <xs:choice>
+          <xs:element ref="columns"/>
+          <xs:element ref="select_labels"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="input" type="xs:boolean"/>
+  <xs:element name="select_label" type="xs:string"/>
+  <xs:element name="columns">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="column"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="column" type="xs:NMTOKEN"/>
+  <xs:element name="select_labels" type="xs:string"/>
+</xs:schema>

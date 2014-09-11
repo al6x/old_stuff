@@ -1,0 +1,12 @@
+CRITICAL
+- Asynchronous Listener
+- Services and Services Registry (Remote services looks the same as Local)
+- Use Services Registry instead of (SecurityManager, LayoutManager, ...)
+- Use 2 Default Policies
+- Add 'require' to plugins
+
+NORMAL
+
+LOW
+
+DONE

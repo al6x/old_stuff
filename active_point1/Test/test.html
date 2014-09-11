@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <link rel="icon" href="http://localhost:8080/__sr__/default_skin/images/favicon">
+        <link rel="stylesheet" type="text/css" href="localhost_files/style.css">
+        <script type="text/javascript" src="localhost_files/dojo.js">
+        </script>
+        <script type="text/javascript" src="localhost_files/bootstrap.js">
+        </script>
+        <script type="text/javascript" src="localhost_files/loader.js">
+        </script>
+        <script type="text/javascript" src="localhost_files/hostenv_browser.js">
+        </script>
+        <script type="text/javascript" src="localhost_files/_base.js">
+        </script>
+        <script type="text/javascript" src="localhost_files/wgui.js">
+        </script>
+        <script type="text/javascript">
+            dojo.addOnLoad(function(){
+                wgui.old_element_not_found = "Element for Update is not found in DOM!"
+                wgui.error_message = "Operation failed!"
+                wgui.active_call_message = "Please wait until previous operation will finished!"
+                wgui.broken_connection = "Connection with Server has been broken! This page will be disabled!"
+                wgui.invalid_ajax_responce = "Invalid AJAX Responce, can't find New Element!"
+                wgui.session_id = "fa"
+                wgui.init()
+            });
+        </script>
+    </head>
+    <body>
+        <noscript>
+            JavaScript must be enabled!
+        </noscript>
+        <!-- WGUI::Engine::Window -->
+        <div id="Window_1">
+            <!-- TestServer -->
+            <div id="t">
+                <!-- View -->
+                <div id="View_1">
+                    <!-- Box -->
+                    <div id="cp_id_root">
+                        <table class="float border_left border_top padding">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="color font">
+                                            Properties
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <!-- Flow -->
+                                        <div id="cp_id_attrs">
+                                            <table class="float padding">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div id="cp_id_a1" class="input font">
+                                                                <input name="cp_id_a1" value="" type="text">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div id="cp_id_a2" class="input font">
+                                                                <input name="cp_id_a2" value="" type="text">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div id="cp_id_a1" class="input font">
+                                            <input name="cp_id_a1" value="" type="text">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div id="cp_id_a2" class="input font">
+                                            <input name="cp_id_a2" value="" type="text">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form id="wgui_ajax_call" enctype="multipart/form-data" style="display: none;" method="post" action="">
+        </form>
+        <div id="wgui_progress_container">
+            <img id="wgui_progress" style="display: none;" src="localhost_files/loading.gif" alt="Loading ...">
+        </div>
+    </body>
+</html>

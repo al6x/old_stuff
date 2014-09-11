@@ -1,0 +1,7 @@
+CRITICAL
+- Cool basic site control
+- Add Content to Portal
+- Add Project 
+
+DONE
+- Add News to Portal

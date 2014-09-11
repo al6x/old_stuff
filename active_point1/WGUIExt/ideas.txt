@@ -1,0 +1,8 @@
+CRITICAL
+
+MEDIUM
+----
+- Add CSS (text and popup dialogs)
+
+DONE
+- Optimize TinyMCE and fix some problems with it (table cells doesn't works, add HTML button, remove <br/> and <p> tags)

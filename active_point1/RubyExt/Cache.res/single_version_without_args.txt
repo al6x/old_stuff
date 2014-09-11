@@ -1,0 +1,10 @@
+def #{m}
+	Cache.monitor.synchronize do
+		if @cache_version_#{als} == RubyExt::Cache.version("#{vnames}")
+			return @cache_value_#{als}
+		else
+			@cache_version_#{als} = RubyExt::Cache.version("#{vnames}")
+			return @cache_value_#{als} = cached_#{als}
+		end		
+	end
+end

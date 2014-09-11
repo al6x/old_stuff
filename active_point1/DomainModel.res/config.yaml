@@ -1,0 +1,3 @@
+:directory: "/home/alex/Projects/data"
+:root_class: "DomainLibrary::Portal::Home"
+:initializer: "DomainLibrary::Portal::Initializer"
