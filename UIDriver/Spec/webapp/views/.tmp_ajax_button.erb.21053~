@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>AJAX Button</title>
+        <script src="js/ext-core-debug.js"></script>
+		<script>
+			Ext.onReady(function() {
+				page_loaded()
+				Ext.Ajax.on('beforerequest', this.ajax_start);
+				Ext.Ajax.on('requestcomplete', this.ajax_finished);
+				Ext.Ajax.on('requestexception', this.ajax_finished);
+			});
+		</script>
+    </head>
+    <body onload="">
+        <script>
+        	function page_loaded(){
+				Ext.get("page_loaded").show();
+			};
+			
+			function ajax_start(){
+				Ext.get("ajax_call").show();
+			};
+			
+			function ajax_finished(){
+				Ext.get("ajax_call").hide();
+			}
+			
+            function ajax_post(){
+                Ext.Ajax.request({
+                    method: 'POST',
+                    url: '/ajax_button',
+                    success: function(response, opts){
+                        Ext.get("placeholder").dom.innerHTML = response.responseText;
+                    },
+                    failure: function(response, opts){
+                        Ext.get("placeholder").dom.innerHTML = "Invalid XHR Response!";
+                    }
+                });
+            };
+        </script>
+        <button onclick="ajax_post(); return false;">AJAX Button</button>
+        <div id="placeholder"></div>
+		<div id="ajax_call" style="display:none">AJAX Call</div>
+		<div id="page_loaded" style="display:none">Page Loaded</div>
+    </body>
+</html>

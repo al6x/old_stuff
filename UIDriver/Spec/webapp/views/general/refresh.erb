@@ -1,0 +1,6 @@
+<html>
+<%= erb :_head %>	
+	<body>
+		Counter<%= session[:counter] ||= 0; session[:counter] += 1 %>
+	</body>
+</html	 

@@ -1,0 +1,12 @@
+<html>
+<%= erb :_head %>	
+	<body>		
+		<p>TextField: <%= params[:text_field] %></p>
+		<p>TextArea: <%= params[:text_area] %></p>
+		<p>File: <%= params[:file][:filename] if params[:file] %></p>
+		<p>SingleSelect: <%= params[:select] %></p>
+		<p>MultiSelect: <%= params[:multi_select] %></p>
+		<p>RadioButton: <%= params[:radio_button2] %></p>
+		<p>CheckBox: <%= params[:check_box2] %></p>
+	</body>	
+</html>

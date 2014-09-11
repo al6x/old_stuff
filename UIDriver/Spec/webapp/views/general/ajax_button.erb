@@ -1,0 +1,21 @@
+<html>
+<%= erb :_head %>
+    <body>
+        <script>        				
+            function ajax_post(){
+                Ext.Ajax.request({
+                    method: 'POST',
+                    url: '/ajax_responce',
+                    success: function(response, opts){
+                        Ext.get("placeholder").dom.innerHTML = response.responseText;
+                    },
+                    failure: function(response, opts){
+                        Ext.get("placeholder").dom.innerHTML = "Invalid XHR Response!";
+                    }
+                });
+            };
+        </script>
+        <button onclick="ajax_post(); return false;">AJAX Button</button>
+        <div id="placeholder"></div>
+    </body>
+</html>

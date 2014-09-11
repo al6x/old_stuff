@@ -1,0 +1,20 @@
+.coordinates_check{
+	position: absolute;
+	left: 10px;	
+	top: 20px;
+	width: 30px;
+	height: 40px;
+}
+
+.item {
+	margin: 5px;
+	padding: 5px;
+}
+
+.table {
+	border: black solid 1px;
+	margin: 5px;
+	padding-right: 10px;
+	width: 100%;
+}
+

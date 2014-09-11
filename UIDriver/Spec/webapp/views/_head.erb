@@ -1,0 +1,16 @@
+    <head>
+        <title>AJAX Button</title>
+        <script src="/js/ext-core-debug.js"></script>
+		<script src="/js/user_script.js"></script>
+		
+		<script>
+			Ext.onReady(function() {
+				UserScript.page_loaded();
+				Ext.Ajax.on('beforerequest', UserScript.ajax_start);
+				Ext.Ajax.on('requestcomplete', UserScript.ajax_finished);
+				Ext.Ajax.on('requestexception', UserScript.ajax_finished);
+			});
+		</script>
+		
+		<link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    </head>

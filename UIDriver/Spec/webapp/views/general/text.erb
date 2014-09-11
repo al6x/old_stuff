@@ -1,0 +1,42 @@
+<html>
+<%= erb :_head %>	
+	<body>
+		<div id="text">Text</div>		
+		<form method="post" action="/general/form_result">	
+			<input type="text" name="text_field" value="TextFieldValue"/><br/>						
+			
+			<input type="file" name="file"/><br/>						
+
+			<textarea name="text_area" rows="2" cols="20">TextAreaValue</textarea><br/>
+
+			<select name="empty_select">
+				<option>yes</option>
+				<option>no</option>			
+				<option selected="selected"></option>
+			</select>
+
+			<select name="select" >
+				<option>One</option>
+				<option selected="selected">Two</option>
+				<option>Three</option>
+			</select>
+			<br/>
+			
+			<select name="multi_select" multiple="multiple" size="3">
+				<option>One</option>
+				<option selected="selected">Two</option>
+				<option selected="selected">Three</option>
+			</select>
+			<br/>  
+			
+			<input type="radio" name="radio_button1" value="RadioButtonOne"/><br/>
+			<input type="radio" name="radio_button2" value="RadioButtonTwo" checked="checked"/><br/>
+			
+			<input type="checkbox" name="check_box1" value="CheckBoxOne"/><br/>
+			<input type="checkbox" name="check_box2" value="CheckBoxTwo" checked="checked"/><br/>
+			
+			<input type="submit" value="Submit"/>
+		</form>		
+	</body>
+	
+</html>

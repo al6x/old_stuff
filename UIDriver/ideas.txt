@@ -1,0 +1,22 @@
+IDEAS
+- Each User has it's own Selenium running. 
+- Use 1 to 1 selenium/browser?
+- Spec for illegal characters in text 
+- create Embedable (iframe) UIDrive test cases
+
+
+HIGH
+
+
+MEDIUM
+- Add :column Filter
+- Queries Union (kind of [:button, :link])
+- add :max_browser_expires to Service::CONFIG
+- Use direct Selenium REST API instead of Ruby Library.
+- When we setting timeout for 1 browser we also setting timeout for all other browsers.
+
+LOW
+
+DONE
+- V.2
+- Add url parameters to go_to

@@ -1,0 +1,36 @@
+<html>
+<%= erb :_head %>	
+	<body>
+		
+		<form method="post" action="/general/form_result" enctype="multipart/form-data">	
+			<input type="text" name="text_field" value=""/><br/>						
+			
+			<input type="file" name="file"/><br/>						
+
+			<textarea name="text_area" rows="2" cols="20"></textarea><br/>
+
+			<select name="select" >
+				<option>One</option>
+				<option>Two</option>
+				<option>Three</option>
+			</select>
+			<br/>
+			
+			<select name="multi_select" multiple="multiple" size="3">
+				<option>One</option>
+				<option>Two</option>
+				<option>Three</option>
+			</select>
+			<br/>  
+			
+			<input type="radio" name="radio_button1" value="RadioButtonOne"/><br/>
+			<input type="radio" name="radio_button2" value="RadioButtonTwo"/><br/>
+			
+			<input type="checkbox" name="check_box1" value="CheckBoxOne"/><br/>
+			<input type="checkbox" name="check_box2" value="CheckBoxTwo"/><br/>
+			
+			<input type="submit" value="Submit"/>
+		</form>		
+	</body>
+	
+</html>

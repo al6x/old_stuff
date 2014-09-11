@@ -1,0 +1,11 @@
+:timeout: "4"
+:speed: "0"
+:browser_expires: "300"
+:retry_timeout: "0.1"
+
+:auto_wait: "true"
+
+:service_port: 8084
+:service_uri: localhost
+
+:text_selector: "text_view"

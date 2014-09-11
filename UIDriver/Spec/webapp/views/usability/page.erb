@@ -1,0 +1,8 @@
+<%= 
+	locals = {
+		:main_menu => erb(:"usability/main_menu"),
+		:left_menu => erb(:"usability/left_menu"),
+		:object => erb(:"usability/object"),
+	}
+	erb :"usability/_template", :locals => locals
+%>
